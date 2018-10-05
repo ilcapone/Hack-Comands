@@ -1,0 +1,2 @@
+Path
+C:\Users\Username\AppData\Local\Android\Sdk\tools\lib\monitor-x86_64\monitor.exe

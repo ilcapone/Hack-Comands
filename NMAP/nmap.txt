@@ -1,0 +1,8 @@
+ nmap -sS -A -O -sV -oN nmap_interna_.txt 192.168.16.0/24
+
+--spoof-mac Cisco -T4 --source-port 53 -sS --send-ip -n --data-length 30 --randomize-hosts -n -f -f -sV --version-all -O
+
+nmap -sT -Pn 34.213.170.51
+
+# Search raspberry
+nmap -p 22 --open -sV 192.168.0.*

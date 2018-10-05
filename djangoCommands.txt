@@ -1,0 +1,8 @@
+django-admin.py startproject mysite
+python manage.py runserver [puerto]
+
+#Inicialización DB
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py shell

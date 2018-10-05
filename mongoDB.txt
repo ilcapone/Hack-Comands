@@ -1,0 +1,74 @@
+################ 	Last configs	################
+
+https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04
+
+----- creating Admin ------------------------------
+db.createUser(
+  {
+    user: "*****",
+    pwd: "******",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+------------ Acces like som user in local ---------
+mongo -u AdminSammy -p --authenticationDatabase admin
+
+--------------- Init Deamon -----------------------
+sudo systemctl start mongodb
+sudo systemctl stop mongodb
+sudo systemctl restart mongodb
+sudo systemctl status mongod
+sudo systemctl enable mongod
+---------------------------------------------------
+
+###################################   WINDOWS    #########################
+----------- Init DB --------------
+#start database
+mongod
+
+#stard database from other folder
+mongod --dbpath F:\Database\MongoDB_DATA
+
+---------- Conect to DB -----------
+mongo
+
+
+###################################   LINUX    #########################
+----------- Init DB --------------
+#start database
+mongod
+
+#stard database from other folder
+mongod --dbpath /home/ubuntu/MongoDB_DATA
+
+# fichero de configuracion
+ /etc/mongod.conf
+
+sudo service mongod start
+sudo service mongod stop
+sudo service mongod restart
+
+----------- Conect to DB --------------
+mongo --host 127.0.0.1:27017
+
+---------- Commands ----------
+
+show databases
+db # base de datos actual
+use <databasename> # select database
+
+
+######################### create user for remote concrol ####################
+use databasename
+
+db.createUser({
+    user: '***********',
+    pwd: '***************',
+    roles: [{ role: 'readWrite', db:'databasename'}]
+})
+
+
+##########		create collection 	###########
+
+db.createCollection("gas", { capped: <boolean>,
+                              collation: <document> } )

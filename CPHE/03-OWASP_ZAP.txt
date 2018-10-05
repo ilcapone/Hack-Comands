@@ -1,0 +1,20 @@
+
+	--- * OWASP ZAP * ---
+
+	### Notas ###
+	- Dos formas de hacer el scaneo
+		> Escaneo Actio  --> Atack
+		> Escaneo Pasivo --> Herramientas/Opciones/ProxiLocal
+				 --> Config Explorador con ProxiLocal
+				 --> Petición al objetivo
+	
+	
+	### Spider ###
+	
+	### Fuzz ###
+	- Realizar en un POST (scriptin)
+	- Selecionar el parametro parametro --> boton derecho FUZZ --> Payload --> Añadir
+	- File Fuzzer / jbrofuzz
+	- Start Fuzzer
+	
+	

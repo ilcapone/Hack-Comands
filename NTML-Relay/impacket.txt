@@ -1,0 +1,3 @@
+
+
+python smbrelay -h [host] -c [comand]

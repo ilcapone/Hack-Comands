@@ -1,0 +1,1 @@
+powershell -noprofile -noexit -c "Get-Content runme.ps1 | PowerShell.exe -noprofile -"

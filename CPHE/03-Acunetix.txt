@@ -1,0 +1,49 @@
+
+	
+	----- *  ACUNETIX * -----
+
+	### Disponible en ###
+	- localhost:3443
+
+	### Notas ###
+	- Muy Ruidosa
+	- Enfocado a scaneo de vulneravilidades WEB
+	- Muchos falsos positivos
+	- Geenra buenos informes
+	- Marcar falsos positivos para que no aparezcan en los informes
+
+	### Uso ###
+	- Uso automatico
+	- Busqueda de puertos
+	- Identificación de servicios
+	- Informes
+
+	### Site Crawler ###
+	- Permite identificar el tamaño de una web para dar un presupuesto $
+	- Añadir objetivo --> Start
+	- Permite realizar spidering de una pagina de forma completa
+	- No realiza scaneo de vulneravilidades
+	- Extrae Cookies, Capchaps
+
+	### Scanner de Subdominios ###
+	- Para identificar nuebos vectores de ataque
+	- Boton derecho y escaneo de servicio detectado
+
+	### Editor HTTP ###
+	- Editar peticiones, GET, POST
+	- Cross Site Scripting
+
+	### HTTP Snnifer ###
+	- Boton deercho init proxy
+	- Configurar proxy en navegador
+
+	### Authentication Tester ###
+	- Prueba de Login
+	- Ataques de Diccionario
+
+	### Scaneo General ###
+	- Permite grado de configuración
+	- Default es completo, prueba todo, muy largo
+
+	
+	

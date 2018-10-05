@@ -1,0 +1,15 @@
+
+
+mkvirtualenv nombre_de_tu_entorno_virtual  # crear un entorno virtual
+
+workon nombre_de_tu_entorno_virtual # interactuar con el entorno virtual
+
+cdvirtualenv # acceder a la raiz del entorno virtual
+
+pip freeze # comprovar que hay instalado en nuestra maquina virtual
+
+deactivate # salir del entorno virtual
+
+lsvirtualenv # listar los entornos virtuales
+
+rmvirtualenv nombre_del_entornovirtual # eliminar un entorno virtual

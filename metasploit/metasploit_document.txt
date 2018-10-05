@@ -1,0 +1,10 @@
+# Ubicacion de los modulos del framework
+ cd /usr/share/metasploit-framework
+
+
+					 cd ~/.msf4/
+# Ubicacion del framwor en la RASPY
+		/opt/metasploit-framework
+
+# Configuracion para escrivir logs >> spool /home/<username>/.msf3/logs/console.log
+ejemplo :  /home/ubuntu/shuriken/metasploit_LOGs/console.log

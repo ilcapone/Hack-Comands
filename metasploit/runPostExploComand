@@ -1,0 +1,2 @@
+set AutoRunScript multi_console_command -r path
+set AutoRunScript multi_console_command -c command

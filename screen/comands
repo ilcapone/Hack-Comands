@@ -1,0 +1,20 @@
+# sesiones aviertas
+screen -ls
+
+# create scren
+screen -S name
+
+# create new window
+Ctrl a c
+
+# move between screens windows
+Ctrl a n
+
+# atacharse a un screen
+screen -x pid
+
+# eliminar screen
+screen -X -S [session # you want to kill] quit
+
+# salir del screen
+exit

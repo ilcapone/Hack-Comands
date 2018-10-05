@@ -1,0 +1,1 @@
+cat telnet_192.168.200.0.nmap | grep Nmap | cut -d ' ' -f 5 > telnet_cleanIPs

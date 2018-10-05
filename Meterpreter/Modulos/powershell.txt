@@ -1,0 +1,7 @@
+
+powhershell_execute "comand"
+powhershell_execute -h
+
+powhershell_import "script"
+
+powershell_shell

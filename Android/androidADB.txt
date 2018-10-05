@@ -1,0 +1,19 @@
+
+Path: C:\Users\Username\AppData\Local\Android\Sdk\platform-tools>
+Activar Samsusng Galaxi depuracion: *#0808#
+
+---------
+Comandos:
+
+adb devides # lista de dispositivos conectado
+adb install path_to_apk # installar aplicacion
+adb pull remote local # copiar archivos
+adb shell # se conecta la dispositivo mediante USB
+	> Comandos ShelL:
+			dumpsys # Vuelca datos del sistema en pantalla
+			dumpstate # Vuelca el estado del sistema
+
+adb shell pm list packages # Extraccion de la lista d aplicaciones installadas
+adb shell pm path com.ejemplo.app # Obtener el path del archivo .apk de la aplicacion
+adb pull path/ejemplo/ap.apk # Descarga del archivo app.apk al PC
+

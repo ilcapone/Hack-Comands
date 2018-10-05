@@ -1,0 +1,4 @@
+
+	- ftp [host]
+	- default:
+			* anonymous:anonymous

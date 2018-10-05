@@ -1,0 +1,3 @@
+# multiseasson in exploit/multi/handler
+set ExitOnSession false
+exploit -j (-z)

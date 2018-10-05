@@ -1,0 +1,7 @@
+getuid
+sysinfo
+ls C:/
+ls C:/Usuarios
+ls C:/Users
+run arp_scanner -i
+ifconfig

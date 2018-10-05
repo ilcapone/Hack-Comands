@@ -1,0 +1,12 @@
+
+
+sudo du -sh /var/cache/apt 			# Ver espacio empelado por la cache
+ps aux | grep -i apt				# Ver que procesos estan empleando apt
+killall apt-get						# Matar los procesos que estan empleando apt
+rm /var/lib/apt/lists/lock			# Eliminar directorios bloqueados
+rm /var/cache/apt/archives/lock		# Eliminar directorios bloqueados
+rm /var/lib/dpkg/lock				# Eliminar directorios bloqueados
+apt-get autoclean					# Limpiar cache
+apt-get clean						# Limpiar cache en profundidad
+du -sh ~/.cache/thumbnails			# Espacio empleado por miniaturas
+rm -rf ~/.cache/thumbnails/*		# Eliminar miniaturas

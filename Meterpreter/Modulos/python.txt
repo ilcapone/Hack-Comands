@@ -1,0 +1,7 @@
+
+#### Ejecutar comando pthon ####
+python_execute "print 'Good morning! It\\'s 5am'"
+python_execute "import os; cd = os.getcwd()" -r cd
+
+### Ejecutar script python ###
+python_import -f /root/findfiles.py
