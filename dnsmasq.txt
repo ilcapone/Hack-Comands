@@ -1,0 +1,3 @@
+
+## Conf File
+	nano /etc/dnsmasq.conf

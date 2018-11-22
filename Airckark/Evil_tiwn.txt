@@ -1,4 +1,10 @@
 
+################### Version 1 ######################
+
+- Create a dnsmasc.conf file
+
+
+################### Version 2 ######################
 ---------------------------------------------------------------------------
 airmon-ng   				# See available wireless network interfaces to use
 airmon-ng start wlan0  		#  Config wireless interface in mod monitor
