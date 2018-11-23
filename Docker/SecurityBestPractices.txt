@@ -1,0 +1,35 @@
+
+
+	
+		##										  ##
+		##	-- Docker Security Best Practices --- ##
+		## 										  ##
+	
+	
+	
+		1 - Configuracion del host 
+			1.1 - Creacion de particiones separadas para los contenedores
+			1.2 - Limitar los usuarios que pueden controlar el demonio de Docker
+			1.3 - Auditar los ficheros y directorios de Docker
+		2 - Configuracion del demonio de Docker
+			2.1 - Restringir el trafico d ered entre contenedores
+			2.2 - Autorizacion habilitada para el CLI d eDocker
+			2.3 - Gestion centralizada/remota de logs
+			2.4 - Recuperacion en vuelo de los contenedores
+			2.5 - Permisos en los ficheros de configuracion del demonio Docker
+		3 - Configuracion de la imagen y fichero Dockerfile
+			3.1 - Ejecucion de contenedores con usuarios NO root
+			3.2 - Content Trust de Docker
+			3.3 - Eliminar los permisos de setuid y setgid
+			3.4 - COPY en vez de ADD en el fichero Dockerfile
+			3.5 - No almacenar secretos en el Dockerfile
+		4 - Runtime de contenedores
+			4.1 - Habilitar SELinux/Apprmor
+			4.2 - Capabilities de Linux registradas dentro de los contenedores
+			4.2 - No permitir la ejecucon de contenedores privilegiados
+			4.3 - SSH no permitido dentro de los contenedores
+			4.5 - No mapear puertos privilegiados dentro de los contenedores
+			4.6 - Asegurar que el namespace de red host no es compartido
+			4.7 - Limitar el uso de recursos como memoria y CPU
+		5 - Otras buenas practicas
+			5.1 - Docker bench security
