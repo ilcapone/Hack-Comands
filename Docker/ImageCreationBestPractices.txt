@@ -1,0 +1,17 @@
+
+
+
+		##										  ##
+		##	-- Docker Security Best Practices --- ##
+		## 										  ##
+
+
+		1 > Usar imagenes pequeñas
+		2 > Usar imagenes especializadas
+		3 > Especializar la version de la imagen base
+		4 > Reducir el numero de instrucciones en el fichero Dockerfile
+		5 > Borrar ficheros que no se necesiten 
+		6 > Aprovechar multifase
+		7 > Reducir el numeor de archivos enviados al demonio Docker
+		8 > El orden impoarta
+		9 > Reusar imagenes
