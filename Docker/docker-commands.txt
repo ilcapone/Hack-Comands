@@ -1,4 +1,6 @@
 
+# Build
+docker buil --tab=image name .
 
 # Exit docker without stop
 Ctrl+p, Ctrl+q 
