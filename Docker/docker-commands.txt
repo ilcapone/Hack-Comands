@@ -7,3 +7,6 @@ Ctrl+p, Ctrl+q
 
 # Run Metasploitable docker
 sudo  docker run --rm -it -p 443:443 -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data remnux/metasploit
+
+# Run Empire
+docker run -it -p 80:80 -p 443:443 -v /home/$USER/mydir:/data empireproject/empire
