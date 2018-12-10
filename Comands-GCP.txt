@@ -1,0 +1,34 @@
+
+## Instances ##
+- gcloud compute instances list
+
+## SSH ##
+- gcloud compute ssh [INSTANCE_NAME]
+- gcloud compute scp --recurse [INSTANCE_NAME]:[REMOTE_DIR] [LOCAL_DIR] -- zone [ZONE]
+
+## SQL ##
+- gcloud sql connect [INSTANCE_ID] --user=root
+
+## Firewalls ##
+- gcloud compute firewall-rules list --project [PROJECT-NAME] --format=json
+
+## Config cluster and proyect credentials ##
+- gcloud container clusters get-credentials [Cluster name] --zone [zone] --project [proyect name]
+
+## Networks ##
+- gcloud compute networks list
+- gcloud compute networks describe [net-name]
+- gcloud compute networks subnets list
+- gcloud compute networks subnets describe [subnetwork-name]
+
+## IP lists ##
+- gcloud compute addresses list
+
+## Describe instance ##
+- gcloud compute instances describe [instance-name]
+
+## Logs ##
+- gcloud logging read 'logName="projects/[PROJECT_ID]/logs/cloudaudit.googleapis.com%2Factivity"' --limit 2 --freshness 300d
+
+## Containers ##
+- gcloud container clusters describe [cluster-name] --zone [zone]
