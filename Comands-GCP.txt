@@ -2,8 +2,12 @@
 ## Instances ##
 - gcloud compute instances list
 
+## Config proyect ##
+- gcloud config set project
+
 ## SSH ##
 - gcloud compute ssh [INSTANCE_NAME]
+- gcloud compute --project "[Project-ID]" ssh --zone "[ZONE]" "[Instance-name]"
 - gcloud compute scp --recurse [INSTANCE_NAME]:[REMOTE_DIR] [LOCAL_DIR] -- zone [ZONE]
 
 ## SQL ##
