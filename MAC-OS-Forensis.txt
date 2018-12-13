@@ -1,0 +1,15 @@
+
+## Buscador ##
+- Comand + Space
+
+## Visor de logs ##
+- Console
+- https://softron.zendesk.com/hc/en-us/articles/115000014774-HOW-TO-Collect-system-logs-on-macOS-Sierra-and-later
+- /var/logs
+
+## Terminal ##
+- Terminal
+- sudo log collect --output ~/Documents/logcoll.logarchive --start '2017-01-10'
+
+## Captura de pantalla ##
+- Comand + Shift + 4 
