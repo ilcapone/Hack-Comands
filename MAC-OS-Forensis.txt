@@ -13,3 +13,6 @@
 
 ## Captura de pantalla ##
 - Comand + Shift + 4 
+
+## Forensic Tool ##
+- https://github.com/Yelp/OSXCollector
