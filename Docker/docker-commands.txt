@@ -1,6 +1,9 @@
 # Inspect container ip
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
 
+# Overwrite entripoint 
+docker run -it --entrypoint "/bin/sh" [image]
+
 # Build
 docker buil --tab=image name .
 
