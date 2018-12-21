@@ -1,0 +1,6 @@
+
+- sudo apt-get autoclean
+- sudo apt-get clean 
+- sudo apt autoremove
+- sudo apt autoremove --purge
+- rm -rf ~/.caché/thumbnails/*
