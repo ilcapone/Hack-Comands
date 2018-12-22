@@ -25,6 +25,9 @@ sudo  docker run --rm -it -p 443:443 -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/dat
 # Run Empire
 docker run -it -p 80:80 -p 443:443 -v /home/$USER/mydir:/data empireproject/empire
 
+# Jenkins Container
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+
 # Logs
 docker logs [container-id]
 docker logs --follow [container-id]	
