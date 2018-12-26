@@ -38,6 +38,10 @@ docker volume ls
 # Exec shell inside a running container
 docker exec -it [container-id] /bin/bash
 
+# Netowrks
+docker network ls
+docker network inspect [network-name]
+
 # Most como docker run commands
 docker run \ 
   --rm \ 
