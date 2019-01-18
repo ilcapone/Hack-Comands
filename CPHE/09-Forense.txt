@@ -1,0 +1,23 @@
+
+		--- * Forense * ---
+		
+		# Conceptos #
+		- Cadena de custodia
+		- 
+		
+		# Pasos
+		- Identificacion de evidencias
+		- Preservacion de evicencias
+		- Analisis de las evidencias
+		- Informe final
+		
+		# Herramientas
+		- Hashcalc
+		- Hashmyfiles
+		- FTKimager
+		- FOCA
+		- Volatily Framework
+		- Tomtology (GPS)
+		- emailtracker
+		- https://emkei.cz (create facke emails)
+		- http://verexif.com (geolocalizar fotos)
