@@ -1,0 +1,27 @@
+
+		--- * Web * ---
+		
+		# Tipos de auditoria #
+		- Test de penetracion
+		- Auditoria de codigo
+		- Auditoria de funcionalidades
+		- Auditoria de infraestructura
+		
+		# Ataques #
+		- SQLi
+		- XSS
+		- Path transversal
+		- Bruteforce
+		- File Upload
+		- Remote file inclusion
+		
+		# Vulnerableweps #
+		- Web for pentester (PentesterLab.com)
+		
+		# Herramientas #
+		- sqlmap 
+			> -u 'url' --dbs (esquema db)
+			> -u 'url' -D [database] --tables (tablas de una base de datos)
+			> -u 'url' -D [database] -T [tabla] -columns (columnas de la base de datos)
+			> -u 'url' -D [database] -T [tabla] --dump (dumpea el contenido)
+			> -u 'url' -D [database] -T [tabla] --sql-shell (devuelve una shell)
