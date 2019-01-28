@@ -47,6 +47,9 @@ docker exec -it [container-id] /bin/bash
 docker network ls
 docker network inspect [network-name]
 
+# Commit changes from container to image
+docker commit [container] [images]
+
 # Most como docker run commands
 docker run \ 
   --rm \ 

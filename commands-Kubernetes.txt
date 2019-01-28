@@ -26,3 +26,11 @@ https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
 
 ## Politicas de seguridad ##
 - kubectl get psp
+
+## Create JOB from YAML file##
+- kubectl create -f [job.yaml]
+- kubectl describe job [job-name]
+- kubectl get jobs
+
+## view services accounts config ###
+kubectl get serviceAccounts

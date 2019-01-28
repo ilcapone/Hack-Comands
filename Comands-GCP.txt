@@ -5,6 +5,9 @@
 ## Config proyect ##
 - gcloud config set project
 
+## Config cluster and proyect credentials ##
+- gcloud container clusters get-credentials [Cluster name] --zone [zone] --project [proyect name]
+
 ## SSH ##
 - gcloud compute ssh [INSTANCE_NAME]
 - gcloud compute --project "[Project-ID]" ssh --zone "[ZONE]" "[Instance-name]" --command "[Comand-to-execute]"
@@ -15,9 +18,6 @@
 
 ## Firewalls ##
 - gcloud compute firewall-rules list --project [PROJECT-NAME] --format=json
-
-## Config cluster and proyect credentials ##
-- gcloud container clusters get-credentials [Cluster name] --zone [zone] --project [proyect name]
 
 ## Networks ##
 - gcloud compute networks list
@@ -36,3 +36,11 @@
 
 ## Containers ##
 - gcloud container clusters describe [cluster-name] --zone [zone]
+
+## Auth like some user or serviceaccount ##
+- gcloud auth list
+- gcloud auth activate-service-account --key-file ./[key.json]
+- gcloud config set project [project-id]
+
+## Push docker to gcp container registry ##
+- gcloud docker -- push eu.gcr.io/[project-id]/[image]:[tag]
