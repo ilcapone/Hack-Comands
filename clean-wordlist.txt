@@ -1,0 +1,1 @@
+sort fsocity.dic | uniq | wc -l
