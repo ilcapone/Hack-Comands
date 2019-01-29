@@ -2,6 +2,9 @@
 ### Compilation ###
 https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
 
+## Config cluster credencials for use in GCP ##
+- gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
+
 ## General info ##
 - kubectl cluster-info
 - kubectl config view
@@ -33,4 +36,4 @@ https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
 - kubectl get jobs
 
 ## view services accounts config ###
-kubectl get serviceAccounts
+- kubectl get serviceAccounts
