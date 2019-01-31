@@ -1,6 +1,9 @@
 
 ### Compilation ###
-https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
+- https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
+
+### Continuousn Deploiment ###
+- https://cloud.google.com/solutions/continuous-delivery-jenkins-kubernetes-engine
 
 ## Config cluster credencials for use in GCP ##
 - gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
