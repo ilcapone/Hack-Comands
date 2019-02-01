@@ -1,0 +1,2 @@
+
+wget -O /var/cache/foobar/stackexchange-site-list.txt http://url.to/stackexchange-site-list.txt

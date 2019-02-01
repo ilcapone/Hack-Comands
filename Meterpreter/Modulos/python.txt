@@ -5,3 +5,7 @@ python_execute "import os; cd = os.getcwd()" -r cd
 
 ### Ejecutar script python ###
 python_import -f /root/findfiles.py
+
+
+### SimpleHTTPServer ###
+python -m SimpleHTTPServer 8080
