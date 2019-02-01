@@ -1,9 +1,16 @@
 
 ### Compilation ###
-https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
+- https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
+
+### Continuousn Deploiment ###
+- https://cloud.google.com/solutions/continuous-delivery-jenkins-kubernetes-engine
+
+## Config cluster credencials for use in GCP ##
+- gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
 
 ## General info ##
 - kubectl cluster-info
+- kubectl cluste dump
 - kubectl config view
 
 ## Deployments ##
@@ -26,3 +33,31 @@ https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
 
 ## Politicas de seguridad ##
 - kubectl get psp
+
+## Create JOB from YAML file##
+- kubectl create -f [job.yaml]
+- kubectl describe job [job-name]
+- kubectl get jobs
+
+## view services accounts config ###
+- kubectl get serviceAccounts
+
+## Basic container deploy ##
+- kubectl create -f [pod-specification].yaml
+- [pod-specification].yaml
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: shell-demo
+		spec:
+		  volumes:
+		  - name: shared-data
+			emptyDir: {}
+		  containers:
+		  - name: nginx
+			image: nginx
+			volumeMounts:
+			- name: shared-data
+			  mountPath: /usr/share/nginx/html
+- kubectl get pod [pod]
+- kubectl exec -it [pod] -- /bin/bash
