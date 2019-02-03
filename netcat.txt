@@ -1,1 +1,2 @@
-nc pi puerto		# para conectarse a una máquina a la escucha
+nc ip puerto		# para conectarse a una máquina a la escucha
+nc -lvp [puerto]    # Crear un listener
