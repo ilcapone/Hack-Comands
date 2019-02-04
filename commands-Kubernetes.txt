@@ -8,14 +8,14 @@
 ### Kubernetes and Vault ###
 - https://medium.com/qubit-engineering/kubernetes-up-integrated-secrets-configuration-5a15b9f5a6c6
 
-## Config cluster credencials for use in GCP ##
-- gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
-
 ## Hacking Kubernetes ###
 - http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html
 
 ## Puertos de getion del cluster ##
 - 443, 8080, 10250 y 10255.
+
+## Config cluster credencials for use in GCP ##
+- gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
 
 ## General info ##
 - kubectl cluster-info
