@@ -4,3 +4,4 @@ lsb_release -a
 
 ## Check permisions ##
 find /path/to/file -user user1 -perm -u+rwx
+groups
