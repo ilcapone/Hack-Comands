@@ -1,4 +1,20 @@
 
+## En que rama estoy ###
+git branch
+
+## Cambiarse a una rama ##
+git checkout [branch-name]
+
+## Comit changes ##
+git add [file-with-changes]
+git commit -m "[coment with the changes]"
+
+## Upload changes to origin ##
+git push 
+
+## Download changes ##
+git pull
+
 ## Merge branch into master ##
 git checkout master
 git pull origin master
