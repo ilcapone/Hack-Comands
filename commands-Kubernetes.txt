@@ -1,6 +1,7 @@
 
 ### Compilation ###
 - https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
+- https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 ### Continuousn Deploiment ###
 - https://cloud.google.com/solutions/continuous-delivery-jenkins-kubernetes-engine
