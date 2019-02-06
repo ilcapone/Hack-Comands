@@ -21,6 +21,17 @@ git pull origin master
 git merge test
 git push origin master
 
-
 ## View changes ##
 git diff
+
+## Create new local branch ##
+git checkout -b [new-branch]
+
+## Upload new local branch to remote ##
+git push -u origin [new-branch]
+
+## Delete local branch ##
+git branch -d [local-branch]
+
+## Delete remote branch 
+git push origin --delete [remote-branch]
