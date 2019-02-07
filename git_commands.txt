@@ -35,3 +35,9 @@ git branch -d [local-branch]
 
 ## Delete remote branch 
 git push origin --delete [remote-branch]
+
+## Cambiar a rama remota q no existe en local ##
+git checkout -b [branch] origin/[branch]
+
+## Discard Changes ##
+git reset --hard HEAD
