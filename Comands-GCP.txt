@@ -47,3 +47,10 @@
 
 ## Auth vs gcp container registry ##
 - gcloud auth configure-docker
+
+## List all projects in gcp organization ##
+gcloud projects list
+gcloud projects list | wc -l
+
+## List VPC networks in project ##
+gcloud compute networks subnets list --project [project]
