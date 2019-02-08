@@ -1,0 +1,76 @@
+
+### Compilation ###
+- https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
+- https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+### Continuousn Deploiment ###
+- https://cloud.google.com/solutions/continuous-delivery-jenkins-kubernetes-engine
+
+### Kubernetes and Vault ###
+- https://medium.com/qubit-engineering/kubernetes-up-integrated-secrets-configuration-5a15b9f5a6c6
+
+## Hacking Kubernetes ###
+- http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html
+
+## Puertos de getion del cluster ##
+- 443, 8080, 10250 y 10255.
+
+## Config cluster credencials for use in GCP ##
+- gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
+
+## General info ##
+- kubectl cluster-info
+- kubectl cluste dump
+- kubectl config view
+
+## Deployments ##
+- kubectl get deployments --all-namespaces
+- kubectl delete deployments/apine-test
+
+## PODS and NODES ##
+- kubectl get pods
+- kubectl get no -o wide
+- kubectl get po -o wide --all-namespaces
+- kubectl get pods --all-namespaces -o json
+- kubectl get nodes --all-namespaces -o json
+- kubectl exec $POD_NAME env
+- kubectl exec -ti $POD_NAME bash
+- kubectl delete pods --all
+
+## LOGS ##
+- kubectl logs my-pod
+- kubectl logs my-pod -c my-container
+
+## Politicas de seguridad ##
+- kubectl get psp
+
+## Create JOB from YAML file##
+- kubectl create -f [job.yaml]
+- kubectl describe job [job-name]
+- kubectl get jobs
+
+## view services accounts config ###
+- kubectl get serviceAccounts
+
+## Basic container deploy ##
+- kubectl create -f [pod-specification].yaml
+- [pod-specification].yaml
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: shell-demo
+		spec:
+		  volumes:
+		  - name: shared-data
+			emptyDir: {}
+		  containers:
+		  - name: nginx
+			image: nginx
+			volumeMounts:
+			- name: shared-data
+			  mountPath: /usr/share/nginx/html
+- kubectl get pod [pod]
+- kubectl exec -it [pod] -- /bin/bash
+
+## Exploiting ##
+- curl --insecure https://[ip]:10250/pods | jq 
