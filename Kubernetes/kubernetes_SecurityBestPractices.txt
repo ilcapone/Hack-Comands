@@ -20,18 +20,18 @@
  - Use private registries to store your approved images
  - Build a CI pipeline that integrates security assessment (like vulnerability scanning), making it part of the build process.
 			* Once an image is built, it should be scanned for security vulnerabilities, and only if no issues are found then the image would be pushed to a private registry, from which deployment to production is done. A failure in the security assessment should create a failure in the pipeline, preventing images with bad security quality from being pushed to the image registry.
- 
 
+			
  
 			## Limit Direct Access to Kubernetes Nodes ##
 			
  - Limit SSH access to Kubernetes nodes
  - Use Kubernetes Authorization Plugins to further control user access to resources.
 			* https://kubernetes.io/docs/reference/access-authn-authz/authorization/
-
+ 
 
 			
-			## Create Administrative Boundaries between Resources ##
+			## Create Administrative Boundaries between Resources (Pod Security Policies)##
 			
  - Use Kubernetes Authorization plugins to create policies that segregate access to namespace resources between different users.
  - For example: the following policy will allow ‘alice’ to read pods from namespace ‘fronto’.
@@ -45,6 +45,7 @@
 						"readonly": true
 						}
 				}
+  - More info: https://kubernetes.io/docs/concepts/policy/pod-security-policy/#policy-reference
 
 
 				
@@ -96,7 +97,8 @@
 					}
 				  }
 				}
-
+ - More info: https://kubernetes.io/blog/2016/04/kubernetes-network-policy-apis/
+ 
 				
 				
 			## Apply Security Context to Your Pods and Containers ##
@@ -108,8 +110,7 @@
 									   | SecurityContext- Capabilities			  |	Controls the Linux capabilities assigned to the container.                   |
 									   | SecurityContext-> readOnlyRootFilesystem |	Controls whether a container will be able to write into the root filesystem. |
 									   | PodSecurityContext-> runAsNonRoot		  |	Prevents running a container with ‘root’ user as part of the pod             |
-									   |_________________________________________________________________________________________________________________________|
-									   
+									   |_________________________________________________________________________________________________________________________|									   
  - The following is an example for pod definition with security context parameters:
 				apiVersion: v1  
 				kind: Pod  
@@ -122,6 +123,7 @@
 				  securityContext:  
 					readOnlyRootFilesystem: true  
 					runAsNonRoot: true
+ - More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
  
  
  
