@@ -1,4 +1,0 @@
-
-
-## Kubernetes external test ##
-curl --insecure https://[IP-master-external]:10250/pods | jq
