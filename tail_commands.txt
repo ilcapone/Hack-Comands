@@ -1,0 +1,7 @@
+
+
+## Monitoring file new entries ##
+tail -n0 -f [file]
+
+## view las entris of file ##
+tails [file]
