@@ -1,0 +1,13 @@
+
+
+## Build images ##
+docker-compose build
+
+## Run Attached mode ##
+docker-compose up
+
+## Run deatached mode ##
+docker-compose up -d
+
+## Container Runing#
+docker-compose ps
