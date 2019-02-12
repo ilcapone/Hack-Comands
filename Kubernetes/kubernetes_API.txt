@@ -1,4 +1,16 @@
 
+## Config exporst for commodity ##
+export TOKEN=[tocken]
+export API_SERVER=[url]
 
-## Kubernetes external test ##
+## GKE obtain tokem ##
+gcloud beta auth application-default print-access-token
+
+## Kubernetes external test Anonimous auth ##
 curl --insecure https://[IP-master-external]:10250/pods | jq
+
+## Kubernetes API auth with tocken ##
+- curl -k -X GET -H "Authorization: Bearer $TOKEN" $API_SERVER
+ 
+## Obtain nodes ##
+- curl -k -X GET -H "Authorization: Bearer $TOKEN" $API_SERVER/api/v1/nodes
