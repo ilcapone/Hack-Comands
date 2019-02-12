@@ -9,5 +9,14 @@ docker-compose up
 ## Run deatached mode ##
 docker-compose up -d
 
-## Container Runing#
+## Container Runing ##
 docker-compose ps
+
+## View services ##
+docker-compose ps
+
+## View logs after deatach mode ##
+docker-compose logs -f -t [servicename]
+
+## Deatach from logs ##
+Ctrl + z or Ctrl + c
