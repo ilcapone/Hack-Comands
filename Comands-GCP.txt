@@ -57,3 +57,6 @@ gcloud compute networks subnets list --project [project]
 
 ## GKE obtain tokem ##
 gcloud beta auth application-default print-access-token
+
+## Package managin in Container-Optimised OS (cos) ##
+sudo toolbox apt-get [comand]

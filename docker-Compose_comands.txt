@@ -20,3 +20,9 @@ docker-compose logs -f -t [servicename]
 
 ## Deatach from logs ##
 Ctrl + z or Ctrl + c
+
+## Removing services and run containers ##
+docker-compose downd
+
+## Start exited containers ##
+docker-compose start
