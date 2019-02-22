@@ -17,6 +17,8 @@ adb shell # se conecta la dispositivo mediante USB
 adb shell pm list packages # Extraccion de la lista d aplicaciones installadas
 adb shell pm path com.ejemplo.app # Obtener el path del archivo .apk de la aplicacion
 adb pull path/ejemplo/ap.apk # Descarga del archivo app.apk al PC
+adb -d logcat [com.package.example]:I *:S   # depurar una aplicacion instalada
+adb -d logcat [com.package.example] | find "keewords"
 
 
 --------

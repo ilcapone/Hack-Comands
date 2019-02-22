@@ -1,5 +1,6 @@
 
 > VMWARE
-> NAT network
-> Port-Forwarding VMware
-> IP tables VMWare machine
+	> NAT network
+	> Port-Forwarding VMware
+	> IP tables VMWare machine
+	> IP table host machine
