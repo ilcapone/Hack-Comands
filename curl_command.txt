@@ -1,0 +1,32 @@
+
+## Cofig file ##
+~/.curlrc
+
+## Use Proxy ##
+curl [url] --proxy [ip]:[port]
+
+## Force insecure ##
+--insecure
+
+## View headers ##
+curl -v [url]
+
+## Change Headers ##
+curl -H "User-Agent: my browser" [url]
+
+## Headres configs ##
+-A (or --user-agent): set "User-Agent" field.
+	> "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_3 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5"
+	> "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.112 Safari/534.30"
+	> "iMacAppStore/1.0.1 (Macintosh; U; Intel Mac OS X 10.6.7; en) AppleWebKit/533.20.25"
+	> "Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3"	
+-b (or --cookie): set "Cookie" field.
+-e (or --referer): set "Referer" field. 
+
+
+## Create POST ##
+-x POST
+-H  "Content-Type: application/x-www-form-urlencoded"
+	"Content-Type: application/json"
+- form urlencoded: -d "param1=value1&param2=value2" or -d @data.txt
+- json: -d '{"key1":"value1", "key2":"value2"}' or -d @data.json
