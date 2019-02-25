@@ -60,3 +60,6 @@ gcloud beta auth application-default print-access-token
 
 ## Package managin in Container-Optimised OS (cos) ##
 sudo toolbox apt-get [comand]
+
+## Copi from bucket to CloudShell ##
+gsutil cp gs://[bucket] [LOCLA]

@@ -1,0 +1,3 @@
+
+## search passwords in directory recursibely ##
+- grep -r 'password' *
