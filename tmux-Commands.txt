@@ -1,0 +1,35 @@
+
+## Config file ##
+~/.tmux.conf
+	> # Example file #
+	# Improve colors
+	set -g default-terminal 'screen-256color'
+	# Set scrollback buffer to 10000
+	set -g history-limit 10000
+	# Customize the status line
+	set -g status-fg  green
+	set -g status-bg  black
+
+## Create new session ##
+- tmux new -s [session_name] 
+	
+## Deatach from season ##
+- Ctrl-b + d
+
+## Exit from tmux ##
+- exit
+
+## View current sessions ##
+- tmux ls
+
+## Attach session ##
+- tmux attach -t [session_name]
+
+## split vertical session ##
+- Ctrl-b + %
+
+## split horizontal session ##
+- Ctrl-b + "
+
+## Move between arrows ##
+- Ctrl-b + [arrow]
