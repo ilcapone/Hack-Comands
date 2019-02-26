@@ -73,4 +73,7 @@
 - kubectl exec -it [pod] -- /bin/bash
 
 ## Exploiting ##
-- curl --insecure https://[ip]:10250/pods | jq 
+- curl --insecure https://[ip]:10250/pods | jq
+
+## Especify namespace ##
+- kubectl get deployment [name] --namespace [namespace] -o yaml
