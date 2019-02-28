@@ -8,5 +8,5 @@
 ## Count lines ##
 - [command] | wc -l
 
-## Monitoring process use kernell calls ##
+## Monitoring process use kernell calls ##cro	
 - strace -p [pid-number] -ff
