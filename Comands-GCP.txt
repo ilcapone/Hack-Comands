@@ -63,3 +63,10 @@ sudo toolbox apt-get [comand]
 
 ## Copi from bucket to CloudShell ##
 gsutil cp gs://[bucket] [LOCLA]
+
+## Copi from Local to Bucket ##
+gsutil cp [LOCLA] gs://[bucket]]
+
+## Local GCloudSDK config file ##
+/home/[USer]/.boto  		## Adicional info https://cloud.google.com/storage/docs/gsutil/commands/config
+

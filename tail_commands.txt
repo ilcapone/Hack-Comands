@@ -4,4 +4,7 @@
 tail -n0 -f [file]
 
 ## view las entris of file ##
-tails [file]
+tail [file]
+
+## view the las x lines of file ##
+tail -x [file]
