@@ -50,6 +50,12 @@ docker network inspect [network-name]
 # Commit changes from container to image
 docker commit [container] [images]
 
+# Export container to tarfile 
+docker export --output="name.tar" [image]
+
+# Import contaienr from tar file
+docker import /path/to/name.tgz
+
 # Most como docker run commands
 docker run \ 
   --rm \ 
