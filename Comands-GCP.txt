@@ -70,3 +70,8 @@ gsutil cp [LOCLA] gs://[bucket]]
 ## Local GCloudSDK config file ##
 /home/[USer]/.boto  		## Adicional info https://cloud.google.com/storage/docs/gsutil/commands/config
 
+
+## Extract data from Cloud SQL to Bucket ## (https://cloud.google.com/sql/docs/mysql/import-export/exporting)
+- gcloud sql instances describe [INSTANCE_NAME]
+- gsutil acl ch -u [SERVICE_ACCOUNT_ADDRESS]:W gs://[BUCKET_NAME]   ## give privilegies to write
+- gcloud sql export csv [INSTANCE_NAME] gs://[BUCKET_NAME]/[FILE_NAME} --database=[DATABASE_NAME] --query=[SELECT_QUERY]
