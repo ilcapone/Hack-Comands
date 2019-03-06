@@ -10,3 +10,9 @@
 
 ## Monitoring process use kernell calls ##cro	
 - strace -p [pid-number] -ff
+
+## Concatener archivos ##
+- cat [file-1] [file-2] [file-3] > [full-file]
+
+## Clean duplicate entris on file ##
+- sort -u [file] > [clean_file]

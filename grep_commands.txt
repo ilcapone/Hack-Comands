@@ -1,3 +1,6 @@
 
 ## search passwords in directory recursibely ##
 - grep -r 'password' *
+
+## search for Urls in file ##
+- grep -oE 'https?:\/\/([a-zA-Z0-9\._-]+\/?)([a-zA-Z0-9\._\?=&%-]+/?)*' [file]
