@@ -1,0 +1,3 @@
+
+## Search like grep ##
+cat text | Select-String -Pattern [text]
