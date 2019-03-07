@@ -4,3 +4,7 @@
 	> Port-Forwarding VMware
 	> IP tables VMWare machine
 	> IP table host machine
+
+### Comands ###
+- emulator -list-avds   # lista emuladores disponibles
+

@@ -1,3 +1,6 @@
 
 ## Search like grep ##
-cat text | Select-String -Pattern [text]
+- cat text | Select-String -Pattern [text]
+
+## Add firewall rule ##
+- New-NetFirewallRule -DisplayName "Android" -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
