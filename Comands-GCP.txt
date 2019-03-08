@@ -68,8 +68,7 @@ gsutil cp gs://[bucket] [LOCLA]
 gsutil cp [LOCLA] gs://[bucket]]
 
 ## Local GCloudSDK config file ##
-/home/[USer]/.boto  		## Adicional info https://cloud.google.com/storage/docs/gsutil/commands/config
-
+/home/[User]/.boto  		## Adicional info https://cloud.google.com/storage/docs/gsutil/commands/config
 
 ## Extract data from Cloud SQL to Bucket ## (https://cloud.google.com/sql/docs/mysql/import-export/exporting)
 - gcloud sql instances describe [INSTANCE_NAME]
