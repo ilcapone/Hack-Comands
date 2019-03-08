@@ -77,3 +77,13 @@
 
 ## Especify namespace ##
 - kubectl get deployment [name] --namespace [namespace] -o yaml
+
+## Pod Port forwarding ##
+- kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
+
+## Listar secretos ##
+kubectl get secret
+
+## Extraccion de secretos ##
+kubectl get secret -o json
+printf $(kubectl get secret [secret] -o jsonpath="{.data}" | [decode-specifi]);echo
