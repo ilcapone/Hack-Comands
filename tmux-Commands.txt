@@ -33,3 +33,6 @@
 
 ## Move between arrows ##
 - Ctrl-b + [arrow]
+
+## Kill session
+tmux kill-session -t [session_name]

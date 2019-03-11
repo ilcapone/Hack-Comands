@@ -1,5 +1,8 @@
 
 
+free -h 							# view free memori RAM space
+
+------ Limpieza de memoria ---
 sudo du -sh /var/cache/apt 			# Ver espacio empelado por la cache
 ps aux | grep -i apt				# Ver que procesos estan empleando apt
 killall apt-get						# Matar los procesos que estan empleando apt

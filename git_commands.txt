@@ -47,3 +47,6 @@ git checkout -b [branch] origin/[branch]
 
 ## Discard Changes ##
 git reset --hard HEAD
+
+## Resolve merge conflicts ##
+https://help.github.com/en/enterprise/2.16/user/articles/resolving-a-merge-conflict-using-the-command-line
