@@ -1,4 +1,7 @@
 
+### Burp adn genymotion ##
+- https://linuxsuperuser.com/configure-burp-suite-proxy-genymotion/
+
 > VMWARE
 	> NAT network
 	> Port-Forwarding VMware

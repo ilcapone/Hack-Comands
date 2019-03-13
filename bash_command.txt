@@ -1,3 +1,12 @@
+## Comands for identifi os system ##
+- cat /etc/issue
+- cat /etc/os-release
+- cat /proc/version
+- dmesg | head -1
+- cat /etc/redhat-release
+- lsb_release -a
+- cat /etc/lsb-release 
+- 
 
 ## Basic Loope in console command ##
 - while true; do echo gas; sleep 2; done

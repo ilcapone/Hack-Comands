@@ -1,8 +1,10 @@
 
+dir 	# Ver ficheros y directorios
+type 	# mostrar contenido de ficjhero 
 
-whoami	# quien soy en el sistema
-net user # usuarios que existen en el sistema
-net localgroup # grupos
+whoami		# quien soy en el sistema
+net user 	# usuarios que existen en el sistema
+net localgroup 	# grupos
 
 ---- create admin user ----
 net user /add username password

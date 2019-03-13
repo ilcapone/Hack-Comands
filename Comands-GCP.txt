@@ -11,7 +11,7 @@
 ## SSH ##
 - gcloud compute ssh [INSTANCE_NAME]
 - gcloud compute --project "[Project-ID]" ssh --zone "[ZONE]" "[Instance-name]" --command "[Comand-to-execute]"
-- gcloud compute scp --recurse [INSTANCE_NAME]:[REMOTE_DIR] [LOCAL_DIR] -- zone [ZONE]
+- gcloud compute scp --recurse [INSTANCE_NAME]:[REMOTE_DIR] [LOCAL_DIR] --zone [ZONE]
 
 ## SQL ##
 - gcloud sql connect [INSTANCE_ID] --user=root
