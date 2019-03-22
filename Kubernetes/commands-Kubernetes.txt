@@ -23,6 +23,12 @@
 - kubectl cluste dump
 - kubectl config view
 
+## DeamonSet ##
+- kubectl get ds
+
+## Namespaces ##
+- kubectl get ns
+
 ## Deployments ##
 - kubectl get deployments --all-namespaces
 - kubectl delete deployments/apine-test
@@ -87,3 +93,6 @@ kubectl get secret
 ## Extraccion de secretos ##
 kubectl get secret [secret-name] -o json
 printf $(kubectl get secret [secret-name] -o jsonpath="{.data}" | [decode-specifi]);echo
+
+## DeamonSet Logs ##
+kubectl logs ds/[name] -f
