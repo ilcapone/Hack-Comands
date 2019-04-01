@@ -52,6 +52,12 @@
 ## Politicas de seguridad ##
 - kubectl get psp
 
+## Network Policies ##
+- 
+
+## Volumenes persistente
+-kubectl get pv
+
 ## Create JOB from YAML file##
 - kubectl create -f [job.yaml]
 - kubectl describe job [job-name]
@@ -90,11 +96,11 @@
 - kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
 
 ## Listar secretos ##
-kubectl get secret
+- kubectl get secret
 
 ## Extraccion de secretos ##
-kubectl get secret [secret-name] -o json
-printf $(kubectl get secret [secret-name] -o jsonpath="{.data}" | [decode-specifi]);echo
+- kubectl get secret [secret-name] -o json
+- printf $(kubectl get secret [secret-name] -o jsonpath="{.data}" | [decode-specifi]);echo
 
 ## DeamonSet Logs ##
-kubectl logs ds/[name] -f
+- kubectl logs ds/[name] -f
