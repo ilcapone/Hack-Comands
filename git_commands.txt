@@ -38,6 +38,7 @@ git push -u origin [new-branch]
 
 ## Delete local branch ##
 git branch -d [local-branch]
+git branch -D [local-branch]
 
 ## Delete remote branch 
 git push origin --delete [remote-branch]
