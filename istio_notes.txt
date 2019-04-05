@@ -1,0 +1,19 @@
+
+		### Istio ###
+		
+		- Referencias
+			* https://istio.io/docs/concepts/security/
+			* https://github.com/istio/istio		
+		
+		- Uso de StackDriver for monitoring
+		- Deploiment de contaienr junto a servicio juntos en el mismo pod
+		- Istio-sidecar-injector: por defecto solo para default
+		- Precio por uso de recursos:
+			* Adaptar opensource para limitar money
+			
+		- instio(version)/isntall/kubernetes
+		- Kiali mesh overveww
+			* https://www.kiali.io/
+			* https://github.com/kiali/kiali
+		
+		- Establecer la identidad de cada uno de los servicios, Service account para identificar los sistemas
