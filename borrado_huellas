@@ -1,0 +1,10 @@
+utmp,wtmp,lastlog //ficheros importantes a eliminar
+
+#unix
+- zap.c
+borra las entradas sobrescribiendolas con ceros
+- marry.c
+sin tener premiso construlle un fichero nuevo sin las tuyas
+
+#windows
+- winzapper

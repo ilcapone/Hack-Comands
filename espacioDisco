@@ -1,0 +1,7 @@
+#comprobar espacio en disco
+ > df -h
+ > fdisk -l
+
+# particiones del disco
+ > lsblk -fm
+ > 
