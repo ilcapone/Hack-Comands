@@ -1,0 +1,22 @@
+# Enviroment
+R -g Tk &
+
+# Execute Rscript
+Rscript <script>
+
+# Get current path
+getwd()
+
+# list files from directory
+list.files("path")
+list.files(getwd())
+
+# install package from source code
+install.packages(getwd()/net.security.Rproj, repos = NULL,
+ type="source")
+
+# install package from github
+devtools::install_github(repo = "r-net-tools/net.security")
+
+# path donde se instalan las librerias
+.libPaths() 

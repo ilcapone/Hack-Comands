@@ -1,0 +1,6 @@
+# Start the PostgreSQL Database
+systemctl start postgresql
+# Initialize the Metasploit Framework Database 
+msfdb init
+# Start Armitage
+armitage
