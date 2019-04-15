@@ -99,6 +99,7 @@
 - kubectl get secret
 
 ## Extraccion de secretos ##
+- kubectl describe secret [secret-name]
 - kubectl get secret [secret-name] -o json
 - printf $(kubectl get secret [secret-name] -o jsonpath="{.data}" | [decode-specifi]);echo
 

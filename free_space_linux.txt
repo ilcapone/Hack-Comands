@@ -1,6 +1,8 @@
 
 
 free -h 							# view free memori RAM space
+free -g | grep Mem | awk '{print $4}	# memoria RAM disponible
+ps --sort -rss -eo rss,pid,command | head		# Procesos con mala gestion de memoria
 
 ------ Limpieza de memoria ---
 sudo du -sh /var/cache/apt 			# Ver espacio empelado por la cache
