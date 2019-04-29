@@ -14,6 +14,9 @@
 ## Monitoring sistem resources ##
 - while true; do top -b2|head -n20; vmstat; lsof |wc -l; sleep 1; done
 
+## Monitorin hard memory ######
+- while true; do echo '------------------------------';df -h; sleep 2; done
+
 ## Count lines ##
 - [command] | wc -l
 
