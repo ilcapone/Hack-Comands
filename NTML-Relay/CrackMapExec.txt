@@ -1,5 +1,6 @@
 
 https://github.com/byt3bl33d3r/CrackMapExec/wiki
+https://byt3bl33d3r.github.io/
 
 # Obtencion de dispositivos con veriones vulnerables de smb
 cme smb <IPs> --gen-relay-list targets.txt
