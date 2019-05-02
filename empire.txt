@@ -1,4 +1,7 @@
 
+### CheatSeet ###
+- https://h4ck.co/wp-content/uploads/2017/11/Empire.pdf
+
 uselistener http
 set host <ip_publica>
 set port <8080>
