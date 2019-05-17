@@ -43,6 +43,7 @@
 - gcloud auth list
 - gcloud auth activate-service-account --key-file ./[key.json]
 - gcloud config set project [project-id]
+- gcloud auth login [user-email]
 
 ## Push docker to gcp container registry ##
 - gcloud docker -- push eu.gcr.io/[project-id]/[image]:[tag]
