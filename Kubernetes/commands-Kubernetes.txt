@@ -22,7 +22,7 @@
 
 ## General info ##
 - kubectl cluster-info
-- kubectl cluste dump
+- kubectl cluster-info dump
 - kubectl config view
 
 ## DeamonSet ##
