@@ -1,3 +1,5 @@
+## Confi ssh ky for gitlab ##
+https://docs.gitlab.com/ee/ssh/
 
 ## Check repository state ##
 git remote show origin

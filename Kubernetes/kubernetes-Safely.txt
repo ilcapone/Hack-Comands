@@ -1,0 +1,102 @@
+
+
+
+				 ##################################################
+				 ###											###
+				 ### Security Guide for Kubernetes Hardering	###
+				 ###											###
+				 ##################################################
+
+----------------------------------------------------------------------------------------------------------------------------------
+References: 
+			- https://kubernetes-security.info/
+			- https://cdn2.hubspot.net/hubfs/1665891/Assets/Kubernetes%20Security%20-%20Operating%20Kubernetes%20Clusters%20and%20Applications%20Safely.pdf?t=1538587424944&_hsenc=p2ANqtz-_7jbqtRATdJAm7eFxtd5u4nVLYuIlrF67z5qbslZ10-I63-RZ4ogqu9iuuEMsx7fskPYWww2jDpVjOvrLs
+
+----------------------------------------------------------------------------------------------------------------------------------
+List of Content:   
+		   
+			####### 1 - Securing the Cluster        #######
+
+			####### 2 - Authentication 		        #######
+
+			####### 3 - Authorization               #######
+
+			####### 4 - Securing Container Images   #######
+
+			####### 5 - Securing the Cluster        #######
+
+			####### 6 - Running Containers Securely #######
+
+			####### 7 - Secrets Managment           #######
+
+			####### 8 - Advanced Topics             #######
+
+----------------------------------------------------------------------------------------------------------------------------------
+Security Principles:
+	# Defense in depth
+	# Least privileges
+	# Limiting the Atack Surface
+	
+----------------------------------------------------------------------------------------------------------------------------------
+Content:
+
+			####### 1 - Securing the Cluster        #######
+
+	## 1.1 - API Server ##
+
+	Concepts:
+		* Function: Kubernetes API server is to offer a REST API for controlling Kubernetes
+		* Risk: User who has full permissions on this API has the equivalent of root access on every machine in the cluster.
+		* Command-line: The 'kubectl' is a client for this API, making requests of the API server to manage resources and workloads.
+
+	Security aspects:
+		* By default run in port 8080
+		* Risk: Any requests to this port bypass authentication and authorization checks. If you leave this port open, anyone who gains access to the host your master is running on has full control over your entire cluster.
+		* Config:
+			> Close the insecure port by setting the API server’s --insecure-port flag to 0, and ensuring that the --insecure-bind-address is not set.
+			> NOTE: N/A in GKE clusters
+		* Check:
+			> curl <IP address>:8080
+				- If the response lists API endpoints, as in the preceding example, then the insecure port is open.
+				- However, if you see an error message of Connection refused, it’s good news, as the port is not open.
+
+
+	## 1.2 - Kubelet ##
+
+	Concepts:
+		* Function: The kubelet is the agent on each node that is responsible for interacting with the container runtime to launch pods, and report node and pod status and metrics.
+
+	Security aspects:
+		* By default run in port 10255, 10250
+		* Config:
+			> Disable anonymous access with --anonymous-auth=false
+			> Set --read-only-port=0 to turn off the read-only port
+			> NOTE: N/A in GKE clusters
+		* Check:
+			> curl -sk https://<IP address>:10250/pods/
+				- If --anonymous-auth is false, you will see a 401 Unauthorized response.
+				- If --anonymous-auth is true and --authorization-mode is Web hook, you’ll see a 403 Forbidden response with the message For bidden (user=system:anonymous, verb=get, resource=nodes, subresource=proxy).
+				- If --anonymous-auth is true and --authorization-mode is AlwaysAllow, you’ll see a list of pods.
+		* Adicionaly:
+			> Kubelet Certificate Rotation: --rotate-certificates
+
+
+     ## 1.3 - Running etcd Safely ##
+
+     Concepts:
+		* Function: The kubelet is the agent on each node that is responsible for interacting with the container runtime to launch pods, and report node and pod status and metrics.
+
+	Security aspects:
+		* By default run in port 10255, 10250
+		* Config:
+			> Disable anonymous access with --anonymous-auth=false
+			> Set --read-only-port=0 to turn off the read-only port
+			> NOTE: N/A in GKE clusters
+		* Check:
+			> curl -sk https://<IP address>:10250/pods/
+				- If --anonymous-auth is false, you will see a 401 Unauthorized response.
+				- If --anonymous-auth is true and --authorization-mode is Web hook, you’ll see a 403 Forbidden response with the message For bidden (user=system:anonymous, verb=get, resource=nodes, subresource=proxy).
+				- If --anonymous-auth is true and --authorization-mode is AlwaysAllow, you’ll see a list of pods.
+		* Adicionaly:
+			> Kubelet Certificate Rotation: --rotate-certificates
+

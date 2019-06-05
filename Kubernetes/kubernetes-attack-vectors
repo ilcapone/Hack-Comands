@@ -1,0 +1,11 @@
+
+		### Kubernetes Vector Attacks ###
+
+		- Acces to machines/VMS (nodes by ssh)
+		- Acces etcd API
+		- Acces via kubernetes API or proxy
+		- Intercep/modify/onject control-plane trafic
+		- Acces via Kubelet API
+		- Escape contaienr to host though vulnerability os volume mount
+		- Intercept/modify/inject application trafic
+		- Exploit vulneravility in aplication code
