@@ -108,5 +108,8 @@
 - kubectl logs ds/[name] -f
 
 ## Copy files from/to pods ##
-kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>
-kubectl cp <some-namespace>/<some-pod>:/tmp/example /tmp/example
+- kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>
+- kubectl cp <some-namespace>/<some-pod>:/tmp/example /tmp/example
+
+## View Cluster Roles ##
+- kubectl get clusterroles

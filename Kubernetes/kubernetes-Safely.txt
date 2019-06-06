@@ -60,6 +60,7 @@ Content:
 				- If the response lists API endpoints, as in the preceding example, then the insecure port is open.
 				- However, if you see an error message of Connection refused, it’s good news, as the port is not open.
 
+				-----------------------------------------------------------------------
 
 	## 1.2 - Kubelet ##
 
@@ -80,23 +81,108 @@ Content:
 		* Adicionaly:
 			> Kubelet Certificate Rotation: --rotate-certificates
 
+				-----------------------------------------------------------------------
 
      ## 1.3 - Running etcd Safely ##
 
      Concepts:
-		* Function: The kubelet is the agent on each node that is responsible for interacting with the container runtime to launch pods, and report node and pod status and metrics.
+		* Function: Kubernetes stores configuration and state information in a distributed key-value store called etcd
+		* Risk: Anyone who can write to etcd can effectively control your Kubernetes cluster.
+
+	Reference:
+		* https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/security.md
 
 	Security aspects:
-		* By default run in port 10255, 10250
+		* You need to ensure that only authenticated access is permitted
 		* Config:
-			> Disable anonymous access with --anonymous-auth=false
-			> Set --read-only-port=0 to turn off the read-only port
-			> NOTE: N/A in GKE clusters
-		* Check:
-			> curl -sk https://<IP address>:10250/pods/
-				- If --anonymous-auth is false, you will see a 401 Unauthorized response.
-				- If --anonymous-auth is true and --authorization-mode is Web hook, you’ll see a 403 Forbidden response with the message For bidden (user=system:anonymous, verb=get, resource=nodes, subresource=proxy).
-				- If --anonymous-auth is true and --authorization-mode is AlwaysAllow, you’ll see a list of pods.
+			> Set --cert-file and --key-file to enable HTTPS connections to etcd.
+			> Set --client-cert-auth=true to ensure that access to etcd requires authentication. Set --trusted-ca-file to pecify the certificate authority that has signed the client certificates.
+			> Set --auto-tls=false to disallow the generation and use of self-signed certificates.
+			> Require etcd nodes to communicate with each other securely by using --peer-client-cert-auth=true. Also set --peer-autotls=false and specify --peer-cert-file, --peer-key-file and --peer-trusted-ca-file. You will need corresponding
+			configuration on the Kubernetes API server so that it can communicate with etcd.
+			> Set --etcd-cafile on the API server to the certificate authority that signed etcd’s certificate.
+			> Specify --etcd-certfile and --etcd-keyfile so that the API server can identify itself to etcd.
 		* Adicionaly:
-			> Kubelet Certificate Rotation: --rotate-certificates
+			> Encript etc Disck:
+				- This is especially important if you are storing Kubernetes secrets in etcd rather than an external secrets store.
+				- https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+
+				-----------------------------------------------------------------------
+
+	## 1.4 - Kubernetes Dashboard ##
+
+	Concepts:
+		* Function: The Dashboard has historically been used by attackers to gain control of Kubernetes clusters
+		* Risk: You might want to take several steps to ensure that your Kubernetes Dashboard is not an easy entry point for attackers
+		* NOTE: N/A in GKE clusters
+
+	Security aspects:
+		* Config:
+			> Allow only authenticated access
+			> Use RBAC
+			> Make sure the Dashboard service account has limited access
+			> Don’t expose your Dashboard to the public internet
+			> NOTE: N/A in GKE clusters
+
+		* Check:
+			> chttps://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca
+
+		* Adicional:
+			> You can use kubectl proxy to access the Dashboard securely from a local machine.
+
+
+			-----------------------------------------------------------------------
+
+			####### 3 - Authentication        #######
+
+	## 2.1 - Identity ##
+
+	Concepts:
+		* Risk: By default, Kubernetes makes the credentials of the service account available via a secret that is mounted into the pod (note that all files shown here are owned by root).
+			If you don’t explicitly specify a service account in the pod spec, the default service account for the namespace is used.
+
+		* Conclusion: 0The creation of a service account triggers the creation of a secret, attached to and managed by the service account.
+
+	Security aspects:
+		* Config:
+			- Ad to the deployment YAML:
+				> spec:
+						serviceAccountName: [serviceaccountname]
+		* Note: By default, the default serviceAccount in a namespace has no permissions other than those of an unauthenticated user.
+
+			-----------------------------------------------------------------------
+
+	## 2.2 - Authentication ##
+
+	Concepts:
+		* The flow Kubernetes uses to authenticate a client’s request is as follows:
+			1. - The client presents its credentials to the API server.
+			2. - The API server uses one of the configured authentication plugins (you can enable multiple) to establish the identity with an identity provider.
+			3. - The identity provider verifies the request information, including username and group membership.
+			4. - If the credentials are in order, the API server moves on to check permissions. Otherwise, it returns an HTTP 401 Unauthorized client error status response code, and with that the request fails.
+
+	Authentication strategis:
+		* Concept: Depending on the size of the deployment, the target users (human versus processes), and organizational policies, you as a cluster admin can choose one or more of the following:
+			> Static password or token file: Since it’s inflexible to maintain a static file with the users and their passwords and requires direct access to the API server, this method is not recommended in production
+			> X.509 certificates
+			> OpenID Connect (OIDC): you use OIDC to provide the API server with an idtoken in the form of a JSON Web Token after using your provider’s login page, such as Google or Azure Active Directory.
+
+			-----------------------------------------------------------------------
+
+		####### 3 - Authorization        #######
+
+	## 3.1 - Concepts ##
+
+	Concepts: Authorization in Kubernetes verifies whether a certain action (suchas “list pods” or “create a secret”) is 		allowed by a certain user or application, and if it is allowed, performs that action or otherwise rejects it 		and potentially logs the attempt.
+
+	The authorization flow is as follows:
+			1. The client’s request is authenticated. See “Authentication Concepts” on page 20 for details on this step.
+			2. If the authentication was successful, the credentials are taken as one input of the authorization module.
+			3. The second input to the authorization module is a vector containing the request path, resource, verb, and namespace (and other secondary attributes).
+			4. If the user or application is permitted to execute a certain action on a certain resource, the request is passed on further to the next component in the chain, the admission controller. If not, the authorization module returns an HTTP 403 Forbidden client error status response code, and with that the request fails.
+
+	## 3.2 - Authorization Modes ##
+
+			Types:
+					- 
 

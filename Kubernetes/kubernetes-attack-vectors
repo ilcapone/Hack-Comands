@@ -9,3 +9,7 @@
 		- Escape contaienr to host though vulnerability os volume mount
 		- Intercept/modify/inject application trafic
 		- Exploit vulneravility in aplication code
+
+		### Decode Tockens ###
+
+		- https://jwt.io/
