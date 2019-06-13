@@ -92,3 +92,14 @@ gsutil cp [LOCLA] gs://[bucket]]
 - gcloud beta container images list-tags --show-occurrences [HOSTNAME]/[PROJECT_ID]/[IMAGE_ID]
 - gcloud beta container images describe --show-package-vulnerability [HOSTNAME]/[PROJECT_ID]/[IMAGE_ID]:[DIGEST]
 
+## List Buckets storage ##
+- gsutil ls
+
+## Get IAM Folder ##
+- gcloud alpha resource-manager folders get-iam-policy [folder]
+
+## Get organization policies ##
+-  gcloud alpha resource-manager org-policies list --organization=[ORG-ID]
+
+## Get cluster node-pools ##
+- gcloud container node-pools list --zone [zone] --cluster [cluster-name] --project [project-name]

@@ -181,8 +181,175 @@ Content:
 			3. The second input to the authorization module is a vector containing the request path, resource, verb, and namespace (and other secondary attributes).
 			4. If the user or application is permitted to execute a certain action on a certain resource, the request is passed on further to the next component in the chain, the admission controller. If not, the authorization module returns an HTTP 403 Forbidden client error status response code, and with that the request fails.
 
+			-----------------------------------------------------------------------
+
 	## 3.2 - Authorization Modes ##
 
 			Types:
-					- 
+					- Node authorization
+					- Attribute-based access control (ABAC)
+					- Webhook
+					- Role-based access control (RBAC) [RECOMENDED]
 
+			-----------------------------------------------------------------------
+
+	## 3.3 -  Access control with RBAC ##
+
+	Concepts:
+				* Entity: A group, user, or service account
+				* Resource: A pod, service, or secret that the entity wants to access.
+				* Role: Used to define rules for actions on resources
+					> Cluster-wide: Cluster roles and their respective cluster role bindings
+					> Namespace-wide:Roles and role bindings
+				* Role binding: This attaches (or binds) a role to an entity, stating that a set of actions is permitted for a certain entity on the specified resources.
+				
+				* Default role agrupations:
+					> User-facing: cluster-admin, admin (for namespaces), edit, and view that you can use out of the box for your end users.
+					> Core components: The Kubernetes control-plane components as well as nodes have predefined roles, such as system:kube-controllermanager or system:node, defining exactly the permissions the respective component needs in order to work properly.
+					> Other components: roles for noncore components that are almost always used alongside the core bits
+
+	Best Practices for roles binding:
+
+				* Description: A good practice to not use the default namespace, so let’s start by creating a namespace "EXAMPLENAMESPACE" that our application will live in and then a service account "SA-EXAMPLE" in this namespace:
+
+					$ kubectl create namespace examplenamespace
+					$ kubectl --namespace=examplenamespace create serviceaccount sa-example
+
+				* Create a role for view pods in this names pace:
+
+					$ kubectl --namespace=examplenamespace create role podview --verb=get --verb=list --resource=pods 
+
+				* Attach role to service account:
+
+					$ kubectl --namespace=examplenamespace create rolebinding mypodviewer --role=podreader \ --serviceaccount=examplenamespace:sa-example
+
+				* Check apropiate role to service account:
+
+					$ kubectl --namespace=[namespace] auth can-i \ --as=system:serviceaccount:[namespace]:[serviceaccountname] list [resource]
+
+	Tooling:
+				* audit2rbac
+				* rbac-manager
+				* kube2iam
+
+	Good practices:
+
+				* Disable automounting of the default service account token: Most applications don’t need to talk to the API server, so they don’t need an access token. This is especially important if you’re not using RBAC. You can do this by specifying:
+					sec:
+						automountServi ceAccountToken: false
+
+				You can patch the default service account so that its credentials are not automatically mounted into pods:
+					
+					$ kubectl patch serviceaccount default -p $'automountServiceAccountToken: false' serviceaccount default" patched
+
+	Risck: Bear in mind that if a pod is compromised in some way, the attacker will have access to the service account associated with that pod, and its corresponding permissions.
+
+			-----------------------------------------------------------------------
+
+		####### 4 - Securing Container Images        #######
+
+	## 4.1 - Concepts ##
+
+	Check that your images:
+		*Don’t include known critical vulnerabilities
+		* Are the images you intended to use, and haven’t been manipulatedor replaced by a third party
+		* Meet other image policy requirements your organization might have in place
+
+	## 4.2 - Scanning Container Images ##
+
+		* Some registries provide metrics on the health of the container images they store. For example, the Red Hat Container Catalog grades images from A–F, and the Google Container Registry and Docker Trusted Registry also include image scan results.
+
+	## 4.3 - Patching Container Images ##
+
+		* The key to “patching” in a container deployment is to rebuild a new container image, and then redeploy the containers based on that new image. The build part is typically automated through a continuous integration (CI) pipeline, and this may be extended to cover continuous deployment (CD) as well
+
+	## 4.4 - CI/CD Best Practices ##
+
+		* Many scanners can report a pass or fail for each image, either on basic criteria (“fail all images with high-severity vulnerabilities”)
+		* You can use this pass/fail in several places in your CI/CD pipeline:
+			• A failed scan can result in a failed build.
+			• A failed scan before deployment can prevent the image from being deployed.
+			• A failed scan on an image that’s already in production can result in an alert so that operators can take remedial action.
+
+	## 4.5 - Image Storage ##
+
+		* Use one or more private registries and require that only images from these registries can be deployed.
+		* The major hosted Kubernetes solutions all offer a container registry solution, which can have the advantage of tight integrations with the cloud platform that you are already familiar with.
+		* Whichever registry solution you are using, unless you are pulling public images, you will need to grant access to your Kubernetes cluster so that it can pull images from the registry. It’s a good idea to use read-only accounts for this purpose
+
+		Risk: By using read-only credentials, you mitigate the possibility that an attacker who gains access to the cluster can push modified images into your registry, which then get pulled and run.
+
+
+	## 4.6 - Image Storage ##
+
+	* To be certain that you are deploying a particular version of an image, it’s possible to refer to it by its unique digest instead of the tag
+	* It’s recommended to avoid using the latest version, at least in production
+
+
+	## 4.7 - Image Trust and Supply Chain ##
+
+	* Risck: potential problem still remains: ensuring that the version pulled from the image registry is the genuine, intended code.
+ 
+	* Several projects aim to help with the problem:
+		- https://theupdateframework.github.io/
+		- https://grafeas.io/
+		- https://in-toto.github.io/
+
+
+	## 4.8 - Minimizing Images to Reduce the Attack Surface ##
+
+	* Concept: general rule that the smaller the image, the smaller the attack surface
+	* Best PRactices: https://kubernetes-security.info/#securing-your-container-images
+
+
+			-----------------------------------------------------------------------
+
+		####### 5 - Running Containers Securely        #######
+
+	## 5.1 - Say No to Root ##
+
+	In order to run containers securely in Kubernetes, we aim to do the following:
+		• Use least privilege to carry out the task at hand.
+		• Do only the minimal host mounts necessary.
+		• Limit communication between applications, and to and from the outside world, to a defined and deterministic set of connections.
+
+	There’s little need to run containers as root. Some exceptions are as follows:
+		• Your container needs to modify the host system; for example, modifying the kernel’s configuration.
+		* The container needs to bind to privileged ports on the node.
+
+	Security aspects:
+	If your container does not fall into one of the preceding categories, then according to the principle of least rivilege, it would make sense to run it as a nonroot user. You can do this by including a USER command in the Dockerfile, defining a user identity that the code should run under.
+
+	## 5.2 - Admission Control ##
+
+	A whole slew of admission controllers are included in the API server, that you, as a cluster admin, can configure:
+		* AlwaysPullImages
+		* DenyEscalatingExec: Denies exec and attach commands to pods that run with escalated privileges, allowing host access. Prevents attackers from launching interactive shells into privileged containers, so this is recommended.
+		* PodSecurityPolicy
+
+	## 5.3 - Security Boundaries ##
+
+	By security boundary, we mean a set of controls to prevent a process from affecting other processes and/or accessing data from other users.
+
+		> Container (not specific to Kubernetes): A container provides basic management of resources, but does not isolate identity or the network, and can suffer from a noisy neighbor on the node for resources that are not isolated by cgroups. It provides some security isolation, but only provides a single layer, compared to our desired double layer.
+
+		> Pod: A pod is a collection of containers. A pod isolates a few more resources than a container, including the network. It does so with micro-segmentation using Kubernetes Network Policy, which dictates which pods can speak to one another. At the moment, a pod does not have a unique identity, but the Kubernetes community has made proposals to provide this. A pod still suffers from noisy neighbors on the same host.
+
+		> Node: This is a machine, either physical or virtual. A node includes a collection of pods, and has a superset of the privileges of those pods. A node leverages a hypervisor or hardware for isolation, including for its resources. Modern Kubernetes nodes run with distinct identities, and are authorized only to access the resources required by pods that are scheduled to the node. There can still be attacks at this level, such as convincing the scheduler to assign sensitive workloads to the node. You can use firewall rules to restrict network traffic to the node.
+
+		>Cluster: A cluster is a collection of nodes and a control plane. This is a management layer for your containers. Clusters offer stronger network isolation with per-cluster DNS.
+
+	## 5.4 - Security Context and Policies ##
+
+	A security context defines privilege and access control settings on either the pod or container level. The supported settings are as follows:
+		> Implement discretionary access control
+		> Capabilities
+		> Apply profiles
+		> Implementing mandatory access control
+				spec:
+					securityContext:
+						runAsUser: 1001
+					containers:
+						securityContext:
+							allowPrivilegeEscalation: false
+	

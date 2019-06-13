@@ -1,6 +1,5 @@
 
 		### Kubernetes Vector Attacks ###
-
 		- Acces to machines/VMS (nodes by ssh)
 		- Acces etcd API
 		- Acces via kubernetes API or proxy
@@ -11,5 +10,8 @@
 		- Exploit vulneravility in aplication code
 
 		### Decode Tockens ###
-
 		- https://jwt.io/
+
+		### Know Vulneravility - From POD to Cluster Admin ###
+		- https://github.com/bgeesaman/kube-env-stealer 
+		
