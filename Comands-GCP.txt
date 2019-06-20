@@ -103,3 +103,9 @@ gsutil cp [LOCLA] gs://[bucket]]
 
 ## Get cluster node-pools ##
 - gcloud container node-pools list --zone [zone] --cluster [cluster-name] --project [project-name]
+
+## Get list node-pools from cluster ##
+- gcloud container node-pools list --cluster [cluster-name]
+
+## Get list of cluster fromm project ##
+- gcloud container clusters list --zone [zone] --project [project]
