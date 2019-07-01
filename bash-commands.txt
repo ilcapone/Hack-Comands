@@ -1,6 +1,7 @@
 
 ## Basic Loope in console command ##
-- while true; do echo gas; sleep 2; done
+- clear
+
 
 ## Monitoring sistem resources ##
 - while true; do top -b2|head -n20; vmstat; lsof |wc -l; sleep 1; done
@@ -13,3 +14,6 @@
 
 ## Copy to clipboard ##
 - cat [file] | clip
+
+## Create a shortcuts ##
+- alias [name]='comand'
