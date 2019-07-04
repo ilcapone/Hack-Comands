@@ -22,7 +22,7 @@
 
 ## General info ##
 - kubectl cluster-info
-- kubectl cluste dump
+- kubectl cluster-info dump
 - kubectl config view
 
 ## DeamonSet ##
@@ -53,7 +53,8 @@
 - kubectl get psp
 
 ## Network Policies ##
-- 
+- kubectl get ns
+- kubectl get networkpolicies --all-namespaces
 
 ## Volumenes persistente
 -kubectl get pv
@@ -105,3 +106,10 @@
 
 ## DeamonSet Logs ##
 - kubectl logs ds/[name] -f
+
+## Copy files from/to pods ##
+- kubectl cp <file-spec-src> <file-spec-dest> -c <specific-container>
+- kubectl cp <some-namespace>/<some-pod>:/tmp/example /tmp/example
+
+## View Cluster Roles ##
+- kubectl get clusterroles

@@ -7,4 +7,7 @@ tail -n0 -f [file]
 tail [file]
 
 ## view the las x lines of file ##
-tail -x [file]
+tail -n x [file]
+
+## view from 15000 line from top
+less +15000 -N [file]

@@ -1,3 +1,5 @@
+## XPose installation ##
+- https://dorylabs.com/get-genymotion-play-store-supersu-xposed/
 
 ### Burp adn genymotion ##
 - https://linuxsuperuser.com/configure-burp-suite-proxy-genymotion/
@@ -15,3 +17,5 @@
 ### Comands ###
 - emulator -list-avds   # lista emuladores disponibles
 
+## Genymotion Logs ###
+- C:\Users\<user>\AppData\Local\Genymobile\Genymotion\deployed\<virtual device name>\Logs

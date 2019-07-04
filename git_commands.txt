@@ -1,3 +1,5 @@
+## Confi ssh ky for gitlab ##
+https://docs.gitlab.com/ee/ssh/
 
 ## Check repository state ##
 git remote show origin
@@ -51,3 +53,7 @@ git reset --hard HEAD
 
 ## Resolve merge conflicts ##
 https://help.github.com/en/enterprise/2.16/user/articles/resolving-a-merge-conflict-using-the-command-line
+
+## Tag branch ##
+git tag [tag]
+git push origin [tag]

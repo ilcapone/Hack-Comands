@@ -1,0 +1,19 @@
+
+## Basic Loope in console command ##
+- clear
+
+
+## Monitoring sistem resources ##
+- while true; do top -b2|head -n20; vmstat; lsof |wc -l; sleep 1; done
+
+## Count lines ##
+- [command] | wc -l
+
+## Monitoring process use kernell calls ##cro	
+- strace -p [pid-number] -ff
+
+## Copy to clipboard ##
+- cat [file] | clip
+
+## Create a shortcuts ##
+- alias [name]='comand'

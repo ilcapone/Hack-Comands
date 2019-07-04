@@ -1,0 +1,355 @@
+
+
+
+				 ##################################################
+				 ###											###
+				 ### Security Guide for Kubernetes Hardering	###
+				 ###											###
+				 ##################################################
+
+----------------------------------------------------------------------------------------------------------------------------------
+References: 
+			- https://kubernetes-security.info/
+			- https://cdn2.hubspot.net/hubfs/1665891/Assets/Kubernetes%20Security%20-%20Operating%20Kubernetes%20Clusters%20and%20Applications%20Safely.pdf?t=1538587424944&_hsenc=p2ANqtz-_7jbqtRATdJAm7eFxtd5u4nVLYuIlrF67z5qbslZ10-I63-RZ4ogqu9iuuEMsx7fskPYWww2jDpVjOvrLs
+
+----------------------------------------------------------------------------------------------------------------------------------
+List of Content:   
+		   
+			####### 1 - Securing the Cluster        #######
+
+			####### 2 - Authentication 		        #######
+
+			####### 3 - Authorization               #######
+
+			####### 4 - Securing Container Images   #######
+
+			####### 5 - Securing the Cluster        #######
+
+			####### 6 - Running Containers Securely #######
+
+			####### 7 - Secrets Managment           #######
+
+			####### 8 - Advanced Topics             #######
+
+----------------------------------------------------------------------------------------------------------------------------------
+Security Principles:
+	# Defense in depth
+	# Least privileges
+	# Limiting the Atack Surface
+	
+----------------------------------------------------------------------------------------------------------------------------------
+Content:
+
+			####### 1 - Securing the Cluster        #######
+
+	## 1.1 - API Server ##
+
+	Concepts:
+		* Function: Kubernetes API server is to offer a REST API for controlling Kubernetes
+		* Risk: User who has full permissions on this API has the equivalent of root access on every machine in the cluster.
+		* Command-line: The 'kubectl' is a client for this API, making requests of the API server to manage resources and workloads.
+
+	Security aspects:
+		* By default run in port 8080
+		* Risk: Any requests to this port bypass authentication and authorization checks. If you leave this port open, anyone who gains access to the host your master is running on has full control over your entire cluster.
+		* Config:
+			> Close the insecure port by setting the API server’s --insecure-port flag to 0, and ensuring that the --insecure-bind-address is not set.
+			> NOTE: N/A in GKE clusters
+		* Check:
+			> curl <IP address>:8080
+				- If the response lists API endpoints, as in the preceding example, then the insecure port is open.
+				- However, if you see an error message of Connection refused, it’s good news, as the port is not open.
+
+				-----------------------------------------------------------------------
+
+	## 1.2 - Kubelet ##
+
+	Concepts:
+		* Function: The kubelet is the agent on each node that is responsible for interacting with the container runtime to launch pods, and report node and pod status and metrics.
+
+	Security aspects:
+		* By default run in port 10255, 10250
+		* Config:
+			> Disable anonymous access with --anonymous-auth=false
+			> Set --read-only-port=0 to turn off the read-only port
+			> NOTE: N/A in GKE clusters
+		* Check:
+			> curl -sk https://<IP address>:10250/pods/
+				- If --anonymous-auth is false, you will see a 401 Unauthorized response.
+				- If --anonymous-auth is true and --authorization-mode is Web hook, you’ll see a 403 Forbidden response with the message For bidden (user=system:anonymous, verb=get, resource=nodes, subresource=proxy).
+				- If --anonymous-auth is true and --authorization-mode is AlwaysAllow, you’ll see a list of pods.
+		* Adicionaly:
+			> Kubelet Certificate Rotation: --rotate-certificates
+
+				-----------------------------------------------------------------------
+
+     ## 1.3 - Running etcd Safely ##
+
+     Concepts:
+		* Function: Kubernetes stores configuration and state information in a distributed key-value store called etcd
+		* Risk: Anyone who can write to etcd can effectively control your Kubernetes cluster.
+
+	Reference:
+		* https://github.com/etcd-io/etcd/blob/master/Documentation/op-guide/security.md
+
+	Security aspects:
+		* You need to ensure that only authenticated access is permitted
+		* Config:
+			> Set --cert-file and --key-file to enable HTTPS connections to etcd.
+			> Set --client-cert-auth=true to ensure that access to etcd requires authentication. Set --trusted-ca-file to pecify the certificate authority that has signed the client certificates.
+			> Set --auto-tls=false to disallow the generation and use of self-signed certificates.
+			> Require etcd nodes to communicate with each other securely by using --peer-client-cert-auth=true. Also set --peer-autotls=false and specify --peer-cert-file, --peer-key-file and --peer-trusted-ca-file. You will need corresponding
+			configuration on the Kubernetes API server so that it can communicate with etcd.
+			> Set --etcd-cafile on the API server to the certificate authority that signed etcd’s certificate.
+			> Specify --etcd-certfile and --etcd-keyfile so that the API server can identify itself to etcd.
+		* Adicionaly:
+			> Encript etc Disck:
+				- This is especially important if you are storing Kubernetes secrets in etcd rather than an external secrets store.
+				- https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+
+				-----------------------------------------------------------------------
+
+	## 1.4 - Kubernetes Dashboard ##
+
+	Concepts:
+		* Function: The Dashboard has historically been used by attackers to gain control of Kubernetes clusters
+		* Risk: You might want to take several steps to ensure that your Kubernetes Dashboard is not an easy entry point for attackers
+		* NOTE: N/A in GKE clusters
+
+	Security aspects:
+		* Config:
+			> Allow only authenticated access
+			> Use RBAC
+			> Make sure the Dashboard service account has limited access
+			> Don’t expose your Dashboard to the public internet
+			> NOTE: N/A in GKE clusters
+
+		* Check:
+			> chttps://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca
+
+		* Adicional:
+			> You can use kubectl proxy to access the Dashboard securely from a local machine.
+
+
+			-----------------------------------------------------------------------
+
+			####### 3 - Authentication        #######
+
+	## 2.1 - Identity ##
+
+	Concepts:
+		* Risk: By default, Kubernetes makes the credentials of the service account available via a secret that is mounted into the pod (note that all files shown here are owned by root).
+			If you don’t explicitly specify a service account in the pod spec, the default service account for the namespace is used.
+
+		* Conclusion: 0The creation of a service account triggers the creation of a secret, attached to and managed by the service account.
+
+	Security aspects:
+		* Config:
+			- Ad to the deployment YAML:
+				> spec:
+						serviceAccountName: [serviceaccountname]
+		* Note: By default, the default serviceAccount in a namespace has no permissions other than those of an unauthenticated user.
+
+			-----------------------------------------------------------------------
+
+	## 2.2 - Authentication ##
+
+	Concepts:
+		* The flow Kubernetes uses to authenticate a client’s request is as follows:
+			1. - The client presents its credentials to the API server.
+			2. - The API server uses one of the configured authentication plugins (you can enable multiple) to establish the identity with an identity provider.
+			3. - The identity provider verifies the request information, including username and group membership.
+			4. - If the credentials are in order, the API server moves on to check permissions. Otherwise, it returns an HTTP 401 Unauthorized client error status response code, and with that the request fails.
+
+	Authentication strategis:
+		* Concept: Depending on the size of the deployment, the target users (human versus processes), and organizational policies, you as a cluster admin can choose one or more of the following:
+			> Static password or token file: Since it’s inflexible to maintain a static file with the users and their passwords and requires direct access to the API server, this method is not recommended in production
+			> X.509 certificates
+			> OpenID Connect (OIDC): you use OIDC to provide the API server with an idtoken in the form of a JSON Web Token after using your provider’s login page, such as Google or Azure Active Directory.
+
+			-----------------------------------------------------------------------
+
+		####### 3 - Authorization        #######
+
+	## 3.1 - Concepts ##
+
+	Concepts: Authorization in Kubernetes verifies whether a certain action (suchas “list pods” or “create a secret”) is 		allowed by a certain user or application, and if it is allowed, performs that action or otherwise rejects it 		and potentially logs the attempt.
+
+	The authorization flow is as follows:
+			1. The client’s request is authenticated. See “Authentication Concepts” on page 20 for details on this step.
+			2. If the authentication was successful, the credentials are taken as one input of the authorization module.
+			3. The second input to the authorization module is a vector containing the request path, resource, verb, and namespace (and other secondary attributes).
+			4. If the user or application is permitted to execute a certain action on a certain resource, the request is passed on further to the next component in the chain, the admission controller. If not, the authorization module returns an HTTP 403 Forbidden client error status response code, and with that the request fails.
+
+			-----------------------------------------------------------------------
+
+	## 3.2 - Authorization Modes ##
+
+			Types:
+					- Node authorization
+					- Attribute-based access control (ABAC)
+					- Webhook
+					- Role-based access control (RBAC) [RECOMENDED]
+
+			-----------------------------------------------------------------------
+
+	## 3.3 -  Access control with RBAC ##
+
+	Concepts:
+				* Entity: A group, user, or service account
+				* Resource: A pod, service, or secret that the entity wants to access.
+				* Role: Used to define rules for actions on resources
+					> Cluster-wide: Cluster roles and their respective cluster role bindings
+					> Namespace-wide:Roles and role bindings
+				* Role binding: This attaches (or binds) a role to an entity, stating that a set of actions is permitted for a certain entity on the specified resources.
+				
+				* Default role agrupations:
+					> User-facing: cluster-admin, admin (for namespaces), edit, and view that you can use out of the box for your end users.
+					> Core components: The Kubernetes control-plane components as well as nodes have predefined roles, such as system:kube-controllermanager or system:node, defining exactly the permissions the respective component needs in order to work properly.
+					> Other components: roles for noncore components that are almost always used alongside the core bits
+
+	Best Practices for roles binding:
+
+				* Description: A good practice to not use the default namespace, so let’s start by creating a namespace "EXAMPLENAMESPACE" that our application will live in and then a service account "SA-EXAMPLE" in this namespace:
+
+					$ kubectl create namespace examplenamespace
+					$ kubectl --namespace=examplenamespace create serviceaccount sa-example
+
+				* Create a role for view pods in this names pace:
+
+					$ kubectl --namespace=examplenamespace create role podview --verb=get --verb=list --resource=pods 
+
+				* Attach role to service account:
+
+					$ kubectl --namespace=examplenamespace create rolebinding mypodviewer --role=podreader \ --serviceaccount=examplenamespace:sa-example
+
+				* Check apropiate role to service account:
+
+					$ kubectl --namespace=[namespace] auth can-i \ --as=system:serviceaccount:[namespace]:[serviceaccountname] list [resource]
+
+	Tooling:
+				* audit2rbac
+				* rbac-manager
+				* kube2iam
+
+	Good practices:
+
+				* Disable automounting of the default service account token: Most applications don’t need to talk to the API server, so they don’t need an access token. This is especially important if you’re not using RBAC. You can do this by specifying:
+					sec:
+						automountServi ceAccountToken: false
+
+				You can patch the default service account so that its credentials are not automatically mounted into pods:
+					
+					$ kubectl patch serviceaccount default -p $'automountServiceAccountToken: false' serviceaccount default" patched
+
+	Risck: Bear in mind that if a pod is compromised in some way, the attacker will have access to the service account associated with that pod, and its corresponding permissions.
+
+			-----------------------------------------------------------------------
+
+		####### 4 - Securing Container Images        #######
+
+	## 4.1 - Concepts ##
+
+	Check that your images:
+		*Don’t include known critical vulnerabilities
+		* Are the images you intended to use, and haven’t been manipulatedor replaced by a third party
+		* Meet other image policy requirements your organization might have in place
+
+	## 4.2 - Scanning Container Images ##
+
+		* Some registries provide metrics on the health of the container images they store. For example, the Red Hat Container Catalog grades images from A–F, and the Google Container Registry and Docker Trusted Registry also include image scan results.
+
+	## 4.3 - Patching Container Images ##
+
+		* The key to “patching” in a container deployment is to rebuild a new container image, and then redeploy the containers based on that new image. The build part is typically automated through a continuous integration (CI) pipeline, and this may be extended to cover continuous deployment (CD) as well
+
+	## 4.4 - CI/CD Best Practices ##
+
+		* Many scanners can report a pass or fail for each image, either on basic criteria (“fail all images with high-severity vulnerabilities”)
+		* You can use this pass/fail in several places in your CI/CD pipeline:
+			• A failed scan can result in a failed build.
+			• A failed scan before deployment can prevent the image from being deployed.
+			• A failed scan on an image that’s already in production can result in an alert so that operators can take remedial action.
+
+	## 4.5 - Image Storage ##
+
+		* Use one or more private registries and require that only images from these registries can be deployed.
+		* The major hosted Kubernetes solutions all offer a container registry solution, which can have the advantage of tight integrations with the cloud platform that you are already familiar with.
+		* Whichever registry solution you are using, unless you are pulling public images, you will need to grant access to your Kubernetes cluster so that it can pull images from the registry. It’s a good idea to use read-only accounts for this purpose
+
+		Risk: By using read-only credentials, you mitigate the possibility that an attacker who gains access to the cluster can push modified images into your registry, which then get pulled and run.
+
+
+	## 4.6 - Image Storage ##
+
+	* To be certain that you are deploying a particular version of an image, it’s possible to refer to it by its unique digest instead of the tag
+	* It’s recommended to avoid using the latest version, at least in production
+
+
+	## 4.7 - Image Trust and Supply Chain ##
+
+	* Risck: potential problem still remains: ensuring that the version pulled from the image registry is the genuine, intended code.
+ 
+	* Several projects aim to help with the problem:
+		- https://theupdateframework.github.io/
+		- https://grafeas.io/
+		- https://in-toto.github.io/
+
+
+	## 4.8 - Minimizing Images to Reduce the Attack Surface ##
+
+	* Concept: general rule that the smaller the image, the smaller the attack surface
+	* Best PRactices: https://kubernetes-security.info/#securing-your-container-images
+
+
+			-----------------------------------------------------------------------
+
+		####### 5 - Running Containers Securely        #######
+
+	## 5.1 - Say No to Root ##
+
+	In order to run containers securely in Kubernetes, we aim to do the following:
+		• Use least privilege to carry out the task at hand.
+		• Do only the minimal host mounts necessary.
+		• Limit communication between applications, and to and from the outside world, to a defined and deterministic set of connections.
+
+	There’s little need to run containers as root. Some exceptions are as follows:
+		• Your container needs to modify the host system; for example, modifying the kernel’s configuration.
+		* The container needs to bind to privileged ports on the node.
+
+	Security aspects:
+	If your container does not fall into one of the preceding categories, then according to the principle of least rivilege, it would make sense to run it as a nonroot user. You can do this by including a USER command in the Dockerfile, defining a user identity that the code should run under.
+
+	## 5.2 - Admission Control ##
+
+	A whole slew of admission controllers are included in the API server, that you, as a cluster admin, can configure:
+		* AlwaysPullImages
+		* DenyEscalatingExec: Denies exec and attach commands to pods that run with escalated privileges, allowing host access. Prevents attackers from launching interactive shells into privileged containers, so this is recommended.
+		* PodSecurityPolicy
+
+	## 5.3 - Security Boundaries ##
+
+	By security boundary, we mean a set of controls to prevent a process from affecting other processes and/or accessing data from other users.
+
+		> Container (not specific to Kubernetes): A container provides basic management of resources, but does not isolate identity or the network, and can suffer from a noisy neighbor on the node for resources that are not isolated by cgroups. It provides some security isolation, but only provides a single layer, compared to our desired double layer.
+
+		> Pod: A pod is a collection of containers. A pod isolates a few more resources than a container, including the network. It does so with micro-segmentation using Kubernetes Network Policy, which dictates which pods can speak to one another. At the moment, a pod does not have a unique identity, but the Kubernetes community has made proposals to provide this. A pod still suffers from noisy neighbors on the same host.
+
+		> Node: This is a machine, either physical or virtual. A node includes a collection of pods, and has a superset of the privileges of those pods. A node leverages a hypervisor or hardware for isolation, including for its resources. Modern Kubernetes nodes run with distinct identities, and are authorized only to access the resources required by pods that are scheduled to the node. There can still be attacks at this level, such as convincing the scheduler to assign sensitive workloads to the node. You can use firewall rules to restrict network traffic to the node.
+
+		>Cluster: A cluster is a collection of nodes and a control plane. This is a management layer for your containers. Clusters offer stronger network isolation with per-cluster DNS.
+
+	## 5.4 - Security Context and Policies ##
+
+	A security context defines privilege and access control settings on either the pod or container level. The supported settings are as follows:
+		> Implement discretionary access control
+		> Capabilities
+		> Apply profiles
+		> Implementing mandatory access control
+				spec:
+					securityContext:
+						runAsUser: 1001
+					containers:
+						securityContext:
+							allowPrivilegeEscalation: false
+	

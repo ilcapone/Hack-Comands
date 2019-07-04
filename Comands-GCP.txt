@@ -43,6 +43,7 @@
 - gcloud auth list
 - gcloud auth activate-service-account --key-file ./[key.json]
 - gcloud config set project [project-id]
+- gcloud auth login [user-email]
 
 ## Push docker to gcp container registry ##
 - gcloud docker -- push eu.gcr.io/[project-id]/[image]:[tag]
@@ -91,3 +92,20 @@ gsutil cp [LOCLA] gs://[bucket]]
 - gcloud beta container images list-tags --show-occurrences [HOSTNAME]/[PROJECT_ID]/[IMAGE_ID]
 - gcloud beta container images describe --show-package-vulnerability [HOSTNAME]/[PROJECT_ID]/[IMAGE_ID]:[DIGEST]
 
+## List Buckets storage ##
+- gsutil ls
+
+## Get IAM Folder ##
+- gcloud alpha resource-manager folders get-iam-policy [folder]
+
+## Get organization policies ##
+-  gcloud alpha resource-manager org-policies list --organization=[ORG-ID]
+
+## Get cluster node-pools ##
+- gcloud container node-pools list --zone [zone] --cluster [cluster-name] --project [project-name]
+
+## Get list node-pools from cluster ##
+- gcloud container node-pools list --cluster [cluster-name]
+
+## Get list of cluster fromm project ##
+- gcloud container clusters list --zone [zone] --project [project]
