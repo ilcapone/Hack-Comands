@@ -1,0 +1,5 @@
+msfcli
+
+msfcli [exploit] 0 										# View available options
+msfcli [exploit] P										# View available payloads
+msfcli [exploit] rhost=x.x.x.x.x payoad=x/x/x/x/x E     # Execute exploit with raguments
