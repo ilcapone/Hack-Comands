@@ -24,6 +24,9 @@ docker build --tab=image name .
 # Exit docker without stop
 Ctrl+p, Ctrl+q 
 
+# Obtain Docker IP 
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [containers]
+
 # Run Metasploitable docker
 sudo  docker run --rm -it -p 443:443 -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data remnux/metasploit
 
