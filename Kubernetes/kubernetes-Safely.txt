@@ -23,13 +23,11 @@ List of Content:
 
 			####### 4 - Securing Container Images   #######
 
-			####### 5 - Securing the Cluster        #######
+			####### 5 - Running Containers Securely #######
 
-			####### 6 - Running Containers Securely #######
+			####### 6 - Secrets Managment           #######
 
-			####### 7 - Secrets Managment           #######
-
-			####### 8 - Advanced Topics             #######
+			####### 7 - Advanced Topics             #######
 
 ----------------------------------------------------------------------------------------------------------------------------------
 Security Principles:
@@ -273,7 +271,7 @@ Content:
 
 	## 4.5 - Image Storage ##
 
-		* Use one or more private registries and require that only images from these registries can be deployed.
+		* Use one or more private registriesls and require that only images from these registries can be deployed.
 		* The major hosted Kubernetes solutions all offer a container registry solution, which can have the advantage of tight integrations with the cloud platform that you are already familiar with.
 		* Whichever registry solution you are using, unless you are pulling public images, you will need to grant access to your Kubernetes cluster so that it can pull images from the registry. It’s a good idea to use read-only accounts for this purpose
 
@@ -326,6 +324,8 @@ Content:
 		* AlwaysPullImages
 		* DenyEscalatingExec: Denies exec and attach commands to pods that run with escalated privileges, allowing host access. Prevents attackers from launching interactive shells into privileged containers, so this is recommended.
 		* PodSecurityPolicy
+		* LimitRange and ResourceQuota
+		* NodeRestriction
 
 	## 5.3 - Security Boundaries ##
 
@@ -337,11 +337,13 @@ Content:
 
 		> Node: This is a machine, either physical or virtual. A node includes a collection of pods, and has a superset of the privileges of those pods. A node leverages a hypervisor or hardware for isolation, including for its resources. Modern Kubernetes nodes run with distinct identities, and are authorized only to access the resources required by pods that are scheduled to the node. There can still be attacks at this level, such as convincing the scheduler to assign sensitive workloads to the node. You can use firewall rules to restrict network traffic to the node.
 
-		>Cluster: A cluster is a collection of nodes and a control plane. This is a management layer for your containers. Clusters offer stronger network isolation with per-cluster DNS.
+		> Cluster: A cluster is a collection of nodes and a control plane. This is a management layer for your containers. Clusters offer stronger network isolation with per-cluster DNS.
 
 	## 5.4 - Security Context and Policies ##
 
-	A security context defines privilege and access control settings on either the pod or container level. The supported settings are as follows:
+	A security context defines privilege and access control settings on either the pod or container level. PodSecurityPolicy allows us to define securityContext context
+	settings, along with other security-related settings such as the seccomp
+	and AppArmor profiles. The supported settings are as follows:
 		> Implement discretionary access control
 		> Capabilities
 		> Apply profiles
@@ -352,4 +354,142 @@ Content:
 					containers:
 						securityContext:
 							allowPrivilegeEscalation: false
-	
+
+				* Check:
+
+				$ kubectl apply -f secconpod.yaml
+				  pod "securepod" created
+
+				$ kubectl exec -it securepod --container=webserver -- id
+				uid=1001 gid=0(root) groups=0(root)
+
+				$ kubectl exec -it securepod --container=shell -- id
+				uid=1001 gid=0(root) groups=0(root)
+
+	Let’s see how we can enforce the “must run as nonroot user” scenario,
+	along with Docker’s default seccomp and AppArmor profiles,
+	using the following policy:
+
+		apiVersion: policy/v1beta1
+		kind: PodSecurityPolicy
+		metadata:
+			name: nonroot
+			annotations:
+				seccomp.security.alpha.kubernetes.io/allowedProfileNames: \
+					'docker/default'
+				apparmor.security.beta.kubernetes.io/allowedProfileNames: \
+					'runtime/default'
+				seccomp.security.alpha.kubernetes.io/defaultProfileName: \
+					'docker/default'
+				apparmor.security.beta.kubernetes.io/defaultProfileName: \
+					'runtime/default'
+		spec:
+			privileged: false
+			allowPrivilegeEscalation: false
+			runAsUser:
+				rule: MustRunAsNonRoot
+			seLinux:
+				rule: RunAsAny
+			supplementalGroups:
+				rules: MustRunAs
+				ranges:
+					- min: 1000
+					  max: 1500
+			fsGroup:
+				rule: MustRunAs
+				ranges:
+					- min: 1000
+					  max: 1500
+
+
+	## 5.5 - Least privilege security settings ##
+
+	> Use a read-only root filesystem: If your application code doesn’t need to be able to write into the filesystem inside the container, the readOnlyRootFilesystem setting prevents that approach.
+
+	> Limiting host volume mounts: The allowedHostPaths parameter in PodSecurityPolicy allows you to limit what can be mounted and therefore made accessible to the container.
+
+	> Disallow privileged access: Unless your container has a particular need for privileged Linux capabilities, privileged and allowPrivilegeEscalation should be false. Privileged access within a container is effectively the same as root access on the host.
+
+
+	## 5.6 - Network policyes ##
+
+	Applications running in Kubernetes can potentially communicate with outside clients (north-south traffic) as well as with other applications running within the ubernetes cluster (east-west traffic).
+
+	By default, all kinds of ingress (incoming) and egress (outgoing)
+	traffic are allowed, but you can control how pods are allowed to
+	communicate by using a Kubernetes feature called network policies
+
+	> Effective Network Policies
+
+		For network policies to be at their most effective, we want to ensure that traffic can flow only where it is needed, and nowhere else. To achieve this, you will typically start with a DenyAll default policy that matches all pods with an empty podSelector. Then take a structured approach to adding network policies that allows traffic between application pods as necessary.
+
+		Suppose we have an application called my-app that stores data in a Postgres database. The following example defines a policy that allows traffic from my-app to my-postgres on the default port for Postgres:
+
+			apiVersion: networking.k8s.io/v1
+			kind: NetworkPolicy
+			metadata:
+				name: allow-myapp-mypostgres
+				namespace: lockeddown
+			spec:
+				podSelector:
+					matchLabels:
+						app: my-postgres
+			ingress:
+				- from:
+					- podSelector:
+						matchLabels:
+							app: my-app
+				ports:
+					- protocol: TCP
+					  port: 5432
+
+
+	## 5.7 - Network policyes ##
+
+	This can include critical information including the node’s kubelet credentials, so it is important to restrict access to these APIs.
+
+	This can be achieved through network policies that block traffic to the Metadata API for all pods that don’t explicitly need access.Azure and AWS both use the IP address 169.254.169.254, and Google uses the domain name metadata.google.internal.
+
+
+	-----------------------------------------------------------------------
+
+		####### 6 - Secret Managment        #######
+
+		## 6.1 - Applying the Principle of Least Privilege ##
+
+		The principle of least privilege has two consequences on secrets
+		management in Kubernetes:
+			• We want to ensure that containerized code can read only the
+			secrets that it needs.
+			• It’s a good idea to have a different set of secrets for different environments (like production, development, and testing). The development and test credentials can be shared with a wider set of team members without necessarily giving them full access to the production credentials.
+
+
+		## 6.2 - Secret Encryption ##
+
+		Ideally, they should by protected at rest and in transit
+
+
+		## 6.3 - Kubernetes Secret Storage ##
+
+		By default, secret values are stored alongside other configuration information in the etcd database; they are simply base64 encoded.
+
+		Anyone who gains access to your etcd database will be able to read base64-encoded secrets from it. You can avoid this risk by ensuring that your etcd cluster is also encrypted on disk
+
+		## 6.4 - Storing Secrets in Third-Party Stores ##
+
+		Using these in conjunction with Kubernetes is considered by many to be a more secure option than storing the secrets alongside less-sensitive information in etcd.
+
+		## 6.5 - Don’t Build Secrets into Images ##
+
+		The first of these options is a bad idea for secrets, and here are a few creasons:
+			• Anyone who has access to the image can obtain the secrets it holds. Bear in mind that the set of people who can access the image may not be the same set of people who need your production credentials.
+			• If you want to change a secret value, you need to rebuild the image. This can imply downtime: for example, if you change database credentials, your application code can’t access the database until it is rebuilt and redeployed.
+			• Anything that is built into the image is likely under source code control, and unfortunately it’s all too common to see secret information made publicly available through GitHub and similar tools. Even if your repos are private, consider the possibility that an authorized user forks your repo and makes it public.
+
+
+		## 6.6 - Passing Secrets as Environment Variables ##
+
+		But be careful: including secret values in YAML files that you check into code control means those secrets are accessible to the same people who can see the source code.
+
+
+

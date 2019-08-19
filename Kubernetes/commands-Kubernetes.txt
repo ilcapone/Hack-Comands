@@ -113,3 +113,7 @@
 
 ## View Cluster Roles ##
 - kubectl get clusterroles
+
+## Deploy YAML using variables ##
+- export NOODEPOOL=$NodePool
+- kubectlenvsubst < basic-deploiment-nodePool-selector.yaml | kubectl apply  -f -

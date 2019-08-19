@@ -1,9 +1,9 @@
 
 
 	######################################
-	##									##
+	##									                ##
 	## Docker Comands Tricks and Tracks ##
-	##									##
+	##									                ##
 	######################################
 	
 # Run docker in deatach mode
