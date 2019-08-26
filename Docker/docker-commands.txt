@@ -59,6 +59,9 @@ docker export --output="name.tar" [image]
 # Import contaienr from tar file
 docker import /path/to/name.tgz
 
+# Export image to tarfile 
+docker save --output="name.tar" [image]
+
 # Most como docker run commands
 docker run \ 
   --rm \ 

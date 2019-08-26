@@ -1,0 +1,41 @@
+## Info ##
+- https://geekytheory.com/programar-tareas-en-linux-usando-crontab
+
+## Edit cron ##
+- crontab -e
+
+## List cron ##
+- crontab -l
+
+
+## Basic Tutorial ##
+
+	Timing		Execute PHP		Path to script						Output
+	* * * * *	/usr/bin/php	/var/www/html/crontest/cron.php	> /dev/null 2>&1
+	The syntax is:
+		1 2 3 4 5 /path/to/command arg1 arg2
+	OR
+		1 2 3 4 5 /root/backup.sh
+
+	Where,
+
+		1: Minute (0-59)
+		2: Hours (0-23)
+		3: Day (0-31)
+		4: Month (0-12 [12 == December])
+		5: Day of the week(0-7 [7 or 0 == sunday])
+		/path/to/command – Script or command name to schedule
+
+	Easy to remember format:0
+		- - - - -
+		| | | | |
+		| | | | ----- Day of week (0 - 7) (Sunday=0 or 7)
+		| | | ------- Month (1 - 12)
+		| | --------- Day of month (1 - 31)
+		| ----------- Hour (0 - 23)
+		------------- Minute (0 - 59)
+		
+	Your cron job looks as follows for system jobs:
+		1 2 3 4 5 USERNAME /path/to/command arg1 arg2
+	OR
+		1 2 3 4 5 USERNAME /path/to/script.sh
