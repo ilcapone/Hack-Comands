@@ -1,0 +1,4 @@
+
+## Config OpenVPN server on GCP ##
+https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engine-9ff760d775d9
+> troublesuting sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
