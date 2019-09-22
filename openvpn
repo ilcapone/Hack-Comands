@@ -1,0 +1,20 @@
+
+## Config OpenVPN server on GCP ##
+https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engine-9ff760d775d9
+
+Installing troublesuting
+	- sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
+
+Linux troublesuting
+	- sudo apt install openvpn-systemd-resolved
+	- Update your config.ovpn file adding these lines:
+	
+		script-security 2
+		up /etc/openvpn/update-systemd-resolved
+		down /etc/openvpn/update-systemd-resolved
+		down-pre
+
+
+Init openvpn on linux
+- sudo openvpn --config client.ovpn
+

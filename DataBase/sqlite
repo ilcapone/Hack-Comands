@@ -1,0 +1,4 @@
+
+
+- sqlite3 [database]
+- sqlite> .tables 		#list available tables
