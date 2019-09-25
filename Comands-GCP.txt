@@ -1,3 +1,6 @@
+## Repositorys ##
+- https://gist.github.com/pydevops/cffbd3c694d599c6ca18342d3625af97#zones
+
 ## Update/Install Google SDK ##
 - Ubuntu: - https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
 

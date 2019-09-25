@@ -7,6 +7,9 @@
 ## List cron ##
 - crontab -l
 
+## Config cron for start script in ever reboot ##
+@reboot /path/script
+
 
 ## Basic Tutorial ##
 

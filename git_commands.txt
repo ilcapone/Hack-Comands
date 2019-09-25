@@ -55,5 +55,5 @@ git reset --hard HEAD
 https://help.github.com/en/enterprise/2.16/user/articles/resolving-a-merge-conflict-using-the-command-line
 
 ## Tag branch ##
-git tag [tag]
+git tag [tag]--help
 git push origin [tag]

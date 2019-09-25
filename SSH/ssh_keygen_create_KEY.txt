@@ -1,1 +1,3 @@
  ssh-keygen -t rsa -b 4096 -C "sample.key" -N "" -f "key"
+
+ ssh-keygen -t rsa -f ~/.ssh/[KEY_FILENAME] -C [USERNAME]

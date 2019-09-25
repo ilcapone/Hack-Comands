@@ -131,7 +131,7 @@ Content:
 
 			-----------------------------------------------------------------------
 
-			####### 3 - Authentication        #######
+			####### 2 - Authentication        #######
 
 	## 2.1 - Identity ##
 
@@ -465,6 +465,7 @@ Content:
 
 
 		## 6.2 - Secret Encryption ##
+
 
 		Ideally, they should by protected at rest and in transit
 

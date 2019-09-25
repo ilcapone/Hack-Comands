@@ -18,3 +18,8 @@ Linux troublesuting
 Init openvpn on linux
 - sudo openvpn --config client.ovpn
 
+
+Generate new clients certs
+- cd ~/openvpn-ca
+- source vars
+- ./build-key [client-unic-name]

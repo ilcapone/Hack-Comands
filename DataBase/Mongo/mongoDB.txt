@@ -5,8 +5,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongo
 ----- creating Admin ------------------------------
 db.createUser(
   {
-    user: "*****",
-    pwd: "******",
+    user: "******",
+    pwd: "**********",
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 )
@@ -70,8 +70,9 @@ db.createUser({
 
 ##########		create collection 	###########
 
-db.createCollection("gas", { capped: <boolean>,
-                              collation: <document> } )
+db.createCollection("cumiVuln", { cumin: gang } )
+
+db.getCollectionNames()
 
 
 ######## Change mongo database RAM use #######
