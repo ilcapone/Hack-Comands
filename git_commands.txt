@@ -35,6 +35,9 @@ git diff
 ## Create new local branch ##
 git checkout -b [new-branch]
 
+## Subir new local branch no existe en remoto ##
+git push origin [new branch]
+
 ## Upload new local branch to remote ##
 git push -u origin [new-branch]
 

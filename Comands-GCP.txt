@@ -42,6 +42,18 @@
 ## Containers ##
 - gcloud container clusters describe [cluster-name] --zone [zone]
 
+## Create SA ##
+- gcloud beta iam service-accounts create [name] --project [project-id]
+
+## List SA ##
+- gcloud iam service-accounts list --project [project-id]
+
+## Create JSON key for SA ##
+- gcloud iam service-accounts keys create [path] --iam-account [sa]
+
+## Give roles to SA ##
+- gcloud projects add-iam-policy-binding [project-id] --member serviceAccount:[sa] --role [roles]
+
 ## Auth like some user or serviceaccount ##
 - gcloud auth list
 - gcloud auth activate-service-account --key-file ./[key.json]
@@ -97,6 +109,9 @@ gsutil cp [LOCLA] gs://[bucket]]
 
 ## List Buckets storage ##
 - gsutil ls
+
+## Cat bucket object#
+- gsutil cat gs://bucket/object 
 
 ## Get IAM Folder ##
 - gcloud alpha resource-manager folders get-iam-policy [folder]

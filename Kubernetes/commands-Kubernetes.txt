@@ -104,6 +104,10 @@
 - kubectl get secret [secret-name] -o json
 - printf $(kubectl get secret [secret-name] -o jsonpath="{.data}" | [decode-specifi]);echo
 
+https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
+## Create Secrets ##
+- echo -n some_text_to_encode | base64
+
 ## DeamonSet Logs ##
 - kubectl logs ds/[name] -f
 
@@ -117,3 +121,7 @@
 ## Deploy YAML using variables ##
 - export NOODEPOOL=$NodePool
 - kubectlenvsubst < basic-deploiment-nodePool-selector.yaml | kubectl apply  -f -
+
+## Rollback ##
+- kubectl rollout history deployment [deployment-name]
+- kubectl rollout undo deployments [deployment-name] --to-revision=[rollout history number]

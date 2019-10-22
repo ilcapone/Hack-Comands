@@ -5,3 +5,55 @@ https://codelabs.developers.google.com/codelabs/vault-on-gke/index.html?index=..
 
 ## Create AppRole ##
 https://learn.hashicorp.com/vault/identity-access-management/iam-authentication
+
+## Identities ##
+https://learn.hashicorp.com/vault/identity-access-management/iam-identity
+
+## Conect to Vault on GKE ##
+export LB_IP="$(gcloud compute addresses describe vault --region europe-west2 --format 'value(address)')"
+export VAULT_ADDR="https://${LB_IP}:443"
+export VAULT_CACERT="$(pwd)/tls/ca.crt"
+export VAULT_TOKEN="$(gsutil cat "gs://${GOOGLE_CLOUD_PROJECT}-vault-storage/root-token.enc" | \
+  base64 --decode | \
+  gcloud kms decrypt \
+    --location europe-west2 \
+    --keyring vault \
+    --key vault-init \
+    --ciphertext-file - \
+    --plaintext-file -)"
+vault status
+
+## Credenciales JEnkins #
+- https://support.cloudbees.com/hc/en-us/articles/203802500-Injecting-Secrets-into-Jenkins-Build-Jobs
+
+
+## interact with curl ##
+
+	# create secrets #
+	- vault kv put kv/myapp/config username="appuser" password="suP3rsec(et!"
+	- vault kv put secret/mysql/webapp @mysqldb.txt
+
+	# Create AppRole ##
+	- 
+
+	# Check state #
+	- curl --insecure https://34.89.100.73/v1/sys/init
+
+	# Obtain secret from AppRole#
+	- Create payload.json
+		{
+			"role_id":"**************",
+			"secret_id":"****************"
+		}
+	- curl --insecure --request POST --data @payload.json https://<VAULT_IP>/v1/auth/approle/nano | jq
+	- curl --insecure --request GET --header "X-Vault-Token: <NEW_TOKEN>" https://<VAULT_IP>/v1/kv/mongo/creds | jq
+
+
+## CLI ##
+- vault status
+- vault policy list
+- vault policy read <POLICY_NAME>
+- vault policy write [policy-name] [file]
+- vault write auth/approle/role/[new-role-name] policies="[policy-name]"
+- vault read auth/approle/role/[new-role-name]/role-id
+- vault write -f auth/approle/role/[new-role-name]/secret-id

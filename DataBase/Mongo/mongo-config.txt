@@ -10,7 +10,7 @@ db.createUser(
 )
 
 ## Create user for database ##
-db.createUser({user: "vulnuser", pwd: "agherqg", roles: [{ role: "readWrite", db: "vulndb" }] });
+db.createUser({user: "newvulnuserr", pwd: "asdgqarhesabvrt", roles: [{ role: "readWrite", db: "vulndb" }] });
 
 db.createUser({
     user: '********',
