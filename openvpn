@@ -2,6 +2,9 @@
 ## Config OpenVPN server on GCP ##
 https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engine-9ff760d775d9
 
+## Status ##
+- sudo systemctl status openvpn@server
+
 ## View active clients ##
 - sudo cat /etc/openvpn/openvpn-status.log
 
@@ -11,7 +14,7 @@ https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engin
 - ./build-key [client-name]
 	# Create client config file#
 	- cd ~/clients
-	- ./gen_config.sh client
+	- ./gen_config.sh [client-name]
 
 ## Installing troublesuting ##
 	- sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE

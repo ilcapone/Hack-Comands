@@ -1,6 +1,8 @@
 
 	-------- * NMAP * -------
- 
+ 	## CheaSeat ##
+ 	https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/
+
 	### Tipos de escaneos  ###
 	nmap -sT [TCP connect]   # Ruidoso
         nmap -sS [Sync scan]	 # Silencioso
@@ -37,6 +39,9 @@
 	nmap -sS --script safe 	  [Mas silencioso, mucha información]
         nmap -sS --script vuln    [Vulneravilidades conocidas con CVES]
 
+    ## Read Ip Targets from file ##
+    nmap -iL list-of-ips.txt
+
 	### Save in file ###
 	nmap -oA [Archivo / Directorio, guarda tres archivos .genmap, .nmap, .xml]
 
@@ -49,3 +54,6 @@
 
 	### Check Auth ###
 	nmap -p 1-65535 -v -Pn --script auth 
+
+	## Proxy ##
+	- nmap -proxy socks4://127.0.0.1:8189
