@@ -2,3 +2,8 @@
  ## Dinamic port forwarding ##
  - ssh -D [localport] [user]@[remote_IP]
  - nmap -sS [IPs to scan] -vv --proxy socks4://127.0.0.1:[localport]
+
+ ## Dinamic port forwarding ##
+ - ssh -D 127.0.0.1:9050 [user]@[remote_IP]
+ - proxychain nmap -sS [IPs to scan] -vv
+ - proxychain firefox
