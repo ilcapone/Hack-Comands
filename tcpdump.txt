@@ -1,4 +1,9 @@
+https://hackertarget.com/tcpdump-examples/
+
 tcpdump -c 3 -w has.pcap
 tcpdump -c 3 -w has.pcap -vv
 tcpdump -c 10 -w has.pcap -vv
 tcpdump -i at0 -w has.pcap -vv
+
+## Monitor Nmap scans ##
+tcpdump -nn
