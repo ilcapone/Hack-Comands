@@ -1,3 +1,5 @@
+## Execute from URL ofuscate ##
+- https://gist.github.com/HarmJ0y/bb48307ffa663256e239
 
 ## Search like grep ##
 - cat text | Select-String -Pattern [text]

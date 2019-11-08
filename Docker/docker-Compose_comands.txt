@@ -23,7 +23,7 @@ Ctrl + z or Ctrl + c
 
 ## Removing services and run containers ##
 docker-compose downd
-
+cd 
 ## Start exited containers ##
 docker-compose start
 
