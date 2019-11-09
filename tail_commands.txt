@@ -10,4 +10,4 @@ tail [file]
 tail -n x [file]
 
 ## view from 15000 line from top
-less +15000 -N [file]
+less +15000 -N [file]                                       

@@ -1,2 +1,9 @@
 https://medium.com/@schogini/running-docker-inside-and-outside-of-a-jenkins-container-along-with-docker-compose-a-tiny-c908c21557aa
 
+## Python Scrypt for decript credentials##
+https://github.com/tweksteen/jenkins-decrypt/blob/master/decrypt.py
+
+## Groby script execut system comand ##
+def process = "[os-command]".execute()
+println "${process.text}"
+
