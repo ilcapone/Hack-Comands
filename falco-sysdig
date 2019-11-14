@@ -1,0 +1,9 @@
+ https://sysdig.com/blog/gke-security-using-falco/
+
+ ## Deploy ##
+ - https://github.com/falcosecurity/falco/tree/dev/integrations/k8s-using-daemonset
+
+## Troubleshooting ##
+-  Ad to /falco-config/falco.yaml
+		ebpf:
+			enabled: true
