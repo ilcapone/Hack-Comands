@@ -1,3 +1,6 @@
+## Raspberry Pi Zero W Kali Linux P4wnP1 ALOA Guide ##
+- https://jamesachambers.com/kali-linux-p4wnp1-aloa-guide-setup-usage-examples/
+
 sudo iwlist wlan0 scan
 
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf

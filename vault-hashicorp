@@ -9,6 +9,9 @@ https://learn.hashicorp.com/vault/identity-access-management/iam-authentication
 ## Identities ##
 https://learn.hashicorp.com/vault/identity-access-management/iam-identity
 
+## Ejemplos de uso ##
+- https://alexandredubreuil.com/articles/2019-03-01-hashicorp-vault-and-continuous-delivery/
+
 ## Conect to Vault on GKE ##
 export LB_IP="$(gcloud compute addresses describe vault --region europe-west2 --format 'value(address)')"
 export VAULT_ADDR="https://${LB_IP}:443"
