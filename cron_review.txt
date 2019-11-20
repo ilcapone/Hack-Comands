@@ -1,6 +1,9 @@
 ## Info ##
 - https://geekytheory.com/programar-tareas-en-linux-usando-crontab
 
+## Cron generator ##
+- https://crontab.guru/
+
 ## Edit cron ##
 - crontab -e
 
