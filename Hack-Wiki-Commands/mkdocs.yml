@@ -1,0 +1,13 @@
+site_name: Hack-Wiki-Commands
+nav:
+    - Home: index.md
+    - About: about.md
+    - Persistence:
+        - 'Schtasks': 'Persistence/schtask.md'
+    - Wifi:
+        - 'Wlan Extract Pass': 'Wifi/Wlan_Extract_Info/wlanExtractIndo.md'
+        - 'Config Wifi Linux': 'Wifi/WlanConfig/configWifi.md'
+        - 'Weak Routes': 'Wifi/Airckark/wifi_hack_tecnics.md'
+    - Aircrack-ng:
+        - 'Karma': 'Wifi/Airckark/karmaHAKK.md'
+theme: readthedocs
