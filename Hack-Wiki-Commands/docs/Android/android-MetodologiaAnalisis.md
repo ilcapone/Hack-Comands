@@ -1,12 +1,7 @@
 
-	Awosemote TOOLs =  https://github.com/ashishb/android-security-awesome
+# Android Metodologi Analisys of APKs
 
-		############################################
-		##										  ##
-		##	Metodologia de Analisis Android APKs  ##
-		##                                        ##
-		############################################
-		
+Awosemote TOOLs =  https://github.com/ashishb/android-security-awesome		
 		
 		- Metodologia de analisis:
 			* Recoleccion de informacion

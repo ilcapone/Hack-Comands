@@ -10,4 +10,6 @@ nav:
         - 'Weak Routes': 'Wifi/Airckark/wifi_hack_tecnics.md'
     - Aircrack-ng:
         - 'Karma': 'Wifi/Airckark/karmaHAKK.md'
+        - 'Aircrak Commands': 'Wifi/Airckark/aircrack_comands.md'
+        - 'Evil Twing': 'Wifi/Airckark/Evil_tiwn.md'
 theme: readthedocs
