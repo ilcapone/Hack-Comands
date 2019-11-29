@@ -1,26 +1,47 @@
 
 # Android Metodologi Analisys of APKs
 
-Awosemote TOOLs =  https://github.com/ashishb/android-security-awesome		
+You can find tools for Android APK analisis here [Awosemote TOOLs](https://github.com/ashishb/android-security-awesome)
 		
-		- Metodologia de analisis:
-			* Recoleccion de informacion
-				> Componentes
-					-> Activities: Encargadas de dar soporte a la parte visual.
-					-> Services: Ejecucion e tareas en segundo plano, APIs
-					-> Receivers: Escucha items emitidos por el sistema y componenetes de otras aplicacioes
-					-> Providers: Suministran la informacion gestionada por la aplicacion de forma estructurada
-				> Permisos
-				> Requisitos HW/SW
-					-> Revisar en el AndroidManifest las etiquetas
-					-> use-sdk
-					-> use-configuration
-					-> use-features
-				> Certificados
-				> Codigo nativo
-				> HTML/Javascripts
-				> Metadatos
-				> Timeline
-			* Analisis
-				> Estatico
-				> Dinamico
+### Analisis Metodology:
+
+#### Information gathering
+
+#####    Componentes
+
+Activities: Responsible for supporting the visual part
+
+Services: Execution and background tasks, APIs
+
+Receivers: Listen to items issued by the system and components of other applications
+
+Providers: They supply the information managed by the application in a structured way
+
+#####    Permisos
+
+#####    Requisitos HW/SW
+
+Check the AndroidManifest tags
+
+use-sdk
+
+use-configuration
+
+use-features
+
+#####    Certificados
+
+#####    Codigo nativo
+
+#####    HTML/Javascripts
+
+#####    Metadatos
+
+##### Timeline
+
+
+### Analisis
+
+####    Estatico
+
+####    Dinamico
