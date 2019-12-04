@@ -1,0 +1,3 @@
+
+histori -c
+rm -r .bash_history

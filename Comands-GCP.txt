@@ -49,6 +49,9 @@
 ## List SA ##
 - gcloud iam service-accounts list --project [project-id]
 
+## Delete SA ##
+- gcloud iam service-accounts delete [SA]
+
 ## Create JSON key for SA ##
 - gcloud iam service-accounts keys create [path] --iam-account [sa]
 
