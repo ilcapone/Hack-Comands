@@ -1,2 +1,0 @@
-netsh.exe wlan show profiles
-netsh.exe wlan show profiles name=AP_WIFI_BCN key=clear
