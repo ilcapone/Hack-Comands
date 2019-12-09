@@ -6,7 +6,7 @@ Activar Samsusng Galaxi depuracion: *#0808#
 Comandos:
 adb start-server
 adb kill-server
-adb devides 							# lista de dispositivos conectado
+adb devices 							# lista de dispositivos conectado
 adb install path_to_apk 				# installar aplicacion
 adb pull remote local 					# copiar archivos
 adb push local remote 					# copiar archivos de local a remoto
