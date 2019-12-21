@@ -1,11 +1,17 @@
 ## Info ##
 - https://geekytheory.com/programar-tareas-en-linux-usando-crontab
 
+## Cron generator ##
+- https://crontab.guru/
+
 ## Edit cron ##
 - crontab -e
 
 ## List cron ##
 - crontab -l
+
+## Config cron for start script in ever reboot ##
+@reboot /path/script
 
 
 ## Basic Tutorial ##

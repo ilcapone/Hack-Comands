@@ -38,6 +38,11 @@
 ## Split string by simbol ##
 - comanf bash | tr -s '-s '
 
+## Create Alias ##
+alias example="command"
+
+## Add user to sudo users ##
+sudo usermod -a -G sudo
 
 ## Create daemon ##
 - https://askubuntu.com/questions/919054/how-do-i-run-a-single-command-at-startup-using-systemd

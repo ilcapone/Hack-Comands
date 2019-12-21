@@ -1,0 +1,6 @@
+# Basic Hardering #
+https://docs.bluehosting.cl/tutoriales/servidores/conceptos-basicos-de-seguridad-en-linux.html
+
+## Services ##
+service --status-all
+systemctl list-unit-files

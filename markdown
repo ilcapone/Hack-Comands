@@ -4,6 +4,7 @@ https://www.mkdocs.org/
 https://www.mkdocs.org/user-guide/writing-your-docs/
 
 ## Sintax ##
+https://www.markdownguide.org/basic-syntax/
 https://www.markdownguide.org/extended-syntax/
 
 ## Run mrkdocs on windows subsistem ##
