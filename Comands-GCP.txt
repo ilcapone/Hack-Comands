@@ -18,6 +18,8 @@
 - gcloud compute --project "[Project-ID]" ssh --zone "[ZONE]" "[Instance-name]" --command "[Comand-to-execute]"
 - gcloud compute scp --recurse [INSTANCE_NAME]:[REMOTE_DIR] [LOCAL_DIR] --zone [ZONE]
 - gcloud compute ssh openvpn --zone us-central1-b --command "ps aux"
+---Delete the SSH pair keys (and remove the associated passphrase)
+- rm ~/.ssh/google_compute_engine*
 
 ## SQL ##
 - gcloud sql connect [INSTANCE_ID] --user=root

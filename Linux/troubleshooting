@@ -7,9 +7,13 @@ E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is an
 - ps aux | grep -i apt
 - sudo kill -9 [proces-id]
 
-
 ## DNS resolv ##
 /etc/resolv.conf
 
 ## Source list ##
 /etc/apt/sources.list
+
+## Inspect running process#
+- strace -p6
+- less /proc/[PID]/fd/[0 or 1 (stddout) or 2(stderr)]
+
