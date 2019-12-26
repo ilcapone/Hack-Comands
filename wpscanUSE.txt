@@ -1,1 +1,10 @@
-ruby wpscan.rb --url www.example.com --enumerate vp
+ruby wpscan.rb --url www.example.com --enumerate vp or vt
+
+## Vulneravility pluguins ##
+--enumerate vp
+
+## Vulneravility Themes ##
+--enumerate vt
+
+## Check users ##
+--enumerate u
