@@ -1,6 +1,12 @@
 # Basic Hardering #
 https://docs.bluehosting.cl/tutoriales/servidores/conceptos-basicos-de-seguridad-en-linux.html
 
-## Services ##
+## List Services ##
 service --status-all
 systemctl list-unit-files
+/etc/init.d/
+
+
+## Disable services ##
+https://linoxide.com/linux-how-to/enable-disable-services-ubuntu-systemd-upstart/
+systemctl disable [service]

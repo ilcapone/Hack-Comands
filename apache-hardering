@@ -1,0 +1,28 @@
+
+## Full Documentation ##
+https://geekflare.com/apache-web-server-hardening-security/
+
+## Know Version ##
+apache2 -v
+
+## Linux directory ##
+/etc/apache2
+
+## Prod Headers ##
+nano apache2.conf  		# Add the headers on the file and restart service
+	ServerTokens Prod
+	ServerSignature Off
+
+## Disable directory browser listing##
+nano apache2.conf  		# Eddit and Chenge for none all Directory
+	<Directory /user/www/example>
+		Options None
+	</Directory>
+
+## Disable etag ##
+nano apache2.conf  		# Add : 	
+	FileETag None
+
+## Disable Trace HTTP Request ##
+nano apache2.conf  		# Add :
+	TraceEnable off
