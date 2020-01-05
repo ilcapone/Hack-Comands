@@ -1,0 +1,17 @@
+
+# Mircrok8s
+
+## Documentation
+
+```https://microk8s.io/docs/```
+
+## Services binding to the localhost interface
+
+Port 	Service 	Description
+10248 	kubelet 	Localhost healthz endpoint.
+10249 	kube-proxy 	Port for the metrics server to serve on.
+10251 	kube-schedule 	Port on which to serve HTTP insecurely.
+10252 	kube-controller 	Port on which to serve HTTP insecurely.
+10256 	kube-proxy 	Port to bind the health check server.
+2380 	etcd 	Used for peer connections.
+1338 	containerd 	Metrics port
