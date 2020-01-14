@@ -47,3 +47,6 @@ sudo usermod -a -G sudo
 ## Create daemon ##
 - https://askubuntu.com/questions/919054/how-do-i-run-a-single-command-at-startup-using-systemd
 -  https://unix.stackexchange.com/questions/426862/proper-way-to-run-shell-script-as-a-daemon
+
+## Create MD5 
+echo -n example | md5sum
