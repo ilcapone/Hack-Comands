@@ -1,6 +1,15 @@
 
 ## Commands VirtualBox
 
-Run virtualbox
+### Run virtualbox Interface
 
 ```virtualbox```
+
+### List Virtual machines
+
+```VBoxManage list vms```
+
+### List Virtual machines currentli running
+
+```VBoxManage list runningvms```
+```VBoxManage list -l runningvms```
