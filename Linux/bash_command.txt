@@ -9,7 +9,6 @@
 - cat /etc/redhat-release
 - lsb_release -a
 - cat /etc/lsb-release 
-- 
 
 ## Basic Loope in console command ##
 - while true; do echo gas; sleep 2; done
@@ -47,3 +46,11 @@ sudo usermod -a -G sudo
 ## Create daemon ##
 - https://askubuntu.com/questions/919054/how-do-i-run-a-single-command-at-startup-using-systemd
 -  https://unix.stackexchange.com/questions/426862/proper-way-to-run-shell-script-as-a-daemon
+
+## Read File line by line 
+#!/bin/bash
+input="/path/to/txt/file"
+while IFS= read -r line
+do
+  echo "$line"
+done < "$input"

@@ -1,0 +1,27 @@
+
+
+## Oficial Documentation Helm CLI
+´´´https://helm.sh/docs/intro/´´´
+
+## Oficial Documentation Chart Museum
+´´´https://chartmuseum.com/docs/´´´
+
+## Config Chartmuseum
+´´´https://github.com/helm/charts/tree/master/stable/chartmuseum#using-with-google-cloud-storage´´´
+
+## Commands
+
+### Install chart
+´´´helm install [name] ./[folder-name]´´´
+
+### Uninstall a chart
+´´´helm uninstall [name]
+
+### Information from a chart installed
+´´´helm get manifet´´´
+
+### Test Template render befor install
+´´´helm install --debug --dry-run [name] ./[folder-name]´´´
+
+### List currentli deploy with helm
+´´´helm list´´´

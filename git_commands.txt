@@ -1,4 +1,4 @@
-git## Confi ssh ky for gitlab ##
+## Confi ssh ky for gitlab ##
 https://docs.gitlab.com/ee/ssh/
 
 ## Check repository state ##
