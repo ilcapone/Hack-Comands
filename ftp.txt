@@ -2,3 +2,7 @@
 	- ftp [host]
 	- default:
 			* anonymous:anonymous
+
+	## Comands
+	USER [user]
+	PASS [password]

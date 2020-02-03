@@ -1,0 +1,22 @@
+
+## Commands VirtualBox
+
+### Documentation
+```https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html```
+
+### Run virtualbox Interface
+
+```virtualbox```
+
+### List Virtual machines
+
+```VBoxManage list vms```
+
+### List Virtual machines currentli running
+
+```VBoxManage list runningvms```
+```VBoxManage list -l runningvms```
+
+# Poweroff VM
+````VBoxManage controlvm [VM-Name] acpipowerbutton```
+```VBoxManage controlvm [VM-Name] poweroff```
