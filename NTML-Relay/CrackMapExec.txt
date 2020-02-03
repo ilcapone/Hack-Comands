@@ -1,6 +1,11 @@
 
 https://github.com/byt3bl33d3r/CrackMapExec/wiki
 https://byt3bl33d3r.github.io/
+https://ptestmethod.readthedocs.io/en/latest/cme.html
+
+# Install
+pip install crackmapkexec
+/home/[user]/.local/bin/cme
 
 # Obtencion de dispositivos con veriones vulnerables de smb
 cme smb <IPs> --gen-relay-list targets.txt

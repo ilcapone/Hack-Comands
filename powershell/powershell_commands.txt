@@ -6,3 +6,6 @@
 
 ## Add firewall rule ##
 - New-NetFirewallRule -DisplayName "Android" -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
+
+## PSexec
+.\PsExec.exe \\[IP] -u User -p password -s cmd
