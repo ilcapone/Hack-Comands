@@ -47,7 +47,6 @@ sudo usermod -a -G sudo
 - https://askubuntu.com/questions/919054/how-do-i-run-a-single-command-at-startup-using-systemd
 -  https://unix.stackexchange.com/questions/426862/proper-way-to-run-shell-script-as-a-daemon
 
-<<<<<<< HEAD
 ## Read File line by line 
 #!/bin/bash
 input="/path/to/txt/file"
@@ -55,7 +54,10 @@ while IFS= read -r line
 do
   echo "$line"
 done < "$input"
-=======
+
 ## Create MD5 
 echo -n example | md5sum
->>>>>>> 617df8d6ee1c3f33a288de3beb87d0c4adf3de76
+
+## Work with JSON output
+[command] | jq '.key.subkey[]-subsubkey'
+[command] | jq -r '.key'
