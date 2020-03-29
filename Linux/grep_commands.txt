@@ -1,7 +1,15 @@
-
-## search passwords in directory recursibely ##
+	## search passwords in directory recursibely ##
 - grep -r 'password' *			# busqueda recursiva en todos los directorios por devajo
 - grep -i ' ' 					# busqueda indistintamente de mayusculas y minusculas
 
 ## search for Urls in file ##
 - grep -oE 'https?:\/\/([a-zA-Z0-9\._-]+\/?)([a-zA-Z0-9\._\?=&%-]+/?)*' [file]
+
+## Grep emails
+"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"
+
+## grep creditCard
+"^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})$"
+http://www.regular-expressions.info/creditcard.html
+
+

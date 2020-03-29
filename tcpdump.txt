@@ -5,5 +5,39 @@ tcpdump -c 3 -w has.pcap -vv
 tcpdump -c 10 -w has.pcap -vv
 tcpdump -i at0 -w has.pcap -vv
 
+
 ## Monitor Nmap scans ##
 tcpdump -nn
+
+## View available interfaces
+tcpdump -D
+
+## Capture in ascii mode and unlimited package lenght
+tcpdump -A -s0
+
+## Write into a file
+tcpdump -w file.pcap
+
+## Select the interfaz to sniff
+tcpdump -i eth0
+
+## Rubish search
+tcpdump ... | grep "somcining" > file
+
+## Rotate Files
+tcpdump -i en0 -w /var/tmp/trace -W 48 -G 1800 -C 100
+
+This will rotate files (of names trace1, trace2, ...) cyclically, with period 48, either every 1800 seconds (=30 minutes) or every 100 MB, whichever comes first.
+
+## Capture http and hppts
+
+Sometimes the traffic is buffered or delayed by DNS server responses. To avoid it, add -l and -n parameters.
+
+-l Make stdout line buffered. Useful if you want to see the data while capturing it.
+
+-n Don't convert addresses (i.e., host addresses, port numbers, etc.) to names.
+
+Then you can use syntax like:
+
+sudo tcpdump -i en1 -nl port http or port https
+For more complex queries, make sure you use brackets to group the expressions.

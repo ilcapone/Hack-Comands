@@ -4,6 +4,10 @@
 ## Update/Install Google SDK ##
 - Ubuntu: - https://cloud.google.com/sdk/docs/quickstart-debian-ubuntu
 
+## Key Rotator ##
+https://cloud.google.com/blog/products/gcp/help-keep-your-google-cloud-service-account-keys-safe
+https://github.com/GoogleCloudPlatform/keyrotator
+
 ## Instances ##
 - gcloud compute instances list
 

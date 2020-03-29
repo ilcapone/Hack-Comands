@@ -37,5 +37,8 @@
 		## Criptomaining atacks ##
 		- https://blog.aquasec.com/crypto-mining-malware-container-security
 		- https://blog.trendmicro.com/trendlabs-security-intelligence/infected-cryptocurrency-mining-containers-target-docker-hosts-with-exposed-apis-use-shodan-to-find-additional-victims/
+
+		## Kube Thanos
+		https://github.com/berkay-dincer/kubethanos/blob/master/README.md
  
 

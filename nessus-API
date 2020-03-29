@@ -1,0 +1,3 @@
+
+### View Scans List
+```curl --insecure -H "X-ApiKeys: accessKey={accessKey}; secretKey={secretKey}" https://localhost:8834/scans```

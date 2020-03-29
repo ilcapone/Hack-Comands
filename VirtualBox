@@ -5,18 +5,38 @@
 ```https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html```
 
 ### Run virtualbox Interface
-
 ```virtualbox```
 
 ### List Virtual machines
-
 ```VBoxManage list vms```
 
 ### List Virtual machines currentli running
-
 ```VBoxManage list runningvms```
 ```VBoxManage list -l runningvms```
 
-# Poweroff VM
-````VBoxManage controlvm [VM-Name] acpipowerbutton```
+### Start VM
+```VBoxManage startvm [VM-Name]```
+
+### Start VM without gui
+````VBoxManage startvm [VM-Name] --type headless```
+
+### Poweroff VM
+```VBoxManage controlvm [VM-Name] acpipowerbutton```
 ```VBoxManage controlvm [VM-Name] poweroff```
+
+## Save State
+```VBoxManage controlvm [VM-Name] savestate```
+
+### Active Remote conexion
+```VBoxManage modifyvm [VM-Name] --vrde on```
+
+### Check if active remote conexion
+```VBoxManage showvminfo [VM-Name] | grep VRDE```
+
+### SSH from Host to VM
+* Enable port forgarding from 127.0.0.1:22xx to VM_IP:22
+	```ssh -p 2222 root@127.0.0.1```
+* Enable ssh service on boot
+	```systemctl enable ssh.service```
+* Enable RootPaswordAcces on /etc/ssh/sshd_config
+	```PermitRootLogin yes```

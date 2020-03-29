@@ -1,1 +1,4 @@
 https://miloserdov.org/?p=2329
+
+http.host=="exact.name.here"
+http.host contains "partial.name.here"

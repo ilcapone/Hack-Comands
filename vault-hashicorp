@@ -1,5 +1,4 @@
 
-
 ## Create a Vault GKE Cluster ##
 https://codelabs.developers.google.com/codelabs/vault-on-gke/index.html?index=..%2F..cloud#0
 
@@ -57,6 +56,12 @@ vault status
 - vault policy list
 - vault policy read <POLICY_NAME>
 - vault policy write [policy-name] [file]
-- vault write auth/approle/role/[new-role-name] policies="[policy-name]"
+- vault write iam-authenticationh/approle/role/[new-role-name] policies="[policy-name]"
 - vault read auth/approle/role/[new-role-name]/role-id
 - vault write -f auth/approle/role/[new-role-name]/secret-id
+
+## API ##
+- curl --request POST --data '{"password": "foo"}' http://127.0.0.1:8200/v1/auth/ldap/login/mitchellh
+- curl --request POST --data '{"password": "foo"}' http://127.0.0.1:8200/v1/auth/userpass/login/mitchellh
+- curl --header "X-Vault-Token: ..." --request LIST http://127.0.0.1:8200/v1/auth/approle/role
+
