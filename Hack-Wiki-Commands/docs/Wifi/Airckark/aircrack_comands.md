@@ -1,5 +1,9 @@
 # Aircrack comand
 
+[Turotial 1](https://www.shellhacks.com/how-to-use-aircrack-ng-wifi-password-hacker-tutorial/)
+[Tutorial 2](https://www.aircrack-ng.org/doku.php?id=newbie_guide)
+[Airodump-ng Record Understandin Values](https://www.aircrack-ng.org/~~V:/doku.php?id=airodump-ng)
+
 See available wireless network interface to use
 
 ```airmon-ng```

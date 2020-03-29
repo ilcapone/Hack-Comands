@@ -1,0 +1,9 @@
+
+
+## Create a persistent alias
+nano ~/.bashrc
+alias l='ls -CF'
+source ~/.bashrc
+
+If de comand need run as sudo try to add
+sudo='sudo '
