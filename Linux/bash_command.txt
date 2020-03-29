@@ -61,3 +61,8 @@ echo -n example | md5sum
 ## Filter JSON
 comand | jq '.[key].[key]'
 comand | jq -r '.[key].[key]'
+
+## Work with JSON output
+[command] | jq '.key.subkey[]-subsubkey'
+[command] | jq -r '.key'
+
