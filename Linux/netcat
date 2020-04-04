@@ -1,0 +1,18 @@
+
+# View full conexions
+netstat -a
+
+# Only TCP
+netstat -at
+
+# Only UDP
+netstat -au
+
+# List Sockets 
+netstat -l
+
+# Sow PID of process how use the conexion
+netstat -p -at
+
+# Routing table
+netstat -r

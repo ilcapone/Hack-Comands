@@ -1,0 +1,47 @@
+
+Docu: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+Login Plugin: https://github.com/int128/kubelogin
+
+## Role
+- A Role always sets permissions within a particular namespace
+- Here’s an example Role in the “default” namespace that can be used to grant read access to pods:
+
+		apiVersion: rbac.authorization.k8s.io/v1
+		kind: Role
+		metadata:
+		  namespace: default
+		  name: pod-reader
+		rules:
+		- apiGroups: [""] # "" indicates the core API group
+		  resources: ["pods"]
+		  verbs: ["get", "watch", "list"]
+
+## ClusterRole
+- By contrast, is a non-namespaced resource
+- ClusterRoles have several uses. You can use a ClusterRole to:
+	* define permissions on namespaced resources and be granted within individual namespace(s)
+	* define permissions on namespaced resources and be granted across all namespaces
+	* define permissions on cluster-scoped resources
+- A ClusterRole can be used to grant the same permissions as a Role. Because ClusterRoles are cluster-scoped, you can also use them to grant access to:
+	* cluster-scoped resources (like nodes)
+	* non-resource endpoints (like /healthz)
+	* namespaced resources (like Pods), across all namespaces For example: you can use a ClusterRole to allow a particular user to run kubectl get pods --all-namespaces
+- Here is an example of a ClusterRole that can be used to grant read access to secrets in any particular namespace, or across all namespaces (depending on how it is bound):
+
+		apiVersion: rbac.authorization.k8s.io/v1
+		kind: ClusterRole
+		metadata:
+		  # "namespace" omitted since ClusterRoles are not namespaced
+		  name: secret-reader
+		rules:
+		- apiGroups: [""]
+		  #
+		  # at the HTTP level, the name of the resource for accessing Secret
+		  # objects is "secrets"
+		  resources: ["secrets"]
+		  verbs: ["get", "watch", "list"]
+
+
+## RoleBinding and ClusterRoleBinding
+A role binding grants the permissions defined in a role to a user or set of users. It holds a list of subjects (users, groups, or service accounts), and a reference to the role being granted. A RoleBinding grants permissions within a specific namespace whereas a ClusterRoleBinding grants that access cluster-wide.
