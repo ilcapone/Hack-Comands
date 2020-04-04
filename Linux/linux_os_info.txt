@@ -1,4 +1,4 @@
-
+	
 lsb_release -a
 
 ## Check permisions ##

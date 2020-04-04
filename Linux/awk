@@ -1,0 +1,4 @@
+
+## Nº of colums
+	awk "{print NF}"
+
