@@ -138,3 +138,6 @@ gsutil cp [LOCLA] gs://[bucket]]
 
 ## Get list of cluster fromm project ##
 - gcloud container clusters list --zone [zone] --project [project]
+
+## Tunneling
+- gcloud compute ssh --zone [zone] [instance] -- -N -p 22 -D localhost:5000

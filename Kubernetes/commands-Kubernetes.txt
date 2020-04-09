@@ -126,6 +126,8 @@ https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
 - kubectl rollout history deployment [deployment-name]
 - kubectl rollout undo deployments [deployment-name] --to-revision=[rollout history number]
 
-
 ## Resources #
 kubectl top pod -n [namespace]
+
+## Exec command in background
+kubectl exec -i $pod -n $namespace -- /bin/bash -c "[command] > /dev/null 2> /dev/null &"

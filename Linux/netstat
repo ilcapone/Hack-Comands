@@ -16,3 +16,6 @@ netstat -p -at
 
 # Routing table
 netstat -r
+
+# A lot of thing
+netstat -napl

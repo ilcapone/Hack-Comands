@@ -13,6 +13,7 @@
 		- https://jwt.io/
 
 		### Know Vulneravility - From POD to Cluster Admin ###
+		- https://blog.appsecco.com/kubernetes-namespace-breakout-using-insecure-host-path-volume-part-1-b382f2a6e216
 		- https://www.4armed.com/blog/kubeletmein-kubelet-hacking-tool/
 		- https://github.com/bgeesaman/kube-env-stealer
 			* https://www.4armed.com/blog/hacking-kubelet-on-gke/
@@ -52,5 +53,11 @@
 
 		# Mimetizarse
 		deployarse en kube-system
+
+		# Pivotig inside pod to service
+		- ssh-keygen 		# copi publik key and copi it into the machine (maive a internet jump machine)
+		- ssh -R [port]:[new-services-to-acces]:[Port] -i [ublic-Key] user@jumping-machine -vv
+			# If you ar using a jumping machine you must need other tunel with
+			- -L [Port]:localhost:[Port]
  
 
