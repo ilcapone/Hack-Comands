@@ -14,6 +14,9 @@
 - https://www.4armed.com/blog/hacking-kubelet-on-gke/
 - https://medium.com/@pczarkowski/the-kubernetes-api-call-is-coming-from-inside-the-cluster-f1a115bd2066
 
+## Undestanding External Services ##
+- https://www.ovh.com/blog/getting-external-traffic-into-kubernetes-clusterip-nodeport-loadbalancer-and-ingress/
+
 ## Puertos de getion del cluster ##
 - 443, 8080, 10250 y 10255.
 
