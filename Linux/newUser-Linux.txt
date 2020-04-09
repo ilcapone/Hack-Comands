@@ -5,3 +5,7 @@ adduser [username]
 # Add user to sudo group
 usermod -aG sudo [username]
 
+# Change user paswords
+sudo passwd		//root password
+passwd			//current user password
+
