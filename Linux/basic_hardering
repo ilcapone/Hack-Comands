@@ -6,7 +6,6 @@ service --status-all
 systemctl list-unit-files
 /etc/init.d/
 
-
 ## Disable services ##
 https://linoxide.com/linux-how-to/enable-disable-services-ubuntu-systemd-upstart/
 systemctl disable [service]

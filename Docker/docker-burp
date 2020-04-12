@@ -1,0 +1,18 @@
+
+# Burp In container
+https://www.marcolancini.it/2018/blog-docker-burp/
+https://github.com/marco-lancini/docker_burp
+
+# Some modifications
+- Donwnload Burp in Jar format and save it in the _data/sources as burp_free.jar name
+- Edite the burp.env as:
+	DISPLAY=:0
+	ENV_MEM_JVM=2048m 
+	ENV_BURP_PRO=0 
+- Error NullPonterException, burp can create de project
+	https://medium.com/@nielssj/docker-volumes-and-file-system-permissions-772c1aee23ca
+	> In resume, the user not have permisions to write so you need to exec out the container
+		chown :1000 _data/   ## and inside folders and files
+		chmod 775 _data/     ## and inside folders and files
+- Config Burp Proxy to lisen on all interface
+- Instal Burp cert

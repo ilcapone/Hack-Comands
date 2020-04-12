@@ -1,5 +1,5 @@
 # Evil Twin
-
+https://thecybersecurityman.com/2018/08/11/pentest-edition-creating-an-evil-twin-or-fake-access-point-using-aircrack-ng-and-dnsmasq-part-1-setup/
 ### Config Wireless Interface
 
 See available wireless network interfaces to use
@@ -20,13 +20,14 @@ Create new screen for facke AP
 Config facke AP
 
 ```airbase-ng -c 6 -e "FakeAPname" mon0 [wlan0mon, wlan0]```
+```	```
 
 Deatach from  screen
 
 ```Cntrl a d```
 
 Connfig the IP to the new interface
-
+```ifconfig at0 up```
 ```ifconfig at0 [IP-Address] netmask 255.255.255.0```
 
 Check config
@@ -58,6 +59,9 @@ Config forwarding
 ### If failed
 
 ```sudo rm /var/run/dhcpd.pid```
+```airmon-ng check kill```
+```netstat -tupln```
+```kill -9 [pid]```
 
 
 ### MITM Record 

@@ -1,4 +1,4 @@
 
 ## Nº of colums
-	awk "{print NF}"
+	awk '{print NF}'
 

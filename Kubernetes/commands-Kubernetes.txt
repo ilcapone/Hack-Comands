@@ -134,3 +134,6 @@ kubectl top pod -n [namespace]
 
 ## Exec command in background
 kubectl exec -i $pod -n $namespace -- /bin/bash -c "[command] > /dev/null 2> /dev/null &"
+
+## Recursos de kubernetes 
+kubectl api-resources

@@ -1,5 +1,7 @@
 	
+## Operative Sistem identify
 lsb_release -a
+cat /etc/os-release
 
 ## Check permisions ##
 find /path/to/file -user user1 -perm -u+rwx
@@ -7,3 +9,4 @@ groups
 
 ## Obtain Linux Kernel ##
 uname -r
+

@@ -66,3 +66,8 @@ comand | jq -r '.[key].[key]'
 [command] | jq '.key.subkey[]-subsubkey'
 [command] | jq -r '.key'
 
+## View all enviroment variables
+printenv | less 
+
+## Obtain MAC addres
+ ip link

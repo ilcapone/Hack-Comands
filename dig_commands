@@ -1,0 +1,3 @@
+
+## Ask to a dns in localhost
+dig pimylifeup.com @localhost
