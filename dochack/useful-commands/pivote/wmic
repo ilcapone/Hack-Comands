@@ -1,0 +1,3 @@
+
+Pivote with wmic
+wmic /node:"{HOST}" process call create {CODE}

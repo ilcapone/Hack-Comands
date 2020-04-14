@@ -1,0 +1,1 @@
+for i in $(cat {domains-file.txt} | awk -F '//' '{print $2}' | sed 's/\/$//g'); do echo $(ping -c 1 $i | head -n 1 | awk '{print $3}' | sed 's/(//g' | sed 's/)//g') ' ' $i >> domains-with-ips.txt   ; done

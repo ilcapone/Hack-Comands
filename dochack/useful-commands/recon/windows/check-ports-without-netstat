@@ -1,0 +1,3 @@
+Get-NetTCPConnection -LocalPort 443 | Format-Table -Property LocalAddress, LocalPort, State, OwningProcess
+
+

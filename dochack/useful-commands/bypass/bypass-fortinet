@@ -1,0 +1,13 @@
+Chicos una cosa que hemos encontrado en {ORG} por si os va bien a los demás.
+
+El FW fortinet, por default, pone todos los servicios mirando paquetes con el source port del 1-65535 menos el servicio all. Esto significa que los deny que hayan hecho los usuarios con estos servicios por default pueden ser bypaseables.
+Aqui hay dos cosas:
+1 - Si hay una rule de deny hecha por algun usuario pero justo debajo hay una de allow que te machearía si no estuviera la deny,se puede bypasear poniendo el source port como 0.
+2 - Si hay una rule de deny hecha por algun usuario y no te machea ninguna rule de allow, bypaeas el primer deny pero finalmente el fortinet te bloquea ya que su regla final es un deny all y el servicio all si que mira el source port de 0-65535.
+
+Para detectar esto se peude utilizar nmap con el parametro -g 0 (o una letra no se por que pero una letra lo tranforma en source port 0).
+Para explotar esto se puede utilizar python con scapy que puede tocar paquetes, yo tengo hecho un script para esto, lo subiré al git cuando pueda. (Se puede mejorar el script, esta hecho para una explotacion rapido para samba, pero le puedes poner cualquier puerto)
+
+Si no se entiende lo de los servicios una breve explicación es que fortinet hace las reglas de FW utilizando IPs, orden y servicios, los servicios son como si digamos los puertos pero configurables, por ejemplo un solo servicio puede tener mas de un puerto. Los servicios pueden configurarse con destination port y con source port, si no configuras el source port, te pone del 1-65535 y ahí esta el error.
+Luego para regla de FW se asocia IPs (source y destination), posición de la rule y servicio.
+
