@@ -1,0 +1,19 @@
+Changed initialrecon.py script to run correctly and changed crtsh_script.py to run with python3 and can execute with more than one domain at same execution on initial
+initial script does normal nmaps, dirsearchs, domain retrieve from certs, subdomain retrieve and executes crtsh_script.py that retrieve domains
+
+./initialrecon.py -d {DOMAINS SEPARATED BY ,} -n {NAME OF BUSINESS} -r {PATH TO FILE WITH IPS} -f -o {OUTPUT PATH} --debug
+
+To take more domains
+amass intel -whois -d {DOMAIN}
+Afther whois command, you will need to check the IPs of these domains found to see if they are in your scope
+
+amass intel -active -cidr {ip}/{cidr} -p 80,443,8080,8443 -ip -r 8.8.4.4,8.8.8.8,1.1.1.1
+Careful because it is not showing all the IPs. Diferent results on diferent executions.
+
+For more manual execution 
+amass intel -active -addr {ip} -p 80,443,8080,8443 -ip -r 8.8.4.4,8.8    .8.8,1.1.1.1
+
+
+Reverse IP lookup
+cat nmap-*.gnmap | grep Host | grep Up | awk '{print $2}' > ips-from-nmaps.txt
+for IP in $(cat ips-from-nmaps.txt); do curl https://api.hackertarget.com/reverseiplookup/?q=$IP >> domains-reverse-lookup.txt; done

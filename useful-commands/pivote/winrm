@@ -1,0 +1,1 @@
+evil-winrm -i {HOST} -u {USER} -s '{PATH TO ps1 SCRIPTS}' -e '{PATH TO exe}'
