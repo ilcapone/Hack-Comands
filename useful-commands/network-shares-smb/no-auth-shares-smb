@@ -1,0 +1,9 @@
+
+smbclient.py this program list network shares and can access, put and get files, read/write network file share. (TO-DO)
+smbclient.py {DOMAIN}/{USER}@{HOST} (TO-DO)
+
+smbclient this program list network shares and can access,put and get files, read/write network file share.
+List shares without login
+smbclient -L \\{HOST} -N
+Access shares without login
+smbclient \\\\{HOST}\\SHARE -N

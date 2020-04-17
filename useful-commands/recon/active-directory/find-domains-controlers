@@ -1,0 +1,1 @@
+dig SRV _ldap._tcp.{DOMAIN with (.org, .local)}

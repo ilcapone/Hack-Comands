@@ -1,0 +1,17 @@
+To install bloodhound on arch:
+sudo pacman -S bloodhound
+
+This will install NEO4J, but the environment variables are incorrectly setted, so you have 2 possibilities, change the $PATH to /usr/share/neo4j/bin/ or do the following things (i prefer the second one)
+
+vim /usr/bin/neo4j
+#Add at the top the following lines
+NEO4J_HOME=/usr/share/neo4j/bin/
+NEO4J_CONF=/etc/neo4j/
+
+vim /etc/neo4j/neo4j.conf
+#uncomment or add the following line
+dbms.allow_format_migration=true
+
+After that just execute the following commands to start bloodhound:
+sudo neo4j console &
+sudo bloodhound &

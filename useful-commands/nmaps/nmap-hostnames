@@ -1,0 +1,5 @@
+nmap {IP}/{cidr} -sL --dns-server {dns-server}
+
+
+list of hosts on a file
+nmap -iL ips-aux.txt -sL --dns-server {DNS-SERVER} | awk -F ' ' '{print $5}'

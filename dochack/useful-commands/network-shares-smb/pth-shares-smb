@@ -1,0 +1,10 @@
+
+smbclient.py this program list network shares and can access, put and get files, read/write network file share. (impacked)
+smbclient.py {DOMAIN}/{USER}@{HOST} -hashes '0:{NTLMHASH}'
+
+smbclient this program list network shares and can access,put and get files, read/write network file share. (TO-DO with hashes if it is possible)
+List shares with login
+smbclient -L \\{HOST} -U {DOMAIN}\\{USERNAME} -P {PASSWORD}
+Access shares without login
+smbclient \\\\{HOST}\\SHARE -U {DOMAIN}\\{USERANME} -P {PASSWORD}
+

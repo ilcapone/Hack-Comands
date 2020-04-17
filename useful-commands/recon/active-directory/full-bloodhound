@@ -1,0 +1,1 @@
+Invoke-Bloodhound -CollectionMethod All -SearchForest -Domain {DOMAIN}

