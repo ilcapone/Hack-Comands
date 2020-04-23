@@ -2,8 +2,18 @@
 
  ## Deploy ##
  - https://github.com/falcosecurity/falco/tree/dev/integrations/k8s-using-daemonset
+ - https://sysdig.com/blog/gke-security-using-falco/
 
 ## Troubleshooting ##
 -  Ad to /falco-config/falco.yaml
 		ebpf:
 			enabled: true
+
+## Create Rules and Understanding
+- https://falco.org/docs/rules/
+- https://sysdig.com/blog/getting-started-writing-falco-rules/
+- https://sysdig.com/blog/detecting-and-preventing-cgroups-escape-via-sctp-cve-2019-3874/
+- https://sysdig.com/blog/falco-0-13-released-kubernetes-audit-support/
+
+## Convert PSPs to rules
+- https://falco.org/docs/psp-support/
