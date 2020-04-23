@@ -137,3 +137,13 @@ kubectl exec -i $pod -n $namespace -- /bin/bash -c "[command] > /dev/null 2> /de
 
 ## Recursos de kubernetes 
 kubectl api-resources
+
+## Deployment status
+kubectl rollout status deployment [deploymentname]
+
+## Deployment history
+kubectl rollout history deployment [name]
+kubectl rollout history deployment [name] --revision=[number]
+
+## RollBack
+kubectl rollout undo deployment [name] --to-revison=[number]
