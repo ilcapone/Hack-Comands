@@ -1,3 +1,8 @@
+## Deploy Mongo on Kubernetes
+https://medium.com/@dilipkumar/standalone-mongodb-on-kubernetes-cluster-19e7b5896b27
+https://codelabs.developers.google.com/codelabs/cloud-mongodb-statefulset/index.html?index=..%2F..index#5
+
+
 ## Create Addmin ##
 db.createUser({user: "adminNit", pwd: "aerhg990876SFHBwa4r5g", roles: [{ role: "userAdminAnyDatabase", db: "admin" }],});
 

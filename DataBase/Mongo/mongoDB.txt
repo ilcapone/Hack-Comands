@@ -78,3 +78,8 @@ db.getCollectionNames()
 ######## Change mongo database RAM use #######
 db.adminCommand({getParameter: '*'})  # view all configuration
 db.adminCommand({'setParameter':1, 'internalQueryExecMaxBlockingSortBytes':134217728}) 	# Aumentar el tamaño de la RAM
+
+##### auth with som user ####
+db.auth( <username>, passwordPrompt() )
+// Or
+db.auth( <username>, <password> )
