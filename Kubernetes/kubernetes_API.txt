@@ -1,4 +1,7 @@
 
+## API - Reference ##
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/
+
 ## Config exporst for commodity ##
 export TOKEN=[tocken]
 export API_SERVER=[url]
@@ -14,3 +17,9 @@ curl --insecure https://[IP-master-external]:10250/pods | jq
  
 ## Obtain nodes ##
 - curl -k -X GET -H "Authorization: Bearer $TOKEN" $API_SERVER/api/v1/nodes
+
+## Kubelet Referene##
+/stats/*
+/metrics/*
+/logs/*
+/spec/*

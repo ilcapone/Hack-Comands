@@ -26,6 +26,10 @@
 		- Use results:
 			* ./kubectl --client-certificate bootstrap/kubelet-bootstrap.crt --client-key bootstrap kubelet-bootstrap.key  --certificate-authority bootstrap/ca.crt --server https://35.198.87.27 get certificatesigningrequests
 
+		## Exploit Healcheck API ##
+		- https://securityboulevard.com/2019/01/kubernetes-unauth-kublet-api-10250-basic-code-exec/
+		- https://gist.github.com/lizrice/c32740fac51db2a5518f06c3dae4944f
+
 		## DNS Spooofing to Kubernetes cluster ##
 		- https://blog.aquasec.com/dns-spoofing-kubernetes-clusters
 		- https://github.com/danielsagi/kube-dnsspoof/

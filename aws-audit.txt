@@ -1,0 +1,6 @@
+
+## Audit Tool
+https://github.com/toniblyx/prowler
+
+## ACLI version
+aws --version
