@@ -13,3 +13,7 @@
 http://www.regular-expressions.info/creditcard.html
 
 
+## grep with or operator
+grep 'pattern1\|pattern2' filename
+
+
