@@ -17,3 +17,16 @@
 
 ## Convert PSPs to rules
 - https://falco.org/docs/psp-support/
+
+## One Rules
+https://github.com/falcosecurity/falco/blob/master/rules/k8s_audit_rules.yaml
+- macro: namespace
+  condition: ka.target.resource=namespaces
+
+ - rule: Pod Created in Kube Namespace
+  desc: Detect any attempt to create a pod in the kube-system or kube-public namespaces
+  condition: kevt and pod and kcreate and ka.target.namespace in (kube-system, kube-public)
+  output: Pod created in kube namespace (user=%ka.user.name pod=%ka.resp.name ns=%ka.target.namespace images=%ka.req.pod.containers.image)
+  priority: WARNING
+  source: k8s_audit
+  tags: [k8s]

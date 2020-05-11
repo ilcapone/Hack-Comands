@@ -1,7 +1,0 @@
-
-## Audit Tool
-https://github.com/toniblyx/prowler
-- Is posible run it in docker
-
-## ACLI version
-aws --version

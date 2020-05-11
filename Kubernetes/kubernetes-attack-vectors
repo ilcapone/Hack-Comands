@@ -63,5 +63,8 @@
 		- ssh -R [port]:[new-services-to-acces]:[Port] -i [ublic-Key] user@jumping-machine -vv
 			# If you ar using a jumping machine you must need other tunel with
 			- -L [Port]:localhost:[Port]
+
+		## Load image in to de cluster from file
+		https://stackoverflow.com/questions/58916308/kubernetes-deploy-with-tar-docker-image
  
 

@@ -1,4 +1,7 @@
 
+## Dirshearch
+
+## How to use
 git clone https://github.com/maurosoria/dirsearch.git
 cd dirsearch
 python3 dirsearch.py -u <URL> -e <EXTENSION> [-e php,html,png,js,jpg]

@@ -1,0 +1,33 @@
+
+## Audit Tool
+https://github.com/toniblyx/prowler
+- Is posible run it in docker
+https://github.com/cloudsploit/scans
+
+## AWSome tooles
+https://github.com/donnemartin/awesome-aws
+
+## Create Diagrams
+https://app.cloudcraft.co/blueprint/
+
+## Trainings
+https://aws.amazon.com/es/training/
+https://www.aws.training/Dashboard/?cta=tctopbanner
+
+## Monitoring
+https://d1.awsstatic.com/whitepapers/aws_security_incident_response.pdf
+https://aws.amazon.com/es/solutions/implementations/centralized-logging/
+https://aws.amazon.com/es/blogs/database/monitor-amazon-rds-for-mysql-and-mariadb-logs-with-amazon-cloudwatch/
+
+## Info
+- https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
+- https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html
+- https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html
+- https://aws.amazon.com/es/ecr/
+- https://docs.aws.amazon.com/AmazonECR/latest/userguide/common-errors-docker.html
+
+## ACLI version
+aws --version
+
+## AWS local credentials
+~/.aws/credentials

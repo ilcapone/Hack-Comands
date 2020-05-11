@@ -8,6 +8,9 @@
 https://cloud.google.com/blog/products/gcp/help-keep-your-google-cloud-service-account-keys-safe
 https://github.com/GoogleCloudPlatform/keyrotator
 
+## Audit tool ##
+https://github.com/cloudsploit/scans
+
 ## Instances ##
 - gcloud compute instances list
 

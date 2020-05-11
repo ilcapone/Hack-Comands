@@ -1,0 +1,29 @@
+
+## IAM (Identiti and Access Managment) Training
+- Auth methoths
+	* AWS CLI
+	* AWS SDKs
+	* AWS Managment Console
+- Use IAM policies for grant acces to resources: This policies are JSONs
+	*	IAM have roles and permisions
+- Best Practices
+	* IAM Group for each department
+	* IAM Policie for each department
+	* Add individual User to each group
+- Descriptions
+	* Users: can be machines or humans, the credential are permanent
+	* Group: collection of users
+	* Roles: The credential ar temporal. 
+	* Policy: Especify the permisionand can be granted to a User, Group or role
+
+## IAM Security Assessment tool 
+- https://github.com/salesforce/cloudsplaining
+
+## IAM Less Polic Generator
+- https://github.com/salesforce/policy_sentry/
+
+## List Users
+aws iam list-users --profile [profile name]
+
+## Obtain MTF tocken credencial 
+aws sts get-session-token --serial-number [arm device] --token-code [token from mtf] --duration-seconds [seconds]

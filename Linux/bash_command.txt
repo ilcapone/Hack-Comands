@@ -71,3 +71,6 @@ printenv | less
 
 ## Obtain MAC addres
  ip link
+
+## Change pasword
+passwd
