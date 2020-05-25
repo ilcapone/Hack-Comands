@@ -69,10 +69,22 @@ db.createUser({
 
 
 ##########		create collection 	###########
+db.createCollection("cumiVuln") 	# Emti collection
+db.[name of new collection].insert({"name" : "tutorialspoint"})
+db.[name of new collection].insert(
+   [
+     { _id: 11, item: "pencil", qty: 50, type: "no.2" },
+     { item: "pen", qty: 20 },
+     { item: "eraser", qty: 25 }
+   ]
+)
 
-db.createCollection("cumiVuln", { cumin: gang } )
+db.getCollectionNames()  # View collections in database
 
-db.getCollectionNames()
+db.[name of new collection].find()				## View collection content
+db.[name of new collection].find().pretty()
+
+db.[name of new collection].find({ Key: "String to mach" }) 		## retunrn info of concreto colection maching the selected key
 
 
 ######## Change mongo database RAM use #######

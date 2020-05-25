@@ -5,6 +5,16 @@
 
 ```https://microk8s.io/docs/```
 
+### Dashboard
+https://microk8s.io/docs/addon-dashboard
+
+token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+microk8s kubectl -n kube-system describe secret $token
+
+microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+
+https://localhost:10443
+
 ## Services binding to the localhost interface
 
 Port 	Service 	Description
