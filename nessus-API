@@ -1,3 +1,13 @@
+## License Error
+https://community.tenable.com/s/article/Expired-license-in-Nessus
+	SSH into the machine where Nessus is installed and run the following commands as root.  
+	# cd /opt/nessus/sbin
+	# service nessusd stop
+	# ./nessuscli fetch --register youractivationcode
+	# service nessusd start
+	Note: For CentOS 7 or RHEL 7, you may need to use:
+	systemctl start nessusd
+	systemctl stop nessusd
 
 ### View Scans List
 ```curl --insecure -H "X-ApiKeys: accessKey={accessKey}; secretKey={secretKey}" https://localhost:8834/scans```

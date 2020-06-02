@@ -7,11 +7,11 @@ https://medium.com/mongoaudit/how-to-enable-authentication-on-mongodb-b9e8a924ef
 
 
 ## Create Addmin ##
-db.createUser({user: "adminNit", pwd: "aerhg990876SFHBwa4r5g", roles: [{ role: "userAdminAnyDatabase", db: "admin" }],});
+db.createUser({user: "adminNit", pwd: "aerhg990876SFHBwa4r5g", roles: [{ role: "userAdminAnyDatabase", db: "admin" }]});
 
 db.createUser(
   {
-    user: "****",
+    user: "****",help
     pwd: "****",
     roles: [ { role: "userAdminAnyDatabase", db: "database-name" } ]
   }

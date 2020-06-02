@@ -8,3 +8,6 @@ https://hackertarget.com/ssh-examples-tunnels/
  - ssh -D 127.0.0.1:9050 [user]@[remote_IP]
  - proxychain nmap -sS [IPs to scan] -vv
  - proxychain firefox
+
+ ## For redirect ocalhost to remote server
+  ssh -L 9000:localhost:5432 user@example.com
