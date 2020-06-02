@@ -1,0 +1,18 @@
+
+## Conect
+psql --host=[host] --port=[port] --username=[admin] --password [database]
+
+## List databases
+\l
+
+### List tables
+\dt
+
+## Switch to other database
+\c [database]
+
+## Describe table
+\d <table_name>
+
+## exit
+\q

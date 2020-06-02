@@ -1,0 +1,28 @@
+
+## ACLI version
+aws --version
+
+## AWS local credentials
+~/.aws/credentials
+
+## List Users
+aws iam list-users --profile [profile name]
+
+## Obtain MTF tocken credencial 
+aws sts get-session-token --serial-number [arm device] --token-code [token from mtf] --duration-seconds [seconds]
+
+## List Buckets
+aws s3api list-buckets --query "Buckets[].Name"
+
+## Create Buckets
+aws s3api create-bucket --bucket [bucket-name] --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
+
+## Delete Bucket
+aws s3api delete-bucket --bucket [bucket-name] --region eu-west-1
+
+## Create CloudFormation from local file
+aws cloudformation create-stack --stack-name myteststack --template-body file:///home/testuser/mytemplate.json --parameters ParameterKey=Parm1,ParameterValue=test1 ParameterKey=Parm2,ParameterValue=test2
+
+
+## EKS
+aws eks update-kubeconfig --name [cluster-name]
