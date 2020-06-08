@@ -1,6 +1,9 @@
 ## Kill prcoces ##
 - kill -9 [PID]
 
+## unTar files
+tar -xvzf file.tar.gz
+
 ## Comands for identifi os system ##
 - cat /etc/issue
 - cat /etc/os-release

@@ -20,6 +20,7 @@ https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engin
 	- sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
 
 ## Linux troublesuting ##
+    - Change /etc/resolf.conf to 1.1.1.1
 	- sudo apt install openvpn-systemd-resolved
 	- Update your config.ovpn file adding these lines:
 	

@@ -147,3 +147,6 @@ kubectl rollout history deployment [name] --revision=[number]
 
 ## RollBack
 kubectl rollout undo deployment [name] --to-revison=[number]
+
+## Mantain observing resource changes
+kubernetes get [pods/svc/deployment/service] --watch
