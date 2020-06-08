@@ -26,8 +26,21 @@ https://aws.amazon.com/es/blogs/database/monitor-amazon-rds-for-mysql-and-mariad
 - https://aws.amazon.com/es/ecr/
 - https://docs.aws.amazon.com/AmazonECR/latest/userguide/common-errors-docker.html
 
-## ACLI version
-aws --version
+## Awoseme Hardering
+https://asecure.cloud/
 
-## AWS local credentials
-~/.aws/credentials
+## Public Bucket
+https://aws.amazon.com/es/premiumsupport/knowledge-center/read-access-objects-s3-bucket/
+https://docs.aws.amazon.com/es_es/AmazonS3/latest/user-guide/block-public-access-account.html
+https://docs.aws.amazon.com/es_es/AmazonS3/latest/user-guide/block-public-access-bucket.html
+
+## Control Tower
+https://controltower.aws-management.tools/core/overview/
+
+## Create S3 AWS config monitoring
+https://aws.amazon.com/es/blogs/security/how-to-use-aws-config-to-monitor-for-and-respond-to-amazon-s3-buckets-allowing-public-access/
+
+## Atacks
+https://rhinosecuritylabs.com/aws/cloud-container-attack-tool/
+https://rhinosecuritylabs.com/cloud-security/cloudgoat-aws-scenario-ec2_ssrf/
+https://github.com/RhinoSecurityLabs/Cloud-Security-Research/tree/master/AWS

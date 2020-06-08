@@ -22,8 +22,3 @@
 ## IAM Less Polic Generator
 - https://github.com/salesforce/policy_sentry/
 
-## List Users
-aws iam list-users --profile [profile name]
-
-## Obtain MTF tocken credencial 
-aws sts get-session-token --serial-number [arm device] --token-code [token from mtf] --duration-seconds [seconds]

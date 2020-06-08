@@ -1,0 +1,15 @@
+
+## Documentation
+https://docs.aws.amazon.com/es_es/AWSCloudFormation/latest/UserGuide/cfn-using-cloudformer.html
+
+## Awoseme Hardering
+https://asecure.cloud/
+https://tools.tldr.run/
+
+
+## Pipeline
+	aws codepipeline get-pipeline --name "PipelineName" > pipeline-file.json
+	- Quiter metadat
+	- Copi paste, change name, region, namespace
+	- Add Artifact store -> add s3 to storage
+	aws codepipeline update-pipeline --cli-input-json file://pipeline-file.json
