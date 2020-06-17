@@ -150,3 +150,9 @@ kubectl rollout undo deployment [name] --to-revison=[number]
 
 ## Mantain observing resource changes
 kubernetes get [pods/svc/deployment/service] --watch
+
+## Get all respurces from namespaces
+kubectl get all -n [namespaces]
+
+## Internal DNS nomenclature
+serviceNAme + namespaceName + svc.cluster.local

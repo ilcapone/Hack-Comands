@@ -10,7 +10,7 @@ db.createUser(
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 )
------------- Acces like som user in local ---------
+------------ Acces like some user in local ---------
 mongo -u AdminSammy -p --authenticationDatabase admin
 
 --------------- Init Deamon -----------------------
@@ -56,6 +56,11 @@ mongo --host 127.0.0.1:27017
 show databases
 db # base de datos actual
 use <databasename> # select database
+
+## View users
+use admin
+db.getUsers()
+db.getUsers( {showCredentials: true} )
 
 
 ######################### create user for remote concrol ####################
