@@ -7,6 +7,9 @@
 	-/logs/*
 	-/spec/*
 
+* API descriptions
+ - https://docs.openshift.com/enterprise/3.0/rest_api/kubernetes_v1.html
+
 * Ports:
 	- 10255 > read only HTTP
 	- 10250 > HTTPS port that can essentially do whatever you want

@@ -66,5 +66,8 @@
 
 		## Load image in to de cluster from file
 		https://stackoverflow.com/questions/58916308/kubernetes-deploy-with-tar-docker-image
+
+		## Kubehunter Vulneravility Descriptions
+		https://aquasecurity.github.io/kube-hunter/
  
 

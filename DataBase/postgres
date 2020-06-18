@@ -14,5 +14,18 @@ psql --host=[host] --port=[port] --username=[admin] --password [database]
 ## Describe table
 \d <table_name>
 
+## View users
+\du
+
+## Create Users
+CREATE USER username;
+CREATE USER username WITH PASSWORD 'password' CREATEDB;
+
+## Create Databases
+CREATE DATABASE databasename;
+
 ## exit
-\q
+\q   
+
+## Dump Database
+pg_dump --host=ip --username=username --password --dbname=template1 --table='users' -f output_pgdump
