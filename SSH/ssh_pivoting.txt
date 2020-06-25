@@ -11,3 +11,4 @@ https://hackertarget.com/ssh-examples-tunnels/
 
  ## For redirect ocalhost to remote server
   ssh -L 9000:localhost:5432 user@example.com
+  ssh -N -L localPort:rdsHost:remotePort user@remoteHost -i ~/path/to/key
