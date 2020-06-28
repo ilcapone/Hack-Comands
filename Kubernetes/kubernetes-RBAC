@@ -45,3 +45,19 @@ Login Plugin: https://github.com/int128/kubelogin
 
 ## RoleBinding and ClusterRoleBinding
 A role binding grants the permissions defined in a role to a user or set of users. It holds a list of subjects (users, groups, or service accounts), and a reference to the role being granted. A RoleBinding grants permissions within a specific namespace whereas a ClusterRoleBinding grants that access cluster-wide.
+
+
+## Creacion y Autenticacion de usuarios con Certificados ##
+
+ - Usa un certificado para ser firmadao por la CA y asi poder autenticar usuarios validos
+ 	> En el certificado el termino CN (Comon Name) hace referencia al Usuario para k8
+ 	> En el certificado el termino O (Organization) hace referencoia al Grupo para k8
+
+ - Proceso
+ 	# En la maquina del nuevo usuario
+ 	1º > openssl genrsa -out [username].key 2048
+ 	2º > openssl req -new -key [username].key -out [username].csr -subj "/CN=[username]/O=[Group]"
+ 	3ª > Envia el certificado al Administrador del Cluster K8
+
+ 	# En la maquina del administrador de kubernetes
+ 	4º > sudo openssl x509 -req -in [username].csr -CA [path of ca.crt] -CAkey [path of ca.key] -CAcreateserial -out [username].crt -days 30

@@ -89,7 +89,7 @@
 			  mountPath: /usr/share/nginx/html
 - kubectl get pod [pod]	
 - kubectl exec -it [pod] -- /bin/bash
-
+ 
 ## Exploiting ##
 - curl --insecure https://[ip]:10250/pods | jq
 
@@ -120,6 +120,7 @@ https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
 
 ## View Cluster Roles ##
 - kubectl get clusterroles
+- kubectl get roles
 
 ## Deploy YAML using variables ##
 - export NOODEPOOL=$NodePool
@@ -155,4 +156,26 @@ kubernetes get [pods/svc/deployment/service] --watch
 kubectl get all -n [namespaces]
 
 ## Internal DNS nomenclature
-serviceNAme + namespaceName + svc.cluster.local
+serviceName + namespaceName + svc.cluster.local
+
+## Context
+	# Current context
+	kubectl config current-context
+	# All context
+	kubectl config get-contexts
+	# View config file
+	kubectl config view
+	# Raw Data
+	kubectl config view --raw
+
+## Kubectl Config
+	# Config new cluster
+	kubectl config set-cluster [cluster-name] --server=https://[IpAdres]:[port] --certificate-authority=[ca.cert]
+	# Config user credentials
+	kubectl config set-credentials [username] --client-certificate=[test.crt] --client-key=[test.key]
+	# Config context
+	kubectl config set-context [ContextName] --cluster=[cluster-name] --user=[username]
+	# Select new context
+	kubectl config use-context [ContextName]
+
+

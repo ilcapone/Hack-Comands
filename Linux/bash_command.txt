@@ -77,3 +77,11 @@ printenv | less
 
 ## Change pasword
 passwd
+
+## Check if var entris on script are empty
+if [ -z "$var" ]
+then
+      echo "\$var is empty"
+else
+      echo "\$var is NOT empty"
+fi
