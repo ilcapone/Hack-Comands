@@ -8,3 +8,6 @@ Integer Value Permissions Binary Representation
 2 write only 010
 1 execute only 001
 0 none 000
+
+## Change file user owner
+chown USER FILE

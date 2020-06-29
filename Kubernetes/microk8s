@@ -30,3 +30,7 @@ Port 	Service 	Description
 
 View Add-ons status
 ```microk8s.status```
+
+## CA Cert/Key Path
+/var/snap/microk8s/1503/certs/ca.crt
+/var/snap/microk8s/1503/certs/ca.key
