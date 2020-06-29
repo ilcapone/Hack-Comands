@@ -1,3 +1,5 @@
+## Documentation
+https://www.shellhacks.com/curl-add-header-multiple-headers-authorization/
 
 ## Cofig file ##
 ~/.curlrc
@@ -30,3 +32,6 @@ curl -H "User-Agent: my browser" [url]
 	"Content-Type: application/json"
 - form urlencoded: -d "param1=value1&param2=value2" or -d @data.txt
 - json: -d '{"key1":"value1", "key2":"value2"}' or -d @data.json
+
+## Basic Auth
+echo -ne "<USER>:<PASSWORD>" | base64 --wrap 0

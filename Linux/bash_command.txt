@@ -4,6 +4,9 @@
 ## unTar files
 tar -xvzf file.tar.gz
 
+## Tar file
+tar -czvf [name-of-archive.tar.gz] [/path/to/directory-or-file]
+
 ## Comands for identifi os system ##
 - cat /etc/issue
 - cat /etc/os-release
@@ -77,3 +80,6 @@ printenv | less
 
 ## Change pasword
 passwd
+
+
+

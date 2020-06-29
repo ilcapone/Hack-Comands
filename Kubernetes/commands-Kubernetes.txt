@@ -99,6 +99,9 @@
 ## Pod Port forwarding ##
 - kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
 
+## Service Port Forwarding
+- kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+
 ## Listar secretos ##
 - kubectl get secret
 
