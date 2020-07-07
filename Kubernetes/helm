@@ -25,3 +25,10 @@
 
 ### List currentli deploy with helm
 ´´´helm list´´´
+´´´helm list -n [namespace]´´´
+
+## Deployment status
+´´´helm status [name] -n [namespace]
+
+## Full information
+helm get all [name] -n [namespace]
