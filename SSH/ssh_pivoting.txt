@@ -1,4 +1,9 @@
-https://hackertarget.com/ssh-examples-tunnels/
+
+ ## Tool
+ https://github.com/sysdream/ligolo
+
+ ## Documetnacion
+ https://hackertarget.com/ssh-examples-tunnels/
 
  ## Dinamic port forwarding ##
  - ssh -D [localport] [user]@[remote_IP]
