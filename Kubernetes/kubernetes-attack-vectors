@@ -1,4 +1,7 @@
 
+		### Volnerable Kubernetes Enviroment
+		- https://github.com/madhuakula/kubernetes-goat
+		
 		### Kubernetes Vector Attacks ###
 		- Acces to machines/VMS (nodes by ssh)
 		- Acces etcd API
@@ -67,12 +70,10 @@
 		## Load image in to de cluster from file
 		https://stackoverflow.com/questions/58916308/kubernetes-deploy-with-tar-docker-image
 
-<<<<<<< HEAD
 		## Kubehunter Vulneravility Descriptions
 		https://aquasecurity.github.io/kube-hunter/
-=======
+
 		## Load image from local image
-		imagePullPolicy: IfNotPresent
->>>>>>> cb003646845dcb85e01026a0a17bdb72c53345f8
+			imagePullPolicy: IfNotPresent
  
 

@@ -19,6 +19,9 @@ https://d1.awsstatic.com/whitepapers/aws_security_incident_response.pdf
 https://aws.amazon.com/es/solutions/implementations/centralized-logging/
 https://aws.amazon.com/es/blogs/database/monitor-amazon-rds-for-mysql-and-mariadb-logs-with-amazon-cloudwatch/
 
+## Centraliced Logging
+https://controltower.aws-management.tools/core/logging-es/
+
 ## Info
 - https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html
 - https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html

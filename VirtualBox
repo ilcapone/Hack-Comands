@@ -40,3 +40,11 @@
 	```systemctl enable ssh.service```
 * Enable RootPaswordAcces on /etc/ssh/sshd_config
 	```PermitRootLogin yes```
+
+
+## VBox Troubleshooting
+	# View Active services
+	ps aux | grep VBoxClient
+
+	# Try
+	pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard

@@ -10,10 +10,17 @@ E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is an
 ## DNS resolv ##
 /etc/resolv.conf
 
+## Static DNS
+- sudo nano /etc/NetworkManager/NetworkManager.conf
+	>  And add this to the [main] section:
+		dns=none
+
 ## Source list ##
 /etc/apt/sources.list
 
 ## Inspect running process#
 - strace -p6
 - less /proc/[PID]/fd/[0 or 1 (stddout) or 2(stderr)]
+
+
 

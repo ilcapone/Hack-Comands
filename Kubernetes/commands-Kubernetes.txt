@@ -99,6 +99,9 @@
 ## Pod Port forwarding ##
 - kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
 
+## Service Port Forwarding
+- kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+
 ## Listar secretos ##
 - kubectl get secret
 
@@ -177,6 +180,13 @@ serviceName + namespaceName + svc.cluster.local
 	kubectl config set-context [ContextName] --cluster=[cluster-name] --user=[username]
 	# Select new context
 	kubectl config use-context [ContextName]
+
+	# With ServiceAccounts
+	https://docs.armory.io/docs/spinnaker-install-admin-guides/manual-service-account/
+	https://clux.github.io/probes/post/2019-03-31-impersonating-kube-accounts/
+
+
+	
 
 
 
