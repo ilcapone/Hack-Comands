@@ -179,3 +179,5 @@ serviceName + namespaceName + svc.cluster.local
 	kubectl config use-context [ContextName]
 
 
+
+
