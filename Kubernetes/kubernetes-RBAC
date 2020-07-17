@@ -61,3 +61,27 @@ A role binding grants the permissions defined in a role to a user or set of user
 
  	# En la maquina del administrador de kubernetes
  	4º > sudo openssl x509 -req -in [username].csr -CA [path of ca.crt] -CAkey [path of ca.key] -CAcreateserial -out [username].crt -days 30
+ 	5º (opcional) > openssl x509 -in [username].crt -noout -text
+
+
+## Entendiendo las SA
+- Siempre se crea una SA de nombre default cuando se crea un namespace
+- Cada SA esta linckada a un secret (token)
+- Cada secret lincado a un SA tiene:
+	> ca.cdrt: certificado publico del cluster kubernetes
+	> namespace
+	> Token: en formato JWT
+- Mount SA in Pod
+	https://medium.com/better-programming/k8s-tips-using-a-serviceaccount-801c433d0023
+- Para adjuntar una SA a un Pod Deve configurarse en el deployment
+	spec:
+		serviceAccountName: [SA-Name]
+		container: 
+			....
+- Default mount path
+	/run/secrets/kubernetes.io/serviceaccount/token
+
+## Understanding deeper the roles and verbs
+https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+https://stackoverflow.com/questions/48118125/kubernetes-rbac-role-verbs-to-exec-to-pod

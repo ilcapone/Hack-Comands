@@ -126,6 +126,7 @@ https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
 - kubectl get roles
 
 ## Deploy YAML using variables ##
+- https://stackoverflow.com/questions/56003777/how-to-pass-environment-variable-in-kubectl-deployment
 - export NOODEPOOL=$NodePool
 - kubectlenvsubst < basic-deploiment-nodePool-selector.yaml | kubectl apply  -f -
 
@@ -186,6 +187,5 @@ serviceName + namespaceName + svc.cluster.local
 	https://clux.github.io/probes/post/2019-03-31-impersonating-kube-accounts/
 
 
-	
 
 

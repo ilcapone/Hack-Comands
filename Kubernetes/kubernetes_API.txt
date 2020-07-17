@@ -23,3 +23,8 @@ curl --insecure https://[IP-master-external]:10250/pods | jq
 /metrics/*
 /logs/*
 /spec/*
+
+## Make request to the API from inside de cluster 
+# Obtain the internal kubernetes services
+- kubectl get svc 			## The kubernetes services
+- curl -i https://[service-IP]/api/v1
