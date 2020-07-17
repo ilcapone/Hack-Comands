@@ -37,4 +37,7 @@ nav:
         - 'Network Exploiting': 'CPHE/05-Exploiting-Red.md'
         - 'Password': 'CPHE/06-Passwords.md'
         - 'Wifi': 'CPHE/07-Wifi.md'
+        - 'Malware': 'CPHE/08-Malware.md'
+        - 'Forensic': 'CPHE/09-Forense.md'
+        - 'Web': 'CPHE/10-Web.md'
 theme: readthedocs
