@@ -1,7 +1,0 @@
-
---------------
-Decompilar
-
-apktool d paht.apk
-d2j-dex2jar path.apk
-# obtencion de codigo en claro con jd-gui abriendo el archivo .jar que jenera d2j-dex2jar
