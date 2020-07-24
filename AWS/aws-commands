@@ -33,4 +33,6 @@ aws cloudformation create-stack --stack-name myteststack --template-body file://
 aws eks update-kubeconfig --name [cluster-name]
 
 ## Obtain Docker Registry Password
-aws ecr get-login-password --region eu-west-1
+aws ecr get-login-password --region eu-west-
+
+## 

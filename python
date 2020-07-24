@@ -4,3 +4,7 @@ python3 -m http.server --cgi 8000
 
 ## Pretty Print JSON
 ```[comand output json] | python -m json.tool```
+
+## Flask tutorial
+https://dev.to/paurakhsharma/flask-rest-api-part-0-setup-basic-crud-api-4650
+https://pythonbasics.org/flask-mongodb/

