@@ -128,7 +128,12 @@ https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
 ## Deploy YAML using variables ##
 - https://stackoverflow.com/questions/56003777/how-to-pass-environment-variable-in-kubectl-deployment
 - export NOODEPOOL=$NodePool
-- kubectlenvsubst < basic-deploiment-nodePool-selector.yaml | kubectl apply  -f -
+- envsubst < basic-deploiment-nodePool-selector.yaml | kubectl apply  -f -
+	# Alpine instal ensub
+	- RUN set -x && apk add --update libintl && \
+    apk add --virtual build_deps gettext &&  \
+    cp /usr/bin/envsubst /usr/local/bin/envsubst && \
+    apk del build_deps
 
 ## Rollback ##
 - kubectl rollout history deployment [deployment-name]
