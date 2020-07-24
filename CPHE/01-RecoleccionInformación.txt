@@ -29,7 +29,7 @@
 
 --------- * Windows PS * --------
 	- Test-NetConnection <objetivo>
-	- Test-NetConnection <objetivo> –TraceRoute
+	- Test-NetConnection <objetivo> â€“TraceRoute
 	- Resolve-DnsName <objetivo>
 
 --------- * Web Pluguins * ------
