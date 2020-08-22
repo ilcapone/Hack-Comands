@@ -67,6 +67,9 @@
 - kubectl describe job [job-name]
 - kubectl get jobs
 
+## Identify complete jobs
+- kubectl get jobs -o json | jq -r '.items[].status.conditions[].type'
+
 ## view services accounts config ###
 - kubectl get serviceAccounts
 

@@ -103,3 +103,15 @@ db.adminCommand({'setParameter':1, 'internalQueryExecMaxBlockingSortBytes':13421
 db.auth( <username>, passwordPrompt() )
 // Or
 db.auth( <username>, <password> )
+
+## Delete user
+db.removeUser(<username>)
+//Or
+db.dropUser(<username>)
+
+## Drop Database
+use <database>
+db.dropDatabase()
+
+## Drop collection
+db.[name of new collection].drop()
