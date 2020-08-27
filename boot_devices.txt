@@ -1,4 +1,0 @@
-  ### Boot Devices ###
-  
-  - Lenovo : F1
-  
