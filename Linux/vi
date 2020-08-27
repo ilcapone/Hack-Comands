@@ -1,0 +1,30 @@
+
+## Comands
+
+# Exit dont save
+:q!
+
+# Exit saving
+:wq
+
+# Just save
+:w
+
+# Edit
+i
+
+# Exit from edit mode
+esc
+
+# Delete character
+x
+
+# Write right
+a
+
+# Write left
+i
+
+# Delete all line
+dd
+
