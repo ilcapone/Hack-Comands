@@ -1,4 +1,0 @@
-
-sudo nano .bash_history
-
-/var/log/auth.log

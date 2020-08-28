@@ -194,6 +194,9 @@ serviceName + namespaceName + svc.cluster.local
 	https://docs.armory.io/docs/spinnaker-install-admin-guides/manual-service-account/
 	https://clux.github.io/probes/post/2019-03-31-impersonating-kube-accounts/
 
+## Add kubelet binari for exec as sudo root
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+
 
 
 

@@ -8,3 +8,10 @@ sin tener premiso construlle un fichero nuevo sin las tuyas
 
 #windows
 - winzapper
+
+## Comands Linux
+
+sudo nano .bash_history
+
+/var/log/auth.log
+

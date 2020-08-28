@@ -11,7 +11,7 @@ git remote update
 git branch
 
 ## Cambiarse a una rama ##
-git checkout [branch-name]
+git checkout [branch-
 
 ## Comit changes ##
 git add [file-with-changes]
@@ -62,3 +62,6 @@ https://help.github.com/en/enterprise/2.16/user/articles/resolving-a-merge-confl
 ## Tag branch ##
 git tag [tag]--help
 git push origin [tag]
+
+## View diferences between branches
+git diff [branch-A] [branch-B]
