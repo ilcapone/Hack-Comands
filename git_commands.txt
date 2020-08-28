@@ -31,7 +31,9 @@ git push origin master
 
 ## View changes ##
 git diff
-
+	# View changes in file befor commit
+	git diff [file]
+	
 ## Create new local branch ##
 git checkout -b [new-branch]
 
