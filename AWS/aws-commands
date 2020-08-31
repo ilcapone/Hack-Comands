@@ -32,7 +32,24 @@ aws cloudformation create-stack --stack-name myteststack --template-body file://
 ## EKS
 aws eks update-kubeconfig --name [cluster-name]
 
-## Obtain Docker Registry Password
-aws ecr get-login-password --region eu-west-
+## List clusters
+aws eks list-clusters --region [region]
 
-## 
+## Describe cluster
+aws eks describe-cluster --name [cluster-name] --region [region]
+
+## Obtain Docker Registry Password
+aws ecr get-login-password --region [region]
+
+## Get VPCs
+aws ec2 describe-vpcs --region [region]
+
+## Get Security groups
+aws ec2 describe-security-groups --region [region]
+
+
+### Documentation ###
+
+## ACLs VS Security Groups
+https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae
+
