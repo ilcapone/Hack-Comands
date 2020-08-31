@@ -115,3 +115,6 @@ db.dropDatabase()
 
 ## Drop collection
 db.[name of new collection].drop()
+
+## Delete one entri from collection
+db..[name of new collection].deleteOne({"example_key":"example_value"})

