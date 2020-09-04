@@ -65,3 +65,7 @@ git push origin [tag]
 
 ## View diferences between branches
 git diff [branch-A] [branch-B]
+
+## Config credencials 
+git config --global user.name "your username"
+git config --global user.password "your password"
