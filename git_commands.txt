@@ -71,3 +71,7 @@ git branch -a
 
 ## View remote branches
 git branch -r
+
+## Config credencials 
+git config --global user.name "your username"
+git config --global user.password "your password"
