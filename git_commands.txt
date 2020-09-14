@@ -11,7 +11,7 @@ git remote update
 git branch
 
 ## Cambiarse a una rama ##
-git checkout [branch-
+git checkout [branch]
 
 ## Comit changes ##
 git add [file-with-changes]
@@ -65,3 +65,9 @@ git push origin [tag]
 
 ## View diferences between branches
 git diff [branch-A] [branch-B]
+
+## View all branches, remote and local
+git branch -a
+
+## View remote branches
+git branch -r

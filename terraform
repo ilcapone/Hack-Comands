@@ -1,0 +1,50 @@
+
+# Documentacion
+
+## Install
+[Oficial docu]](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+
+## First steps
+[Oficial first steps](https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code?in=terraform/aws-get-started)
+
+## Pass variables on deployment
+[Oficial](https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-variables)
+
+## Tool for manae multiple Terraform versions
+https://github.com/tfutils/tfenv
+
+
+# Commands
+
+### Initialize project
+
+``` terraform init ```
+
+### Validate sintax
+
+``` terraform validate ```
+
+### View plan
+
+``` terraform plan ```
+
+### Deploy
+
+``` terraform apply ```
+
+### Delete deploy
+
+``` terraform destroy ```
+
+## View Deployment
+
+`` terraform show ```
+
+
+# Troubleshooting
+
+
+
+# Examples
+
+## RDS - https://github.com/bridgecrewio/terraform-aws-secured-postgresql-rds
