@@ -88,3 +88,7 @@ then
 else
       echo "\$var is NOT empty"
 fi
+
+
+## Modify Banner
+nano .bashrc
