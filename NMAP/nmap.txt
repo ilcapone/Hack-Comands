@@ -6,3 +6,7 @@ nmap -sT -Pn 34.213.170.51
 
 # Search raspberry
 nmap -p 22 --open -sV 192.168.0.*
+
+## Scan open port and execute service scan
+ ports=$(nmap -p- --min-rate=1000 -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
+ nmap -sC -sV -p$ports 10.10.10.27 

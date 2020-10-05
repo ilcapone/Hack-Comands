@@ -7,3 +7,11 @@ source ~/.bashrc
 
 If de comand need run as sudo try to add
 sudo='sudo '
+
+## Other forms
+echo -e '#!/bin/bash\necho hello' > /usr/bin/hi && \
+    chmod +x /usr/bin/hi
+
+## The same pasing argss
+RUN echo -e '#!/bin/bash\necho hello "$@"' > /usr/bin/hi && \
+    chmod +x /usr/bin/hi

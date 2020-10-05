@@ -1,0 +1,6 @@
+
+### Service
+445/tcp   open  microsoft-ds Windows Server --- Standard --- microsoft-ds
+
+## Basic conexion
+smbclient -N -L \\\\[Target-IP]\\
