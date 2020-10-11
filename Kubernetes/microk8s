@@ -15,6 +15,11 @@ microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:
 
 https://localhost:10443
 
+## If dashboard is on remote server and is not expose to internet
+ssh -L 8081:localhost:10443 user@IP
+
+https://localhost:8081
+
 ## Services binding to the localhost interface
 
 Port 	Service 	Description

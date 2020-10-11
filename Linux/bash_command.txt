@@ -89,6 +89,9 @@ else
       echo "\$var is NOT empty"
 fi
 
+## Pass args and flags to a script
+https://unix.stackexchange.com/questions/140840/using-getopts-to-parse-options-after-a-non-option-argument?rq=1
+
 
 ## Modify Banner
 nano .bashrc

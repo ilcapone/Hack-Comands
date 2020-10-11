@@ -4,3 +4,6 @@
 
 ## Basic conexion
 smbclient -N -L \\\\[Target-IP]\\
+
+## Acces to shareable resource
+smbclient -N \\\\[Target-IP]\\[shareable-resource]

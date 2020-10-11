@@ -2,3 +2,12 @@
 comando | find "parametro"  # para filtrar resultados en la salida de comandos
 tree # ver directorio e arbol
 move origen destino # mover archivos de un directorio a otro
+
+## View Path
+path
+
+## View current directory
+echo %CD%
+
+## View file content
+type [file]

