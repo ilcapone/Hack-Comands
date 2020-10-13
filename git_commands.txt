@@ -26,7 +26,7 @@ git pull
 ## Merge branch test into master ##
 git checkout master
 git pull origin master
-git merge test
+git merge test 
 git push origin master
 
 ## View changes ##

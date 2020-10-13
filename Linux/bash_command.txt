@@ -1,3 +1,6 @@
+## cheatsheet
+https://devhints.io/bash
+
 ## Kill prcoces ##
 - kill -9 [PID]
 

