@@ -26,7 +26,7 @@ git pull
 ## Merge branch test into master ##
 git checkout master
 git pull origin master
-git merge test
+git merge test 
 git push origin master
 
 ## View changes ##
@@ -61,7 +61,12 @@ https://help.github.com/en/enterprise/2.16/user/articles/resolving-a-merge-confl
 
 ## Tag branch ##
 git tag [tag]--help
+
+## Push Tag
 git push origin [tag]
+
+## List Tags
+git tag -l
 
 ## View diferences between branches
 git diff [branch-A] [branch-B]

@@ -1,3 +1,9 @@
 
-
+## Relay atack
 python smbrelay -h [host] -c [comand]
+
+
+## Conect to windows sql
+mssqlclient.py [username/somservice]@[IP] -windows-auth 
+
+psexec.py [user]@[IP]

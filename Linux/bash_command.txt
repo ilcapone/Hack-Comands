@@ -1,3 +1,6 @@
+## cheatsheet
+https://devhints.io/bash
+
 ## Kill prcoces ##
 - kill -9 [PID]
 
@@ -96,3 +99,9 @@ sed -i 's/search_string/replace_string/' filename
 ## Copi from console to clipboad
 cat [file] | clip
 xclip -sel clip < [file]
+
+## Pass args and flags to a script
+https://unix.stackexchange.com/questions/140840/using-getopts-to-parse-options-after-a-non-option-argument?rq=1
+
+## Modify Banner
+nano .bashrc

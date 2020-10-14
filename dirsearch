@@ -5,3 +5,6 @@
 git clone https://github.com/maurosoria/dirsearch.git
 cd dirsearch
 python3 dirsearch.py -u <URL> -e <EXTENSION> [-e php,html,png,js,jpg]
+
+## Hard Use
+```dirsearch -u http/s://{HOST}/{PATH} -w {DICT-PATH} --plain-text-report={OUTPUTPATH} -e asp,aspx,php,config,htm,html,jsp,py,txt,conf,bak,backup,swp,old,db,sql,zip,gz -b -F --threads 80```

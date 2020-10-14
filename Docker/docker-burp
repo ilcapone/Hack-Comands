@@ -3,6 +3,9 @@
 https://www.marcolancini.it/2018/blog-docker-burp/
 https://github.com/marco-lancini/docker_burp
 
+## EXECUTION
+sudo docker-compose up
+
 # Some modifications
 - Donwnload Burp in Jar format and save it in the _data/sources as burp_free.jar name
 - Edite the burp.env as:
