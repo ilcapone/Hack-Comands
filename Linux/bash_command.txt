@@ -88,3 +88,11 @@ then
 else
       echo "\$var is NOT empty"
 fi
+
+
+## Replace string in file
+sed -i 's/search_string/replace_string/' filename
+
+## Copi from console to clipboad
+cat [file] | clip
+xclip -sel clip < [file]

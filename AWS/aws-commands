@@ -5,6 +5,9 @@ aws --version
 ## AWS local credentials
 ~/.aws/credentials
 
+## Configure CLI
+aws configure
+
 ## List Users
 aws iam list-users --profile [profile name]
 
@@ -43,6 +46,7 @@ aws ecr get-login-password --region [region]
 
 ## Get VPCs
 aws ec2 describe-vpcs --region [region]
+aws ec2 describe-vpcs --vpc-id [vpcID] --region [region]
 
 ## Get Security groups
 aws ec2 describe-security-groups --region [region]
