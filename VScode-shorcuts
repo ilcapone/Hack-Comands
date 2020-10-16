@@ -1,0 +1,26 @@
+
+## Useful Shorcuts
+
+### View Shortcuts
+Ctrl+K Ctrl+S
+
+## Change Themes
+Ctrl+K Ctrl+T
+
+## Open Terminal
+Ctrl+`
+
+## Show/Hide side folder explorer bar
+Ctrl+B
+
+## Switch between code editos tabs
+Ctrl+1, Ctrl+2, Ctrl+3
+
+## Markdown preview
+Ctrl+K V
+
+## Modify Font Size
+https://dev-pages.info/vscode-how-to-change-the-font-size/
+- nano  $HOME/.config/Code/User/settings.json
+	"editor.fontSize": 12,
+	"terminal.integrated.fontSize": 12
