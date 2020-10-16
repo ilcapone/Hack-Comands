@@ -13,6 +13,7 @@ nav:
         - 'Aircrak Commands': 'Wifi/Airckark/aircrack_comands.md'
         - 'Evil Twing': 'Wifi/Airckark/Evil_tiwn.md'
     - Android:
+        - 'Pentest': 'Android/android-pentest.md'
         - 'Analysis Methodology': 'Android/android-MetodologiaAnalisis.md'
         - 'Inspect Certificate': 'Android/android-Certificates.md'
         - 'ADB Commands': 'Android/androidADB.md'

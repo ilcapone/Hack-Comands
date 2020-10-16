@@ -105,3 +105,6 @@ https://unix.stackexchange.com/questions/140840/using-getopts-to-parse-options-a
 
 ## Modify Banner
 nano .bashrc
+
+## View string in binary
+string [binarifile]
