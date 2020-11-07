@@ -9,6 +9,8 @@
 ### Kubernetes and Vault ###
 - https://medium.com/qubit-engineering/kubernetes-up-integrated-secrets-configuration-5a15b9f5a6c6
 
+## Configure private registry
+
 ## Hacking Kubernetes ###
 - http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html
 - https://www.4armed.com/blog/hacking-kubelet-on-gke/

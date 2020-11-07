@@ -50,7 +50,7 @@ tar -czvf [name-of-archive.tar.gz] [/path/to/directory-or-file]
 alias example="command"
 
 ## Add user to sudo users ##
-sudo usermod -a -G sudo
+sudo usermod -a -G sudo [username]
 
 ## Create daemon ##
 - https://askubuntu.com/questions/919054/how-do-i-run-a-single-command-at-startup-using-systemd
@@ -79,7 +79,7 @@ comand | jq -r '.[key].[key]'
 printenv | less 
 
 ## Obtain MAC addres
- ip link
+ip link
 
 ## Change pasword
 passwd

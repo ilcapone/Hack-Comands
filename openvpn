@@ -21,6 +21,8 @@ https://openvpn.net/community-resources/how-to/#hardening-openvpn-security
 
 ## Installing troublesuting ##
 	- sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
+	- Add to crontab for reboot control
+		> @reboot sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
 
 ## Linux troublesuting ##
     - Change /etc/resolf.conf to 1.1.1.1
