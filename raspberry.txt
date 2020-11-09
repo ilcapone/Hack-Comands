@@ -10,4 +10,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
  ### Reverse shell whiz raspberru pi as ruberducky ###
   - https://p4wnp1.readthedocs.io/en/latest/
+
+ ## Raspbian without desktop
+ https://www.raspberrypi.org/downloads/raspberry-pi-os/
   
