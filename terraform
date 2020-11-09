@@ -24,7 +24,7 @@ https://github.com/tfutils/tfenv
 
 ``` terraform validate ```
 
-### View plan
+### View plan	 
 
 ``` terraform plan ```
 
@@ -40,10 +40,7 @@ https://github.com/tfutils/tfenv
 
 `` terraform show ```
 
-
 # Troubleshooting
-
-
 
 # Examples
 

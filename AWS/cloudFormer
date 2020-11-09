@@ -6,7 +6,6 @@ https://docs.aws.amazon.com/es_es/AWSCloudFormation/latest/UserGuide/cfn-using-c
 https://asecure.cloud/
 https://tools.tldr.run/
 
-
 ## Pipeline
 	aws codepipeline get-pipeline --name "PipelineName" > pipeline-file.json
 	- Quiter metadat

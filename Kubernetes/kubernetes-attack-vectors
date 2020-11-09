@@ -1,5 +1,5 @@
 
-		### Volnerable Kubernetes Enviroment
+		### Vulnerable Kubernetes Enviroment
 		- https://github.com/madhuakula/kubernetes-goat
 		
 		### Kubernetes Vector Attacks ###
@@ -14,6 +14,9 @@
 
 		### Decode Tockens ###
 		- https://jwt.io/
+
+		## Pentesting procedures
+		- https://www.cyberark.com/resources/threat-research-blog/kubernetes-pentest-methodology-part-1
 
 		### Know Vulneravility - From POD to Cluster Admin ###
 		- https://blog.appsecco.com/kubernetes-namespace-breakout-using-insecure-host-path-volume-part-1-b382f2a6e216

@@ -36,6 +36,9 @@ docker run -it -p 80:80 -p 443:443 -v /home/$USER/mydir:/data empireproject/empi
 # Jenkins Container
 docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 
+# Aquatone
+https://blog.smallsec.ca/dockerizing-cli-tools/
+
 # Logs
 docker logs [container-id]
 docker logs --follow [container-id]	
@@ -61,6 +64,15 @@ docker import /path/to/name.tgz
 
 # Export image to tarfile 
 docker save --output="name.tar" [image]
+
+# Copy files from contaienr
+docker cp <containerId>:/file/path/within/container /host/path/target
+
+# Copy from contaienr to host
+docker cp /host/path/target <containerId>:/file/path/within/container
+
+# Tag image
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 
 # Most como docker run commands
 docker run \ 
