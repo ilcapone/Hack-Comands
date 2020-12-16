@@ -12,8 +12,10 @@
 "^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13})$"
 http://www.regular-expressions.info/creditcard.html
 
-
 ## grep with or operator
 grep 'pattern1\|pattern2' filename
+
+## Search Ips
+grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
 
 

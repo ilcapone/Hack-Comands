@@ -54,3 +54,4 @@ https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
 
  ## Basic Server Listener ##
  nc -l [port]
+ nc -lvp [port]

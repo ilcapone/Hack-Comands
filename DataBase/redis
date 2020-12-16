@@ -1,0 +1,18 @@
+
+## Docu
+https://www.tutorialspoint.com/redis/redis_quick_guide.htm
+
+## Pentest procedure
+https://book.hacktricks.xyz/pentesting/6379-pentesting-redis
+
+## Basic conexion
+redis-cli -h [host] -p [port_number] -a [password]
+
+## Get info
+info
+
+## Get all configuracion setings
+CONFIG GET *
+
+## View all existing KEYS
+KEYS *
