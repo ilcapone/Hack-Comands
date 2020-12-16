@@ -80,3 +80,28 @@ git branch -r
 ## Config credencials 
 git config --global user.name "your username"
 git config --global user.password "your password"
+
+# Clone Repository partially, just a folder
+git clone --depth 1 --filter=blob:none --no-checkout -b [branch] [repo https url]
+cd repo
+git checkout [branch] -- folder/subfoler/subsubfolder 
+
+## Install latest github version from source
+https://www.osradar.com/how-to-install-the-latest-version-of-git-in-debian-9/
+
+## Get Last commit description only
+git log --pretty=oneline --format=%B -n 1
+
+## Get last tag
+git describe --abbrev=0 --tags
+
+## History of commmits
+git log --pretty=oneline
+
+## Delete local tag
+git tag -d [local_tag]
+
+## Delete remote tag
+git push --delete origin [tag]
+
+

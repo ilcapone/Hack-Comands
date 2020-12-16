@@ -1,6 +1,7 @@
 
 ## Python Simple HTTP server
 python3 -m http.server --cgi 8000
+python2.7 -m SimpleHTTPServer [port]
 
 ## Pretty Print JSON
 ```[comand output json] | python -m json.tool```

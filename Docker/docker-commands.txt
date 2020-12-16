@@ -35,6 +35,9 @@ docker run -it -p 80:80 -p 443:443 -v /home/$USER/mydir:/data empireproject/empi
 
 # Jenkins Container
 docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+  
+  ## Jenkins image documentation
+  https://github.com/jenkinsci/docker
 
 # Logs
 docker logs [container-id]
@@ -61,6 +64,9 @@ docker import /path/to/name.tgz
 
 # Export image to tarfile 
 docker save --output="name.tar" [image]
+
+## Raspberry Pi architecture images
+docker run -ti armhf/alpine:3.5 /bin/sh
 
 # Most como docker run commands
 docker run \ 

@@ -1,0 +1,26 @@
+
+
+## Create acces to de cluster from outside de cluster host
+
+- campo CN=[kubernetes-user]
+- campo O=[Grupo del user]
+
+# Steps
+	- Create Keys and sing
+	openssl genrsa -out [username].key 2048
+
+	- Create CSR
+	openssl req -new -key [username].key -out [username].csr -subj "/CN=[username]/O=[group]"
+ 
+    - Sing CSR with cluster CA
+    sudo openssl x509 -req -in [username].csr -CA [cluste_CA-path.crt] -CAkey [cluste_CA-path.key] -out [username].crt -days 365 
+    
+    - Config kubectl
+     > config server
+     kubectl config set-cluster [clustername] --server=https://[server]:[port] --certificate-authority=[ca.crt]
+     > config user
+     kubectl config set-credentials [username] --client-certificate=[username].crt --client-key=[username].key
+     > config context
+      kubectl config set-context [contextname] --cluster=[clustername] --user=[username] --namespace=[namespace]
+     > Steing context
+     ubectl config use-context  [contextname]
