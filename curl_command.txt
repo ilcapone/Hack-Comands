@@ -35,3 +35,7 @@ curl -H "User-Agent: my browser" [url]
 
 ## Basic Auth
 echo -ne "<USER>:<PASSWORD>" | base64 --wrap 0
+
+
+## HTTP auth
+curl --user USER:PASSWORD http://example.yus

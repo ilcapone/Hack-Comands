@@ -10,6 +10,9 @@ println "${process.text}"
 ## View Workets
 http://IP:port/jenkins/computer/
 
+## Github wenhooks to internal jenkins
+https://medium.com/@developerwakeling/setting-up-github-webhooks-jenkins-and-ngrok-for-local-development-f4b2c1ab5b6
+
 ## Hack pipelines
 pipeline{
 	agent any

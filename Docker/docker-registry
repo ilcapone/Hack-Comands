@@ -16,3 +16,12 @@ https:/[registry-IP]:[port]/v2/_catalog
 
 ## Tags images from image
 https://[registry-IP]:[port]/v2/controller/tags/list
+
+
+# Config private registry
+	## Modify local DNS
+		Edit the file nano /etc/hosts and add [private-registry-IP] [private-registry-CN]
+
+	## Docker auth private registry
+		Copy the ca.cert to /etc/docker/certs.d/[registryname]:[port]/ca.cert
+		Then run docker login [registryname]:[port]

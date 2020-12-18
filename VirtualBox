@@ -33,6 +33,9 @@
 ### Check if active remote conexion
 ```VBoxManage showvminfo [VM-Name] | grep VRDE```
 
+### Delete VM
+VBoxManage unregistervm --delete [VM-Name]
+
 ### SSH from Host to VM
 * Enable port forgarding from 127.0.0.1:22xx to VM_IP:22
 	```ssh -p 2222 root@127.0.0.1```
@@ -40,7 +43,6 @@
 	```systemctl enable ssh.service```
 * Enable RootPaswordAcces on /etc/ssh/sshd_config
 	```PermitRootLogin yes```
-
 
 ## VBox Troubleshooting
 	# View Active services

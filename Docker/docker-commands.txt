@@ -35,6 +35,9 @@ docker run -it -p 80:80 -p 443:443 -v /home/$USER/mydir:/data empireproject/empi
 
 # Jenkins Container
 docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+  
+  ## Jenkins image documentation
+  https://github.com/jenkinsci/docker
 
 # Aquatone
 https://blog.smallsec.ca/dockerizing-cli-tools/
@@ -65,6 +68,10 @@ docker import /path/to/name.tgz
 # Export image to tarfile 
 docker save --output="name.tar" [image]
 
+<<<<<<< HEAD
+## Raspberry Pi architecture images
+docker run -ti armhf/alpine:3.5 /bin/sh
+=======
 # Copy files from contaienr
 docker cp <containerId>:/file/path/within/container /host/path/target
 
@@ -73,6 +80,7 @@ docker cp /host/path/target <containerId>:/file/path/within/container
 
 # Tag image
 docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+>>>>>>> e70e8b66417ff985abd6a94153a18e7998d6f1c8
 
 # Most como docker run commands
 docker run \ 

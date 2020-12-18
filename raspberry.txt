@@ -13,4 +13,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
  ## Raspbian without desktop
  https://www.raspberrypi.org/downloads/raspberry-pi-os/
+
+ ## Default Java home path
+ /usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
   
