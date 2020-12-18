@@ -1,4 +1,4 @@
-
+# Docu
 
 ## Oficial Documentation Helm CLI
 ´´´https://helm.sh/docs/intro/´´´
@@ -8,6 +8,9 @@
 
 ## Config Chartmuseum
 ´´´https://github.com/helm/charts/tree/master/stable/chartmuseum#using-with-google-cloud-storage´´´
+
+## Helm Tricks
+https://helm.sh/docs/howto/charts_tips_and_tricks/#creating-image-pull-secrets
 
 ## Commands
 
@@ -32,3 +35,6 @@
 
 ## Full information
 helm get all [name] -n [namespace]
+
+## Create an emty chart
+helm create [emty_chart_name]

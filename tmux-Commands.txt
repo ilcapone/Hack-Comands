@@ -36,3 +36,6 @@
 
 ## Kill session
 tmux kill-session -t [session_name]
+
+## Zoom
+- Ctrl-b + z

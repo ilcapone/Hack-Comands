@@ -17,6 +17,9 @@ git checkout [branch]
 git add [file-with-changes]
 git commit -m "[coment with the changes]"
 
+## Revert local commit not push
+git reset HEAD~;
+
 ## Upload changes to origin ##
 git push 
 
