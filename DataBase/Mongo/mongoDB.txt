@@ -92,7 +92,7 @@ db.getCollectionNames()  # View collections in database
 db.[name of new collection].find()				## View collection content
 db.[name of new collection].find().pretty()
 
-db.[name of new collection].find({ Key: "String to mach" }) 		## retunrn info of concreto colection maching the selected key
+db.[name of new collection].find({ Key: "String to mach" }) 		## retunrn info of concret colection maching the selected key
 
 
 ######## Change mongo database RAM use #######

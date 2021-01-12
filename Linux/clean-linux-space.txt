@@ -1,4 +1,8 @@
 
+## View folder size
+du -sh [folder]
+
+## Clean space
 sudo apt-get autoclean
 sudo apt-get clean 
 sudo apt autoremove

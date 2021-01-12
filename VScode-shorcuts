@@ -19,6 +19,12 @@ Ctrl+1, Ctrl+2, Ctrl+3
 ## Markdown preview
 Ctrl+K V
 
+## Coment pice of code
+Ctrl+K+C
+
+## Uncommnt
+Ctrl+K+U
+
 ## Modify Font Size
 https://dev-pages.info/vscode-how-to-change-the-font-size/
 - nano  $HOME/.config/Code/User/settings.json

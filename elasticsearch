@@ -1,5 +1,9 @@
 
 
+## Permisions
+https://www.elastic.co/guide/en/kibana/current/kibana-privileges.html
 
 # Querys
 /_nodes?pretty=true
+
+

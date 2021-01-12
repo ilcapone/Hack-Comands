@@ -1,8 +1,15 @@
 
-	- ftp [host]
-	- default:
-			* anonymous:anonymous
+## Free client 
+sudo apt-get install lftp
+	
+	# use
+	lftp -u [user] [IP]
 
-	## Comands
-	USER [user]
-	PASS [password]
+## Ftp native in som linux distributions
+- ftp [host]
+- default:
+		* anonymous:anonymous
+
+## Comands
+USER [user]
+PASS [password]

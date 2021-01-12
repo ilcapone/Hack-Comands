@@ -85,3 +85,4 @@ A role binding grants the permissions defined in a role to a user or set of user
 https://kubernetes.io/docs/reference/access-authn-authz/rbac/
 https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 https://stackoverflow.com/questions/48118125/kubernetes-rbac-role-verbs-to-exec-to-pod
+
