@@ -25,3 +25,14 @@ https://[registry-IP]:[port]/v2/controller/tags/list
 	## Docker auth private registry
 		Copy the ca.cert to /etc/docker/certs.d/[registryname]:[port]/ca.cert
 		Then run docker login [registryname]:[port]
+
+
+## Delete Images
+
+	## Get digest
+	curl --insecure -H "Authorization: Basic [basicAuth]"  -H "Accept: application/vnd.docker.distribution.manifest.v2+json"  https://[IP]:Port/v2/[image]/manifests/[tag] | jq -r '.config.digest'
+	curl -X DELETE --insecure -H "Authorization: Basic [basicAuth]"  https://[IP]:[port]/v2/[image]/manifests/[digest]
+
+	## Run garbage collector
+	- Login in the registry host
+	 docker exec -it [registry-images] bin/registry garbage-collect /etc/docker/registry/config.yml
