@@ -10,6 +10,7 @@ Integer Value Permissions Binary Representation
 0 none 000
 
 ## Change file user owner
-chown USER FILE
+chown [USER] [FILE]
 
-zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://target
+## Change folder and subfolder user owner
+sudo chown -R [USER] [FOLDER]

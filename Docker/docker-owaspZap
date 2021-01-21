@@ -1,0 +1,5 @@
+## Docu
+https://www.zaproxy.org/docs/docker/about/
+
+## Use
+zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://target
