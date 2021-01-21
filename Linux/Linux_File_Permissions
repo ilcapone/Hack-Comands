@@ -11,3 +11,5 @@ Integer Value Permissions Binary Representation
 
 ## Change file user owner
 chown USER FILE
+
+zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://target

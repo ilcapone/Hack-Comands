@@ -13,6 +13,9 @@
 ## Config cron for start script in ever reboot ##
 @reboot /path/script
 
+## Review if cronjonb is runnins
+sudo grep CRON /var/log/syslog
+
 
 ## Basic Tutorial ##
 
