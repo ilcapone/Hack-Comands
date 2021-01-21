@@ -188,7 +188,7 @@ cat /etc/passwd | cut -d:    # Lista de usuarios
 grep -v -E "^#" /etc/passwd | awk -F: '$3 == 0 { print $1}'   # Lista de super-usuarios
 awk -F: '($3 == "0") {print}' /etc/passwd   # Lista de super usuarios
 cat /etc/sudoers
-sudo -l
+sudo -l    ### listar archivos sobre los que un usuario puede eplear sudo
 
 
 Qué archivos sensibles podemos encontrar?

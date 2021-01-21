@@ -3,3 +3,6 @@
 ´´´https://osintframework.com/´´´
 
 https://www.hackers-arise.com/osint
+
+## Run Golismero
+golismero scan example.com

