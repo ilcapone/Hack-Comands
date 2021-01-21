@@ -78,5 +78,8 @@
 
 		## Load image from local image
 			imagePullPolicy: IfNotPresent
+
+		## Validate deployments
+		https://learnk8s.io/validating-kubernetes-yaml
  
 

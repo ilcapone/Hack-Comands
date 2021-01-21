@@ -9,8 +9,8 @@
 ### Kubernetes and Vault ###
 - https://medium.com/qubit-engineering/kubernetes-up-integrated-secrets-configuration-5a15b9f5a6c6
 
-## Configure private registry
-
+## Manage
+https://github.com/astefanutti/kubebox
 
 ## Hacking Kubernetes ###
 - http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html
@@ -204,6 +204,7 @@ serviceName + namespaceName + svc.cluster.local
 
 ## Add kubelet binari for exec as sudo root
 mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+
 
 
 

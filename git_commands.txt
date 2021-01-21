@@ -1,5 +1,28 @@
 ## Confi ssh ky for gitlab ##
 https://docs.gitlab.com/ee/ssh/
+	
+## Confi ssh ky for github ##	
+https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh
+
+	## Generate SSH key pair
+	ssh-keygen -t ed25519 -C "your_email@example.com"
+
+	## Adding ssh key to the ssh-agent
+	eval "$(ssh-agent -s)"
+	ssh-add ~/.ssh/[keyname]
+
+	## Add to github
+
+	## Test conexion
+	ssh -T git@github.com
+
+	## Config multiple accounts
+	- Create .ssh/config file
+	- add:
+		Host [host]
+		  Preferredauthentications publickey
+		  IdentityFile ~/.ssh/[keyname]
+
 
 ## Check repository state ##
 git remote show origin
@@ -106,5 +129,11 @@ git tag -d [local_tag]
 
 ## Delete remote tag
 git push --delete origin [tag]
+
+## View remote Urls
+git remote -v
+
+## Change fron remote HTTPS to SSH
+git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 
 
