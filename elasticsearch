@@ -7,3 +7,7 @@ https://www.elastic.co/guide/en/kibana/current/kibana-privileges.html
 /_nodes?pretty=true
 
 
+## Deploy ELK with docker
+https://github.com/Einsteinish/docker-elk
+
+
