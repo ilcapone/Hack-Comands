@@ -68,6 +68,9 @@ docker import /path/to/name.tgz
 # Export image to tarfile 
 docker save --output="name.tar" [image]
 
+## Load from tar file !recomended!
+docker load --input [image.tar]
+
 ## Raspberry Pi architecture images
 docker run -ti armhf/alpine:3.5 /bin/sh
 

@@ -16,4 +16,11 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
  ## Default Java home path
  /usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
+
+ ### Tips for setup raspi 4
+ https://support.thepihut.com/hc/en-us/articles/360001887937-My-Raspberry-Pi-4-will-not-boot-is-faulty
+ https://raspberrytips.com/raspberry-pi-wont-boot/
   
+
+ 	## Deep analisys
+ 	https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=58151

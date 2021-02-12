@@ -81,5 +81,9 @@
 
 		## Validate deployments
 		https://learnk8s.io/validating-kubernetes-yaml
+
+		## MITRE
+		https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/
+		https://attack.mitre.org/techniques/T1525/
  
 
