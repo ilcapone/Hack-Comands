@@ -4,3 +4,39 @@
 
 # particiones del disco
  > lsblk -fm
+
+ # folder size
+ du -h
+
+ ## View usbs
+ lsusb
+
+## Usb aditional information
+https://www.linuxnix.com/find-usb-device-details-in-linuxunix-using-lsusb-command/
+
+## Create a mount point to a usb
+	Docu
+		https://www.fosslinux.com/44371/how-to-mount-usb-drive-in-linux.htm
+	Not Persistence
+	> Create mount point
+		sudo mkdir /media/USB-Drive
+	> Mount the use inself
+		sudo mount /dev/sda1 /media/USB-Drive
+	Persistence
+			sudo nano /etc/fstab
+		Then add
+			/dev/sda1 /media/USB-Drive vfat defaults
+
+	Verify
+		ls -l /dev/disk/by-uuid/*
+
+
+## Formatear USB
+	- Docu
+		> https://tecadmin.net/format-usb-in-linux/
+	- Un mount
+		> sudo umount /dev/sdc1
+	- Formats types
+		FAT > sudo mkfs.vfat /dev/sdc1
+		NTFS > sudo mkfs.ntfs /dev/sdc1
+		EXT4 > sudo mkfs.ext4 /dev/sdc1
