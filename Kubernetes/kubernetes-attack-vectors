@@ -85,5 +85,11 @@
 		## MITRE
 		https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/
 		https://attack.mitre.org/techniques/T1525/
+
+		## Hack-misconfiguration
+		https://github.com/vchinnipilli/kubestriker
+
+		## Kube-Read
+		https://github.com/lightspin-tech/red-kube
  
 
