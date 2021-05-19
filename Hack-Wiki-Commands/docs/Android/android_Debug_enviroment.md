@@ -1,5 +1,8 @@
 # Android Debug Enviroment
 
+## Create Enviroment
+```https://lobuhisec.medium.com/c%C3%B3mo-montar-un-laboratorio-de-pentesting-para-android-en-windows-4b5c627ea67a```
+
 ## XPose installation
 ```https://dorylabs.com/get-genymotion-play-store-supersu-xposed/```
 

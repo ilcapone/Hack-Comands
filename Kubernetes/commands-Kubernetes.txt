@@ -1,4 +1,7 @@
 
+## Full Documentation 
+https://github.com/magnologan/awesome-k8s-security
+
 ### Compilation ###
 - https://gist.github.com/edsiper/fac9a816898e16fc0036f5508320e8b4
 - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
@@ -11,6 +14,9 @@
 
 ## Manage
 https://github.com/astefanutti/kubebox
+
+## Managment Bot Kube
+https://github.com/infracloudio/botkube
 
 ## Hacking Kubernetes ###
 - http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html

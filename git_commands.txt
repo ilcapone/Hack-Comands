@@ -23,6 +23,11 @@ https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/
 		  Preferredauthentications publickey
 		  IdentityFile ~/.ssh/[keyname]
 
+## Proces to create a Pull Request
+http://www.dasblinkenlichten.com/how-to-create-a-github-pull-request-pr/
+
+## How to update PR
+https://ffeathers.wordpress.com/2020/01/12/how-to-update-your-pr-on-github/
 
 ## Check repository state ##
 git remote show origin
