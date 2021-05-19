@@ -5,7 +5,12 @@
 
 	https://securecompliance.gitbook.io/projects/openvas-greenbone-deployment-full-guide
 
+	https://github.com/Secure-Compliance-Solutions-LLC/OpenVAS-Docker
+
 	## Image
 	https://hub.docker.com/r/securecompliance/gvm/
 
- 
+	## Run AS
+	ocker run --detach --publish 8080:9392 --publish 5432:5432 --publish 2222:22 --env DB_PASSWORD="postgres DB password" --env PASSWORD="webUI password" --volume gvm-data:/data --name gvm securecompliance/gvm
+
+	

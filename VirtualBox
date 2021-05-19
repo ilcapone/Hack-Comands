@@ -50,3 +50,4 @@ VBoxManage unregistervm --delete [VM-Name]
 
 	# Try
 	pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard
+

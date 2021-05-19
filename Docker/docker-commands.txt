@@ -42,6 +42,9 @@ docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins
 # Aquatone
 https://blog.smallsec.ca/dockerizing-cli-tools/
 
+## Run Mobsf on docker
+https://mobsf.github.io/docs/#/docker
+
 # Logs
 docker logs [container-id]
 docker logs --follow [container-id]	

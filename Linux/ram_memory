@@ -1,0 +1,3 @@
+
+## RAM memory, used and free
+free -h
