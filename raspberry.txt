@@ -23,7 +23,11 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
  ### Tips for setup raspi 4
  https://support.thepihut.com/hc/en-us/articles/360001887937-My-Raspberry-Pi-4-will-not-boot-is-faulty
  https://raspberrytips.com/raspberry-pi-wont-boot/
-  
-
- 	## Deep analisys
+ 
+  	## Deep analisys
  	https://www.raspberrypi.org/forums/viewtopic.php?f=28&t=58151
+
+ ## Troubleshooting
+
+ 	# problmes with moun volumens
+ 	http://www.htgsd.com/information-technology/fix-rpi-with-cannot-open-access-to-console-the-root-account-is-locked/

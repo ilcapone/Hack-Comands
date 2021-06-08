@@ -1,0 +1,23 @@
+
+## Permisions
+https://www.elastic.co/guide/en/kibana/current/kibana-privileges.html
+
+# Querys
+/_nodes?pretty=true
+
+## Deploy ELK with docker
+https://github.com/Einsteinish/docker-elk
+
+## Run wazu stack with docker-compose
+https://documentation.wazuh.com/current/docker/wazuh-container.html
+
+## Deploy on raspberry
+https://github.com/stefanwalther/rpi-docker-elk
+	
+	### mANUAL
+	https://www.linkedin.com/pulse/elasticsearch-raspberry-pi-rushab-ambre/
+	
+	https://www.elastic.co/guide/en/elastic-stack-get-started/6.8/get-started-elastic-stack.html
+
+## Logs paths
+/var/log/elasticsearch/elasticsearch.log

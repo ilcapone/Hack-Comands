@@ -10,3 +10,6 @@ groups
 ## Obtain Linux Kernel ##
 uname -r
 
+## Get architecture
+dpkg --print-architecture
+
