@@ -54,8 +54,26 @@ aws ec2 describe-security-groups --region [region]
 ## Asume Role
 aws sts assume-role --role-arn "[the arn]" --role-session-name [some-Session_name]
 
+## List all RDS instances
+aws rds describe-db-instances
+
+## List all RDS snapshots
+aws rds describe-db-snapshots
+
+## List all automated RDS snapshots
+aws rds describe-db-snapshots \
+    --snapshot-type automated \
+    --query "length(*[].{DBSnapshots:SnapshotType})"
+
+    ## Filter by dbsnapshot name
+    aws rds describe-db-snapshots --snapshot-type automated --query "*[].{DBSnapshots:DBSnapshotIdentifier}"
+
+
 ### Documentation ###
 
 ## ACLs VS Security Groups
 https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae
+
+## Copy and Share Snapshots
+https://dzone.com/articles/automatic-sharing-and-loading-rds-snapshots
 

@@ -91,5 +91,12 @@
 
 		## Kube-Read
 		https://github.com/lightspin-tech/red-kube
+
+		## Pentesting Tool
+		https://github.com/inguardians/peirates
+		--> Documentation: https://www.inguardians.com/peirates/
+
+		## C2C malware case on Windows K8s
+		https://unit42.paloaltonetworks.com/siloscape/
  
 
