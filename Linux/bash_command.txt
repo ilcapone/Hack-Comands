@@ -13,6 +13,9 @@ tar -czvf [name-of-archive.tar.gz] [/path/to/directory-or-file]
 ## Unzip file
 unzip file.zip
 
+# Unzip .gz or .txt.gz
+gunzip [file]
+
 ## Unzip with pasword
 unzip -P [pasword] file.zip
 

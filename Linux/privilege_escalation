@@ -1,0 +1,19 @@
+
+### SUID ###
+In Linux, SUID (set owner userId upon execution) is a special type of file permission given to a file. SUID gives temporary permissions to a user to run the program/file with the permission of the file owner (rather than the user who runs it).
+
+For example, the binary file to change your password has the SUID bit set on it (/usr/bin/passwd). This is because to change your password, it will need to write to the shadowers file that you do not have access to, root does, so it has root privileges to make the right changes.
+
+	> More Info: 
+				https://pentestlab.blog/2017/09/25/suid-executables/
+				https://www.hackingarticles.in/linux-privilege-escalation-using-suid-binaries/
+	> Search files with SUID
+		find / -user root -perm -4000 -print 2>/dev/null
+		find / -perm -u=s -type f 2>/dev/null
+		find / -user root -perm -4000 -exec ls -ldb {} \;
+	> Example elevate priv using /bin/systemctl
+		https://medium.com/@klockw3rk/privilege-escalation-leveraging-misconfigured-systemctl-permissions-bc62b0b28d49
+		https://gist.github.com/A1vinSmith/78786df7899a840ec43c5ddecb6a4740
+	> Adicional Info:
+		* Befor execute /bin/systemctl enable root.service will be necesary execute /bin/systemctl start root.service
+
