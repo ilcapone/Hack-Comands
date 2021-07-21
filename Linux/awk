@@ -2,3 +2,6 @@
 ## Nº of colums
 	awk '{print NF}'
 
+## Get specfic colum
+	awk '{print $1}'
+

@@ -1,0 +1,17 @@
+## Main docu
+https://cli.github.com/manual/gh_help_reference
+
+## auth
+gh auth login
+
+## Especify repo without stay in the repo path
+--repo [OWNER]/[REPO_NAME]
+
+## List execution workflows
+gh run list --repo [OWNER]/[REPO_NAME]
+
+## View Workflow expecific information
+gh run view [workflowID] --repo [OWNER]/[REPO_NAME]
+
+## View Job Logs 
+gh run view --job [jobID] --log --repo [OWNER]/[REPO_NAME]

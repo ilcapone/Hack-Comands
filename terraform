@@ -10,7 +10,7 @@
 ## Pass variables on deployment
 [Oficial](https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-variables)
 
-## Tool for manae multiple Terraform versions
+## Tool for manage multiple Terraform versions
 https://github.com/tfutils/tfenv
 
 

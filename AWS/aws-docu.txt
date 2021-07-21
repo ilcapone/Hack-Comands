@@ -48,3 +48,10 @@ https://aws.amazon.com/es/blogs/security/how-to-use-aws-config-to-monitor-for-an
 https://rhinosecuritylabs.com/aws/cloud-container-attack-tool/
 https://rhinosecuritylabs.com/cloud-security/cloudgoat-aws-scenario-ec2_ssrf/
 https://github.com/RhinoSecurityLabs/Cloud-Security-Research/tree/master/AWS
+
+## Creat a DRP with AWS Backups
+https://aws.amazon.com/es/blogs/storage/secure-data-recovery-with-cross-account-backup-and-cross-region-copy-using-aws-backup/
+https://aws.amazon.com/es/blogs/storage/centralized-cross-account-management-with-cross-region-copy-using-aws-backup/
+
+## Services that can be public
+https://github.com/SummitRoute/aws_exposable_resources

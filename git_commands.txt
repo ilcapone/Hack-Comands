@@ -141,4 +141,8 @@ git remote -v
 ## Change fron remote HTTPS to SSH
 git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 
+## Trigger Acction with empty commit
+git commit --allow-empty -m "trigger GitHub actions"
+git push
+
 
