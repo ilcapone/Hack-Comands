@@ -35,18 +35,24 @@ Tools
 
 ### Tools
 
-Cain y Abel
+#### Cain y Abel
 
  Ophcrack
 
 - Live CD booteable
 
-Jhon The Riper
+#### Jhon The Riper
+
+- [Documentation](https://countuponsecurity.files.wordpress.com/2016/09/jtr-cheat-sheet.pdf)
+- [Use Formats](http://pentestmonkey.net/cheat-sheet/john-the-ripper-hash-formats)
 
 ```john --format=[has-format] [hash-file.txt]```
 
-```john --wordlist [wordlist-path] [hash-file.txt]```
+```john --wordlist=[wordlist-path] [hash-file.txt]```
 
-www.onlinehashckarck
+
+### Online Tools
+
+```www.onlinehashckarck```
 			
 	
