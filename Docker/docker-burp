@@ -19,3 +19,7 @@ sudo docker-compose up
 		chmod 775 _data/     ## and inside folders and files
 - Config Burp Proxy to lisen on all interface
 - Instal Burp cert
+
+## Install burp license
+- /home/[user]/.java/.userPrefs/burp
+--> sustituir

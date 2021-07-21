@@ -44,6 +44,7 @@
 		- https://blog.aquasec.com/kubernetes-security-pod-escape-log-mounts
 		- https://github.com/danielsagi/kube-pod-escape
 		- https://unaaldia.hispasec.com/2019/04/vulnerabilidad-en-kubernetes-mal-parcheada-permite-realizar-un-directory-traversal-en-el-copiado.html
+		- https://blog.trailofbits.com/2019/07/19/understanding-docker-container-escapes/
 
 		## Criptomaining atacks ##
 		- https://blog.aquasec.com/crypto-mining-malware-container-security
