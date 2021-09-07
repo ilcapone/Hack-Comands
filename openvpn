@@ -5,6 +5,9 @@ https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engin
 ## Hargering guide
 https://openvpn.net/community-resources/how-to/#hardening-openvpn-security
 
+## Expose internal service port on vpn server
+https://unix.stackexchange.com/questions/449853/port-forwarding-using-openvpn-client
+
 ## Status ##
 - sudo systemctl status openvpn@server
 
@@ -24,6 +27,7 @@ https://openvpn.net/community-resources/how-to/#hardening-openvpn-security
 	- Add to crontab for reboot control
 		> @reboot sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
 
+
 ## Linux troublesuting ##
     - Change /etc/resolf.conf to 1.1.1.1
 	- sudo apt install openvpn-systemd-resolved
@@ -39,5 +43,9 @@ https://openvpn.net/community-resources/how-to/#hardening-openvpn-security
 	  tcpdump -ni any port 53
 
 
-##Init openvpn on linux
+## Init openvpn on linux
 - sudo openvpn --config client.ovpn
+
+## Client review logs
+grep VPN /var/log/syslog
+grep openvpn /var/log/syslog

@@ -101,7 +101,6 @@ else
       echo "\$var is NOT empty"
 fi
 
-
 ## Replace string in file
 sed -i 's/search_string/replace_string/' filename
 
@@ -117,6 +116,9 @@ https://unix.stackexchange.com/questions/140840/using-getopts-to-parse-options-a
 
 ## Modify Banner
 nano .bashrc
+	
+## Modify banner
+nano /etc/motd
 
 ## Get timestamp
 date +"%s"
@@ -134,3 +136,15 @@ string [binarifile]
 	    echo $i
 	done
 
+## Package information
+dpkg -s [package_name]
+
+# Review package forwarding status
+cat /proc/sys/net/ipv4/ip_forward
+
+# Enable package forwarding persistence
+sudo nano /etc/sysctl.conf
+	> uncoment: net.ipv4.ip_forward=1
+sudo sysctl -p
+
+The OpenVPN server machine may need to NAT or bridge the TUN/TAP interface to the internet in order for this to work properly).

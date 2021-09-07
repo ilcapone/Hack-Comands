@@ -1,0 +1,16 @@
+## Documentatios
+	# Hardening
+	https://linux-audit.com/audit-and-harden-your-ssh-configuration/
+
+	# Cert Acces
+	https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
+
+## View State
+sshd -T
+
+## Config file
+/etc/ssh/sshd_config
+
+## Logs
+/var/log/auth.log
+

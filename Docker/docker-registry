@@ -9,6 +9,9 @@ https://microk8s.io/docs/registry-private
 https://github.com/containerd/cri/blob/master/docs/registry.md
 https://www.ibm.com/mysupport/s/question/0D50z000062l0GL/failed-to-fetch-anonymous-token-unexpected-status-401-unauthorized-when-running-a-kubernetes-deployment?language=es
 
+## K8s
+https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
 ## API
 
 ## View images in registry

@@ -9,10 +9,20 @@
 ## Config Chartmuseum
 ´´´https://github.com/helm/charts/tree/master/stable/chartmuseum#using-with-google-cloud-storage´´´
 
-## Helm Tricks
-https://helm.sh/docs/howto/charts_tips_and_tricks/#creating-image-pull-secrets
+## Helm Tricks add docker registry secret
+´´´https://helm.sh/docs/howto/charts_tips_and_tricks/#creating-image-pull-secrets´´´
+
+## Add args
+´´´https://stackoverflow.com/questions/52839920/get-array-of-strings-from-helm-config´´´
+´´´https://stackoverflow.com/questions/58028761/pass-array-in-helm-values-property´´´
+
+## Objects
+´´´https://helm.sh/docs/chart_template_guide/builtin_objects/´´´
 
 ## Commands
+
+### Create basic Chart
+helm create [name]
 
 ### Install chart
 ´´´helm install [name] ./[folder-name]´´´
@@ -34,7 +44,11 @@ https://helm.sh/docs/howto/charts_tips_and_tricks/#creating-image-pull-secrets
 ´´´helm status [name] -n [namespace]
 
 ## Full information
-helm get all [name] -n [namespace]
+´´´helm get all [name] -n [namespace]´´´
 
 ## Create an emty chart
-helm create [emty_chart_name]
+´´´helm create [emty_chart_name]´´´
+
+## Search charts on repo
+´´´helm search repo´´´
+

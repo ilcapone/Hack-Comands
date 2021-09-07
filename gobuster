@@ -4,6 +4,9 @@ https://github.com/OJ/gobuster
 # Basic Use to search directorys
 gobuster dir -u http://[ip]:[puesto] -w [wordlist]
 
+# Sckipt Certificate validate
+gobuster dir -u http://[ip]:[puesto] -w [wordlist] -k --wildcard
+
 # Basic Use to search DNS subdomains
 gobuster dns -d <target domain> -w <wordlist>
 

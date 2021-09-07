@@ -14,6 +14,9 @@
 ```VBoxManage list runningvms```
 ```VBoxManage list -l runningvms```
 
+### Information About VM
+```VBoxManage showvminfo [VM-Name]```
+
 ### Start VM
 ```VBoxManage startvm [VM-Name]```
 
@@ -50,4 +53,17 @@ VBoxManage unregistervm --delete [VM-Name]
 
 	# Try
 	pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard
+
+# Resize VBox Disk
+	------------ Docu --------------
+	
+	https://help.clouding.io/hc/es/articles/360010074599-C%C3%B3mo-extender-particiones-manualmente-en-Linux
+	------------ How To -------------
+	1º Power off VBos
+	2º Resize VBox Disk:
+		- VBoxManage modifyhd [VM_Name_Disck.vdi] --resize [Size in MB]
+	3º StartVM and acces
+	4º Resice Partition:
+		- Review size: fdisk -l
+		- resize2fs /dev/sda1
 

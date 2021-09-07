@@ -1,6 +1,6 @@
 
 	
-	--- * Exploitng Automatizado * ---
+	--- * Automatic Exploiting  * ---
 	
 	### Metasploit ###
 	- Init:
@@ -19,6 +19,9 @@
 		* db_import nmap.xml .nessus
 		* hosts
 
+	- Scann with nmap whitin metasploit
+	   * db_nmap -sV [target_ip]
+
 	- View Hosts info:
 		* hosts
 		* services [host]
@@ -27,6 +30,7 @@
 
 	- Exploit
 		* use [exploit]
+			--> use [nº that apear in the left column #]
 		* info
 		* show paylodas
 		* set payload [payload]

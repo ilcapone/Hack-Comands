@@ -29,6 +29,9 @@ https://github.com/infracloudio/botkube
 ## Puertos de getion del cluster ##
 - 443, 8080, 10250 y 10255.
 
+## Config pribate registry
+https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
 ## Config cluster credencials for use in GCP ##
 - gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
 

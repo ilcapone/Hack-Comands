@@ -1,0 +1,22 @@
+
+# Docu
+https://www.sololinux.es/como-configurar-ufw-firewall-en-debian-10-correctamente/
+
+# Activate
+sudo ufw enable
+
+# Disable
+sudo ufw disable
+
+# Status
+sudo ufw status verbose
+sudo ufw status numbered
+
+# Allow SSH
+sudo ufw allow OpenSSH
+
+# Open specific port
+sudo ufw allow 123/tcp
+
+# Delete specific rule
+sudo ufw delete [numper]

@@ -11,3 +11,9 @@ sudo apt-get clean
 sudo apt autoremove
 sudo apt autoremove --purge
 rm -rf ~/.caché/thumbnails/*
+
+## Displaying all sub-directories and their sizes, sorted by size 
+du -hs * | sort -hr
+
+# Buscar ARchivos en todo el sistema con espacio malloer de 50MB
+sudo find / -type f -size +50M -exec ls -lh {} \;

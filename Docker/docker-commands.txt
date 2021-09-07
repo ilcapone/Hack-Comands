@@ -99,6 +99,9 @@ docker run \
   --volume /my_volume \
   --workdir /app \ 
   IMAGE bash
+
+# Delete all pause container
+docker rm $(docker ps -a --format "{{.ID}}")
  
  -----------------------------------------
  

