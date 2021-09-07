@@ -16,29 +16,30 @@ https://github.com/tfutils/tfenv
 
 # Commands
 
-### Initialize project
-
+## Initialize project
 ``` terraform init ```
 
-### Validate sintax
-
+## Validate sintax
 ``` terraform validate ```
 
-### View plan	 
-
+## View plan	 
 ``` terraform plan ```
 
-### Deploy
-
+## Deploy
 ``` terraform apply ```
 
-### Delete deploy
-
+## Delete deploy
 ``` terraform destroy ```
 
 ## View Deployment
+``` terraform show ```
 
-`` terraform show ```
+## View state
+```terraform state list```
+
+## Remove resource from state
+```terraform state rm [state path]
+
 
 # Troubleshooting
 

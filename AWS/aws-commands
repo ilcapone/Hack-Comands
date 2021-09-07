@@ -68,6 +68,10 @@ aws rds describe-db-snapshots \
     ## Filter by dbsnapshot name
     aws rds describe-db-snapshots --snapshot-type automated --query "*[].{DBSnapshots:DBSnapshotIdentifier}"
 
+## Get EKS security cluster
+aws eks describe-cluster --name <cluster_name> --query cluster.resourcesVpcConfig.clusterSecurityGroupId
+aws eks describe-cluster --name <cluster_name> --query cluster.resourcesVpcConfig.securityGroupIds
+
 
 ### Documentation ###
 
