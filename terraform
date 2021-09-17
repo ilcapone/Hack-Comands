@@ -11,7 +11,13 @@
 [Oficial](https://learn.hashicorp.com/tutorials/terraform/google-cloud-platform-variables)
 
 ## Tool for manage multiple Terraform versions
-https://github.com/tfutils/tfenv
+[tfenv](https://github.com/tfutils/tfenv)
+
+## Check cost of terraform
+[infracost](https://github.com/infracost/infracost)
+
+## Check Security Estatic Code Analysis
+[checkov](https://github.com/bridgecrewio/checkov)
 
 
 # Commands

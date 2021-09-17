@@ -11,6 +11,9 @@ docker run -d [docker_image]
 
 # Exec bash into a container and exit without stop
 docker exec -it [container] bash
+
+# Exec bash into a container as root
+docker exec -it [container] bash
 	
 # Inspect container ip
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
