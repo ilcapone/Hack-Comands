@@ -21,6 +21,7 @@ nav:
         - 'Decompile APK': 'Android/android_Decompile.md'
         - 'Android Monitoring': 'Android/android_monitor.md'
         - 'Cordoba Phonegapp': 'Android/cordoba-securityAspects.md'
+        - 'Manage APKs': 'Android/android-APK.md'
     - Ethical Hacking:
         - 'Linux Commands': 'CPHE/00-ComandosLINUX.md'
         - 'Information Gathering': 'CPHE/01-RecoleccionInformación.md'

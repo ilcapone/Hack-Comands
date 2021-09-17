@@ -10,3 +10,7 @@ nmap -p 22 --open -sV 192.168.0.*
 ## Scan open port and execute service scan
  ports=$(nmap -p- --min-rate=1000 -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
  nmap -sC -sV -p$ports 10.10.10.27 
+
+
+## Download nmap from binary without install
+wget https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/nmap?raw=true -O nmap
