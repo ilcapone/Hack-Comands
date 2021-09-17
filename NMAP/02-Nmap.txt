@@ -14,7 +14,7 @@
 	
 	### Evadir Firewalls  ###
 	nmap -sS -Pn
-	nmap -sS -f
+	nmap -sS -f  
 	nmap -sS --mtu 6/4/16/32 (División de paquetes)
 
 	### Version de servicios ###

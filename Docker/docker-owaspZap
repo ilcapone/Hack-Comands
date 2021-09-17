@@ -1,5 +1,10 @@
 ## Docu
 https://www.zaproxy.org/docs/docker/about/
+https://www.zaproxy.org/docs/docker/webswing/
+
+## Run owaszap on web
+	docker run -u zap -p 8080:8080 -p 8090:8090 -i owasp/zap2docker-stable zap-webswing.sh
+ 	- Acces on http://localhost:8080/zap
 
 ## Use
 zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://target

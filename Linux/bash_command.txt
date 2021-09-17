@@ -146,5 +146,3 @@ cat /proc/sys/net/ipv4/ip_forward
 sudo nano /etc/sysctl.conf
 	> uncoment: net.ipv4.ip_forward=1
 sudo sysctl -p
-
-The OpenVPN server machine may need to NAT or bridge the TUN/TAP interface to the internet in order for this to work properly).
