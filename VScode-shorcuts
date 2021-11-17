@@ -30,3 +30,8 @@ https://dev-pages.info/vscode-how-to-change-the-font-size/
 - nano  $HOME/.config/Code/User/settings.json
 	"editor.fontSize": 12,
 	"terminal.integrated.fontSize": 12
+
+
+
+@bionicvanilla
+@4br4x4s_

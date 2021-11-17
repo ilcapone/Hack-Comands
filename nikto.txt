@@ -2,6 +2,9 @@
 
 --- * NIKTO * ---
 
+## Docu
+	https://man.archlinux.org/man/community/nikto/nikto.1.en
+	
 # ayuda 	 --> niktko -H	
 # Intesive scan  --> nikto -host [httl//ejemplo.gas] -C all -Display -F [csv,html,xml,txt] -output [file]
 # Proxy 	 --> nikto -host [] -useproxy [http://localhost:8181]

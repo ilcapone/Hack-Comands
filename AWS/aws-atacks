@@ -1,0 +1,35 @@
+
+## Awesome Tools
+https://github.com/toniblyx/my-arsenal-of-aws-security-tools
+
+## PACU Docker
+docker run -it rhinosecuritylabs/pacu:latest
+
+## Tools and tactics
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
+
+## Hack Cognito Auth
+	# Cognito understanding
+	https://www.integralist.co.uk/posts/cognito/
+
+	# Atacks Docu
+		https://notsosecure.com/hacking-aws-cognito-misconfigurations/
+		https://curlsandbun.medium.com/compromising-s3-buckets-through-misconfigured-aws-cognito-e23f08b2f475
+		https://blog.appsecco.com/exploiting-weak-configurations-in-amazon-cognito-in-aws-471ce761963
+
+	# Example get API KEy
+	https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#CognitoIdentity-GetCredentialsForIdentity-request-CustomRoleArn
+
+	## Signature Request
+	https://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
+
+	## Manual Auth
+	https://stackoverflow.com/questions/61528968/manual-authentication-with-amazon-cognito
+	https://stackoverflow.com/questions/37941780/what-is-the-rest-or-cli-api-for-logging-in-to-amazon-cognito-user-pools/53343689#53343689
+
+	## InitiateAuth vs AdminInitiateAuth
+	https://stackoverflow.com/questions/53755308/aws-cognito-admininitiateauth-vs-initiateauth
+
+
+## Container Enviroment on AWS
+https://github.com/RhinoSecurityLabs/ccat

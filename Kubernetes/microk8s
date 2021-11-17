@@ -5,6 +5,9 @@
 
 ```https://microk8s.io/docs/```
 
+## Basic Ingress Config
+```https://microk8s.io/docs/addon-ingress```
+
 ### Dashboard
 https://microk8s.io/docs/addon-dashboard
 

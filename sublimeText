@@ -1,0 +1,7 @@
+
+## Prettify JSON
+	# Install
+	CMD+SHIFT+P, then select ‘Install Package’. Search for ‘Pretty JSON’ 
+
+	# How to use
+	To prettify JSON, make selection of json (or else it will try to use full view buffer) and through Command Palette Ctrl+Shift+P find “Pretty JSON: Format JSON” (you can search for part of it like 'pretty format')
