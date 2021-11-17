@@ -14,3 +14,7 @@ ruby wpscan.rb --url http(s)://www.example.com --enumerate vp or vt
 
 ## Vervose ##
 -v
+
+## Harde Use
+ --enumerate "vp,vt,cb,dbe" --plugins-threshold 100 --themes-threshold 50 
+

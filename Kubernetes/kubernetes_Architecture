@@ -1,0 +1,8 @@
+### Ingres controller restrict by IP
+https://medium.com/@maninder.bindra/using-nginx-ingress-controller-to-restrict-access-by-ip-ip-whitelisting-for-a-service-deployed-to-bd5c86dc66d6
+
+### Nginx ingress controller anotations
+https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/
+
+## Istio
+https://istio.io/latest/docs/concepts/security/

@@ -21,3 +21,7 @@ List available devices
 
 ## Genymotion Logs
 ```C:\Users\<user>\AppData\Local\Genymobile\Genymotion\deployed\<virtual device name>\Logs```
+
+# Online Enviroment
+Upload your APK and get the results online.
+```https://beta.pithus.org/```

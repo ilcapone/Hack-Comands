@@ -1,4 +1,10 @@
 
+## How to conect
+	- Docu
+	- docker pull mcr.microsoft.com/mssql-tools	
+	- docker run -it mcr.microsoft.com/mssql-tools
+	-  sqlcmd -S 127.0.0.1 -U [user] -P [pass]
+
 ## Get Admin Shell
 SQL> SELECT IS_SRVROLEMEMBER ('sysadmin')
 ----------> REspond with som number

