@@ -32,7 +32,7 @@ aws s3api get-object --bucket [bucket-name] --key [object] [output-file-name]
 ## Create CloudFormation from local file
 aws cloudformation create-stack --stack-name myteststack --template-body file:///home/testuser/mytemplate.json --parameters ParameterKey=Parm1,ParameterValue=test1 ParameterKey=Parm2,ParameterValue=test2
 
-## EKS
+## EKS auth
 aws eks update-kubeconfig --name [cluster-name]
 
 ## List clusters
@@ -72,8 +72,14 @@ aws rds describe-db-snapshots \
 aws eks describe-cluster --name <cluster_name> --query cluster.resourcesVpcConfig.clusterSecurityGroupId
 aws eks describe-cluster --name <cluster_name> --query cluster.resourcesVpcConfig.securityGroupIds
 
+## List Backups plan
+aws backup list-backup-plans
 
-### Documentation ###
+## Get information of specfic backup plan 
+aws backup get-backup-plan --backup-plan-id [backup-ID]
+
+
+    ### Documentation ###
 
 ## ACLs VS Security Groups
 https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae

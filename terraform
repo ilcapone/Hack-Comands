@@ -18,6 +18,10 @@
 
 ## Check Security Estatic Code Analysis
 [checkov](https://github.com/bridgecrewio/checkov)
+[tfsec](https://github.com/aquasecurity/tfsec)
+
+## Tutorials
+[Scanning infraestructure as code](https://blog.christophetd.fr/shifting-cloud-security-left-scanning-infrastructure-as-code-for-security-issues/)
 
 
 # Commands
@@ -52,3 +56,13 @@
 # Examples
 
 ## RDS - https://github.com/bridgecrewio/terraform-aws-secured-postgresql-rds
+
+
+## Debugging
+	
+	# Enable
+	export TF_LOG=trace
+	export TF_LOG_PATH=./terraform.log
+
+	# Disable
+	export TF_LOG=off

@@ -22,6 +22,7 @@ nav:
         - 'Android Monitoring': 'Android/android_monitor.md'
         - 'Cordoba Phonegapp': 'Android/cordoba-securityAspects.md'
         - 'Manage APKs': 'Android/android-APK.md'
+        - 'SDK': 'Android/android-SDK.md'
     - Ethical Hacking:
         - 'Linux Commands': 'CPHE/00-ComandosLINUX.md'
         - 'Information Gathering': 'CPHE/01-RecoleccionInformación.md'
