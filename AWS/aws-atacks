@@ -8,8 +8,11 @@ docker run -it rhinosecuritylabs/pacu:latest
 ## Tools and tactics
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
 
-## Hack 
- Auth
+## S3 Policies
+https://github.com/bear/s3scan
+
+## Hack Cognito Auth
+
 	# Cognito understanding
 	https://www.integralist.co.uk/posts/cognito/
 

@@ -20,6 +20,13 @@
 
 		## Pentesting procedures
 		- https://www.cyberark.com/resources/threat-research-blog/kubernetes-pentest-methodology-part-1
+		- https://www.cyberark.com/resources/threat-research-blog/kubernetes-pentest-methodology-part-2
+		- https://github.com/calinah/learn-by-hacking-kccn/blob/master/Learn%20by%20Hacking.pdf
+
+		## Hacking Kubernetes ###
+		- http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html
+		- https://www.4armed.com/blog/hacking-kubelet-on-gke/
+		- https://medium.com/@pczarkowski/the-kubernetes-api-call-is-coming-from-inside-the-cluster-f1a115bd2066
 
 		### Know Vulneravility - From POD to Cluster Admin ###
 		- https://blog.appsecco.com/kubernetes-namespace-breakout-using-insecure-host-path-volume-part-1-b382f2a6e216
@@ -34,6 +41,9 @@
 
 		- Use results:
 			* ./kubectl --client-certificate bootstrap/kubelet-bootstrap.crt --client-key bootstrap kubelet-bootstrap.key  --certificate-authority bootstrap/ca.crt --server https://35.198.87.27 get certificatesigningrequests
+
+		## Scape From Pods
+		https://bishopfox.com/blog/kubernetes-pod-privilege-escalation#Pod4
 
 		## Exploit Healcheck API ##
 		- https://securityboulevard.com/2019/01/kubernetes-unauth-kublet-api-10250-basic-code-exec/
@@ -56,11 +66,15 @@
 		## Kube Thanos
 		https://github.com/berkay-dincer/kubethanos/blob/master/README.md
 
-		## Kube Audit Roles
+		## Kube Audit Roles and Permisions
 		https://github.com/cyberark/kubernetes-rbac-audit
 
 		## Mitre Attack
+		https://github.com/aquasecurity/kube-hunter#kuberentes-attck-matrix
 		https://www.microsoft.com/security/blog/2020/04/02/attack-matrix-kubernetes/
+
+		## OWASP K8s
+		https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html
 
 		## Clean kubernetes logs
 		kubectl delete events–all
@@ -77,7 +91,7 @@
 		## Load image in to de cluster from file
 		https://stackoverflow.com/questions/58916308/kubernetes-deploy-with-tar-docker-image
 
-		## Kubehunter Vulneravility Descriptions
+		## Aqua Kube-Hunter Vulneravility Descriptions
 		https://aquasecurity.github.io/kube-hunter/
 
 		## Load image from local image
@@ -102,5 +116,37 @@
 
 		## C2C malware case on Windows K8s
 		https://unit42.paloaltonetworks.com/siloscape/
+
+		## Get images running on each pod in the cluster
+		> Crete file images.fmt with the content:
+		NAMESPACE            NAME           IMAGE
+		metadata.namespace   metadata.name  spec.containers[0].image
+
+		> kubectl get pods -A -o custom-columns-file=images.fmt
+
+		## cve-2022-0185
+		https://www.armosec.io/blog/cve-2022-0185-kubernetes-users/
+
+		## Comon vulneravilitys Check
+		https://github.com/armosec/kubescape
+
+			## Controls
+			https://hub.armo.cloud/docs/controls
+
+			## NSA Controls
+			https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/2716980/nsa-cisa-release-kubernetes-hardening-guidance/
+			- kubescape scan framework nsa
+
+			## Mitre Controls
+			- kubescape scan framework mitre
+
+		## CVE-2020–15257: k8s exploit hostNetwork: true
+		- Kubernetes users are affected if they are using containerd as the CRI runtime and running pods with .spec.hostNetwork: true without setting .spec.securityContext.runAsUser
+		- https://medium.com/nttlabs/dont-use-host-network-namespace-f548aeeef575
+		- https://blog.aquasec.com/cve-2020-15257-containerd-shim-api-vulnerability
+		- https://www.fatalerrors.org/a/cve-2020-15257-escape-docker-with-containerd-shim-api-under-host.html
+		- How to check
+		    $ kubectl get pods -A -o json | jq -c '.items[] | select(.spec.hostNetwork==true) |[.metadata.namespace, .metadata.name]'
+
  
 

@@ -10,6 +10,9 @@ Ctrl+K Ctrl+T
 ## Open Terminal
 Ctrl+`
 
+## Select all content in file
+Ctrl+a
+
 ## Show/Hide side folder explorer bar
 Ctrl+B
 
@@ -30,3 +33,4 @@ https://dev-pages.info/vscode-how-to-change-the-font-size/
 - nano  $HOME/.config/Code/User/settings.json
 	"editor.fontSize": 12,
 	"terminal.integrated.fontSize": 12
+
