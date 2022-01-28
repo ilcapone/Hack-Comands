@@ -4,5 +4,8 @@ https://medium.com/@maninder.bindra/using-nginx-ingress-controller-to-restrict-a
 ### Nginx ingress controller anotations
 https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/
 
+## Nginx ingress controller basic auth http
+https://kubernetes.github.io/ingress-nginx/examples/auth/basic/
+
 ## Istio
 https://istio.io/latest/docs/concepts/security/

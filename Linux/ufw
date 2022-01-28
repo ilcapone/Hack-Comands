@@ -1,6 +1,8 @@
 
 # Docu
 https://www.sololinux.es/como-configurar-ufw-firewall-en-debian-10-correctamente/
+https://www.hackers-arise.com/post/linux-firewalls-uncomplicated-firewall-ufw?s=09
+https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands
 
 # Activate
 sudo ufw enable

@@ -57,3 +57,4 @@ helm create [name]
 ## Search charts on repo
 ´´´helm search repo´´´
 
+toolsdeploymenthelm

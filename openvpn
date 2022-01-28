@@ -2,6 +2,10 @@
 ## Config OpenVPN server on GCP ##
 https://medium.com/teendevs/setting-up-an-openvpn-server-on-google-compute-engine-9ff760d775d9
 
+## Config OpenVPN Debian10
+https://tecadmin.net/install-openvpn-debian-10/
+https://www.rosehosting.com/blog/how-to-set-up-an-openvpn-server-on-debian-10/
+
 ## Hargering guide
 https://openvpn.net/community-resources/how-to/#hardening-openvpn-security
 

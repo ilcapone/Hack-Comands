@@ -48,6 +48,9 @@ https://blog.smallsec.ca/dockerizing-cli-tools/
 ## Run Mobsf on docker
 https://mobsf.github.io/docs/#/docker
 
+## Run ReconFTW on docker
+docker run -v $PWD/reconftw.cfg:/root/Tools/reconftw/reconftw.cfg -v $PWD/Recon/:/root/Tools/reconftw/Recon/ --name recon_name --rm reconftw -d domain -a --deep
+
 # Logs
 docker logs [container-id]
 docker logs --follow [container-id]	
@@ -102,6 +105,9 @@ docker run \
   --volume /my_volume \
   --workdir /app \ 
   IMAGE bash
+
+# Delete all images
+docker rmi $(docker images --format "{{.ID}}")
 
 # Delete all pause container
 docker rm $(docker ps -a --format "{{.ID}}")

@@ -1,0 +1,57 @@
+
+## API Types
+	### By Architecture
+	- REST (Representational State Transfer)
+	- SOAP (Simple Object Access Protocol)
+
+	### By Use
+	- Public API
+	- Internal API
+	- Partner API
+	- Composite API
+
+## Security prespective
+
+	1.- Broken Object Level Authorization
+	Occurs when the server does not properly check if the currently logged in user or if a logged out user can read, update or delete an object to which they do not have the rights.
+
+		#### Based on UserID
+		- Example: <https://google.com/get_users_search_history?userID=1234>
+		- When a Broken Object Level Authorization issue arises, we can view the search history of other users.
+
+		#### Based on ObjectID
+		- objectID's are passed to the server when the server does not properly check if the user is authorised for that object.
+		- Example:
+				> Secure Petitions
+				GET product.php?id=12 for getting the details
+				POST product.php?id=12 for updating a product's details
+				DELETE product.php?id=12 to delete a product
+				> Insecure Petition
+				POST /import.php? with a CSV body containing id,name and price: {1,"test",12}
+
+	2.- Broken User Authentication
+	It happens when user validation is weak and can be broken, either by brute force of dictionaries, by devile jwt tokens or multiple reasons that make it possible to skip the authentication process
+
+		#### JWT validation endpoint accepts "None" algorithm
+		If the verification mechanismins accepts the None algorith. We can simply change something in the JWT and encode it again when we change the algorith to None.
+
+		Best practices: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
+
+	3.- Excessive Data Exposure
+	When these API's return too much data, we can speak of Excessive Data Exposure
+
+	4.- Lack of rate limiting
+	Example: At first this might seem hard to abuse but if we create a document on the system that has a large file size and then copy it over, we might trigger the server to run out of resources.
+
+	5.- Broken Function Level Authorization
+	Due to the bad configuration of parameters it is possible to assign us a role that does not touch us, so we can have access to new functions that would not touch us due to our initial role
+
+	6.- Mass Assignment
+	As a user, we have the authorization to edit and view specific properties of the objects but we might also be limited and not able to edit or view some specific properties (For example user can view product.stock but user should not be able to edit product.stock). These properties are then matched to parameters on the front-end and if these conversion happen automatically, they might convert parameters to properties the attacker should not be able to access.
+
+	7.- Security Misconfiguration
+	
+
+
+
+
