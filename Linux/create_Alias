@@ -15,3 +15,4 @@ echo -e '#!/bin/bash\necho hello' > /usr/bin/hi && \
 ## The same pasing argss
 RUN echo -e '#!/bin/bash\necho hello "$@"' > /usr/bin/hi && \
     chmod +x /usr/bin/hi
+

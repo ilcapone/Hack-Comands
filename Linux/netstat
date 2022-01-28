@@ -19,3 +19,6 @@ netstat -r
 
 # A lot of thing
 netstat -napl
+
+## Binary to use without install
+https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/ncat

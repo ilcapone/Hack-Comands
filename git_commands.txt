@@ -145,4 +145,10 @@ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 git commit --allow-empty -m "trigger GitHub actions"
 git push
 
+## Config repository configuration
+nano .git/config
+
+## Config repository with diferent user
+git remote set-url origin https://[user]@github.com/repor_user/report.git
+
 

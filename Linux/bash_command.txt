@@ -15,7 +15,7 @@ unzip file.zip
 
 # Unzip .gz or .txt.gz
 gunzip [file]
-
+v
 ## Unzip with pasword
 unzip -P [pasword] file.zip
 
@@ -146,3 +146,10 @@ cat /proc/sys/net/ipv4/ip_forward
 sudo nano /etc/sysctl.conf
 	> uncoment: net.ipv4.ip_forward=1
 sudo sysctl -p
+
+## Clean base64 file with jump lines
+cat [base64file_with_trhas] | grep '[a-z0-9]' | base64 -d > clean_base64
+
+## Test conexion without curl or netcat or ping
+timeout 1 bash -c "</dev/tcp/[hostname]/[Port]" && echo "Port open" || echo "Port closed"
+timeout 1 bash -c "</dev/tcp/ifconfig.io/443" && echo "Port open" || echo "Port closed"
