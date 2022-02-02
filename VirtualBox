@@ -54,7 +54,7 @@ VBoxManage unregistervm --delete [VM-Name]
 	# Try
 	pkill 'VBoxClient --clipboard' -f & sleep 1 && VBoxClient --clipboard
 
-# Resize VBox Disk
+## Resize VBox Disk
 	------------ Docu --------------
 	
 	https://help.clouding.io/hc/es/articles/360010074599-C%C3%B3mo-extender-particiones-manualmente-en-Linux
