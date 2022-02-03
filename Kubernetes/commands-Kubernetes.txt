@@ -21,11 +21,6 @@ https://github.com/astefanutti/kubebox
 ## Managment Bot Kube
 https://github.com/infracloudio/botkube
 
-## Hacking Kubernetes ###
-- http://www.elladodelmal.com/2019/01/hacking-kubernetes-auditoria-de.html
-- https://www.4armed.com/blog/hacking-kubelet-on-gke/
-- https://medium.com/@pczarkowski/the-kubernetes-api-call-is-coming-from-inside-the-cluster-f1a115bd2066
-
 ## Undestanding External Services ##
 - https://www.ovh.com/blog/getting-external-traffic-into-kubernetes-clusterip-nodeport-loadbalancer-and-ingress/
 
