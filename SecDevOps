@@ -4,3 +4,6 @@ https://www.sans.org/security-resources/posters/secure-devops-toolchain-swat-che
 
 ## Gitlab Pipelines to multiple enviroments
 https://about.gitlab.com/blog/2021/02/05/ci-deployment-and-environments/
+
+## Gitlab config OpenVPN inside Pipeline
+https://www.marcogomiero.com/posts/2021/gitlab-pipeline-vpn/
