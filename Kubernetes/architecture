@@ -1,9 +1,0 @@
-
-
-## Ingress Controller ##
-	# Docu
-	- https://kubernetes.io/docs/concepts/services-networking/ingress/
-	- https://www.ibm.com/cloud/blog/kubernetes-ingress
-
-	## Integration with AWS
-	- https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/how-it-works/
