@@ -5,6 +5,8 @@ You can find tools for Android APK analisis here [Awosemote TOOLs](https://githu
 		
 ### Analisis Metodology:
 
+- Usefull checklist https://mobexler.com/checklist.htm#android
+
 #### Information gathering
 
 #####    Componentes

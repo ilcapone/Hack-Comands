@@ -56,14 +56,20 @@ VBoxManage unregistervm --delete [VM-Name]
 
 ## Resize VBox Disk
 	------------ Docu --------------
-	
+	https://linuxhint.com/increase-virtualbox-disk-size/
 	https://help.clouding.io/hc/es/articles/360010074599-C%C3%B3mo-extender-particiones-manualmente-en-Linux
 	------------ How To -------------
 	1º Power off VBos
 	2º Resize VBox Disk:
 		- VBoxManage modifyhd [VM_Name_Disck.vdi] --resize [Size in MB]
-	3º StartVM and acces
+	3º StartVM and access.
 	4º Resice Partition:
 		- Review size: fdisk -l
 		- resize2fs /dev/sda1
 
+	---------- Trouble shooting -------------
+	Swap partition in the midle:
+		- https://blog.mwpreston.net/2012/06/22/expanding-a-linux-disk-with-gparted-and-getting-swap-out-of-the-way/
+
+## Config VBoxManage in windows
+	SET PATH=%PATH%;C:\Program Files\Oracle\VirtualBox

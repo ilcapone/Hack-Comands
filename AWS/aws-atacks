@@ -4,12 +4,27 @@ https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 
 ## PACU Docker
 docker run -it rhinosecuritylabs/pacu:latest
+	
+	# How to use pacu
+	https://ermetic.com/blog/aws/tracking-adversaries-in-aws-using-anomaly-detection-part-2/
+
+	# Modules information
+	https://github.com/RhinoSecurityLabs/pacu/wiki/Module-Details
 
 ## Tools and tactics
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
 
 ## S3 Policies
 https://github.com/bear/s3scan
+
+## Enumerate IAM Permisions of specific acount
+https://github.com/toniblyx/my-arsenal-of-aws-security-tools
+
+## Ways of privilage scalation
+https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
+
+## Vulnerable resources enviroments to review
+https://ermetic.com/blog/aws/dont-hide-your-secrets-in-plain-sight/
 
 ## Hack Cognito Auth
 
@@ -37,3 +52,12 @@ https://github.com/bear/s3scan
 
 ## Container Enviroment on AWS
 https://github.com/RhinoSecurityLabs/ccat
+
+## Audit Lamda Guard
+https://github.com/Skyscanner/LambdaGuard
+	
+	## Brief resume
+	https://medium.com/@SkyscannerEng/introducing-lambdaguard-a-security-scanner-for-aws-lambda-f5c6e23f8345
+
+## Backdorin EC2 security groups
+aws ec2 authorize-security-group-ingress --group-id [security_grou_id] --protocol [tcp or udp] --port [port] --cidr [atacker_ip]

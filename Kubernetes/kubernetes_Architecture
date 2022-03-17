@@ -9,3 +9,15 @@ https://kubernetes.github.io/ingress-nginx/examples/auth/basic/
 
 ## Istio
 https://istio.io/latest/docs/concepts/security/
+
+## Ingress Controller ##
+	# Docu
+	- https://kubernetes.io/docs/concepts/services-networking/ingress/
+	- https://www.ibm.com/cloud/blog/kubernetes-ingress
+
+	## Integration with AWS
+	- https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/how-it-works/
+
+## External Network Plocies
+	## Real Case
+	https://monzo.com/blog/controlling-outbound-traffic-from-kubernetes

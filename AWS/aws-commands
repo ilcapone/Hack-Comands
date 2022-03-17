@@ -1,4 +1,15 @@
 
+    ### Documentation ###
+
+## ACLs VS Security Groups
+https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae
+
+## Copy and Share Snapshots
+https://dzone.com/articles/automatic-sharing-and-loading-rds-snapshots
+
+
+    ### Commands ###
+
 ## ACLI version
 aws --version
 
@@ -7,6 +18,18 @@ aws --version
 
 ## Configure CLI
 aws configure
+
+## Get user arn information
+aws sts get-caller-identity
+
+## Get Local Context
+aws configure list-profiles
+
+## Configure context
+aws configure --profile security
+
+## List user or group atached policies
+aws iam list-attached-user-policies --user-name [user or group]
 
 ## List Users
 aws iam list-users --profile [profile name]
@@ -44,6 +67,9 @@ aws eks describe-cluster --name [cluster-name] --region [region]
 ## Obtain Docker Registry Password
 aws ecr get-login-password --region [region]
 
+## List EC2s
+aws ec2 describe-instances --region [region]
+
 ## Get VPCs
 aws ec2 describe-vpcs --region [region]
 aws ec2 describe-vpcs --vpc-id [vpcID] --region [region]
@@ -78,12 +104,15 @@ aws backup list-backup-plans
 ## Get information of specfic backup plan 
 aws backup get-backup-plan --backup-plan-id [backup-ID]
 
+## List secrets manager
+aws secretsmanager list-secrets
 
-    ### Documentation ###
+## List functions
+aws lambda list-functions --region [region] --output json
 
-## ACLs VS Security Groups
-https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae
+## DynamoDB get tables names
+aws dynamodb list-tables --region [region]
 
-## Copy and Share Snapshots
-https://dzone.com/articles/automatic-sharing-and-loading-rds-snapshots
+## DynamoDB view structure of table
+aws dynamodb describe-table --table-name [table] --region [region]
 

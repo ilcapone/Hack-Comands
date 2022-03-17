@@ -51,6 +51,9 @@ https://mobsf.github.io/docs/#/docker
 ## Run ReconFTW on docker
 docker run -v $PWD/reconftw.cfg:/root/Tools/reconftw/reconftw.cfg -v $PWD/Recon/:/root/Tools/reconftw/Recon/ --name recon_name --rm reconftw -d domain -a --deep
 
+## Run OpenVas
+docker run -d -p 443:443 --name openvas mikesplain/openvas
+
 # Logs
 docker logs [container-id]
 docker logs --follow [container-id]	

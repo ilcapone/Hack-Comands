@@ -13,6 +13,9 @@ curl [url] --proxy [ip]:[port]
 ## View headers ##
 curl -v [url]
 
+## Foloww redirect
+curl -L [url]
+
 ## Change Headers ##
 curl -H "User-Agent: my browser" [url]
 
@@ -35,7 +38,6 @@ curl -H "User-Agent: my browser" [url]
 
 ## Basic Auth
 echo -ne "<USER>:<PASSWORD>" | base64 --wrap 0
-
 
 ## HTTP auth
 curl --user USER:PASSWORD http://example.yus
