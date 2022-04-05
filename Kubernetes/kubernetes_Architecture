@@ -21,3 +21,12 @@ https://istio.io/latest/docs/concepts/security/
 ## External Network Plocies
 	## Real Case
 	https://monzo.com/blog/controlling-outbound-traffic-from-kubernetes
+
+
+## EKS
+	### With Terraform
+	https://learn.hashicorp.com/tutorials/terraform/eks
+
+	### With Cloudformation
+	https://medium.com/@dhammond0083/aws-eks-managed-setup-with-cloudformation-97461300e952
+	https://blog.knoldus.com/aws-eks-cluster-by-cloudformation/

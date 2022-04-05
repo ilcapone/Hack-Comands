@@ -224,6 +224,7 @@ kubectl get pod -o json -A | jq -r '.items[].spec.containers[].ports[].container
 
 	# Clean information
 	kubectl get pod -o json -A | jq -r '.items[] | {pod_name: .metadata.name, pod_ip: .status.podIP, pod_port: .spec.containers[].ports[].containerPort}'
+	
 
 
 

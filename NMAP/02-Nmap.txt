@@ -25,6 +25,7 @@
 	
 	### Escaneo de todos los puertos ###
 	nmap -sS -p1-65535
+	nmap -p-
 
 	### SO + Versiones + RUIDO ###
         nmap -A -T4 [-A equivale a -O, -sV, -sC (script), traceroute]

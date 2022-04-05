@@ -25,8 +25,8 @@ aws sts get-caller-identity
 ## Get Local Context
 aws configure list-profiles
 
-## Configure context
-aws configure --profile security
+## Crearte new context
+aws configure --profile [context-name]
 
 ## List user or group atached policies
 aws iam list-attached-user-policies --user-name [user or group]

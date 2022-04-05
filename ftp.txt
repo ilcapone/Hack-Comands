@@ -13,3 +13,9 @@ sudo apt-get install lftp
 ## Comands
 USER [user]
 PASS [password]
+
+## Documentation ftp
+https://www.cs.colostate.edu/helpdocs/ftp.html
+
+## Documentacion lftp
+https://lftp.yar.ru/lftp-man.html

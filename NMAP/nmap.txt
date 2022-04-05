@@ -11,7 +11,58 @@ nmap -p 22 --open -sV 192.168.0.*
  ports=$(nmap -p- --min-rate=1000 -T4 10.10.10.27 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
  nmap -sC -sV -p$ports 10.10.10.27 
 
+## Search in .gnmap files
+grep [keyword] scan.gnmap
+
 
 ## Download nmap from binary without install
 wget https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/nmap?raw=true -O nmap
 curl -L https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/nmap?raw=true --output nmap_raw
+
+## Scant Types options
+Port Scan Type  Example Command
+TCP Null Scan                   sudo nmap -sN 
+TCP FIN Scan                    sudo nmap -sF
+TCP Xmas Scan                   sudo nmap -sX 
+TCP Maimon Scan                 sudo nmap -sM 
+TCP ACK Scan                    sudo nmap -sA 
+TCP Window Scan                 sudo nmap -sW 1
+Custom TCP Scan                 sudo nmap --scanflags URGACKPSHRSTSYNFIN 
+Spoofed Source IP               sudo nmap -S SPOOFED_IP 
+Spoofed MAC Address             --spoof-mac SPOOFED_MAC
+Decoy Scan                      nmap -D DECOY_IP,ME 
+Idle (Zombie) Scan              sudo nmap -sI ZOMBIE_IP 
+Fragment IP data into 8 bytes   -f
+Fragment IP data into 16 bytes  -ff
+Option  Purpose
+
+--source-port PORT_NUM    specify source port number
+
+--data-length NUM    append random data to reach given length
+
+## Debug and Verbose
+Option  Purpose
+--reason    explains how Nmap made its conclusion
+-v          verbose
+-vv         very verbose
+-d          debugging
+-dd         more details for debugging
+
+
+### Script Options
+
+Script Category     Description
+auth                Authentication related scripts
+broadcast           Discover hosts by sending broadcast messages
+brute               Performs brute-force password auditing against logins
+default             Default scripts, same as -sC
+discovery           Retrieve accessible information, such as database tables and DNS names
+dos                 Detects servers vulnerable to Denial of Service (DoS)
+exploit             Attempts to exploit various vulnerable services
+external            Checks using a third-party service, such as Geoplugin and Virustotal
+fuzzer              Launch fuzzing attacks
+intrusive           Intrusive scripts such as brute-force attacks and exploitation
+malware             Scans for backdoors
+safe                Safe scripts that won’t crash the target
+version             Retrieve service versions
+vuln                Checks for vulnerabilities or exploit vulnerable services

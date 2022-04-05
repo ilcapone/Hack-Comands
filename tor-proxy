@@ -1,0 +1,9 @@
+
+	## Setup a tor proxy
+	docker run -it -p 8118:8118 -p 9050:9050 dperson/torproxy
+
+		## Test it
+		curl --socks5-hostname 127.0.0.1:9050 ifconfig.io
+
+		## Documentation
+		https://github.com/dperson/torproxy
