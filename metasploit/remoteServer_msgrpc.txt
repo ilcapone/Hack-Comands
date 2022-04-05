@@ -7,3 +7,13 @@ load msgrpc ServerHost=192.168.1.0 ServerPort=55553 User=**** Pass='*****'
 
 # msfd
 https://github.com/rapid7/metasploit-framework/blob/master/msfd
+
+	## Optipns
+	-a   Bind to this IP address instead of loopback
+    -A   Specify list of hosts allowed to connect
+    -D   Specify list of hosts not allowed to connect
+    -f   Run the daemon in the foreground
+    -h   Help banner
+    -p   Bind to this port instead of 55554
+    -q   Do not print the banner on startup
+    -s   Use SSL

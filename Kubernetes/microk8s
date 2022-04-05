@@ -31,6 +31,7 @@ Port 	Service 	Description
 10251 	kube-schedule 	Port on which to serve HTTP insecurely.
 10252 	kube-controller 	Port on which to serve HTTP insecurely.
 10256 	kube-proxy 	Port to bind the health check server.
+10254   ingress controller default metrics /metrics /helathz
 2380 	etcd 	Used for peer connections.
 1338 	containerd 	Metrics port
 

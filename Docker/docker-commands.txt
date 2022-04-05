@@ -33,6 +33,11 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [co
 # Run Metasploitable docker
 sudo  docker run --rm -it -p 443:443 -v ~/.msf4:/root/.msf4 -v /tmp/msf:/tmp/data remnux/metasploit
 
+  ## With Database using docker-compose
+  - Download docker-compose from: https://github.com/rapid7/metasploit-framework/blob/master/docker-compose.yml
+  - Run as: 
+      > docker-compose run --rm --service-ports -e MSF_UID=$(id -u) -e MSF_GID=$(id -g) ms
+
 # Run Empire
 docker run -it -p 80:80 -p 443:443 -v /home/$USER/mydir:/data bcsecurity/empire:v3.6.3
 
