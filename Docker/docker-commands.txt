@@ -59,6 +59,9 @@ docker run -v $PWD/reconftw.cfg:/root/Tools/reconftw/reconftw.cfg -v $PWD/Recon/
 ## Run OpenVas
 docker run -d -p 443:443 --name openvas mikesplain/openvas
 
+## Run John The ripper
+docker run -it --entrypoint bash adamoss/john-the-ripper
+
 # Logs
 docker logs [container-id]
 docker logs --follow [container-id]	

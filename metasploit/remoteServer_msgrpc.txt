@@ -7,6 +7,7 @@ load msgrpc ServerHost=192.168.1.0 ServerPort=55553 User=**** Pass='*****'
 
 # msfd
 https://github.com/rapid7/metasploit-framework/blob/master/msfd
+https://www.flu-project.com/2012/10/msfd-gestion-remota-de-metasploit_9.html?m=0
 
 	## Optipns
 	-a   Bind to this IP address instead of loopback

@@ -31,7 +31,6 @@ https://unix.stackexchange.com/questions/449853/port-forwarding-using-openvpn-cl
 	- Add to crontab for reboot control
 		> @reboot sudo iptables -t nat -A POSTROUTING -o ens4  -j MASQUERADE
 
-
 ## Linux troublesuting ##
     - Change /etc/resolf.conf to 1.1.1.1
 	- sudo apt install openvpn-systemd-resolved
