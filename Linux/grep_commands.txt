@@ -1,4 +1,4 @@
-	## search passwords in directory recursibely ##
+## search passwords in directory recursibely ##
 - grep -r 'password' *			# busqueda recursiva en todos los directorios por devajo
 - grep -i ' ' 					# busqueda indistintamente de mayusculas y minusculas
 
