@@ -1,0 +1,4 @@
+
+	## RDP to Windows
+	- Install: sudo apt-get install freerdp2-x11
+	- Maque conexion: xfreerdp /u:"User name" /v:IP:3389
