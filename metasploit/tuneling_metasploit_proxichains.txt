@@ -10,6 +10,7 @@
 		- set SRVPORT <PORT_NUMBER>
 		
 		## Config proxichain .conf to sockat4 Server Port ##
+		- nano /etc/proxychains.conf
 		
 		## Create SSH Tunneling from local machin to remote atacker server ##
 		- ssh <Remote server> -L <PORT_NUMBER>:localhost:<PORT_NUMBER>

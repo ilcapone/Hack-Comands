@@ -39,3 +39,9 @@
 	- View active handlers
 		* jobs
 
+	- Generate Payload inside msf
+		* Documentation: https://www.offensive-security.com/metasploit-unleashed/generating-payloads/
+		* use payload/../..
+		* set variables
+		* generate -p [format] -f [destination path]
+

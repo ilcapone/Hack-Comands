@@ -11,3 +11,17 @@ echo %CD%
 
 ## View file content
 type [file]
+
+dir 	# Ver ficheros y directorios
+type 	# mostrar contenido de ficjhero 
+
+whoami		# quien soy en el sistema
+net user 	# usuarios que existen en el sistema
+net localgroup 	# grupos
+
+## Create admin user
+net user /add username password
+net localgroup administradores username /add
+
+## Change user passowrd
+net user [username] [new password]
