@@ -45,3 +45,7 @@
 		* set variables
 		* generate -p [format] -f [destination path]
 
+	- Post Explotation Shell to Meterpreter
+		* Module: post/multi/manage/shell_to_meterpreter
+		* Automatic: https://www.infosecmatter.com/metasploit-module-library/?mm=post/multi/manage/shell_to_meterpreter
+

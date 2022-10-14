@@ -5,23 +5,25 @@
 
 ```https://microk8s.io/docs/```
 
+## Troubleshooting
+
 ## Basic Ingress Config
 ```https://microk8s.io/docs/addon-ingress```
 
 ### Dashboard
-https://microk8s.io/docs/addon-dashboard
+	https://microk8s.io/docs/addon-dashboard
 
-token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
-microk8s kubectl -n kube-system describe secret $token
+	token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+	microk8s kubectl -n kube-system describe secret $token
 
-microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
-x
-https://localhost:10443
+	microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443
+
+	https://localhost:10443
 
 ## If dashboard is on remote server and is not expose to internet
-ssh -L 8081:localhost:10443 user@IP
+	ssh -L 8081:localhost:10443 user@IP
 
-https://localhost:8081
+	https://localhost:8081
 
 ## Services binding to the localhost interface
 
@@ -43,3 +45,10 @@ View Add-ons status
 ## CA Cert/Key Path
 /var/snap/microk8s/1503/certs/ca.crt
 /var/snap/microk8s/1503/certs/ca.key
+
+## K8s Cert Expired
+	- Error : Unable to connect to the server: x509: certificate has expired or is not yet valid
+	- Documentation: https://www.etissimo.de/blog/2022/04/03/renew-microk8s-kubernetes-server-certificates-annually/?lang=en
+	- Commnads:
+		* Check Valid Cerr - openssl x509 -enddate -noout -in /var/snap/microk8s/current/certs/server.crt
+		* Reniew server cert - sudo microk8s refresh-certs --cert server.crt
