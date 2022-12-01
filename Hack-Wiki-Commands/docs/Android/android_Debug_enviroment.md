@@ -44,3 +44,6 @@ Upload your APK and get the results online.
 	https://stackoverflow.com/questions/5095234/how-to-get-root-access-on-android-emulator
 	https://infosectrek.wordpress.com/2017/03/06/rooting-the-android-emulator/
 	https://securityboulevard.com/2020/09/how-to-configure-android-virtual-for-mobile-pentest/
+
+## Recompile app to sniff with burp - Extreme scenarios
+```https://blog.wapnet.nl/2021/10/owasp-zap-proxy-with-android-on-genymotion/```

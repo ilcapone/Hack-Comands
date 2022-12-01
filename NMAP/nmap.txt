@@ -48,7 +48,6 @@ Option  Purpose
 -d          debugging
 -dd         more details for debugging
 
-
 ### Script Options
 
 Script Category     Description

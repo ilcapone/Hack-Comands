@@ -19,3 +19,10 @@ https://www.cs.colostate.edu/helpdocs/ftp.html
 
 ## Documentacion lftp
 https://lftp.yar.ru/lftp-man.html
+
+## Hack Tricks Docu
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-
+
+## Anonymous acces and mitigation
+https://shahmeeramir.com/penetration-testing-of-an-ftp-server-19afe538be4b
+	> Username and Password: anonymous:anonymous

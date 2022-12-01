@@ -16,6 +16,9 @@ aws --version
 ## AWS local credentials
 ~/.aws/credentials
 
+## AWS local profiles
+~/.aws/config
+
 ## Configure CLI
 aws configure
 
@@ -27,6 +30,12 @@ aws configure list-profiles
 
 ## Crearte new context
 aws configure --profile [context-name]
+
+## Change betewenn context
+export AWS_PROFILE=[context_name]
+
+## List all AWS Regons
+aws ec2 describe-regions  --output json | jq -r '.Regions[].RegionName'
 
 ## List user or group atached policies
 aws iam list-attached-user-policies --user-name [user or group]
@@ -58,14 +67,38 @@ aws cloudformation create-stack --stack-name myteststack --template-body file://
 ## EKS auth
 aws eks update-kubeconfig --name [cluster-name]
 
-## List clusters
+## List clusters EKS
 aws eks list-clusters --region [region]
 
-## Describe cluster
+## Describe cluster EKS
 aws eks describe-cluster --name [cluster-name] --region [region]
 
 ## Obtain Docker Registry Password
 aws ecr get-login-password --region [region]
+
+## List cluster ECS
+aws ecs list-clusters --region []
+
+## Describecluster ECS
+aws ecs describe-clusters --cluster []
+
+## List container instances in cluster ECS
+aws ecs list-container-instances --cluster []
+
+## List services in lcuster ECS
+aws ecs list-services --cluster []
+
+## List Tasks in cluster ECS
+aws ecs list-tasks --cluster []
+
+## Descrive service on ECS cluster
+aws ecs describe-services --cluster [] --services []
+
+## Descrive container instance on ECS cluster
+aws ecs describe-container-instances --cluster [] --container-instances []
+
+## Describe task in cluster ECS
+aws ecs describe-tasks --cluster [] --tasks []
 
 ## List EC2s
 aws ec2 describe-instances --region [region]
@@ -73,6 +106,9 @@ aws ec2 describe-instances --region [region]
 ## Get VPCs
 aws ec2 describe-vpcs --region [region]
 aws ec2 describe-vpcs --vpc-id [vpcID] --region [region]
+
+## EC2 get internal IPs
+aws ec2 describe-instances --region [region]  --query 'Reservations[*].Instances[*].[PrivateIpAddress]' --output text
 
 ## Get Security groups
 aws ec2 describe-security-groups --region [region]
@@ -94,6 +130,9 @@ aws rds describe-db-snapshots \
     ## Filter by dbsnapshot name
     aws rds describe-db-snapshots --snapshot-type automated --query "*[].{DBSnapshots:DBSnapshotIdentifier}"
 
+## Howe To Conect RDS and info
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_CommonTasks.Connect.html
+
 ## Get EKS security cluster
 aws eks describe-cluster --name <cluster_name> --query cluster.resourcesVpcConfig.clusterSecurityGroupId
 aws eks describe-cluster --name <cluster_name> --query cluster.resourcesVpcConfig.securityGroupIds
@@ -110,9 +149,23 @@ aws secretsmanager list-secrets
 ## List functions
 aws lambda list-functions --region [region] --output json
 
+## Get Lamda Source Code
+aws lambda get-function --function-name [lamda-name] --query 'Code.Location'
+
 ## DynamoDB get tables names
 aws dynamodb list-tables --region [region]
 
 ## DynamoDB view structure of table
 aws dynamodb describe-table --table-name [table] --region [region]
 
+## Lists SQS
+aws sqs list-queues
+
+## Get SQS atributes
+aws sqs get-queue-attributes --region [Region] --queue-url [SQS_URL] --attribute-names Policy
+
+## ECR start vulneravility scan againts image
+aws ecr start-image-scan --repository-name [reponame] --image-id imageDigest=[imageDigest] --region [region]
+
+## ECR get vulneravialty scan details from image
+aws ecr describe-image-scan-findings --repository-name [reponame] --image-id imageDigest=[imageDigest]

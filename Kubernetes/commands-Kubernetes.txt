@@ -30,6 +30,9 @@ https://github.com/infracloudio/botkube
 ## Config pribate registry
 https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
+## Install Kubectl
+https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+
 ## Config cluster credencials for use in GCP ##
 - gcloud container clusters get-credentials [cluster-name] --zone [zone] --project [Project-ID]
 

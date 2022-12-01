@@ -249,7 +249,7 @@ Content:
 	## 4.1 - Concepts ##
 
 	Check that your images:
-		*Don’t include known critical vulnerabilities
+		* Don’t include known critical vulnerabilities
 		* Are the images you intended to use, and haven’t been manipulatedor replaced by a third party
 		* Meet other image policy requirements your organization might have in place
 

@@ -1,0 +1,5 @@
+## Conect with cli and 2factor
+	1 - sudo openfortivpn <IP>:<Puerto> -u <Usuario>
+	2 - When fails get Diggest from output and step 3
+	3 - sudo openfortivpn <IP>:<Puerto> -u <Usuario> --trusted-cert [digest]
+
