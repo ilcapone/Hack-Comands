@@ -10,3 +10,6 @@ ifconfig
 - Migrate to lsass process
 	> migrete -P [procesID]
 - Use hasdump
+
+## Search specific file
+search -f flag*txt

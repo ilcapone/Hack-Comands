@@ -48,3 +48,6 @@ run post/multi/recon/local_exploit_suggester
 ## Load last version of mimikatz
 load kiwi
 
+## Search specific file
+search -f flag*txt
+

@@ -31,3 +31,7 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
  	# problmes with moun volumens
  	http://www.htgsd.com/information-technology/fix-rpi-with-cannot-open-access-to-console-the-root-account-is-locked/
+
+    iptables -A FORWARD -i wlan1 -j ACCEPT
+    iptables -A FORWARD -o wlan1 -j ACCEPT
+    iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
