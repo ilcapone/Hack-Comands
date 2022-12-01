@@ -1,0 +1,17 @@
+HID = human interface device
+
+Using Raspberry Pi Zero W: https://github.com/RoganDawes/P4wnP1_aloa/
+
+Simulate apple keyboard (Very important to configure in USB Settings):
+- Vendor id: 0x05AC
+- Product id: 0x0267
+- Serial number: F0T536302K7G9KPAS
+
+Configure P4wnP1 aloa to use it as Rubber Ducky:
+- Create a HID script and store it (Keymaps: https://github.com/mame82/P4wnP1_aloa/blob/master/dist/keymaps/common.json).
+- Go to trigger actions and remove all items.
+- Add one --> Turn on Enabled --> Trigger: service started --> Action: start a HIDScript --> Script name: the script created before.
+- Store the trigger action.
+- Go to Generic Settings --> Select the TriggerActions Template created, the USB Templated created with the proper information about the vendor id, product id and serial number, and the WiFi template and others if desired. Store the Master Template.
+- In Generic Settings, in the Startup Settings, select the Master Template you just created.
+- Plug in into the victim laptop and enjoy.
