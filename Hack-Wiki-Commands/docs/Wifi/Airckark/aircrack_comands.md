@@ -9,11 +9,11 @@ See available wireless network interface to use
 ```airmon-ng```
 Config wireless interface in mod monitor
 
-```airmon-ng start wlan0```
+```airmon-ng start wlan0mon```
 
 Capture network info
 
-```airodump-ng wlan0``` 
+```airodump-ng wlan0mon``` 
 
 Capture networks info specifiying the chanel and de BSSID, (Also save the handshake in file id record)
 

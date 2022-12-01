@@ -1,0 +1,20 @@
+
+## Tool to manage volumenes from CMD
+- diskpart
+
+## Documentation
+https://es.easeus.com/partition-manager-tips/format-usb-flash-drive-using-cmd.html
+https://limitegeek.com/eliminar-particiones-de-un-dispositivo-usb-sin-programas/
+
+## Listar unidades
+- list disk
+
+## Selecionar disco
+- select disk [number]
+
+## Eliminar particiones del discp
+- clean
+
+## Formatear disco
+- create partition primary
+- format fs=ntfs

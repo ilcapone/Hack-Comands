@@ -14,6 +14,9 @@ docker run -it rhinosecuritylabs/pacu:latest
 ## Tools and tactics
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
 
+## Documetnation and tactics
+https://cloudsecwiki.com/aws_cloud.html
+
 ## S3 Policies
 https://github.com/bear/s3scan
 
@@ -64,3 +67,27 @@ aws ec2 authorize-security-group-ingress --group-id [security_grou_id] --protoco
 
 ## Extract sensitive User Data metadata in EC2
 aws ec2 describe-instance-attribute --attribute userData --region <REGION> --instance-id <INSTANCE_ID> --query UserData.Value --output text > encodeddata; base64 --decode encodeddata
+
+## CloudFron Subdomain hijacking
+https://www.mindpointgroup.com/blog/cloudfront-hijacking
+
+## Check Publics RDS
+
+	# Test if Flag Public Accesible is set to True
+	aws rds describe-db-instances --region [Region] --db-instance-identifier [database-ID] --query 'DBInstances[*].PubliclyAccessible'
+
+	# Get VPC security Group ID
+	aws rds describe-db-instances --region [Region] --db-instance-identifier [database-id] --query 'DBInstances[*].VpcSecurityGroups'
+
+	# Get vpc ACLs
+	aws ec2 describe-security-groups --region [Region] --group-ids [VpcSecurityGroupId] --query 'SecurityGroups[*].IpPermissions'
+
+## Check Public S3 in a whitebox escenario
+https://github.com/clario-tech/s3-inspector
+
+## Check Public SQS
+https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/SQS/sqs-queue-exposed.html
+https://documenter.getpostman.com/view/2631434/SWLh56pX#9efb2756-cbf2-4243-a330-8388416ea4b9
+
+	- SendMesage: curl --location -g --request GET '[SQS_URL]?Action=SendMessage&MessageBody=[url_Encode_Mesage]'
+	- ReceiveMesage: curl --location --request GET '[SQS_URL]?Action=ReceiveMessage'

@@ -10,6 +10,12 @@ tar -xvzf file.tar.gz
 ## Tar file
 tar -czvf [name-of-archive.tar.gz] [/path/to/directory-or-file]
 
+## Zip File
+zip myfile.zip filename.txt
+
+## zip folder
+zip -r myfile.zip folder 
+
 ## Unzip file
 unzip file.zip
 

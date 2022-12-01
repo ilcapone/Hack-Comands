@@ -18,3 +18,5 @@
 		* show databases;
 		* use [databasename];
 		* quit;
+		* show tables;
+		* describe [table];

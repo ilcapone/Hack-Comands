@@ -32,6 +32,22 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
  	# problmes with moun volumens
  	http://www.htgsd.com/information-technology/fix-rpi-with-cannot-open-access-to-console-the-root-account-is-locked/
 
+---------- Wifi HAck Tool ---------------
+## Setup  araspi hack tool
+https://artificesecurity.com/how-to-build-your-own-penetration-testing-dropbox-using-a-raspberry-pi-4/
+
+## Redirect Trafic
+sysctl -w net.ipv4.ip_forward=1
+iptables -t nat -A POSTROUTING -s [Red IP de origin] -o [interfaz de salida] -j MASQUERADE
+Ejemplo: 
+    - iptables -t nat -A POSTROUTING -s 10.9.10.0/24 -o eth0 -j MASQUERADE
+
+    ## Other interesting Redirections
     iptables -A FORWARD -i wlan1 -j ACCEPT
     iptables -A FORWARD -o wlan1 -j ACCEPT
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+--------- Pineapple in Raspy --------
+
+Open Sourc OS - Fruitywifi > http://fruitywifi.com/index_eng.html
+>>>>>>> 3cf1a3f2c2dd26c3675b336108d6440ee4249dde

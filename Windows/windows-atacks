@@ -9,3 +9,6 @@ https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet
 
 # Breaking Kiosks
 https://blog.nviso.eu/2022/05/24/breaking-out-of-windows-kiosks-using-only-microsoft-edge/
+
+## OSVDB-630 - Internal IP disclousure in Location Header - IIS
+https://github.com/sullo/nikto/issues/406
