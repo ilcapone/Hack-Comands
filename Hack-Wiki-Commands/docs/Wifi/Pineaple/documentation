@@ -1,4 +1,9 @@
 
-- Nasic Tutorial > https://4pfsec.com/wireless-hacking-with-the-wifi-pineapple/
-- Git Docu > https://github.com/PrettyBoyCosmo/Lets-Learn/blob/main/wifi-pineapple/booknotes.md
 - Oficial Docs > https://docs.hak5.org/wifi-pineapple/
+
+- Dashboard: http://172.16.42.1:1471
+
+## Documentation
+	- https://4pfsec.com/wireless-hacking-with-the-wifi-pineapple/
+	- https://repo.4pfsec.com/wireless-penetration-testing/wifi-pineapple-tetra
+	- https://github.com/PrettyBoyCosmo/Lets-Learn/blob/main/wifi-pineapple/booknotes.md
