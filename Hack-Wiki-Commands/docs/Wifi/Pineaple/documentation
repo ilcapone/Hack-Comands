@@ -2,3 +2,10 @@
 - Nasic Tutorial > https://4pfsec.com/wireless-hacking-with-the-wifi-pineapple/
 - Git Docu > https://github.com/PrettyBoyCosmo/Lets-Learn/blob/main/wifi-pineapple/booknotes.md
 - Oficial Docs > https://docs.hak5.org/wifi-pineapple/
+
+## Acccess
+- 172.16.42.1:1471
+
+
+## Bad USB
+- https://github.com/FalsePhilosopher/badusb
