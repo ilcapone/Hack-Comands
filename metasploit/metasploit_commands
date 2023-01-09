@@ -43,7 +43,7 @@
 		* Documentation: https://www.offensive-security.com/metasploit-unleashed/generating-payloads/
 		* use payload/../..
 		* set variables
-		* generate -p [format] -f [destination path]
+		* generate -f [format] -o [destination path]
 
 	- Post Explotation Shell to Meterpreter
 		* Module: post/multi/manage/shell_to_meterpreter
