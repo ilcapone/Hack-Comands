@@ -115,6 +115,7 @@ aws ec2 describe-security-groups --region [region]
 
 ## Asume Role
 aws sts assume-role --role-arn "[the arn]" --role-session-name [some-Session_name]
+aws sts assume-role --role-arn "arn:aws:iam::[Acount ID]:role/OrganizationAccountAccessRole" --role-session-name [Season-name] --duration-seconds 43200 
 
 ## List all RDS instances
 aws rds describe-db-instances
