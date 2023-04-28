@@ -1,0 +1,9 @@
+
+	## Notes
+	* Red Team engagements consist of emulating a real threat actor's Tactics, Techniques and Procedures (TTPs)
+	* Every red team engagement will start by defining clear goals, often referenced as crown jewels or flags
+	* Areas de accion		
+	    - Technical Infrastructure: Like in a regular penetration test, a red team will try to uncover technical vulnerabilities, with a much higher emphasis on stealth and evasion.
+	    - Social Engineering: Targeting people through phishing campaigns, phone calls or social media to trick them into revealing information that should be private.
+	    - Physical Intrusion: Using techniques like lockpicking, RFID cloning, exploiting weaknesses in electronic access control devices to access restricted areas of facilities.
+	* Rules of Engagement (RoE) are a legally binding outline of the client objectives and scope with further details of engagement expectations between both parties. This is the first "official" document in the engagement planning process and requires proper authorization between the client and the red team

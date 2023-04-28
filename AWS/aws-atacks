@@ -13,6 +13,7 @@ docker run -it rhinosecuritylabs/pacu:latest
 
 ## Tools and tactics
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
+https://github.com/CyberSecurityUP/Cloud-Security-Attacks
 
 ## Documetnation and tactics
 https://cloudsecwiki.com/aws_cloud.html

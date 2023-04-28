@@ -7,3 +7,6 @@ smbclient -N -L \\\\[Target-IP]\\
 
 ## Acces to shareable resource
 smbclient -N \\\\[Target-IP]\\[shareable-resource]
+
+## Download all files in folder
+smbget -R smb://fileserver/directory
