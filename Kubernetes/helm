@@ -36,7 +36,7 @@ helm create [name]
 ´´´helm uninstall [name]
 
 ### Information from a chart installed
-´´´helm get manifet [name]´´´
+´´´helm get manifest [name]´´´
 
 ### Test Template render befor install
 ´´´helm install --debug --dry-run [name] ./[folder-name]´´´

@@ -1,8 +1,19 @@
 ## Docu
 https://github.com/scythe-io/purple-team-exercise-framework/blob/master/PTEFv1.md
 
+	## Planing
+	https://redteam.guide/docs/Planning/goal-planning
+
+	## European Framework - TIBER-EU
+	https://www.ecb.europa.eu/pub/pdf/other/ecb.tiber_eu_framework.en.pdf
+
+	## MITRE ATT&CK Matrix
+	https://attack.mitre.org/
+
 ## Tools
 https://github.com/bigb0sss/RedTeam-OffensiveSecurity
+https://github.com/CyberSecurityUP/Awesome-Red-Team-Operations
+https://github.com/infosecn1nja/Red-Teaming-Toolkit#Payload%20Development
 
 #### Fuente ####
 - https://ired.team/offensive-security-experiments/offensive-security-cheetsheets

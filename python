@@ -1,4 +1,24 @@
 
+### Documentation
+
+	## Flask tutorial
+	https://dev.to/paurakhsharma/flask-rest-api-part-0-setup-basic-crud-api-4650
+	https://pythonbasics.org/flask-mongodb/
+
+	## Mongo Read File
+	https://www.youtube.com/watch?v=EXKWrzoGsWk
+	https://tutorials.technology/tutorials/Mongoengine-How-to-use-filefield-for-storing-images-and-files.html
+
+	## Flask and Angular Tutorial
+	https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-apps-part-1/
+
+	## Flasck User Roles
+	https://blog.teclado.com/learn-python-defining-user-access-roles-in-flask/
+
+	## Basic WebShell
+	https://gist.github.com/phoemur/461c97aa5af5c785062b7b4db8ca79cd
+
+
 ## Python Simple HTTP server
 python3 -m http.server --cgi 8000
 python2.7 -m SimpleHTTPServer [port]
@@ -6,19 +26,5 @@ python2.7 -m SimpleHTTPServer [port]
 ## Pretty Print JSON
 ```[comand output json] | python -m json.tool```
 
-## Flask tutorial
-https://dev.to/paurakhsharma/flask-rest-api-part-0-setup-basic-crud-api-4650
-https://pythonbasics.org/flask-mongodb/
-
-## Mongo Read File
-https://www.youtube.com/watch?v=EXKWrzoGsWk
-https://tutorials.technology/tutorials/Mongoengine-How-to-use-filefield-for-storing-images-and-files.html
-
-## Flask and Angular Tutorial
-https://auth0.com/blog/using-python-flask-and-angular-to-build-modern-apps-part-1/
-
-## Flasck User Roles
-https://blog.teclado.com/learn-python-defining-user-access-roles-in-flask/
-
-## Basic WebShell
-https://gist.github.com/phoemur/461c97aa5af5c785062b7b4db8ca79cd
+## Create a SMB Server in atacker machine that is linked to a folder in the target machine
+python3.9 /opt/impacket/examples/smbserver.py -smb2support -username [TargetUser] -password [TargetPassword] [TargetFolder] [AtackerFolder]
