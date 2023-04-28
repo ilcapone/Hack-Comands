@@ -2,6 +2,22 @@
 ## Awesome Tools
 https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 
+## Prowler
+	## Documentation
+	- https://github.com/prowler-cloud/prowler
+
+	## Initial config
+	export AWS_ACCESS_KEY_ID=""
+	export AWS_SECRET_ACCESS_KEY=""
+	export AWS_SESSION_TOKEN=""
+
+	## How to run
+	./prowler -M html -o [results_path]
+
+## Security Audit Roles
+arn:aws:iam::aws:policy/SecurityAudit
+arn:aws:iam::aws:policy/job-function/ViewOnlyAccess
+
 ## PACU Docker
 docker run -it rhinosecuritylabs/pacu:latest
 	
@@ -10,6 +26,21 @@ docker run -it rhinosecuritylabs/pacu:latest
 
 	# Modules information
 	https://github.com/RhinoSecurityLabs/pacu/wiki/Module-Details
+
+## Cloud Fox
+https://github.com/BishopFox/cloudfox
+
+	## Documentacion
+	https://bishopfox.com/blog/introducing-cloudfox
+
+	## Enumerate Resources
+	./cloudfox aws --profile [profile] -v3 inventory
+
+	## Enumerate Endoints
+	./cloudfox aws --profile [profile] -v3 endpoints
+
+	## Get Enviroments Variables Credentials
+	./cloudfox aws --profile [profile] -v3 env-vars
 
 ## Tools and tactics
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
@@ -22,6 +53,7 @@ https://github.com/bear/s3scan
 
 ## Enumerate IAM Permisions of specific acount
 https://github.com/toniblyx/my-arsenal-of-aws-security-tools
+https://github.com/andresriancho/enumerate-iam
 
 ## Ways of privilage scalation
 https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
@@ -66,7 +98,7 @@ https://github.com/Skyscanner/LambdaGuard
 aws ec2 authorize-security-group-ingress --group-id [security_grou_id] --protocol [tcp or udp] --port [port] --cidr [atacker_ip]
 
 ## Extract sensitive User Data metadata in EC2
-aws ec2 describe-instance-attribute --attribute userData --region <REGION> --instance-id <INSTANCE_ID> --query UserData.Value --output text > encodeddata; base64 --decode encodeddata
+aws ec2 describe-instance-attribute --attribute userData --region <REGION> --instance-id <INSTANCE_ID> --query UserData.Value --output text | base64 -d
 
 ## CloudFron Subdomain hijacking
 https://www.mindpointgroup.com/blog/cloudfront-hijacking

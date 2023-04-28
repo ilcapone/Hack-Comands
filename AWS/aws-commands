@@ -7,6 +7,12 @@ https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-netw
 ## Copy and Share Snapshots
 https://dzone.com/articles/automatic-sharing-and-loading-rds-snapshots
 
+## Search AMIs IDs UBUNTU
+https://cloud-images.ubuntu.com/locator/ec2/
+
+## How to acces to EC2 if lost my kei pair
+https://aws.amazon.com/premiumsupport/knowledge-center/user-data-replace-key-pair-ec2/
+https://cloudsolutionsonline.blogspot.com/2021/11/connect-to-linux-ec2-instance-if-ssh.html?m=1
 
     ### Commands ###
 
@@ -35,7 +41,7 @@ aws configure --profile [context-name]
 export AWS_PROFILE=[context_name]
 
 ## List all AWS Regons
-aws ec2 describe-regions  --output json | jq -r '.Regions[].RegionName'
+aws ec2 describe-regions --region us-west-1 --output json | jq -r '.Regions[].RegionName'
 
 ## List user or group atached policies
 aws iam list-attached-user-policies --user-name [user or group]
@@ -113,6 +119,54 @@ aws ec2 describe-instances --region [region]  --query 'Reservations[*].Instances
 ## Get Security groups
 aws ec2 describe-security-groups --region [region]
 
+## Create Security group
+aws ec2 create-security-group --group-name [name] --vpc-id [VPC-id]
+
+## Delete Security group
+aws ec2 delete-security-group --group-id [group-ID]
+
+## Run EC2 instance
+aws ec2 run-instances --image-id [ami-xxxxxxxx] --count 1 --instance-type t2.micro --key-name [MyKeyPair] --security-group-ids [sg-903004f8] --subnet-id [subnet-6e7f829e]
+
+    ## Debian AMI ID
+    ami-0874dad5025ca362c
+
+    ## Test the creation without create
+    --dry-run
+
+## Delete isntance EC2
+aws ec2 terminate-instances --instance-id [instanceID]
+
+## List all public IPS
+aws ec2 describe-instances --query=Reservations[].Instances[].PublicIpAddress
+
+## Create a Private Key
+aws ec2 create-key-pair --key-name [MyKeyPair] --query ['KeyMaterial'] --output text > MyKeyPair.pem
+
+## Permisos para Key pair
+chmod 400 MyKeyPair.pem
+
+## Delete Key pair
+aws ec2 delete-key-pair --key-name [MyKeyPair]
+
+## List Key pairs
+aws ec2 describe-key-pairs 
+
+## List EFS
+aws efs describe-file-systems
+
+## List EFS Access Point
+aws efs describe-access-points
+
+## Descrive EFS Security Policy
+aws efs describe-file-system-policy --file-system-id [EFS ID]
+
+## Pacage need in ubuntu instance
+sudo apt-get -y install nfs-common
+
+## How to mount EFS in EC2
+https://cloudbytes.dev/aws-academy/mount-amazon-efs-drive-on-ec2-ubuntu-linux-using-nfs-utils
+
 ## Asume Role
 aws sts assume-role --role-arn "[the arn]" --role-session-name [some-Session_name]
 aws sts assume-role --role-arn "arn:aws:iam::[Acount ID]:role/OrganizationAccountAccessRole" --role-session-name [Season-name] --duration-seconds 43200 
@@ -170,3 +224,14 @@ aws ecr start-image-scan --repository-name [reponame] --image-id imageDigest=[im
 
 ## ECR get vulneravialty scan details from image
 aws ecr describe-image-scan-findings --repository-name [reponame] --image-id imageDigest=[imageDigest]
+aws ecr describe-image-scan-findings --repository-name [reponame] --image-id imageTag=[imageDigest]
+
+## ECR get all repository names list
+aws ecr describe-repositories | jq -r '.repositories[].repositoryName'
+
+## ECR get iamgeg tags sort by date
+aws ecr describe-images --repository-name foo --query 'sort_by(imageDetails,& imagePushedAt)[*]'
+    
+    ## Get last image push
+    aws ecr describe-images --repository-name application/chatmail_send --query 'sort_by(imageDetails,& imagePushedAt)[*]' | jq -r '.[-1]'
+

@@ -58,3 +58,6 @@
 
 	## Proxy ##
 	- nmap -proxy socks4://127.0.0.1:8189
+
+	## Review TLS config
+	nmap -sV --script ssl-enum-ciphers -p 443 

@@ -21,7 +21,7 @@ unzip file.zip
 
 # Unzip .gz or .txt.gz
 gunzip [file]
-v
+
 ## Unzip with pasword
 unzip -P [pasword] file.zip
 
@@ -159,3 +159,6 @@ cat [base64file_with_trhas] | grep '[a-z0-9]' | base64 -d > clean_base64
 ## Test conexion without curl or netcat or ping
 timeout 1 bash -c "</dev/tcp/[hostname]/[Port]" && echo "Port open" || echo "Port closed"
 timeout 1 bash -c "</dev/tcp/ifconfig.io/443" && echo "Port open" || echo "Port closed"
+
+## Echo salto de linea
+echo -e "\n"

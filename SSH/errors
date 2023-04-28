@@ -1,0 +1,3 @@
+
+	# ssh key permissions too open
+	- chmod 400 private.key
