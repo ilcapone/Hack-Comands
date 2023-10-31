@@ -1,0 +1,15 @@
+
+	## Pentesting tactics
+	- https://book.hacktricks.xyz/network-services-pentesting/pentesting-smtp
+
+	## Send Mail from comand line
+	- https://www.shellhacks.com/send-email-smtp-server-command-line/
+	```
+	HELO local.domain.name
+	MAIL FROM: info@powen.es
+	RCPT TO: marty-mcfly@a2secure.com
+	DATA
+	SUBJECT: Powen Pentest - SMTP PWND
+	... Write the body and endi with a dot ...
+	Press ENTER
+	```  

@@ -1,0 +1,15 @@
+
+	## CLI Git repository
+	https://github.com/Azure/azure-cli
+
+	## login
+	- az login
+
+	## Networks documentation
+	- https://learn.microsoft.com/en-us/cli/azure/network/nsg?view=azure-cli-latest
+
+	## List networks security groups
+	- az network nsg list
+
+	## List rulls in security groups
+	- az network nsg rule list

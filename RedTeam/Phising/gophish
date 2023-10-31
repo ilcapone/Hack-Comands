@@ -1,0 +1,59 @@
+
+	## Github
+	https://github.com/gophish/gophish
+
+	## Oficial page
+	https://getgophish.com/
+
+	## Basic Architecture
+	https://medium.com/swlh/production-ready-gophish-with-nginx-mysql-and-docker-68db412d6cdd+
+	https://blog.tiraquelibras.com/?p=237
+	http://lockboxx.blogspot.com/2020/01/gophish-evilginx2-auto-deployment-w.html
+
+		## Production Architecture
+		- Nginex: Como reverse proxy
+		- Gophis: Aplicacion de gestion de campña de phising
+		- Database: Base de datos para el almacenamiento y persistencia
+		- SMTP Server: Para el envi de correos electronicos
+
+	## Docker-Compose Architecture
+	https://github.com/billdeitrick/gophish-docker-compose/blob/master/docker-compose.yml
+	https://github.com/ahhh/phish_composer/blob/master/docker-compose.yml#L46
+
+	## SMTP Servers Options
+	- https://github.com/mailhog/MailHog
+	- https://www.mailgun.com/
+
+	## Phising Tactivs
+	- https://infosecwriteups.com/phishing-creating-and-analyzing-ed73e5fec7b6
+
+	## Concepts
+
+		- Sending Profiles: Are the connection details required to actually send your Phishing emails; this is just simply an SMTP server that you have access to.
+		- Landing Pages: Next, we're going to set up the landing page; this is the website that the Phishing email is going to direct the victim to; this page is usually a spoof of a website the victim is familiar with.
+		- Email Templates: This is the design and content of the email you're going to actually send to the victim; it will need to be persuasive and contain a link to your landing page to enable us to capture the victim's username and password.
+		- Users & Groups: This is where we can store the email addresses of our intended targets.
+
+	## How To - Basic
+
+	1- Configurar primero Sending Profies (SMTP Server).
+	2- Configurar Landing Page
+		> Add HTML Code.
+		> Select Capture Submitted Data (Si el codgo HTML contiene form, sumbited input, estos seran capturados).
+				```
+				<form method="post">
+			        <div class="login-form">
+			            <div>Username:</div>
+			            <div><input name="username"></div>
+			            <div>Password:</div>
+			            <div><input type="password" name="password"></div>
+			            <div><input type="submit" value="Login"></div>
+			        </div>
+			    </form>
+				```
+		> Select Capture Passwords
+	3 - Configurar Email Template
+		> Poner nombre y Sumbject
+		> Configurar Body, lo importante aqui es añadir un Link y configurar el Protocol y Url con: <other> y {{.URL}} respectivamente.
+	4 - Configure Users & Groups
+	5 - Configure Campaing

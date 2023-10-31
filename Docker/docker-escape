@@ -1,0 +1,8 @@
+
+	## Docu
+	https://book.hacktricks.xyz/linux-hardening/privilege-escalation/docker-security/docker-breakout-privilege-escalation
+	https://book.hacktricks.xyz/linux-hardening/privilege-escalation/linux-capabilities
+	https://i.blackhat.com/USA-19/Thursday/us-19-Edwards-Compendium-Of-Container-Escapes-up.pdf
+
+	## Container Scape Detection
+	https://github.com/stealthcopter/deepce
