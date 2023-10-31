@@ -124,3 +124,6 @@ https://documenter.getpostman.com/view/2631434/SWLh56pX#9efb2756-cbf2-4243-a330-
 
 	- SendMesage: curl --location -g --request GET '[SQS_URL]?Action=SendMessage&MessageBody=[url_Encode_Mesage]'
 	- ReceiveMesage: curl --location --request GET '[SQS_URL]?Action=ReceiveMessage'
+
+## CloudFormation Output
+aws cloudformation describe-stacks --stack-name [cloudformation-name] --profile [profile-name] --region [region]

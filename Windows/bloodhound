@@ -7,9 +7,19 @@ https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/
 ## Bloodhoudn for kali
 https://github.com/fox-it/BloodHound.py
 
-## How to use UI
+## Set Up
+
 	# Neo4j Container
 	docker run --restart always --publish=7474:7474 --publish=7687:7687 --volume=$(pwd)/data:/data --env NEO4J_AUTH=[user]/[pass] neo4j:4.0 
 
-	## Run
-	./ ./BloodHound --no-sandbox
+	## Run BloodHound GUI
+	- Download binary from: https://github.com/BloodHoundAD/BloodHound/releases
+	- Run as: ./BloodHound --no-sandbox
+
+	## Runn Azure BloodHound Guid
+	https://github.com/BloodHoundAD/BloodHound/releases/tag/4.2.0
+
+## Qustom azure Queries
+	
+	# Install custom azure queries
+	https://github.com/y0k4i-1337/BloodHound-Queries

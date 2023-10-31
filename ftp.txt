@@ -1,4 +1,8 @@
 
+
+## Basic conexion and Grab Banner
+nc -vn [IP] 21
+
 ## Free client 
 sudo apt-get install lftp
 	
@@ -21,8 +25,13 @@ https://www.cs.colostate.edu/helpdocs/ftp.html
 https://lftp.yar.ru/lftp-man.html
 
 ## Hack Tricks Docu
-https://book.hacktricks.xyz/network-services-pentesting/pentesting-
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-ftp
 
 ## Anonymous acces and mitigation
 https://shahmeeramir.com/penetration-testing-of-an-ftp-server-19afe538be4b
 	> Username and Password: anonymous:anonymous
+
+	## Comon Anonymous login
+	- anonymous : anonymous
+	- anonymous :
+	- ftp : ftp

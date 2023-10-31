@@ -11,4 +11,5 @@ https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-
 ## Authoritation headers
 "Authorization: Bearer $TOCKEN"
 
-ya29.c.KpMB4gcGi951hkK1CWXAOB468LRlJe8rU45-121VsA1gJHKpknOgYGegglJo1_3OkTgu5ZO_zqEJj98G6Cb90LGVdNMT21Q50sN-YX8FbNjBr-n9qy8uvgnDnkKbkJreldtQirlPnTSwgjZsMrf7CqgKL48W7eyrQnl_y-3OAQTwq6X1K3JiH-XuHPcL0vEkCLq92lPK
+## Google Maps API Keys Tools
+https://github.com/streaak/keyhacks#google-maps-api-key

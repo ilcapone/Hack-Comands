@@ -44,7 +44,7 @@ net user [username] [new password]
 icacls [path]
 
 ## Review Service configuration
-sc qc [Service Name
+sc qc [Service Name]
 
 ## Revie Permisions of a Services
 ccesschk64.exe -qlc [service Name]

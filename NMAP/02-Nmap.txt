@@ -60,4 +60,12 @@
 	- nmap -proxy socks4://127.0.0.1:8189
 
 	## Review TLS config
-	nmap -sV --script ssl-enum-ciphers -p 443 
+	nmap -sV --script ssl-enum-ciphers -p 443
+
+	## Exclude IPs from scans
+	--exclude [IP1,IPT2,IP3]
+
+	## Stop and resume nmap
+	- Stop   > Cntrl+C
+	- Resume > nmap --resume [otputfile]
+	- Docu: https://github.com/nmap/nmap/issues/1206

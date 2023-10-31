@@ -18,4 +18,9 @@ grep 'pattern1\|pattern2' filename
 ## Search Ips
 grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"
 
+## Grep view lines before
+grep -B [nº of lines]
+
+## Grep view lines after
+grep -A [nº of lines]
 

@@ -1,9 +1,19 @@
 
 ## General Information
-	https://prog.world/pentest-applications-with-graphql/
+https://prog.world/pentest-applications-with-graphql/
+
+## How to do the querys
+https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/graphql#querying
 
 ## View Graphiq scheme
 https://apis.guru/graphql-voyager/
+
+## Curls
+curl -s -v  -XPOST -H "Content-Type:application/graphql" -H "x-api-key:<api-key>" -d '{ "query": "query {singleNote(id:29){record {name{value}}}}" }' https://<graphql-endpoint>/graphql
+
+  ## Curl Querys
+  { "query": "query {  __schema {    types {      name      fields {        name      }    }  }}" }
+
 
 ## Types of requests
 
