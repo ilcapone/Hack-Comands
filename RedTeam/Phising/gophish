@@ -6,9 +6,11 @@
 	https://getgophish.com/
 
 	## Basic Architecture
-	https://medium.com/swlh/production-ready-gophish-with-nginx-mysql-and-docker-68db412d6cdd+
+	https://medium.com/swlh/production-ready-gophish-with-nginx-mysql-and-docker-68db412d6cdd
 	https://blog.tiraquelibras.com/?p=237
 	http://lockboxx.blogspot.com/2020/01/gophish-evilginx2-auto-deployment-w.html
+	https://notes.offsec-journey.com/resource-development/infrastructure-1
+	https://sidb.in/posts/phishing-101/#infrastructure-and-tools-used
 
 		## Production Architecture
 		- Nginex: Como reverse proxy
@@ -24,8 +26,18 @@
 	- https://github.com/mailhog/MailHog
 	- https://www.mailgun.com/
 
+		## MailGun Email config
+		- https://documentation.mailgun.com/en/latest/quickstart-sending.html?utm_source=mailgun&utm_medium=email&utm_campaign=transactional-dns-propagation
+		- https://help.mailgun.com/hc/en-us/articles/360026833053
+
 	## Phising Tactivs
 	- https://infosecwriteups.com/phishing-creating-and-analyzing-ed73e5fec7b6
+
+	## Create Basic Template
+	- https://docs.getgophish.com/user-guide/building-your-first-campaign/creating-the-template
+
+	## Remove IOCs
+	https://www.sprocketsecurity.com/resources/never-had-a-bad-day-phishing-how-to-set-up-gophish-to-evade-security-controls
 
 	## Concepts
 

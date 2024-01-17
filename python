@@ -28,3 +28,4 @@ python2.7 -m SimpleHTTPServer [port]
 
 ## Create a SMB Server in atacker machine that is linked to a folder in the target machine
 python3.9 /opt/impacket/examples/smbserver.py -smb2support -username [TargetUser] -password [TargetPassword] [TargetFolder] [AtackerFolder]
+

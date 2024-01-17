@@ -165,3 +165,6 @@ timeout 1 bash -c "</dev/tcp/ifconfig.io/443" && echo "Port open" || echo "Port 
 
 ## Echo salto de linea
 echo -e "\n"
+
+## Extract Metadata from file
+exiftool -s <path_to_file>

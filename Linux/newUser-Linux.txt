@@ -12,3 +12,7 @@ passwd			//current user password
 ## Delete user
 userdel [username]
 
+## List users
+cat /etc/passwd
+
+

@@ -52,6 +52,9 @@ https://cloudsecwiki.com/aws_cloud.html
 ## S3 Policies
 https://github.com/bear/s3scan
 
+## Check Public S3 in a whitebox escenario
+https://github.com/clario-tech/s3-inspector
+
 ## Enumerate IAM Permisions of specific acount
 https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 https://github.com/andresriancho/enumerate-iam
@@ -101,6 +104,9 @@ aws ec2 authorize-security-group-ingress --group-id [security_grou_id] --protoco
 ## Extract sensitive User Data metadata in EC2
 aws ec2 describe-instance-attribute --attribute userData --region <REGION> --instance-id <INSTANCE_ID> --query UserData.Value --output text | base64 -d
 
+	## Remediation
+	https://stackoverflow.com/questions/62632113/what-is-the-best-possible-way-to-pass-api-key-for-aws-ec2-user-data-script
+
 ## CloudFron Subdomain hijacking
 https://www.mindpointgroup.com/blog/cloudfront-hijacking
 
@@ -114,9 +120,6 @@ https://www.mindpointgroup.com/blog/cloudfront-hijacking
 
 	# Get vpc ACLs
 	aws ec2 describe-security-groups --region [Region] --group-ids [VpcSecurityGroupId] --query 'SecurityGroups[*].IpPermissions'
-
-## Check Public S3 in a whitebox escenario
-https://github.com/clario-tech/s3-inspector
 
 ## Check Public SQS
 https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/SQS/sqs-queue-exposed.html

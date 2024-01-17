@@ -3,6 +3,9 @@
 ## Build images ##
 docker-compose build
 
+	## Run rocker compose and rebuild images
+	docker-compose up --build
+
 ## Run Attached mode ##
 docker-compose up
 

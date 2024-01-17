@@ -1,3 +1,12 @@
 
+## Docu
+https://www.hostinger.es/tutoriales/comando-dig-linux
+
 ## Ask to a dns in localhost
 dig pimylifeup.com @localhost
+
+## IP Record
+dig [domain] A
+
+## MX Record
+dig [domain] MX

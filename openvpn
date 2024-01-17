@@ -12,6 +12,9 @@ https://openvpn.net/community-resources/how-to/#hardening-openvpn-security
 ## Expose internal service port on vpn server
 https://unix.stackexchange.com/questions/449853/port-forwarding-using-openvpn-client
 
+## Install and configure openvpn with script
+https://www.cyberciti.biz/faq/howto-setup-openvpn-server-on-ubuntu-linux-14-04-or-16-04-lts/
+
 ## Status ##
 - sudo systemctl status openvpn@server
 
@@ -42,7 +45,6 @@ https://unix.stackexchange.com/questions/449853/port-forwarding-using-openvpn-cl
 		down-pre
 
 	- Check DNS resolving
-
 	  tcpdump -ni any port 53
 
 

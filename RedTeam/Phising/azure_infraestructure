@@ -1,0 +1,19 @@
+
+	## How to
+	https://0xboku.com/2021/07/12/ArtOfDeviceCodePhish.html
+
+	## Demo
+	https://www.youtube.com/watch?v=VglCgoIjztE
+	https://www.youtube.com/watch?v=jbUJ2NsZgcE
+
+	## Infraestructure
+	- Azure Account Subscription
+			* Azure Active Directory (AAD) phishing domain
+			* Admin Global Administrator user to acquire 30-day Office 365 trial licenses
+			* Exchange Online
+			* DKIM
+			* Phising Accounts
+
+	## Purge CDN Content
+	https://learn.microsoft.com/en-us/azure/cdn/cdn-purge-endpoint?ref=codeisahighway.com 
+	

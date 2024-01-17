@@ -3,6 +3,9 @@
  	## CheaSeat ##
  	https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/
 
+ 	## Evade firewall
+ 		https://infosecwriteups.com/evading-firewall-ids-during-network-reconnaissance-using-nmap-7dc393138178
+
 	### Tipos de escaneos  ###
 	nmap -sT [TCP connect]   # Ruidoso
         nmap -sS [Sync scan]	 # Silencioso
@@ -50,13 +53,16 @@
 	nmap --spoof-mac Cisco -T4 --source-port 53 -sS --send-ip -n --data-length 30 --randomize-hosts -n -f -f -sV --version-all -O
 	nmap -sS --mtu 32 -Pn -T2 --data-length 30
 
+		## Custom
+		nmap -sS -Pn -mtu 8 --source-port 53 -D RND:12 -f --spoof-mac 0 -T3 
+
 	### Hard Scan ###
 	nmap -sS --script vuln -T4 -sV -O -p1-65535 -f -Pn -v
 
 	### Check Auth ###
 	nmap -p 1-65535 -v -Pn --script auth 
 
-	## Proxy ##
+	## Proxy ##cat
 	- nmap -proxy socks4://127.0.0.1:8189
 
 	## Review TLS config
@@ -69,3 +75,6 @@
 	- Stop   > Cntrl+C
 	- Resume > nmap --resume [otputfile]
 	- Docu: https://github.com/nmap/nmap/issues/1206
+
+	## Random generate source IP
+	nmap -D RND:12 

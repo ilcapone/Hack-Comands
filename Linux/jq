@@ -1,5 +1,8 @@
+## Basic Filter
+jq -r '.[]'
+
 # Create new JSON filtering other JSON
-| jq -r '.items[] | {name: .metadata.name, ContainerVolume: .spec.containers[].volumeMounts}'
+jq -r '.items[] | {name: .metadata.name, ContainerVolume: .spec.containers[].volumeMounts}'
 
 ## Filter by value
- jq -r '.[] | select(.status=="connect") | .id') 
+jq -r '.[] | select(.status=="connect") | .id') 

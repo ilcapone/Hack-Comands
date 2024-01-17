@@ -12,3 +12,6 @@ https://blog.nviso.eu/2022/05/24/breaking-out-of-windows-kiosks-using-only-micro
 
 ## OSVDB-630 - Internal IP disclousure in Location Header - IIS
 https://github.com/sullo/nikto/issues/406
+
+## Path Transversals
+https://gist.github.com/SleepyLctl/823c4d29f834a71ba995238e80eb15f9

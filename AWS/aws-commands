@@ -1,6 +1,9 @@
 
     ### Documentation ###
 
+## Generar claves para acceso programado (CLI)
+https://docs.aws.amazon.com/es_es/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey
+
 ## ACLs VS Security Groups
 https://medium.com/awesome-cloud/aws-difference-between-security-groups-and-network-acls-adc632ea29ae
 
@@ -105,6 +108,12 @@ aws ecs describe-container-instances --cluster [] --container-instances []
 
 ## Describe task in cluster ECS
 aws ecs describe-tasks --cluster [] --tasks []
+
+## List ECS tasks definitions
+aws ecs list-task-definitions --profile [] --region []
+
+## Describne tasks definitios
+aws ecs describe-task-definition --profile [] --region [] --task-definition []
 
 ## List EC2s
 aws ec2 describe-instances --region [region]
@@ -233,5 +242,5 @@ aws ecr describe-repositories | jq -r '.repositories[].repositoryName'
 aws ecr describe-images --repository-name foo --query 'sort_by(imageDetails,& imagePushedAt)[*]'
     
     ## Get last image push
-    aws ecr describe-images --repository-name application/chatmail_send --query 'sort_by(imageDetails,& imagePushedAt)[*]' | jq -r '.[-1]'
+    aws ecr describe-images --repository-name [] --query 'sort_by(imageDetails,& imagePushedAt)[*]' | jq -r '.[-1]'
 

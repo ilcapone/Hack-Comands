@@ -1,0 +1,27 @@
+
+	# Basic Understanding
+	https://www.hostinet.com/formacion/correo-electronico/porque-mis-email-llegan-a-spam-en-outlook-hotmail-msn-etc/
+
+	## Templates - Emails and PAges
+	https://github.com/criggs626/PhishingTemplates
+	https://github.com/LiveGray/OPENORCHID
+
+	## Email Testing
+	https://www.mail-tester.com/
+	https://www.experte.com/spam-checker
+	https://www.mailgenius.com/
+
+	## SMTP - Exploit Open Relay - Via Telnet
+	https://learn.microsoft.com/es-es/exchange/mail-flow/test-smtp-telnet?view=exchserver-2019
+	https://gbhackers.com/email-spoofing-exploiting-open-relay/
+	https://www.blackhillsinfosec.com/how-to-test-for-open-mail-relays/
+
+		## Automated Tools
+		https://github.com/crazywifi/SMTP_Relay_Phisher
+
+	## Solcitar, que la IP sea eliminada de la blacklist de Office365
+	- https://sender.office.com/
+	- Tarda 30 mins aprox en ser eliminada de la lisa
+
+	## Gmail, recomendations infraestructura
+	https://support.google.com/mail/answer/81126?hl=es-419

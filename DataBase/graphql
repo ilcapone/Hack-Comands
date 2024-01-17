@@ -8,6 +8,9 @@ https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/graphql#q
 ## View Graphiq scheme
 https://apis.guru/graphql-voyager/
 
+## BurpSuit Extension
+https://portswigger.net/burp/documentation/desktop/testing-workflow/session-management/working-with-graphql
+
 ## Curls
 curl -s -v  -XPOST -H "Content-Type:application/graphql" -H "x-api-key:<api-key>" -d '{ "query": "query {singleNote(id:29){record {name{value}}}}" }' https://<graphql-endpoint>/graphql
 

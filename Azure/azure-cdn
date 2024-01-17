@@ -1,0 +1,7 @@
+
+	## How to config basic CDN
+	https://learn.microsoft.com/en-us/azure/cdn/cdn-add-to-web-app
+
+	## How to configure cusom domain
+	Paso 1 - https://learn.microsoft.com/en-us/azure/cdn/cdn-create-new-endpoint
+	Paso 2 - https://learn.microsoft.com/en-us/azure/cdn/cdn-map-content-to-custom-domain?source=recommendations&tabs=azure-dns%2Cazure-portal%2Cazure-portal-cleanup
