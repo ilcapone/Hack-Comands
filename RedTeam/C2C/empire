@@ -1,0 +1,9 @@
+
+	## Restart Server
+	./ps-empire server --reset
+
+	## Basic use GU
+	https://bc-security.gitbook.io/empire-wiki/interfaces/starkiller/introduction
+
+	## How to use
+	https://vk9-sec.com/how-to-set-up-use-c2-empire/

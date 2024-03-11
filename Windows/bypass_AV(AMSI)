@@ -13,3 +13,9 @@ https://github.com/S3cur3Th1sSh1t/Pentest-Tools#General-usefull-Powershell-Scrip
 ## Disable AMSI
 https://www.contextis.com/us/blog/amsi-bypass
 https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell
+
+## Ramdom generator of AMSI Tactics
+https://amsi.fail/
+
+## Bypass - 03-2024 --> Working
+https://gist.githubusercontent.com/FatRodzianko/c8a76537b5a87b850c7d158728717998/raw/36103d12eec662d532c9127f2396bc347d13c3c5/my-am-bypass.ps1

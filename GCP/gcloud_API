@@ -12,4 +12,12 @@ https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-
 "Authorization: Bearer $TOCKEN"
 
 ## Google Maps API Keys Tools
-https://github.com/streaak/keyhacks#google-maps-api-key
+	
+	### Documentation
+	https://github.com/streaak/keyhacks#google-maps-api-key
+
+	## Tools
+	https://github.com/ozguralp/gmapsapiscanner
+
+	## Recomendations
+	https://developers.google.com/maps/api-security-best-practices?hl=es-419#restricting-api-keys

@@ -1,0 +1,44 @@
+
+	## Cheap RubberDucky - Attiny85
+	https://content.instructables.com/F98/D011/JSCG6QG3/F98D011JSCG6QG3.pdf
+
+		## Setup
+		https://www.instructables.com/How-to-Setup-DigiSprak-Attiny85-Boar
+		https://www.youtube.com/watch?v=X6R8cveFz74
+		https://maker.pro/arduino/projects/how-to-build-a-rubber-ducky-usb-with-arduino-using-a-digispark-module
+
+			## Troubleshooting - Dont be detect in others computers after burnit
+			https://arduino.stackexchange.com/questions/32321/why-isnt-digispark-automatically-recognized-on-other-computers
+
+		## Bad USB - Attiny85
+		https://github.com/MTK911/Attiny85
+		http://kio4.com/arduino/67_Attiny85_Teclado.htm
+		https://github.com/CedArctic/DigiSpark-Scripts
+
+		## Payloads
+		- Reverse shell - https://github.com/CedArctic/DigiSpark-Scripts/blob/master/Reverse_Shell/Reverse_Shell.ino
+		- Deploy payload - https://github.com/CedArctic/DigiSpark-Scripts/tree/master/Rapid_Shell
+		- Config Stager - https://www.youtube.com/watch?v=DYhu5yg_OzA
+
+		## Carcasa
+		https://cults3d.com/es/modelo-3d/herramientas/digispark-attiny85-badusb-fake-usb-memory-case-remix
+		https://es.aliexpress.com/item/1005005819378403.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.2.4b8654ad2rfaIq&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=7c720b41-bffc-48dc-b73c-2b2e9531f07e&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:7c720b41-bffc-48dc-b73c-2b2e9531f07e,tpp_buckets:668%232846%238110%231995&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A
+		https://es.aliexpress.com/item/1005004141483244.html?spm=a2g0o.detail.pcDetailBottomMoreThisSeller.3.2290s4rZs4rZpV&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.291025.0&scm_id=1007.13339.291025.0&scm-url=1007.13339.291025.0&pvid=bf91bded-f884-4ea6-a950-eca5e0889306&_t=gps-id:pcDetailBottomMoreThisSeller,scm-url:1007.13339.291025.0,pvid:bf91bded-f884-4ea6-a950-eca5e0889306,tpp_buckets:668%232846%238114%231999&utparam-url=scene%3ApcDetailBottomMoreThisSeller%7Cquery_from%3A
+		https://es.aliexpress.com/item/1005003983339459.html?spm=a2g0o.detail.pcDetailTopMoreOtherSeller.3.514byWE7yWE7Wf&gps-id=pcDetailTopMoreOtherSeller&scm=1007.40050.354490.0&scm_id=1007.40050.354490.0&scm-url=1007.40050.354490.0&pvid=dd94d914-b3ab-42fc-a359-066634828be0&_t=gps-id:pcDetailTopMoreOtherSeller,scm-url:1007.40050.354490.0,pvid:dd94d914-b3ab-42fc-a359-066634828be0,tpp_buckets:668%232846%238107%231934&utparam-url=scene%3ApcDetailTopMoreOtherSeller%7Cquery_from%3A
+
+		## Fabricantes
+		https://www.3dinnovacion.com/contacto/
+
+		## Convert RubberDuky to Attiny85 Arduino Scripts
+		https://duckify.huhn.me/
+
+	## RubberDukky Payloads
+	https://es.aliexpress.com/item/1005006507528008.html?spm=a2g0o.productlist.main.1.aaad5099EBIWzh&algo_pvid=3061726f-2c95-42cd-833f-890129ffca20&utparam-url=scene%3Asearch%7Cquery_from%3A
+	https://hackmag.com/security/rubber-ducky/
+	https://github.com/brandonlw/Psychson/wiki/Known-Supported-Devices
+	https://github.com/brandonlw/Psychson
+	https://hackernoon.com/low-cost-usb-rubber-ducky-pen-test-tool-for-3-using-digispark-and-duck2spark-5d59afc1910
+	https://www.amazon.com/Digispark-Kickstarter-ATTINY85-Arduino-Development/dp/B01MQOPY5C
+	https://blog.kalrong.net/es/2017/06/07/attiny85-el-famoso-cheap-rubber-ducky/
+	https://0x00sec.org/t/a-complete-beginner-friendly-guide-to-the-digispark-badusb/8002
+	https://www.hackerdecabecera.com/2017/07/cheap-usb-rubber-ducky_21.htm

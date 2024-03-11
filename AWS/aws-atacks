@@ -42,6 +42,9 @@ https://github.com/BishopFox/cloudfox
 	## Get Enviroments Variables Credentials
 	./cloudfox aws --profile [profile] -v3 env-vars
 
+##AWS px - Graphic Resource
+https://github.com/WithSecureLabs/awspx
+
 ## Tools and tactics
 https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md
 https://github.com/CyberSecurityUP/Cloud-Security-Attacks

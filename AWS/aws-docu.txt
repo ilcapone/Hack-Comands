@@ -58,3 +58,6 @@ https://aws.amazon.com/es/blogs/storage/centralized-cross-account-management-wit
 
 ## Services that can be public
 https://github.com/SummitRoute/aws_exposable_resources
+
+## ECS Criptomaining 
+https://securitylabs.datadoghq.com/articles/tales-from-the-cloud-trenches-ecs-crypto-mining/

@@ -8,6 +8,11 @@
 	# Start gcloud sdk
 	- gcloud init
 
+## Security Audir Account
+	- roles/viewer : For general configuration settings and assets enumeration
+	- roles/iam.securityReviewer : For listing the different roles and permissions across the organization
+	- roles/monitoring.viewer : For checking monitoring and logs configurations
+
 ## Key Rotator ##
 https://cloud.google.com/blog/products/gcp/help-keep-your-google-cloud-service-account-keys-safe
 https://github.com/GoogleCloudPlatform/keyrotator
