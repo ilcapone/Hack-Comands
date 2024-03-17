@@ -25,3 +25,8 @@ sudo ufw delete [numper]
 
 # Deny by default
 sudo ufw default deny incoming
+
+## Other linux firewalls
+
+	## Firewalld
+	https://oracle-base.com/articles/linux/linux-firewall-firewalld
