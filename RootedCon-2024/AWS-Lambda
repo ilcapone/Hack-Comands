@@ -1,0 +1,23 @@
+
+	## Firecracker
+	- Disponible en github
+	- La base de ejecucionn de las lamdas
+
+	## Url especifica de las lamdas
+	https://lambda-url.[region].amazonaws.com
+
+	## Memoria compartida
+	- Cada 5 peticiones se reutiliza una nueva lambda -> se reutiliza la memoria
+	- Carpetas compartidas entre ejecuciones
+	- No siempre las ejecuciones estan aisladas
+
+	## Inernamente
+	- Existe un entrypoint - lambda-entrypoint.sh
+	- Variables de entorno con informacion sensible
+
+	## runtime
+	- awslambdaric
+	- interactuar directamente con el runtime de las lambdas a trabes de una api
+
+	## AWs lambda proxy
+	- local mitmproxy > lambda proxy
