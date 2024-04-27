@@ -37,7 +37,7 @@ aws sts get-caller-identity
 ## Get Local Context
 aws configure list-profiles
 
-## Crearte new context
+## Crearte new contextz
 aws configure --profile [context-name]
 
 ## Change betewenn context
@@ -159,7 +159,10 @@ chmod 400 MyKeyPair.pem
 aws ec2 delete-key-pair --key-name [MyKeyPair]
 
 ## List Key pairs
-aws ec2 describe-key-pairs 
+aws ec2 describe-key-pairs
+
+## Get EC2 Auto Scaling Launch Configuration
+aws autoscaling describe-launch-configurations --launch-configuration-names []
 
 ## List EFS
 aws efs describe-file-systems
@@ -215,6 +218,15 @@ aws lambda list-functions --region [region] --output json
 
 ## Get Lamda Source Code
 aws lambda get-function --function-name [lamda-name] --query 'Code.Location'
+
+## Get lamda policy
+aws lambda get-policy --function-name [nameid]
+
+## Get lambda URL
+aws lambda get-function-url-config  --function-name [nameid]
+
+## Get Enviroments from especific lambda
+aws lambda get-function-configuration --query 'Environment.Variables' --function-name []
 
 ## DynamoDB get tables names
 aws dynamodb list-tables --region [region]

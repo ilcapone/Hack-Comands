@@ -1,5 +1,7 @@
-C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
-C:\ProgramData\Microsoft\Windows\Menú Inicio\Programas\Inicio
+	
+	## Comon locations folder
+	C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
+	C:\ProgramData\Microsoft\Windows\Menú Inicio\Programas\Inicio
 
 	## Windows 10 usuario
 	C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup

@@ -58,6 +58,9 @@ https://github.com/bear/s3scan
 ## Check Public S3 in a whitebox escenario
 https://github.com/clario-tech/s3-inspector
 
+## Upload file to a public Bucket s3
+curl -X PUT -T "archivo-local.txt" http://nombre-del-bucket.s3.amazonaws.com/archivo-remoto.txt
+
 ## Enumerate IAM Permisions of specific acount
 https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 https://github.com/andresriancho/enumerate-iam
@@ -133,3 +136,6 @@ https://documenter.getpostman.com/view/2631434/SWLh56pX#9efb2756-cbf2-4243-a330-
 
 ## CloudFormation Output
 aws cloudformation describe-stacks --stack-name [cloudformation-name] --profile [profile-name] --region [region]
+
+## Check Cresd IAM identiti
+aws sts get-caller-identity

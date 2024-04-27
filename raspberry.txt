@@ -48,6 +48,5 @@ Ejemplo:
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 --------- Pineapple in Raspy --------
-
 Open Sourc OS - Fruitywifi > http://fruitywifi.com/index_eng.html
->>>>>>> 3cf1a3f2c2dd26c3675b336108d6440ee4249dde
+

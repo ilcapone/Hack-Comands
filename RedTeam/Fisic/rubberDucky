@@ -3,12 +3,16 @@
 	https://content.instructables.com/F98/D011/JSCG6QG3/F98D011JSCG6QG3.pdf
 
 		## Setup
+		https://www.youtube.com/watch?v=MmDBvgrYGZs
 		https://www.instructables.com/How-to-Setup-DigiSprak-Attiny85-Boar
 		https://www.youtube.com/watch?v=X6R8cveFz74
 		https://maker.pro/arduino/projects/how-to-build-a-rubber-ducky-usb-with-arduino-using-a-digispark-module
 
 			## Troubleshooting - Dont be detect in others computers after burnit
 			https://arduino.stackexchange.com/questions/32321/why-isnt-digispark-automatically-recognized-on-other-computers
+
+			## Change Keyboard to spanish
+			https://github.com/Dasor/digispark-keyboard-layout-Spanish
 
 		## Bad USB - Attiny85
 		https://github.com/MTK911/Attiny85

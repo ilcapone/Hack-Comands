@@ -23,3 +23,7 @@
 
 		## Docs
 		https://github.com/t3l3machus/Villain/blob/main/Usage_Guide.md
+
+
+	## USe Azure CDN to hidde conexins
+	https://medium.com/r3d-buck3t/red-teaming-in-cloud-leverage-azure-frontdoor-cdn-for-c2-redirectors-79dd9ca98178
