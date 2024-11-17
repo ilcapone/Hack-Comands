@@ -5,6 +5,12 @@
 	## login
 	- az login
 
+	## Configurar subscripcion especifica
+	- az account list
+		> Este comando mostrará una lista en formato tabla de todas tus suscripciones, incluyendo las columnas Name (nombre de la suscripción) y Id (el ID de suscripción).
+	- az login --tenant TENANT-ID
+	- az account set --subscription "<subscription-id-or-name>"
+
 	## Networks documentation
 	- https://learn.microsoft.com/en-us/cli/azure/network/nsg?view=azure-cli-latest
 
@@ -13,3 +19,9 @@
 
 	## List rulls in security groups
 	- az network nsg rule list
+
+	## List Users
+	az ad user list --output table
+
+	## List Role asigment
+	

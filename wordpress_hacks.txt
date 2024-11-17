@@ -1,9 +1,0 @@
-
-	## Search Hardcode Passwords ##
-	- cat public_html/wp-config.php |grep -E "DB_USER|DB_PASS"
-
-	## Access Draft posts
-	http://[url]/&status=draft
-
-	## View users
-	http://[url]//wp-json/wp/v2/users/

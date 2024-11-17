@@ -69,6 +69,9 @@ docker logs --follow [container-id]
 # Volumenes montados
 docker volume ls
 
+## Eliminar eliminados que no se utilizan
+docker volume prune
+
 # Exec shell inside a running container
 docker exec -it [container-id] /bin/bash
 

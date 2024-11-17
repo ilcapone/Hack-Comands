@@ -1,5 +1,5 @@
 ## Confi ssh ky for gitlab ##
-https://docs.gitlab.com/ee/ssh/
+https://docs.gitlab.com/ee/user/ssh.html
 	
 ## Confi ssh ky for github ##	
 https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh

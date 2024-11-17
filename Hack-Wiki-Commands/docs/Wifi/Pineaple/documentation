@@ -8,12 +8,18 @@
 ## Acccess
 - Dashboard: http://172.16.42.1:1471
 
-## Evil Portals
+## Atacks
 
-
-## Conceps
+	## Evil Portals
+	- https://github.com/kleo/evilportals
 
 	## PineAP - Rogue AP
 	- Docu: https://docs.hak5.org/wifi-pineapple/ui-overview/pineap
 	- Rogue access point is a wireless access point that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker.
+
+	## SSl strip man in the middle
+	- https://scotthelme.co.uk/wifi-pineapple-karma-sslstrip/
+
+	## Karma
+	https://www.youtube.com/watch?v=fOmDNn2aXXA
 

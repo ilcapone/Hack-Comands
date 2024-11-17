@@ -228,6 +228,9 @@ aws lambda get-function-url-config  --function-name [nameid]
 ## Get Enviroments from especific lambda
 aws lambda get-function-configuration --query 'Environment.Variables' --function-name []
 
+## Get al lambdas that have enviroment
+aws lambda list-functions --profile $profile --region $region --output json | jq '.Functions[] | select(.Environment) | .FunctionName'
+
 ## DynamoDB get tables names
 aws dynamodb list-tables --region [region]
 
@@ -255,4 +258,29 @@ aws ecr describe-images --repository-name foo --query 'sort_by(imageDetails,& im
     
     ## Get last image push
     aws ecr describe-images --repository-name [] --query 'sort_by(imageDetails,& imagePushedAt)[*]' | jq -r '.[-1]'
+
+## SSO Configure session
+aws configure sso-session
+
+    ## Info you need
+    SSO session name: my-sso
+    SSO start URL [None]: https://my-sso-portal.awsapps.com/start
+    SSO region [None]: us-east-1
+    SSO registration scopes [None]: sso:account:access
+
+    ## Documentation
+    https://docs.aws.amazon.com/cli/latest/userguide/sso-configure-profile-token.html
+
+## SSO Loging Loging
+aws sso login --sso-session [sesionname]
+
+## SSO get access Token
+- It is safe in a JSON in the path: ~/.aws/sso/cache
+- Filter and get acces token: $(cat [file_name].json | jq -r '.accessToken')
+
+## SSO Listar accounts 
+aws sso list-accounts --access-token $(cat [file_name].json | jq -r '.accessToken') --region []
+
+
+
 

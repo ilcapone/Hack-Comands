@@ -30,3 +30,13 @@ sudo ufw default deny incoming
 
 	## Firewalld
 	https://oracle-base.com/articles/linux/linux-firewall-firewalld
+
+## Block specific IP
+
+	## Doc
+	https://www.cyberciti.biz/faq/how-to-block-an-ip-address-with-ufw-on-ubuntu-linux-server/
+
+	## Command
+	sudo ufw deny from {ip-address-here} to any
+	sudo ufw reject from {ip-address-here} to any
+

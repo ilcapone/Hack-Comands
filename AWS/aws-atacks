@@ -61,6 +61,9 @@ https://github.com/clario-tech/s3-inspector
 ## Upload file to a public Bucket s3
 curl -X PUT -T "archivo-local.txt" http://nombre-del-bucket.s3.amazonaws.com/archivo-remoto.txt
 
+## Upload html file to be load as web page
+curl -X PUT -T "/path/to/index.html" -H "Content-Type: text/html" http://nombre-del-bucket.s3.amazonaws.com/index.html
+
 ## Enumerate IAM Permisions of specific acount
 https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 https://github.com/andresriancho/enumerate-iam
@@ -139,3 +142,12 @@ aws cloudformation describe-stacks --stack-name [cloudformation-name] --profile 
 
 ## Check Cresd IAM identiti
 aws sts get-caller-identity
+
+## Find secrets in EC2 Auto Scaling Launch Configuration
+aws autoscaling describe-launch-configurations --launch-configuration-names []
+
+## Finde secrets in EC2 Launch Template
+aws ec2 describe-launch-template-versions --launch-template-name <LaunchTemplateName> --versions "$Latest"
+
+## Bypass GuardDuty
+https://hackingthe.cloud/aws/avoiding-detection/guardduty-pentest/

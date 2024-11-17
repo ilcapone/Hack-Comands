@@ -1,3 +1,14 @@
+
+## Docu
+https://github.com/frizb/Linux-Privilege-Escalation
+
+	## Hard tool
+	https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+		- curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh
+
+
+## Commands
+
 Sistema Operativo
 
 Qué distribución es? Qué versión?

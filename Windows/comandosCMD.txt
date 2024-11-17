@@ -55,3 +55,7 @@ whoami /priv
 ## Backup the SAM and SYSTEM hashes
 reg save hklm\system C:\Users\[SomeUSer]\system.hive
 eg save hklm\sam C:\Users\[SomeUSer]\sam.hive
+
+## Obtener arquitectura del sistema
+	- wmic os get osarchitecture
+	- echo %PROCESSOR_ARCHITECTURE%

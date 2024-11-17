@@ -1,5 +1,4 @@
 
-
 ## Build images ##
 docker-compose build
 
@@ -26,6 +25,9 @@ Ctrl + z or Ctrl + c
 
 ## Removing services and run containers ##
 docker-compose down
+
+	## Delete also persistence volumens
+	docker-compose down --volume
 
 ## Start exited containers ##
 docker-compose start

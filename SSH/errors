@@ -5,3 +5,6 @@
 	## Received disconnect from [IP] port [Port]:2: Too many authentication failures
 	- Runn comand with: -o IdentitiesOnly=yes
 	- Documentation: https://www.tecmint.com/fix-ssh-too-many-authentication-failures-error/
+
+	## Si la conexion no se establece, da un timeout y al ver los los la ultima linea es: expecting SSH2_MSG_KEX_ECDH_REPLY
+	- Es necesario añadir: -o KexAlgorithms=ecdh-sha2-nistp521

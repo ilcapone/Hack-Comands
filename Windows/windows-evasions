@@ -13,3 +13,6 @@ https://s3cur3th1ssh1t.github.io/A-tale-of-EDR-bypass-methods/
 
 ## Ocultar consola por codigo
 https://stackoverflow.com/questions/40617800/opening-powershell-script-and-hide-command-prompt-but-not-the-gui
+
+## Eliminar historial de ejcucion de Windows+R
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f

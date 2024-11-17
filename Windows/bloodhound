@@ -10,7 +10,7 @@ https://github.com/fox-it/BloodHound.py
 ## Set Up
 
 	# Neo4j Container
-	docker run --restart always --publish=7474:7474 --publish=7687:7687 --volume=$(pwd)/data:/data --env NEO4J_AUTH=[user]/[pass] neo4j:4.0 
+	docker run --restart always --publish=7474:7474 --publish=7687:7687 --volume=$(pwd)/data:/data --env NEO4J_AUTH=[user]/[pass] neo4j:4.4
 
 	## Run BloodHound GUI
 	- Download binary from: https://github.com/BloodHoundAD/BloodHound/releases
