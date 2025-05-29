@@ -2,6 +2,9 @@
 	# Documentation
 	https://www.labsmac.es/1-introduccion-que-es-samba-y-algo-de-smb-cifs/
 
+	## Hack Tools
+	https://github.com/p0dalirius/DumpSMBShare
+
 	## Enumerar Shares on host
 	nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse [HOST]
 
@@ -17,5 +20,7 @@
 	## Montar carpeta remota en local
 	mkdir [local directori]
 	mount [remote IP]:[remote folder] [local directori]
+
+
 
 

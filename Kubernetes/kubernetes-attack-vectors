@@ -43,7 +43,7 @@
 			* ./kubectl --client-certificate bootstrap/kubelet-bootstrap.crt --client-key bootstrap kubelet-bootstrap.key  --certificate-authority bootstrap/ca.crt --server https://35.198.87.27 get certificatesigningrequests
 
 		## Scape From Pods
-		https://bishopfox.com/blog/kubernetes-pod-privilege-escalation#Pod4
+		- https://bishopfox.com/blog/kubernetes-pod-privilege-escalation#Pod4
 
 		## Exploit Healcheck API ##
 		- https://securityboulevard.com/2019/01/kubernetes-unauth-kublet-api-10250-basic-code-exec/
@@ -170,6 +170,31 @@
 
 				# Explore the API with TOKEN
 				curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${APISERVER}/api
+
+		## MITM tactics
+		https://rorycrispin.co.uk/mitm-proxy.html
+
+		## Standar DNS k8s names
+		
+		- DNS del servidor de API:
+			Nombre DNS: kubernetes.default.svc
+			Descripción: Dirección interna del servidor de la API del clúster.
+			Resolución: Apunta al IP del servicio del servidor de la API
+
+		- DNS de CoreDNS (servidor DNS interno):
+			Nombre DNS: kube-dns.kube-system.svc
+			Descripción: Servicio que proporciona resolución de DNS para el clúster.
+
+		- DNS del servicio en namespaces:
+			Formato: [nombre-servicio].[namespace].svc.cluster.local
+			Ejemplo:
+				Servicio: my-service
+				Namespace: default
+				DNS: my-service.default.svc.cluster.local
+
+		- Servicios específicos por defecto:
+			kubernetes.default - Resolución básica sin dominios avanzados (ideal para pruebas simples).
+			kubernetes.default.svc.cluster.local - Dirección completa que incluye la zona de clúster.
 
  
 

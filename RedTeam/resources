@@ -13,6 +13,9 @@ https://github.com/scythe-io/purple-team-exercise-framework/blob/master/PTEFv1.m
 	## MITRE ATT&CK Matrix
 	https://attack.mitre.org/
 
+	## Tactical Pentest Skills
+	https://sensepost.com/blog/
+
 ## Tools
 https://github.com/bigb0sss/RedTeam-OffensiveSecurity
 https://github.com/CyberSecurityUP/Awesome-Red-Team-Operations
@@ -76,6 +79,10 @@ https://www.flightradar24.com
 ## Create specific Google Maps
 https://www.bpwebs.com/how-to-create-your-own-map-using-google-my-maps/
 
+## Mapas por tiempo para detalles de imagenes
+	- https://earthexplorer.usgs.gov/
+	- https://earth.google.com/
+
 ## Detailed maps and infraestructure
 https://www.openstreetmap.org/
 
@@ -95,3 +102,34 @@ https://www.capsolver.com/es
 
 ## Monitorizar cambios en paginas web y recibir alertas
 https://chromewebstore.google.com/detail/distill-web-monitor/inlikjemeeknofckkjolnjbpehgadgge?hl=es&pli=1
+
+## Wifi Density map
+	https://wigle.net/
+
+## Wifi Tactics
+	https://sensepost.com/blog/wifi/
+
+	## WarDriving
+	https://www.youtube.com/watch?v=FrQL80q7Bu0
+	https://www.reddit.com/r/WifiPineapple/comments/1abezem/gps_and_aps/?rdt=57317
+
+## Asistentes CHAT Bot
+	## Phising new tactics IA
+	https://github.com/microsoft/TinyTroupe
+
+## DoS Tools
+	- WRK especifico para HTTP
+		Basic and Easy: https://github.com/wg/wrk
+		Use: wrk -t12 -c400 -d30s tcp://[ÎP]:[PORT]
+	- https://github.com/inovex/mqtt-stresser
+		Basic Use: docker run -it --rm mqtt-stresser:v01 -num-clients 10 -num-messages 150 -rampup-delay 1s -rampup-size 10 -global-timeout 180s -timeout 20s -log-level 2 -broker tcp://[IP]:[PORT]
+	- https://github.com/rabbitmq/rabbitmq-perf-test
+
+## 3D Printer high cuality
+https://eu.store.bambulab.com/collections/3d-printer/products/p1s
+
+## Ramsomware
+https://github.com/JoelGMSec/PSRansom
+
+## Reverse ingenering
+https://github.com/LaurieWired/GhidraMCP

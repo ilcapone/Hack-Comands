@@ -151,3 +151,9 @@ aws ec2 describe-launch-template-versions --launch-template-name <LaunchTemplate
 
 ## Bypass GuardDuty
 https://hackingthe.cloud/aws/avoiding-detection/guardduty-pentest/
+
+## Ramsomware PoC
+https://www.linkedin.com/posts/clintgibler_ransomware-in-aws-open-source-tools-activity-7304947959618576384-CCrJ/?rcm=ACoAAC9a_XMBV4i3TpQOhjwkLoDT3XMwbJD4J28
+
+## Privilege escalation
+https://github.com/carlospolop/cloudpeass

@@ -1,0 +1,43 @@
+
+	## Sonarqube
+
+		## Docker UI
+		- docker run --rm -it --name sonarqube -p 9000:9000 sonarqube:community
+		- docker run --rm -it --name sonarqube -p 9000:9000 
+			   -v ~/sonarqube/data:/opt/sonarqube/data \
+			   -v ~/sonarqube/extensions:/opt/sonarqube/extensions \
+			   -v ~/sonarqube/logs:/opt/sonarqube/logs \
+			   sonarqube:lts
+
+		## Access
+		- http://localhost:9000
+		- Default user credentials
+			admin:admin
+
+		## Documentation
+		- https://docs.sonarsource.com/sonarqube-server/latest/
+
+		## Scan local proyect
+		- Create file in de root directory of the local proyect with name: sonar-project.properties
+		- Content:
+			sonar.projectKey=my_project
+			sonar.projectName=My Project
+			sonar.projectVersion=1.0
+			sonar.sources=.
+			sonar.host.url=http://localhost:9000
+			sonar.login=<TOKEN_GENERADO>
+
+		## Docker Scaner
+		- docker run --rm -it -e SONAR_HOST_URL="http://${SONARQUBE_URL}" -e SONAR_TOKEN="myAuthenticationToken" -v "${YOUR_REPO}:/usr/src" sonarsource/sonar-scanner-cli
+		- SONARQUBE_URL=172.17.0.1
+
+	## Bearer
+
+		# source Code
+		- https://github.com/bearer/bearer
+
+		## Docker
+		- docker run --rm -v /path/to/repo:/tmp/scan bearer/bearer:latest-amd64 scan /tmp/scan
+
+	## Semgrep
+	- https://github.com/semgrep/semgrep

@@ -2,6 +2,9 @@
 	## View currrent rules
 	iptables -L
 
+		## View nat table
+		iptables -t nat -L -n -v
+
 	## Aply internet sharing
 	- iptables -t nat -A POSTROUTING -s [Red IP de origin] -o [interfaz de salida] -j MASQUERADE
 	Ejemplo: 

@@ -1,0 +1,28 @@
+
+	## Nvidia manage ingo
+	nvidia-smi
+
+	## Identificar tajeta grafica
+	lspci | grep -i vga
+	lshw -C display
+
+    ## Temperatura de la grafica
+    nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits
+
+    	# Observar la temperatura en bucle
+    	watch -n 2 'nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits'
+
+    	## Potencia del ventilador en bucle
+    	watch -n 2 'nvidia-smi --query-gpu=fan.speed --format=csv,noheader'
+
+    ## Fix - No entorno grafico control fan speed
+
+    	## Harcoded values
+    	- nano ~/.xinitrc
+    	- ADD
+    		> nvidia-settings -a "[gpu:0]/GPUFanControlState=1"
+			  nvidia-settings -a "[fan:0]/GPUTargetFanSpeed=50"
+			  exec openbox
+		- startx
+
+

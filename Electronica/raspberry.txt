@@ -1,3 +1,7 @@
+
+## Raspberry PI, PINs description image
+https://forums.raspberrypi.com/download/file.php?id=23591
+
 ## Raspberry Pi Zero W Kali Linux P4wnP1 ALOA Guide ##
 - https://jamesachambers.com/kali-linux-p4wnp1-aloa-guide-setup-usage-examples/
 - https://github.com/mame82/P4wnP1_alo
@@ -49,4 +53,47 @@ Ejemplo:
 
 --------- Pineapple in Raspy --------
 Open Sourc OS - Fruitywifi > http://fruitywifi.com/index_eng.html
+
+--------- 3.5 inch RPi LCD -------------
+# Get current Raspbery Pi OS Version
+cat /proc/cpuinfo | grep Model
+
+--------- 7 inch RPi LCD -------------
+## Insert SD Card in another pc
+## Open config.txt and add at the endd
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt 1024 600 60 6 0 0 0
+hdmi_drive=1
+
+--------- Config Arduino on Raspberry ---------
+sudo apt-get install arduino
+Note: The Raspberry Pi will likely recognize the Arduino as a serial device, such as /dev/ttyACM0 or /dev/ttyUSB0
+
+--------- Codigo de ERRORES segun LEDs ---------
+
+# Significado basico
+🔴 LED rojo = alimentación (power).
+🟡 LED verde/amarillo = actividad de la tarjeta SD.
+
+# Codigo de colores
+Se enciende el LED rojo 🔴 y el amarillo 🟡 parpadea, luego ambos se apagan y no sucede nada.
+
+    Esto sugiere un fallo al cargar el sistema operativo desde la tarjeta SD. Puede deberse a:
+    - Tarjeta SD mal formateada o imagen corrupta.
+    - Imagen escrita incorrectamente.
+    - Problema físico con la SD o el lector.
+    - Archivo bootcode.bin o partición de arranque mal generada.
+
+--------- Modelos por año ---------
+Año     Modelo lanzado
+2012    Raspberry Pi Model B
+2013    Raspberry Pi Model A
+2014    Raspberry Pi Model B+
+        Raspberry Pi Compute Module 1
+2015    Raspberry Pi 2 Model B
+2016    Raspberry Pi 3 Model B
+2019    Raspberry Pi 4 Model B
+
+
 

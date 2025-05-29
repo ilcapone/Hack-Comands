@@ -61,3 +61,6 @@ https://github.com/SummitRoute/aws_exposable_resources
 
 ## ECS Criptomaining 
 https://securitylabs.datadoghq.com/articles/tales-from-the-cloud-trenches-ecs-crypto-mining/
+
+## Deploy Windows 11 AMI on EC2
+https://aws.amazon.com/es/blogs/modernizing-with-aws/bringing-your-windows-11-image-to-aws-with-vm-import-export/

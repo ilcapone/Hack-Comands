@@ -8,6 +8,9 @@
 	## Importat privileges for haking
 	https://github.com/gtworek/Priv2Admin
 
+## Informacion del sistema
+systeminfo
+
 # para filtrar resultados en la salida de comandos
 comando | find "parametro" 
 
@@ -46,7 +49,7 @@ icacls [path]
 ## Review Service configuration
 sc qc [Service Name]
 
-## Revie Permisions of a Services
+## Review Permisions of a Services
 ccesschk64.exe -qlc [service Name]
 
 ## Chek own user Permisions

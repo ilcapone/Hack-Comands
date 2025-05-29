@@ -125,6 +125,9 @@ docker rmi $(docker images --format "{{.ID}}")
 
 # Delete all pause container
 docker rm $(docker ps -a --format "{{.ID}}")
+
+## Ver recursos de los contenedores
+docker stats
  
  -----------------------------------------
  

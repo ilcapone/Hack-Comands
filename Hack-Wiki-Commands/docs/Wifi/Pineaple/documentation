@@ -23,3 +23,17 @@
 	## Karma
 	https://www.youtube.com/watch?v=fOmDNn2aXXA
 
+
+## Setup Wardriving
+
+	## Kismet
+	opkg update
+	opkg install kismet kismet-capture-linux-wifi
+	nano /etc/kismet/kismet.conf
+	kismet
+	> Donfig datasources to see data
+
+	## GPSD
+	opkg update
+	opkg isntall gpsd gpsd-clients
+

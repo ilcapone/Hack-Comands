@@ -17,7 +17,7 @@ https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-regi
 ## View images in registry
 https:/[registry-IP]:[port]/v2/_catalog
 
-## Tags images from image
+## Tags images from image 
 https://[registry-IP]:[port]/v2/controller/tags/list
 
 
@@ -28,6 +28,17 @@ https://[registry-IP]:[port]/v2/controller/tags/list
 	## Docker auth private registry
 		Copy the ca.cert to /etc/docker/certs.d/[registryname]:[port]/ca.cert
 		Then run docker login [registryname]:[port]
+
+	## Hacer push o pull
+		# Etiquetar una imagen local
+		docker tag mi-imagen myregistry.example.com/mi-proyecto/mi-imagen:latest
+
+		# Push al registry
+		docker push myregistry.example.com/mi-proyecto/mi-imagen:latest
+
+		# Pull desde el registry
+		docker pull myregistry.example.com/mi-proyecto/mi-imagen:latest
+
 
 
 ## Delete Images

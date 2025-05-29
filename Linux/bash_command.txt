@@ -171,3 +171,7 @@ exiftool -s <path_to_file>
 
 ## View binare as human read
 strings [binari path]
+
+## Search inside less comand
+less file.txt
+/[string to search]

@@ -1,0 +1,19 @@
+
+	## Documetnacion
+
+	## Cómo obtener el identificador GPG
+	- gpg --list-keys
+	- gpg --list-keys --fingerprint
+
+		## Entendiendo el output
+		pub   rsa4096 2024-12-11 [SC] [expires: 2025-12-11]
+		      1234ABCD5678EFGH1234ABCD5678EFGH1234ABCD
+		uid           [ultimate] Tu Nombre <tuemail@ejemplo.com>
+		sub   rsa4096 2024-12-11 [E] [expires: 2025-12-11]
+
+		* Key ID: Los últimos 8 caracteres del fingerprint (en este caso, 1234ABCD).
+		* Fingerprint: Toda la cadena larga (en este caso, 1234ABCD5678EFGH1234ABCD5678EFGH1234ABCD).
+
+	## Generar par de clabes gpg
+	- gpg --full-generate-key
+

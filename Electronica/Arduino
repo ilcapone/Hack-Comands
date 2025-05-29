@@ -1,0 +1,19 @@
+
+
+#### NFC ####
+	## Rear NFC Cards with Modul RFID RC522 ##
+	- https://naylampmechatronics.com/blog/22_Tutorial-Lector-RFID-RC522.html
+
+	## Info ##
+	- https://www.youtube.com/watch?v=uihjXyMuqMY
+
+	## Security ASpects ##
+	- https://stackoverflow.com/questions/36395457/read-write-to-nfc-tag-with-password-protection
+
+### DC Motor Control L298N ###
+
+	- https://howtomechatronics.com/tutorials/arduino/arduino-dc-motor-control-tutorial-l298n-pwm-h-bridge/
+	- https://lastminuteengineers.com/l298n-dc-stepper-driver-arduino-tutorial/
+
+## Robot Smart Kit Elego V2.0
+https://github.com/keopx/Arduino/tree/master/Elegoo%20Smart%20Robot%20Car%20Kit%20V2.0.2017.08.21/Espanol

@@ -73,7 +73,7 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 - kubectl get networkpolicies --all-namespaces
 
 ## Volumenes persistente
--kubectl get pv
+- kubectl get pv
 
 ## Create JOB from YAML file##
 - kubectl create -f [job.yaml]
@@ -127,6 +127,7 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 - printf $(kubectl get secret [secret-name] -o jsonpath="{.data}" | [decode-specifi]);echo
 
 https://medium.com/platformer-blog/using-kubernetes-secrets-5e7530e0378a
+
 ## Create Secrets ##
 - echo -n some_text_to_encode | base64
 
@@ -228,7 +229,8 @@ kubectl get pod -o json -A | jq -r '.items[].spec.containers[].ports[].container
 	# Clean information
 	kubectl get pod -o json -A | jq -r '.items[] | {pod_name: .metadata.name, pod_ip: .status.podIP, pod_port: .spec.containers[].ports[].containerPort}'
 	
-
+## Verificar External IPs
+kubectl get svc -A
 
 
 

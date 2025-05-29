@@ -35,5 +35,27 @@ sudo nano /etc/NetworkManager/NetworkManager.conf
 ## Trilling to update with erros
 - sudo apt-get --allow-releaseinfo-change update
 
+## Clean linux space
+## View folder size
+du -sh [folder]
+
+## View partition size
+
+	## View folder size
+	df -h
+
+	## Clean space
+	sudo apt-get autoclean
+	sudo apt-get clean 
+	sudo apt autoremove
+	sudo apt autoremove --purge
+	rm -rf ~/.caché/thumbnails/*
+
+	## Displaying all sub-directories and their sizes, sorted by size 
+	du -hs * | sort -hr
+
+	# Buscar ARchivos en todo el sistema con espacio malloer de 50MB
+	sudo find / -type f -size +50M -exec ls -lh {} \;
+
 
 

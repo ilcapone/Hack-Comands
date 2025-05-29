@@ -164,6 +164,15 @@ aws ec2 describe-key-pairs
 ## Get EC2 Auto Scaling Launch Configuration
 aws autoscaling describe-launch-configurations --launch-configuration-names []
 
+## List EC2 Launch templates
+aws ec2 describe-launch-templates --query 'LaunchTemplates[*].LaunchTemplateName'
+
+## Descrive EC2 Launch Tempaltes
+aws ec2 describe-launch-templates --launch-template-name [LaunchTemplate-Name]  --query 'LaunchTemplates[*]'
+
+## Get EC2 Launch Tempalte UserData Metadatra
+aws ec2 describe-launch-template-versions --launch-template-name [LaunchTemplate-Name] --query 'LaunchTemplateVersions[*].{VersionNumber:VersionNumber,UserData:Data}'
+
 ## List EFS
 aws efs describe-file-systems
 
@@ -281,6 +290,15 @@ aws sso login --sso-session [sesionname]
 ## SSO Listar accounts 
 aws sso list-accounts --access-token $(cat [file_name].json | jq -r '.accessToken') --region []
 
+## Listar claves KMS
+aws kms list-keys --query 'Keys[*].KeyId'
 
+## Descripcion de una clave KMS
+aws kms describe-key --key-id [Key-id]
 
+    ## Get state
+    aws kms describe-key --key-id [Key-id] --query 'KeyMetadata.KeyState'
+
+## Get KMS policy
+aws kms get-key-policy --key-id [Key-id]
 

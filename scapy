@@ -4,4 +4,7 @@
 - https://scapy.readthedocs.io/en/latest/usage.html
 
  - IP().show()
+
+## ARP SPoofing
+	dns_pod_mac = srp1(Ether() / IP(dst=kubedns_vip) / UDP(dport=53) / DNS(rd=1,qd=DNSQR())).src
  

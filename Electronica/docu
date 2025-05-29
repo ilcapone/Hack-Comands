@@ -1,0 +1,35 @@
+
+	# Medicion voltaje baterias con multimetro digital
+	https://www.youtube.com/watch?v=wogxII9kHU8
+
+	## Cargga de Baterias con IMAX B6AC
+	- Calculadora para parametros de carga y almacenamiento
+	- https://aeromodelismo.epiel.com/scripts/carga.pl?Lang=es&Tipo=LiPo&Voltaje=11.1&Capacidad=1200&CargaMaxima=&Modo=Lento&Cargador=SkyRC+iMAX+B6AC&.submit=Recalcular&.cgifields=Cargador&.cgifields=Lang&.cgifields=Modo&.cgifields=Tipo
+
+		## Teoria
+		Puntos clave a tener en cuenta
+		Cuatro elementos:
+			- Voltaje
+				1S = 3,7V (una celda)
+				2S = 7,4V (dos celda)
+				3S = 11,1V (tres celdas)
+			- Autonomia (Capacidad)
+				400mh - Dura mui poco en el tiempo
+				5300mh - Durara mucho mas
+			- Velocidad de descarga
+				- Cocher de radiocontrl, Drones necesita mucha capacidad de descarga, motores con mucha fuerza
+					> Necesitan una capacidad de descarga mayor
+				- Camiones, escabadoras de radiocontrol consumen muy poco
+					> Necesitan una capacidad de descarga MENOR
+				- 1C = Un pico de descarga
+					100C muchisimos picos de descarga
+			- Velocidad de carga
+					El nivel de C recomendados para la el proceso de carga
+			- Entrega de potencia
+
+			WARNING - ¿pORQUE EXPLOTAN?
+			- Por cortocircuito
+			- Elementos en el circuito que no obtienen el voltaje correcto, la bateria sigue cargando y rebienta
+			- Por pinchazo
+
+			SEGURIDAD - Durante la carta nunca dejar baterias desatendidas
