@@ -34,5 +34,10 @@ https://dev-pages.info/vscode-how-to-change-the-font-size/
 	"editor.fontSize": 12,
 	"terminal.integrated.fontSize": 12
 
+## Setuo CodeGPT
+- nano  $HOME/.config/Code/User/settings.json
+	"CodeGPT.apiKey": "sk-sv.....akh>
+    "Codegpt.provider": "openai"
+
 	
 
