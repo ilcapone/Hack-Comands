@@ -290,6 +290,9 @@ aws sso login --sso-session [sesionname]
 ## SSO Listar accounts 
 aws sso list-accounts --access-token $(cat [file_name].json | jq -r '.accessToken') --region []
 
+## List roles by accounts
+aws sso list-account-roles --account-id [] --access-token $(cat [file_name].json | jq -r '.accessToken') --region []
+
 ## Listar claves KMS
 aws kms list-keys --query 'Keys[*].KeyId'
 
@@ -302,3 +305,12 @@ aws kms describe-key --key-id [Key-id]
 ## Get KMS policy
 aws kms get-key-policy --key-id [Key-id]
 
+## Acces instancya using ssm
+aws ssm start-session --region [] --target i-xxxxxxxxxxxxxxxxx
+
+
+## Review "IAM AWS-Managed policies that allow full "*:*" administrative privileges are not attached"
+aws iam list-entities-for-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --query '{Users:PolicyUsers[].UserName, Groups:PolicyGroups[].GroupName, Roles:PolicyRoles[].RoleName}' --output table --profile []
+
+    ## Revisar quien puede asumir esos roles
+    aws iam get-role --role-name OrganizationAccountAccessRole --query 'Role.AssumeRolePolicyDocument' --profile []

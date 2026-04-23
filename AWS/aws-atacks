@@ -14,6 +14,9 @@ https://github.com/toniblyx/my-arsenal-of-aws-security-tools
 	## How to run
 	./prowler -M html -o [results_path]
 
+	## Docker
+	docker run -ti --rm -v /your/local/dir/prowler-output:/home/prowler/output --name prowler --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY --env AWS_SESSION_TOKEN toniblyx/prowler:latest
+
 ## Security Audit Roles
 arn:aws:iam::aws:policy/SecurityAudit
 arn:aws:iam::aws:policy/job-function/ViewOnlyAccess

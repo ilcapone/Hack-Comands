@@ -12,6 +12,13 @@
 	- roles/viewer : For general configuration settings and assets enumeration
 	- roles/iam.securityReviewer : For listing the different roles and permissions across the organization
 	- roles/monitoring.viewer : For checking monitoring and logs configurations
+	- roles/cloudasset.viewer: Permite usar la API de Cloud Asset Inventory. Es la forma más eficiente de exportar el estado de toda la infraestructura en un solo JSON para analizarlo offline. Muy útil para no saturar la API con miles de peticiones individuales.
+	- IMPORTANTE habilitar: Service Usage API (serviceusage.googleapis.com)
+
+## Pentest Activo (simular insider)
+	- roles/compute.networkUser
+	- roles/container.developer
+	- IMPORTANTE habilitar: Service Usage API (serviceusage.googleapis.com)
 
 ## Key Rotator ##
 https://cloud.google.com/blog/products/gcp/help-keep-your-google-cloud-service-account-keys-safe

@@ -3,5 +3,11 @@
 openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt
 
-## Generate valid self signed certificate
+## Generate valid self signed certificate - But with warning
 https://medium.com/@antelle/how-to-generate-a-self-signed-ssl-certificate-for-an-ip-address-f0dd8dddf754
+
+## Generate valid cert
+sudo apt install certbot
+sudo certbot certonly --standalone -d login.salesforce.edreamsodigeo.com
+- NOTES: Es necesario, tener un registro de tipo A que asociel el dominio o subdominio con la IP donde se ejecutan estos comandos y por otro lado es necesario que el puerto 80 sea accesible desde internet
+

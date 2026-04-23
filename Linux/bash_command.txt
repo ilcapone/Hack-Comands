@@ -175,3 +175,6 @@ strings [binari path]
 ## Search inside less comand
 less file.txt
 /[string to search]
+
+##M ergear dos documentos sin lineas duplicadas
+cat subdominios_1.txt subdominios_2.txt | sort -u > subdominios_final.txt

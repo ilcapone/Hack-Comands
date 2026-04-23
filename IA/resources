@@ -1,0 +1,63 @@
+
+## LLM
+https://github.com/ollama/ollama
+
+## N8N
+https://github.com/n8n-io/n8n
+	
+	## Documentation N8N
+	https://docs.n8n.io/
+
+	## Starter Kit - docker-compose
+	https://docs.n8n.io/hosting/starter-kits/ai-starter-kit/
+
+	## Basic workflow
+	https://docs.n8n.io/try-it-out/tutorial-first-workflow/
+	https://docs.n8n.io/advanced-ai/intro-tutorial/
+
+	## Docker Compose
+	https://github.com/n8n-io/n8n-hosting/tree/main/docker-compose/withPostgres
+
+## Aotumatic Pentest
+https://github.com/usestrix/strix
+
+## Basic Docu - Setups
+https://www.youtube.com/watch?v=7qrruzYC0b4
+https://www.youtube.com/watch?v=q8c-ZXt2gWQ
+https://www.youtube.com/watch?v=maZ_fF57yhE
+
+## Advanced Docu
+https://www.youtube.com/watch?v=aRAuCMY6tFA&list=PLMfGwpRDVl-JfUYTKk7SYCzJzTnClaOt7&index=21
+
+## Cloud con graficas varatas para computacion
+https://www.runpod.io/
+
+## RAG y n8n
+https://www.youtube.com/watch?v=OjONdOCkhk8&t=1469s
+
+## RAG Strategy
+https://www.youtube.com/watch?v=tLMViADvSNE
+
+## PDF to MArkdown etc..
+https://github.com/docling-project/docling
+https://www.youtube.com/watch?v=fg0_0M8kZ8g
+
+## Claude
+	
+	## Limpiar historial
+	/clear
+
+	## Añadir comando a .md
+	#
+
+	## Compactar y mejorar contexto
+	/compact [instrucciones de almacenamiento en la memoria del contexto]
+
+	## recuperar sesion anterior
+	claude /resume
+
+	## Cambiar entre modelos
+	/model
+
+	## Volver a versiones anteriores
+	/rewind

@@ -5,6 +5,9 @@
 	## Oficial page
 	https://getgophish.com/
 
+	## Documentation
+	https://www.blackhillsinfosec.com/installing-gophish-and-creating-a-campaign/
+
 	## Basic Architecture
 	https://medium.com/swlh/production-ready-gophish-with-nginx-mysql-and-docker-68db412d6cdd
 	https://blog.tiraquelibras.com/?p=237
@@ -35,12 +38,23 @@
 
 	## Create Basic Template
 	- https://docs.getgophish.com/user-guide/building-your-first-campaign/creating-the-template
+	
+	## Basic Tamplates - Mails and landing pages -
+	- https://github.com/mazipan/login-page-css/tree/master/src
+	- https://github.com/FreeZeroDays/GoPhish-Templates/tree/master
+	- https://github.com/brunobotelhobr/My-Gophish-Templates
+	- https://github.com/securitygeneration/templates
+	- https://github.com/criggs626/PhishingTemplates/tree/master/emails
+	- https://github.com/rat-c/gophish-templates
+	- https://github.com/LinkSec/phishing-templates/tree/main/emails
+	- https://github.com/LiveGray/OPENORCHID/tree/master/GoPhish_Templates
+	- https://github.com/lindelof/particles-bg
+	- https://github.com/topics/login-template
 
 	## Remove IOCs
 	https://www.sprocketsecurity.com/resources/never-had-a-bad-day-phishing-how-to-set-up-gophish-to-evade-security-controls
 
 	## Concepts
-
 		- Sending Profiles: Are the connection details required to actually send your Phishing emails; this is just simply an SMTP server that you have access to.
 		- Landing Pages: Next, we're going to set up the landing page; this is the website that the Phishing email is going to direct the victim to; this page is usually a spoof of a website the victim is familiar with.
 		- Email Templates: This is the design and content of the email you're going to actually send to the victim; it will need to be persuasive and contain a link to your landing page to enable us to capture the victim's username and password.
